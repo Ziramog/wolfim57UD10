@@ -18,6 +18,7 @@
 </head>
 <body>
   <!-- ═══════════════ AMBIENT ELEMENTS ═══════════════ -->
+  <div id="cinematic-bg" aria-hidden="true"></div>
   <div class="film-grain" aria-hidden="true"></div>
   <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
 
@@ -60,6 +61,9 @@
 
   <!-- ═══════════════ HERO ═══════════════ -->
   <header id="hero" class="hero">
+    <video class="hero__bg-video" autoplay loop muted playsinline>
+      <source src="Animation_on_transparent_base_202605251555.mp4" type="video/mp4">
+    </video>
     <div class="hero__grid-lines" id="hero-grid" aria-hidden="true">
       <div class="hero__vline" style="left:8.333%"></div>
       <div class="hero__vline" style="left:25%"></div>
@@ -507,19 +511,19 @@
 
       <div class="intelligence__metrics" data-animate="fade-up">
         <div class="metric">
-          <span class="metric__number">97%</span>
+          <span class="metric__number" data-metric-target="97" data-metric-suffix="%">0%</span>
           <span class="metric__label" data-i18n-html="intel.m1">Google PageSpeed<br>Score Average</span>
         </div>
         <div class="metric">
-          <span class="metric__number">3.2×</span>
+          <span class="metric__number" data-metric-target="3.2" data-metric-suffix="×">0.0×</span>
           <span class="metric__label" data-i18n-html="intel.m2">Lead Generation<br>Improvement</span>
         </div>
         <div class="metric">
-          <span class="metric__number">40%</span>
+          <span class="metric__number" data-metric-target="40" data-metric-suffix="%">0%</span>
           <span class="metric__label" data-i18n-html="intel.m3">Lower Cost<br>Per Acquisition</span>
         </div>
         <div class="metric">
-          <span class="metric__number">∞</span>
+          <span class="metric__number" data-metric-target="1" data-metric-suffix="∞">0</span>
           <span class="metric__label" data-i18n-html="intel.m4">Scalability<br>Ceiling</span>
         </div>
       </div>

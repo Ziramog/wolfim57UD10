@@ -74,6 +74,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ─── CINEMATIC BACKGROUND ─── */
+#cinematic-bg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at 50% 30%, rgba(0,0,0,0.015) 0%, rgba(0,0,0,0.03) 100%);
+  z-index: -999;
+  pointer-events: none;
+}
+
 /* ─── FILM GRAIN ─── */
 .film-grain {
   position: fixed;
@@ -328,6 +339,17 @@ img {
   padding: var(--container-padding);
   padding-top: 8rem;
   overflow: hidden;
+}
+
+.hero__bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .hero__grid-lines {
@@ -640,6 +662,24 @@ img {
   background: var(--black);
   position: relative;
   overflow: hidden;
+  transition: transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+/* ─── MUSEUM HOVER EFFECT ─── */
+.projects:hover .project {
+  opacity: 0.6;
+  filter: grayscale(20%);
+  transition: opacity 0.8s ease, filter 0.8s ease;
+}
+
+.projects:hover .project:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+.project:hover .project__image-inner {
+  transform: scale(1.03);
 }
 
 .project__video {
@@ -1511,18 +1551,19 @@ img {
    ANIMATIONS
    ═══════════════════════════════════════════════════════ */
 
-/* Fade Up */
+/* Fade Up Cinematic */
+/* Fade Up Cinematic */
 [data-animate="fade-up"] {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(20px) scale(0.98);
   transition:
-    opacity var(--duration-glacial) var(--ease-out),
-    transform var(--duration-glacial) var(--ease-out);
+    opacity 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 [data-animate="fade-up"].is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 /* Title Lines Cinematic Refinement */

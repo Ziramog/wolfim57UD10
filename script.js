@@ -585,6 +585,16 @@
     }
   });
 
+  const heroContent = document.querySelector('.hero__content');
+  const heroGridLines = document.querySelector('.hero__grid-lines');
+  let windowWidth = window.innerWidth;
+  let windowHeight = window.innerHeight;
+
+  window.addEventListener('resize', () => {
+    windowWidth = window.innerWidth;
+    windowHeight = window.innerHeight;
+  });
+
   function animateCursor() {
     cursorX += (targetX - cursorX) * 0.12;
     cursorY += (targetY - cursorY) * 0.12;
@@ -594,6 +604,18 @@
     if (cursorGlow) {
       cursorGlow.style.left = cursorX + 'px';
       cursorGlow.style.top = cursorY + 'px';
+    }
+
+    if (document.body.classList.contains('system-awake')) {
+      const offsetX = (cursorX - windowWidth / 2) / windowWidth;
+      const offsetY = (cursorY - windowHeight / 2) / windowHeight;
+
+      if (heroContent) {
+        heroContent.style.transform = `translate(${offsetX * -10}px, ${offsetY * -10}px)`;
+      }
+      if (heroGridLines) {
+        heroGridLines.style.transform = `translate(${offsetX * 15}px, ${offsetY * 15}px)`;
+      }
     }
     
     requestAnimationFrame(animateCursor);
@@ -694,6 +716,42 @@
     observer.observe(el);
   });
 
+  // ─── METRICS COUNTING ENGINE ───
+  const metricsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const target = parseFloat(entry.target.getAttribute('data-metric-target'));
+        const suffix = entry.target.getAttribute('data-metric-suffix') || '';
+        const duration = 2500;
+        const startTime = performance.now();
+        const isFloat = target % 1 !== 0;
+
+        function updateNumber(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const easeOut = 1 - Math.pow(1 - progress, 3);
+          let current = target * easeOut;
+          
+          if (isFloat) {
+            entry.target.textContent = current.toFixed(1) + suffix;
+          } else {
+            entry.target.textContent = Math.round(current) + suffix;
+          }
+
+          if (progress < 1) {
+            requestAnimationFrame(updateNumber);
+          }
+        }
+        requestAnimationFrame(updateNumber);
+        metricsObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.metric__number[data-metric-target]').forEach(el => {
+    metricsObserver.observe(el);
+  });
+
 
   // ─── HERO TITLE ANIMATION ───
   const heroScrambleEl = document.getElementById('hero-scramble');
@@ -756,6 +814,11 @@
         }, i * 150);
       });
     }, 2400);
+
+    // 2800ms: System awake (ambient parallax begins)
+    setTimeout(() => {
+      document.body.classList.add('system-awake');
+    }, 2800);
     // 3000ms: Unlock overflow for Fisheye effect
     setTimeout(() => {
       if (titleLines[0]) {
@@ -888,66 +951,6 @@
     });
   });
 
-
-  // ─── COUNTER ANIMATION FOR METRICS ───
-  function animateCounter(el, target, suffix = '') {
-    const duration = 2000;
-    const start = performance.now();
-    const isFloat = String(target).includes('.');
-    const isInfinity = target === '∞';
-
-    if (isInfinity) {
-      el.textContent = '∞';
-      return;
-    }
-
-    function update(now) {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 4);
-
-      if (isFloat) {
-        el.textContent = (target * eased).toFixed(1) + suffix;
-      } else {
-        el.textContent = Math.round(target * eased) + suffix;
-      }
-
-      if (progress < 1) {
-        requestAnimationFrame(update);
-      }
-    }
-
-    requestAnimationFrame(update);
-  }
-
-  // Observe metrics for counter animation
-  const metricsObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const numberEl = entry.target.querySelector('.metric__number');
-          const text = numberEl.textContent.trim();
-
-          if (text === '∞') {
-            // Skip infinity
-          } else if (text.includes('%')) {
-            animateCounter(numberEl, parseInt(text), '%');
-          } else if (text.includes('×')) {
-            animateCounter(numberEl, parseFloat(text), '×');
-          } else {
-            animateCounter(numberEl, parseInt(text));
-          }
-
-          metricsObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
-
-  document.querySelectorAll('.metric').forEach((metric) => {
-    metricsObserver.observe(metric);
-  });
 
 
   // ─── SECTION OBSERVER ───
