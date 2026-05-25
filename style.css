@@ -629,7 +629,7 @@ img {
 
 .project__image {
   position: relative;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   background: var(--black);
 }
