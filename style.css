@@ -341,17 +341,6 @@ img {
   overflow: hidden;
 }
 
-.hero__bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-  pointer-events: none;
-}
-
 .hero__grid-lines {
   position: absolute;
   top: 0;
@@ -450,8 +439,37 @@ img {
   font-weight: 700;
   line-height: 0.88;
   letter-spacing: -0.04em;
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
   text-transform: uppercase;
+}
+
+/* Hero Scene — Cinematic Video Accent */
+.hero__scene {
+  position: absolute;
+  top: 12vh;
+  right: var(--container-padding);
+  width: 28vw;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(12px) scale(0.98);
+  transition:
+    opacity 2s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.system-awake .hero__scene {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.hero__scene-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .hero__title-line {
@@ -1718,6 +1736,14 @@ img {
 
   .hero__title-line--secondary {
     padding-left: clamp(1rem, 8vw, 4rem);
+  }
+
+  .hero__scene {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    margin-bottom: var(--space-sm);
   }
 
   .project {

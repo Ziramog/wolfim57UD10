@@ -447,7 +447,7 @@
     },
   };
 
-  let currentLang = 'en';
+  let currentLang = 'es';
 
   function setLanguage(lang) {
     currentLang = lang;
@@ -493,14 +493,16 @@
     });
   }
 
-  // Restore saved preference
+  // Restore saved preference or default to Spanish
   try {
     const saved = localStorage.getItem('wolfim-lang');
     if (saved && translations[saved]) {
       setLanguage(saved);
+    } else {
+      setLanguage('es');
     }
   } catch (e) {
-    // localStorage not available
+    setLanguage('es');
   }
 
 
@@ -629,7 +631,33 @@
     el.addEventListener('mouseleave', () => cursor.classList.remove('cursor--expanded'));
   });
 
-
+  // ─── NAV LINK HOVER SCRAMBLE ───
+  const navLinks = document.querySelectorAll('.nav__link');
+  navLinks.forEach(link => {
+    link.addEventListener('mouseenter', () => {
+      if (link.dataset.isScrambling === 'true') return;
+      link.dataset.isScrambling = 'true';
+      
+      const currentText = link.textContent;
+      let iterations = 0;
+      
+      const interval = setInterval(() => {
+        link.textContent = currentText.split('').map((char, index) => {
+          if (char === ' ') return ' ';
+          if (index < iterations) return currentText[index];
+          return SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)];
+        }).join('');
+        
+        iterations += 1/3;
+        
+        if (iterations >= currentText.length) {
+          clearInterval(interval);
+          link.textContent = currentText;
+          link.dataset.isScrambling = 'false';
+        }
+      }, 30);
+    });
+  });
   // ─── NAVIGATION ───
   const nav = document.getElementById('nav-main');
   const menuBtn = document.getElementById('nav-menu-btn');
