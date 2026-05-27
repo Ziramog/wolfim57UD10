@@ -20,10 +20,8 @@
       'hero.label': 'Digital Design & Creative Technology',
       'hero.desc': 'We design and build premium websites and digital systems for modern businesses. Every project combines architectural design thinking, AI-enhanced workflows, and a relentless focus on what actually drives growth.',
       'hero.desc_mobile': 'We build digital systems for the next generation of business. Design with intent, AI with purpose, technology that scales — an atmosphere built for exponential growth.',
-      'hero.focus_label': 'Focus',
-      'hero.focus_value': 'Premium Web Design &amp;<br>Digital Systems',
-      'hero.approach_label': 'Approach',
-      'hero.approach_value': 'AI-Enhanced &amp;<br>Systems-Driven',
+      'hero.cta_projects': 'View Work',
+      'hero.cta_pricing': 'Pricing',
       'hero.scroll': 'Scroll',
 
       // Projects
@@ -240,6 +238,8 @@
       'hero.label': 'Diseño Digital & Tecnología Creativa',
       'hero.desc': 'Diseño con intención. Tecnología con propósito. Cada proyecto es una arquitectura digital construida desde cero — con IA en el proceso y el crecimiento como única métrica.',
       'hero.desc_mobile': 'Construimos sistemas digitales para la próxima generación de negocios. Diseño con intención, IA con propósito, tecnología que escala — una atmósfera construida para crecer de forma exponencial.',
+      'hero.cta_projects': 'Ver Proyectos',
+      'hero.cta_pricing': 'Precios',
       'hero.focus_label': 'Enfoque',
       'hero.focus_value': 'Diseño Web Premium &amp;<br>Sistemas Digitales',
       'hero.approach_label': 'Método',
@@ -479,12 +479,48 @@
       opt.classList.toggle('lang-toggle__option--active', opt.dataset.lang === lang);
     });
 
+    // Run typewriter if applicable
+    if (window.innerWidth <= 768) {
+      runMobileTypewriter();
+    }
+
     // Persist preference
     try {
       localStorage.setItem('wolfim-lang', lang);
     } catch (e) {
       // localStorage not available
     }
+  }
+
+  let typewriterTimeout = null;
+  function runMobileTypewriter() {
+    const mobileDesc = document.querySelector('.desc-mobile');
+    if (!mobileDesc) return;
+
+    if (typewriterTimeout) clearTimeout(typewriterTimeout);
+
+    const key = mobileDesc.getAttribute('data-i18n');
+    const fullText = translations[currentLang][key];
+    if (!fullText) return;
+
+    mobileDesc.textContent = '';
+    mobileDesc.classList.add('is-typing');
+    
+    let i = 0;
+    function typeChar() {
+      if (i < fullText.length) {
+        mobileDesc.textContent += fullText.charAt(i);
+        i++;
+        // Add slight randomness to typing speed for realism (20-60ms)
+        const speed = Math.random() * 40 + 20;
+        typewriterTimeout = setTimeout(typeChar, speed);
+      } else {
+        mobileDesc.classList.remove('is-typing');
+      }
+    }
+    
+    // Initial delay before typing starts
+    typewriterTimeout = setTimeout(typeChar, 800);
   }
 
   // ─── LANGUAGE TOGGLE ───
@@ -1052,21 +1088,5 @@
 
   // Start the cycle a few seconds after initial load
   setTimeout(triggerRandomEffect, Math.random() * 5000 + 3000);
-
-  // ─── BANNER MULTI-LINE CYCLE ───
-  let bannerState = 1;
-  
-  function cycleBanner() {
-    const bannerCont = document.querySelector('.desc-mobile');
-    if (!bannerCont) return;
-
-    bannerState++;
-    if (bannerState > 3) bannerState = 1;
-
-    bannerCont.classList.remove('lines-1', 'lines-2', 'lines-3');
-    bannerCont.classList.add(`lines-${bannerState}`);
-  }
-
-  setInterval(cycleBanner, 5000); // Cycle every 5 seconds
 
 })();
