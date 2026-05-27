@@ -25,7 +25,9 @@
   <!-- ═══════════════ NAVIGATION ═══════════════ -->
   <nav id="nav-main" class="nav">
     <div class="nav__inner">
-      <a href="#" class="nav__logo" id="nav-logo">WOLFIM</a>
+      <a href="#" class="nav__logo" id="nav-logo">
+        <img src="wolfim_studio_whitebg.png" alt="Wolfim Studio" class="nav__logo-img">
+      </a>
       <div class="nav__links" id="nav-links">
         <a href="#projects" class="nav__link" data-i18n="nav.projects">Work</a>
         <a href="#capabilities" class="nav__link" data-i18n="nav.capabilities">Services</a>
@@ -71,24 +73,44 @@
       <div class="hero__scan-line"></div>
     </div>
     <div class="hero__content">
-      <div class="hero__eyebrow" data-animate="fade-up">
-        <span class="hero__label" data-i18n="hero.label">Digital Design & Creative Technology</span>
-        <span class="hero__year">Est. 2024</span>
-      </div>
       <div class="hero__scene" data-animate="fade-up">
         <video class="hero__scene-video" autoplay loop muted playsinline>
           <source src="Initial_Scene_-_2026-05-26_202605252357.mp4" type="video/mp4">
         </video>
+      </div>
+      <div class="hero__eyebrow" data-animate="fade-up">
+        <span class="hero__label" data-i18n="hero.label">Digital Design &amp; Creative Technology</span>
+        <span class="hero__year">Est. 2024</span>
       </div>
       <h1 class="hero__title" data-animate="title">
         <span class="hero__title-line" id="hero-wolfim" data-animate="title-line">WOLFIM</span>
         <span class="hero__title-line hero__title-line--secondary" data-animate="title-line"><span class="hero__title-sep" id="hero-sep">/</span><span id="hero-scramble" class="hero__coded--waiting">57UD10</span></span>
       </h1>
       <div class="hero__bottom">
-        <div class="hero__description" data-animate="fade-up">
-          <p data-i18n="hero.desc">We design and build premium websites and digital systems for modern businesses. Every project combines architectural design thinking, AI-enhanced workflows, and a relentless focus on what actually drives growth.</p>
+        <div class="hero__description" data-animate="fade-up" style="transition-delay: 0.1s;">
+          <p class="desc-desktop" data-i18n="hero.desc">Diseño con intención. Tecnología con propósito. Cada proyecto es una arquitectura digital construida desde cero — con IA en el proceso y el crecimiento como única métrica.</p>
+          <div class="desc-mobile lines-1">
+            <div class="desc-mobile-track track-1">
+              <span data-i18n="hero.desc_mobile">Construimos sistemas digitales para la próxima generación de negocios. Diseño con intención, IA con propósito, tecnología que escala — una atmósfera construida para crecer de forma exponencial.</span>
+              <span class="banner-sep">///</span>
+              <span data-i18n="hero.desc_mobile" aria-hidden="true">Construimos sistemas digitales para la próxima generación de negocios. Diseño con intención, IA con propósito, tecnología que escala — una atmósfera construida para crecer de forma exponencial.</span>
+              <span class="banner-sep" aria-hidden="true">///</span>
+            </div>
+            <div class="desc-mobile-track track-2">
+              <span data-i18n="hero.desc_mobile">Construimos sistemas digitales para la próxima generación de negocios. Diseño con intención, IA con propósito, tecnología que escala — una atmósfera construida para crecer de forma exponencial.</span>
+              <span class="banner-sep">///</span>
+              <span data-i18n="hero.desc_mobile" aria-hidden="true">Construimos sistemas digitales para la próxima generación de negocios. Diseño con intención, IA con propósito, tecnología que escala — una atmósfera construida para crecer de forma exponencial.</span>
+              <span class="banner-sep" aria-hidden="true">///</span>
+            </div>
+            <div class="desc-mobile-track track-3">
+              <span data-i18n="hero.desc_mobile">Construimos sistemas digitales para la próxima generación de negocios. Diseño con intención, IA con propósito, tecnología que escala — una atmósfera construida para crecer de forma exponencial.</span>
+              <span class="banner-sep">///</span>
+              <span data-i18n="hero.desc_mobile" aria-hidden="true">Construimos sistemas digitales para la próxima generación de negocios. Diseño con intención, IA con propósito, tecnología que escala — una atmósfera construida para crecer de forma exponencial.</span>
+              <span class="banner-sep" aria-hidden="true">///</span>
+            </div>
+          </div>
         </div>
-        <div class="hero__meta" data-animate="fade-up">
+        <div class="hero__meta" id="hero-meta">
           <div class="hero__meta-item">
             <span class="hero__meta-label" data-i18n="hero.focus_label">Focus</span>
             <span class="hero__meta-value" data-i18n-html="hero.focus_value">Premium Web Design &amp;<br>Digital Systems</span>
@@ -99,7 +121,6 @@
           </div>
         </div>
       </div>
-    </div>
     <div class="hero__scroll" data-animate="fade-up">
       <span data-i18n="hero.scroll">Scroll</span>
       <div class="hero__scroll-line"></div>
@@ -152,7 +173,9 @@
 
       <article class="project" data-animate="fade-up">
         <div class="project__image">
-          <div class="project__image-inner" id="project-img-3"></div>
+          <video class="project__image-inner project__video" autoplay loop muted playsinline>
+            <source src="construvial-2.mp4" type="video/mp4">
+          </video>
         </div>
         <div class="project__info">
           <span class="project__number">003</span>

@@ -19,6 +19,7 @@
       // Hero
       'hero.label': 'Digital Design & Creative Technology',
       'hero.desc': 'We design and build premium websites and digital systems for modern businesses. Every project combines architectural design thinking, AI-enhanced workflows, and a relentless focus on what actually drives growth.',
+      'hero.desc_mobile': 'We build digital systems for the next generation of business. Design with intent, AI with purpose, technology that scales — an atmosphere built for exponential growth.',
       'hero.focus_label': 'Focus',
       'hero.focus_value': 'Premium Web Design &amp;<br>Digital Systems',
       'hero.approach_label': 'Approach',
@@ -36,10 +37,10 @@
       'projects.p2.tag1': 'Web Platform',
       'projects.p2.tag2': 'SEO & Lead Gen',
       'projects.p2.desc': 'High-performance website for a real estate developer. Property listing engine, Google Ads integration, SEO architecture, and automated lead capture — turning search traffic into signed deals.',
-      'projects.p3.title': 'Sovereign<br>Visual',
-      'projects.p3.tag1': 'Editorial Website',
-      'projects.p3.tag2': 'Visual Direction',
-      'projects.p3.desc': 'Typography-driven website and visual identity for a luxury brand. Custom design system, motion choreography, and content management — a digital presence that communicates before you read a word.',
+      'projects.p3.title': 'Construvial<br>S.A.',
+      'projects.p3.tag1': 'Construction Website',
+      'projects.p3.tag2': 'Visual Identity & AI',
+      'projects.p3.desc': 'Immersive digital presence for a construction company. Custom visual identity, AI image generation, and strategic WhatsApp CTA integration — designed to build trust and capture leads directly.',
       'projects.p4.title': 'Apex<br>Digital',
       'projects.p4.tag1': 'Website & Growth',
       'projects.p4.tag2': 'Ads & Analytics',
@@ -237,7 +238,8 @@
 
       // Hero
       'hero.label': 'Diseño Digital & Tecnología Creativa',
-      'hero.desc': 'Diseñamos y construimos sitios web premium y sistemas digitales para negocios modernos. Cada proyecto combina pensamiento arquitectónico de diseño, flujos de trabajo potenciados por IA, y un enfoque implacable en lo que realmente impulsa el crecimiento.',
+      'hero.desc': 'Diseño con intención. Tecnología con propósito. Cada proyecto es una arquitectura digital construida desde cero — con IA en el proceso y el crecimiento como única métrica.',
+      'hero.desc_mobile': 'Construimos sistemas digitales para la próxima generación de negocios. Diseño con intención, IA con propósito, tecnología que escala — una atmósfera construida para crecer de forma exponencial.',
       'hero.focus_label': 'Enfoque',
       'hero.focus_value': 'Diseño Web Premium &amp;<br>Sistemas Digitales',
       'hero.approach_label': 'Método',
@@ -255,10 +257,10 @@
       'projects.p2.tag1': 'Plataforma Automotriz',
       'projects.p2.tag2': 'IA & Automatización',
       'projects.p2.desc': 'Plataforma digital de alto rendimiento para agencia de autos premium nuevos y usados. Generación de descripciones potenciada por IA, arquitectura SEO, comparativas de vehículos y emisión automatizada de presupuestos — convirtiendo tráfico en ventas.',
-      'projects.p3.title': 'Sovereign<br>Visual',
-      'projects.p3.tag1': 'Web Editorial',
-      'projects.p3.tag2': 'Dirección Visual',
-      'projects.p3.desc': 'Sitio web tipográfico e identidad visual para una marca de lujo. Sistema de diseño personalizado, coreografía de movimiento y gestión de contenido — una presencia digital que comunica antes de que leas una palabra.',
+      'projects.p3.title': 'Construvial<br>S.A.',
+      'projects.p3.tag1': 'Sitio Web Constructora',
+      'projects.p3.tag2': 'Identidad Visual e IA',
+      'projects.p3.desc': 'Presencia digital inmersiva para empresa constructora. Identidad visual, generación de imágenes con IA, y un CTA estratégico de WhatsApp — diseñado para generar confianza y captar clientes de manera directa.',
       'projects.p4.title': 'Apex<br>Digital',
       'projects.p4.tag1': 'Web & Crecimiento',
       'projects.p4.tag2': 'Ads & Analítica',
@@ -996,5 +998,75 @@
   document.querySelectorAll('.section').forEach((section) => {
     sectionObserver.observe(section);
   });
+
+  // ─── DYNAMIC TITLE WIDTH FOR DESCRIPTION ───
+  const heroWolfim = document.getElementById('hero-wolfim');
+  function syncWolfimWidth() {
+    if (heroWolfim) {
+      const width = heroWolfim.getBoundingClientRect().width;
+      document.documentElement.style.setProperty('--wolfim-width', width + 'px');
+    }
+  }
+  window.addEventListener('resize', syncWolfimWidth);
+  document.fonts.ready.then(syncWolfimWidth);
+  syncWolfimWidth();
+
+  // ─── RANDOM ALTERNATING VIDEO EFFECTS ───
+  let nextEffectIsZoom = true;
+
+  function triggerRandomEffect() {
+    const videoCont = document.querySelector('.hero__scene');
+    if (!videoCont) return;
+
+    // 15% chance for the rare mega effect
+    const isRareEffect = Math.random() < 0.15;
+
+    if (isRareEffect) {
+      videoCont.classList.add('scene-mega-drop');
+      setTimeout(() => {
+        videoCont.classList.remove('scene-mega-drop');
+        scheduleNextEffect();
+      }, 2000);
+    } else {
+      if (nextEffectIsZoom) {
+        videoCont.classList.add('scene-zoomed');
+        setTimeout(() => {
+          videoCont.classList.remove('scene-zoomed');
+          scheduleNextEffect();
+        }, 3000);
+      } else {
+        videoCont.classList.add('scene-dropped');
+        setTimeout(() => {
+          videoCont.classList.remove('scene-dropped');
+          scheduleNextEffect();
+        }, 3000);
+      }
+      nextEffectIsZoom = !nextEffectIsZoom;
+    }
+  }
+
+  function scheduleNextEffect() {
+    const nextRandomTime = Math.random() * 10000 + 5000; // Between 5 and 15s
+    setTimeout(triggerRandomEffect, nextRandomTime);
+  }
+
+  // Start the cycle a few seconds after initial load
+  setTimeout(triggerRandomEffect, Math.random() * 5000 + 3000);
+
+  // ─── BANNER MULTI-LINE CYCLE ───
+  let bannerState = 1;
+  
+  function cycleBanner() {
+    const bannerCont = document.querySelector('.desc-mobile');
+    if (!bannerCont) return;
+
+    bannerState++;
+    if (bannerState > 3) bannerState = 1;
+
+    bannerCont.classList.remove('lines-1', 'lines-2', 'lines-3');
+    bannerCont.classList.add(`lines-${bannerState}`);
+  }
+
+  setInterval(cycleBanner, 5000); // Cycle every 5 seconds
 
 })();
