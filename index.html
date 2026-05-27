@@ -1,20 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wolfim Studio — Premium Web Design & Digital Systems</title>
-  <meta name="description" content="Wolfim Studio designs and builds premium websites and digital systems for modern businesses. AI-enhanced workflows, SEO, growth infrastructure, and architectural design thinking.">
-  <meta name="keywords" content="premium web design, digital systems, AI-enhanced workflows, SEO, Google Ads, growth infrastructure, brand identity, creative technology">
+  <meta name="description" content="Wolfim Studio diseña y construye sitios web premium y sistemas digitales para negocios modernos. Flujos de trabajo potenciados por IA, SEO, infraestructura de crecimiento y pensamiento de diseño arquitectónico.">
+  <meta name="keywords" content="diseño web premium, sistemas digitales, flujos de trabajo IA, SEO, Google Ads, infraestructura de crecimiento, identidad de marca, tecnología creativa">
   <meta name="author" content="Wolfim Studio">
-  <meta property="og:title" content="Wolfim Studio — Premium Web Design & Digital Systems">
-  <meta property="og:description" content="Premium websites and digital systems for modern businesses. Built with AI-enhanced workflows, architectural precision, and a focus on growth.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wolfim.com/">
+  <meta property="og:title" content="Wolfim Studio — Diseño Web Premium & Sistemas Digitales">
+  <meta property="og:description" content="Sitios web premium y sistemas digitales para negocios modernos. Construidos con IA, precisión arquitectónica y foco en el crecimiento.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="https://wolfim.com/og-image.jpg">
+  <meta property="og:url" content="https://wolfim.com/">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://wolfim.com/og-image.jpg">
+  <link rel="icon" type="image/png" href="wolfim_nobg.png">
+  <link rel="apple-touch-icon" href="wolfim_nobg.png">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D7E290M8PW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-D7E290M8PW');
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="alternate" hreflang="es" href="https://wolfim.com/">
+  <link rel="alternate" hreflang="en" href="https://wolfim.com/?lang=en">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "name": "Wolfim Studio",
+        "description": "Wolfim Studio diseña y construye sitios web premium y sistemas digitales para negocios modernos. Flujos de trabajo potenciados por IA, SEO, infraestructura de crecimiento y pensamiento de diseño arquitectónico.",
+        "url": "https://wolfim.com/",
+        "email": "hello@wolfim.com",
+        "telephone": "+54-9-11-7385-8454",
+        "areaServed": {
+          "@type": "Country",
+          "name": "Argentina"
+        },
+        "priceRange": "$$",
+        "serviceType": [
+          "Diseño Web",
+          "Desarrollo Web",
+          "SEO",
+          "Google Ads",
+          "Identidad de Marca",
+          "Automatización con IA"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "name": "Wolfim Studio",
+        "url": "https://wolfim.com/",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://wolfim.com/?s={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "VideoObject",
+        "name": "Wolfim Studio — Diseño Web Premium & Sistemas Digitales",
+        "description": "Presentación cinematográfica del estudio Wolfim. Diseño web premium y sistemas digitales para negocios modernos.",
+        "thumbnailUrl": "https://wolfim.com/og-image.jpg",
+        "uploadDate": "2024-01-01",
+        "contentUrl": "https://wolfim.com/Initial_Scene_-_2026-05-26_202605252357.mp4",
+        "embedUrl": "https://wolfim.com/Initial_Scene_-_2026-05-26_202605252357.mp4"
+      }
+    ]
+  }
+  </script>
+
 </head>
 <body>
   <!-- ═══════════════ AMBIENT ELEMENTS ═══════════════ -->
@@ -25,15 +95,15 @@
   <!-- ═══════════════ NAVIGATION ═══════════════ -->
   <nav id="nav-main" class="nav">
     <div class="nav__inner">
-      <a href="#" class="nav__logo" id="nav-logo">
-        <img src="wolfim_studio_whitebg.png" alt="Wolfim Studio" class="nav__logo-img">
+      <a href="#hero" class="nav__logo" id="nav-logo">
+        <img src="wolfim_studio_whitebg.png" alt="Wolfim Studio" class="nav__logo-img" width="180" height="63">
       </a>
       <div class="nav__links" id="nav-links">
-        <a href="#projects" class="nav__link" data-i18n="nav.projects">Work</a>
-        <a href="#capabilities" class="nav__link" data-i18n="nav.capabilities">Services</a>
-        <a href="#pricing" class="nav__link" data-i18n="nav.pricing">Pricing</a>
-        <a href="#process" class="nav__link" data-i18n="nav.process">Process</a>
-        <a href="#contact" class="nav__link" data-i18n="nav.contact">Contact</a>
+        <a href="#projects" class="nav__link" data-i18n="nav.projects">Trabajos</a>
+        <a href="#capabilities" class="nav__link" data-i18n="nav.capabilities">Servicios</a>
+        <a href="#pricing" class="nav__link" data-i18n="nav.pricing">Precios</a>
+        <a href="#process" class="nav__link" data-i18n="nav.process">Proceso</a>
+        <a href="#contact" class="nav__link" data-i18n="nav.contact">Contacto</a>
       </div>
       <div class="nav__meta">
         <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">
@@ -53,11 +123,11 @@
   <!-- Mobile overlay -->
   <div class="mobile-menu" id="mobile-menu">
     <div class="mobile-menu__inner">
-      <a href="#projects" class="mobile-menu__link" data-i18n="nav.projects">Work</a>
-      <a href="#capabilities" class="mobile-menu__link" data-i18n="nav.capabilities">Services</a>
-      <a href="#pricing" class="mobile-menu__link" data-i18n="nav.pricing">Pricing</a>
-      <a href="#process" class="mobile-menu__link" data-i18n="nav.process">Process</a>
-      <a href="#contact" class="mobile-menu__link" data-i18n="nav.contact">Contact</a>
+      <a href="#projects" class="mobile-menu__link" data-i18n="nav.projects">Trabajos</a>
+      <a href="#capabilities" class="mobile-menu__link" data-i18n="nav.capabilities">Servicios</a>
+      <a href="#pricing" class="mobile-menu__link" data-i18n="nav.pricing">Precios</a>
+      <a href="#process" class="mobile-menu__link" data-i18n="nav.process">Proceso</a>
+      <a href="#contact" class="mobile-menu__link" data-i18n="nav.contact">Contacto</a>
     </div>
   </div>
 
@@ -79,32 +149,37 @@
       <div class="hero__scan-line"></div>
     </div>
     <div class="hero__content">
-      <div class="hero__scene" data-animate="fade-up">
-        <video class="hero__scene-video" autoplay loop muted playsinline>
-          <source src="Initial_Scene_-_2026-05-26_202605252357.mp4" type="video/mp4">
-        </video>
-      </div>
       <div class="hero__eyebrow" data-animate="fade-up">
-        <span class="hero__label" data-i18n="hero.label">Digital Design &amp; Creative Technology</span>
+        <span class="hero__label" data-i18n="hero.label">Diseño Digital &amp; Tecnología Creativa</span>
         <span class="hero__year">Est. 2024</span>
       </div>
       <h1 class="hero__title" data-animate="title">
         <span class="hero__title-line" id="hero-wolfim" data-animate="title-line">WOLFIM</span>
         <span class="hero__title-line hero__title-line--secondary" data-animate="title-line"><span class="hero__title-sep" id="hero-sep">/</span><span id="hero-scramble" class="hero__coded--waiting">57UD10</span></span>
+        <span class="sr-only"> — Diseño Web Premium & Sistemas Digitales</span>
       </h1>
-      <div class="hero__bottom">
-        <div class="hero__description" data-animate="fade-up" style="transition-delay: 0.1s;">
-          <p class="desc-desktop" data-i18n="hero.desc">Diseño con intención. Tecnología con propósito. Cada proyecto es una arquitectura digital construida desde cero — con IA en el proceso y el crecimiento como única métrica.</p>
-          <p class="desc-mobile" data-i18n="hero.desc_mobile">Construimos sistemas digitales para la próxima generación de negocios. Diseño con intención, IA con propósito, tecnología que escala — una atmósfera construida para crecer de forma exponencial.</p>
-        </div>
-        <div class="hero__ctas" id="hero-ctas">
-          <a href="#projects" class="hero__cta hero__cta--primary" data-i18n="hero.cta_projects">Ver Proyectos</a>
-          <a href="#pricing" class="hero__cta hero__cta--secondary" data-i18n="hero.cta_pricing">Precios</a>
-        </div>
+      <div class="hero__scene" data-animate="fade-up">
+        <video class="hero__scene-video" autoplay loop muted playsinline>
+          <source src="Initial_Scene_-_2026-05-26_202605252357.mp4" type="video/mp4">
+        </video>
       </div>
-    <div class="hero__scroll" data-animate="fade-up">
-      <span data-i18n="hero.scroll">Scroll</span>
-      <div class="hero__scroll-line"></div>
+      <div class="hero__description" data-animate="fade-up" style="transition-delay: 0.1s;">
+        <p class="desc-desktop" data-i18n="hero.desc">Diseño con intención. Tecnología con propósito. Cada proyecto es una arquitectura digital construida desde cero — con IA en el proceso y el crecimiento como única métrica.</p>
+        <p class="desc-mobile" data-i18n="hero.desc_mobile">Construimos sistemas digitales para la próxima generación de negocios. Diseño con intención, IA con propósito, tecnología que escala — una atmósfera construida para crecer de forma exponencial.</p>
+      </div>
+      <div class="hero__ctas" id="hero-ctas" data-animate="fade-up">
+        <a href="https://wa.me/5491173858454?text=Hola%20Wolfim%2C%20estoy%20interesado%20en%20un%20sitio%20web" class="hero__cta hero__cta--whatsapp" target="_blank" rel="noopener noreferrer">
+          <span>Hablemos por WhatsApp</span>
+        </a>
+        <a href="#projects" class="hero__cta hero__cta--primary" data-i18n="hero.cta_projects">Ver Proyectos</a>
+        <a href="#pricing" class="hero__cta hero__cta--secondary" data-i18n="hero.cta_pricing">Precios</a>
+        <span class="hero__cta-note">Desde $200 USD + $29/mes</span>
+      </div>
+      <p class="hero__location" data-animate="fade-up">Buenos Aires · Servicio remoto en toda Argentina</p>
+      <div class="hero__scroll" data-animate="fade-up">
+        <span data-i18n="hero.scroll">Desplazar</span>
+        <div class="hero__scroll-line"></div>
+      </div>
     </div>
   </header>
 
@@ -120,7 +195,7 @@
 
       <article class="project" data-animate="fade-up">
         <div class="project__image">
-          <video class="project__image-inner project__video" autoplay loop muted playsinline>
+          <video class="project__image-inner project__video" autoplay loop muted playsinline preload="none" aria-label="Video de presentación del sitio web inmersivo para Roggero & Roma, plataforma inmobiliaria premium">
             <source src="roggeroyroma_hero2.mp4" type="video/mp4">
           </video>
         </div>
@@ -137,7 +212,7 @@
 
       <article class="project project--reverse" data-animate="fade-up">
         <div class="project__image">
-          <video class="project__image-inner project__video" autoplay loop muted playsinline>
+          <video class="project__image-inner project__video" autoplay loop muted playsinline preload="none" aria-label="Video de presentación de la plataforma digital S&P Cars para agencia de autos premium">
             <source src="SPCars.mp4" type="video/mp4">
           </video>
         </div>
@@ -154,7 +229,7 @@
 
       <article class="project" data-animate="fade-up">
         <div class="project__image">
-          <video class="project__image-inner project__video" autoplay loop muted playsinline>
+          <video class="project__image-inner project__video" autoplay loop muted playsinline preload="none" aria-label="Video de presentación del sitio web editorial y dirección visual para Sovereign Visual">
             <source src="construvial-2.mp4" type="video/mp4">
           </video>
         </div>
@@ -712,18 +787,18 @@
       <div class="contact__right" data-animate="fade-up">
         <p class="contact__desc" data-i18n="contact.desc">If you're looking for a website that actually reflects the quality of your business — not a template with your logo on it — let's talk. I work directly with every client, from first conversation to launch and beyond.</p>
         <div class="contact__links">
-          <a href="mailto:studio@wolfim.com" class="contact__link" id="contact-email">
-            <span class="contact__link-label">Email</span>
-            <span class="contact__link-value">studio@wolfim.com</span>
+          <a href="https://wa.me/5491173858454?text=Hola%20Wolfim%2C%20estoy%20interesado%20en%20un%20sitio%20web" class="contact__link contact__link--whatsapp" target="_blank" rel="noopener noreferrer">
+            <span class="contact__link-label">WhatsApp</span>
+            <span class="contact__link-value">+54 9 11 7385-8454</span>
           </a>
-          <a href="#" class="contact__link" id="contact-schedule">
-            <span class="contact__link-label" data-i18n="contact.schedule_label">Schedule</span>
-            <span class="contact__link-value" data-i18n="contact.schedule_value">Book a free intro call</span>
+          <a href="mailto:hello@wolfim.com" class="contact__link" id="contact-email">
+            <span class="contact__link-label">Email</span>
+            <span class="contact__link-value">hello@wolfim.com</span>
           </a>
         </div>
         <div class="contact__availability">
           <span class="contact__avail-dot"></span>
-          <span data-i18n="contact.availability">Currently taking on new projects for Q3 2026</span>
+          <span data-i18n="contact.availability">Tomando nuevos proyectos para Q3 2026</span>
         </div>
       </div>
     </div>
@@ -738,13 +813,23 @@
         <span class="footer__copy" data-i18n="footer.copy">© 2024 — All rights reserved</span>
       </div>
       <div class="footer__right">
-        <a href="#" class="footer__link">LinkedIn</a>
-        <a href="#" class="footer__link">Twitter / X</a>
-        <a href="#" class="footer__link">GitHub</a>
+        <span class="footer__link">LinkedIn</span>
+        <span class="footer__link">Twitter / X</span>
+        <span class="footer__link">GitHub</span>
       </div>
     </div>
   </footer>
 
+  <!-- WhatsApp Sticky Button -->
+  <a href="https://wa.me/5491173858454?text=Hola%20Wolfim%2C%20estoy%20interesado%20en%20un%20sitio%20web" class="whatsapp-sticky" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+      <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+    </svg>
+  </a>
+
+  <!-- Main Script -->
   <script src="script.js"></script>
 </body>
 </html>

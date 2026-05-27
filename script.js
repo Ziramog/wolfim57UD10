@@ -479,10 +479,7 @@
       opt.classList.toggle('lang-toggle__option--active', opt.dataset.lang === lang);
     });
 
-    // Run typewriter if applicable
-    if (window.innerWidth <= 768) {
-      runMobileTypewriter();
-    }
+    // Mobile typewriter removed for instant readability
 
     // Persist preference
     try {
@@ -1088,5 +1085,57 @@
 
   // Start the cycle a few seconds after initial load
   setTimeout(triggerRandomEffect, Math.random() * 5000 + 3000);
+
+  // ─── ANALYTICS EVENT TRACKING ───
+  function trackEvent(name, params) {
+    if (typeof gtag === 'function') {
+      gtag('event', name, params || {});
+    }
+  }
+
+  // WhatsApp clicks
+  document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+    link.addEventListener('click', () => {
+      trackEvent('whatsapp_click', { location: link.closest('.contact__links') ? 'contact_section' : 'sticky_button' });
+    });
+  });
+
+  // Pricing section view
+  const pricingSection = document.getElementById('pricing');
+  if (pricingSection && 'IntersectionObserver' in window) {
+    new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          trackEvent('view_pricing');
+        }
+      });
+    }, { threshold: 0.5 }).observe(pricingSection);
+  }
+
+  // ─── LAZY LOAD PROJECT VIDEOS ───
+  const projectVideos = document.querySelectorAll('.project__video');
+  if ('IntersectionObserver' in window) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const video = entry.target;
+          video.setAttribute('preload', 'auto');
+          video.play().catch(() => {});
+          videoObserver.unobserve(video);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+
+    projectVideos.forEach(video => {
+      video.removeAttribute('autoplay');
+      videoObserver.observe(video);
+    });
+  } else {
+    // Fallback: just play all videos
+    projectVideos.forEach(video => {
+      video.setAttribute('preload', 'auto');
+      video.play().catch(() => {});
+    });
+  }
 
 })();
