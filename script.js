@@ -1045,6 +1045,15 @@
   syncWolfimWidth();
 
   // ─── RANDOM ALTERNATING VIDEO EFFECTS ───
+  const heroVideo = document.querySelector('.hero__scene-video');
+  if (heroVideo) {
+    heroVideo.muted = true;
+    heroVideo.play().catch(() => {
+      // If autoplay fails, we just silently ignore to prevent console spam, 
+      // but enforcing muted = true above often fixes it.
+    });
+  }
+
   let nextEffectIsZoom = true;
 
   function triggerRandomEffect() {

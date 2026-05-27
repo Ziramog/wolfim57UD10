@@ -566,7 +566,6 @@ img {
   height: 100%;
   object-fit: cover;
   display: block;
-  mix-blend-mode: multiply;
   filter: saturate(0.6) contrast(0.92) brightness(0.98);
 }
 
@@ -1932,7 +1931,7 @@ img {
     position: relative;
     width: 100%;
     aspect-ratio: 16 / 8;
-    margin-top: 0;
+    margin-top: 5px;
     margin-bottom: 0.25rem;
     overflow: hidden;
     pointer-events: auto;
@@ -2005,6 +2004,10 @@ img {
     margin-bottom: 0.25rem;
     order: 4;
     width: 100%;
+  }
+
+  .hero__cta--whatsapp {
+    display: none !important;
   }
 
   .hero__cta {

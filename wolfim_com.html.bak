@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wolfim Studio — Premium Web Design & Digital Systems</title>
+  <meta name="description" content="Wolfim Studio designs and builds premium websites and digital systems for modern businesses. AI-enhanced workflows, SEO, growth infrastructure, and architectural design thinking.">
+  <meta name="keywords" content="premium web design, digital systems, AI-enhanced workflows, SEO, Google Ads, growth infrastructure, brand identity, creative technology">
+  <meta name="author" content="Wolfim Studio">
+  <meta property="og:title" content="Wolfim Studio — Premium Web Design & Digital Systems">
+  <meta property="og:description" content="Premium websites and digital systems for modern businesses. Built with AI-enhanced workflows, architectural precision, and a focus on growth.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ═══════════════ AMBIENT ELEMENTS ═══════════════ -->
+  <div id="cinematic-bg" aria-hidden="true"></div>
+  <div class="film-grain" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+
+  <!-- ═══════════════ NAVIGATION ═══════════════ -->
+  <nav id="nav-main" class="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo" id="nav-logo">WOLFIM</a>
+      <div class="nav__links" id="nav-links">
+        <a href="#projects" class="nav__link" data-i18n="nav.projects">Work</a>
+        <a href="#capabilities" class="nav__link" data-i18n="nav.capabilities">Services</a>
+        <a href="#pricing" class="nav__link" data-i18n="nav.pricing">Pricing</a>
+        <a href="#process" class="nav__link" data-i18n="nav.process">Process</a>
+        <a href="#contact" class="nav__link" data-i18n="nav.contact">Contact</a>
+      </div>
+      <div class="nav__meta">
+        <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">
+          <span class="lang-toggle__option lang-toggle__option--active" data-lang="en">EN</span>
+          <span class="lang-toggle__divider">/</span>
+          <span class="lang-toggle__option" data-lang="es">ES</span>
+        </button>
+        <span class="nav__time" id="nav-time"></span>
+        <button class="nav__menu-btn" id="nav-menu-btn" aria-label="Toggle menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav__line"></div>
+  </nav>
+
+  <!-- Mobile overlay -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu__inner">
+      <a href="#projects" class="mobile-menu__link" data-i18n="nav.projects">Work</a>
+      <a href="#capabilities" class="mobile-menu__link" data-i18n="nav.capabilities">Services</a>
+      <a href="#pricing" class="mobile-menu__link" data-i18n="nav.pricing">Pricing</a>
+      <a href="#process" class="mobile-menu__link" data-i18n="nav.process">Process</a>
+      <a href="#contact" class="mobile-menu__link" data-i18n="nav.contact">Contact</a>
+    </div>
+  </div>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <header id="hero" class="hero">
+    <div class="hero__grid-lines" id="hero-grid" aria-hidden="true">
+      <div class="hero__vline" style="left:8.333%"></div>
+      <div class="hero__vline" style="left:25%"></div>
+      <div class="hero__vline" style="left:41.666%"></div>
+      <div class="hero__vline" style="left:58.333%"></div>
+      <div class="hero__vline" style="left:75%"></div>
+      <div class="hero__vline" style="left:91.666%"></div>
+      <div class="hero__scan-line"></div>
+    </div>
+    <div class="hero__content">
+      <div class="hero__eyebrow" data-animate="fade-up">
+        <span class="hero__label" data-i18n="hero.label">Digital Design & Creative Technology</span>
+        <span class="hero__year">Est. 2024</span>
+      </div>
+      <div class="hero__scene" data-animate="fade-up">
+        <video class="hero__scene-video" autoplay loop muted playsinline>
+          <source src="Initial_Scene_-_2026-05-26_202605252357.mp4" type="video/mp4">
+        </video>
+      </div>
+      <h1 class="hero__title" data-animate="title">
+        <span class="hero__title-line" id="hero-wolfim" data-animate="title-line">WOLFIM</span>
+        <span class="hero__title-line hero__title-line--secondary" data-animate="title-line"><span class="hero__title-sep" id="hero-sep">/</span><span id="hero-scramble" class="hero__coded--waiting">57UD10</span></span>
+      </h1>
+      <div class="hero__bottom">
+        <div class="hero__description" data-animate="fade-up">
+          <p data-i18n="hero.desc">We design and build premium websites and digital systems for modern businesses. Every project combines architectural design thinking, AI-enhanced workflows, and a relentless focus on what actually drives growth.</p>
+        </div>
+        <div class="hero__meta" data-animate="fade-up">
+          <div class="hero__meta-item">
+            <span class="hero__meta-label" data-i18n="hero.focus_label">Focus</span>
+            <span class="hero__meta-value" data-i18n-html="hero.focus_value">Premium Web Design &amp;<br>Digital Systems</span>
+          </div>
+          <div class="hero__meta-item">
+            <span class="hero__meta-label" data-i18n="hero.approach_label">Approach</span>
+            <span class="hero__meta-value" data-i18n-html="hero.approach_value">AI-Enhanced &amp;<br>Systems-Driven</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__scroll" data-animate="fade-up">
+      <span data-i18n="hero.scroll">Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </header>
+
+  <!-- ═══════════════ SELECTED PROJECTS ═══════════════ -->
+  <section id="projects" class="section projects">
+    <div class="section__header" data-animate="fade-up">
+      <span class="section__number">01</span>
+      <h2 class="section__title" data-i18n-html="projects.title">Selected<br>Work</h2>
+      <p class="section__subtitle" data-i18n="projects.subtitle">Websites and digital systems, built to perform</p>
+    </div>
+    <div class="section__line"></div>
+    <div class="projects__grid">
+
+      <article class="project" data-animate="fade-up">
+        <div class="project__image">
+          <video class="project__image-inner project__video" autoplay loop muted playsinline>
+            <source src="roggeroyroma_hero2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="project__info">
+          <span class="project__number">001</span>
+          <h3 class="project__title" data-i18n-html="projects.p1.title">Roggero<br>&amp; Roma</h3>
+          <div class="project__meta">
+            <span class="project__tag" data-i18n="projects.p1.tag1">Real Estate Platform</span>
+            <span class="project__tag" data-i18n="projects.p1.tag2">Immersive Web</span>
+          </div>
+          <p class="project__desc" data-i18n="projects.p1.desc">Immersive website and premium branding for real estate developments. Integrated quoting engine, advanced SEO optimization, direct Google Reviews connection, and interactive maps — designed to elevate brand authority and convert leads.</p>
+        </div>
+      </article>
+
+      <article class="project project--reverse" data-animate="fade-up">
+        <div class="project__image">
+          <video class="project__image-inner project__video" autoplay loop muted playsinline>
+            <source src="SPCars.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="project__info">
+          <span class="project__number">002</span>
+          <h3 class="project__title" data-i18n-html="projects.p2.title">S&amp;P<br>Cars</h3>
+          <div class="project__meta">
+            <span class="project__tag" data-i18n="projects.p2.tag1">Automotive Platform</span>
+            <span class="project__tag" data-i18n="projects.p2.tag2">AI & Automation</span>
+          </div>
+          <p class="project__desc" data-i18n="projects.p2.desc">High-performance digital platform for premium new and used car dealerships. AI-powered vehicle descriptions, advanced SEO architecture, side-by-side comparisons, and automated quoting — turning search traffic into closed sales.</p>
+        </div>
+      </article>
+
+      <article class="project" data-animate="fade-up">
+        <div class="project__image">
+          <div class="project__image-inner" id="project-img-3"></div>
+        </div>
+        <div class="project__info">
+          <span class="project__number">003</span>
+          <h3 class="project__title" data-i18n-html="projects.p3.title">Sovereign<br>Visual</h3>
+          <div class="project__meta">
+            <span class="project__tag" data-i18n="projects.p3.tag1">Editorial Website</span>
+            <span class="project__tag" data-i18n="projects.p3.tag2">Visual Direction</span>
+          </div>
+          <p class="project__desc" data-i18n="projects.p3.desc">Typography-driven website and visual identity for a luxury brand. Custom design system, motion choreography, and content management — a digital presence that communicates before you read a word.</p>
+        </div>
+      </article>
+
+      <article class="project project--reverse" data-animate="fade-up">
+        <div class="project__image">
+          <div class="project__image-inner" id="project-img-4"></div>
+        </div>
+        <div class="project__info">
+          <span class="project__number">004</span>
+          <h3 class="project__title" data-i18n-html="projects.p4.title">Apex<br>Digital</h3>
+          <div class="project__meta">
+            <span class="project__tag" data-i18n="projects.p4.tag1">Website & Growth</span>
+            <span class="project__tag" data-i18n="projects.p4.tag2">Ads & Analytics</span>
+          </div>
+          <p class="project__desc" data-i18n="projects.p4.desc">Website, ad campaigns, and analytics infrastructure for a growing tech company. Google Ads management, conversion tracking, and performance dashboards — a complete digital growth engine.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════ CAPABILITIES ═══════════════ -->
+  <section id="capabilities" class="section capabilities">
+    <div class="section__header" data-animate="fade-up">
+      <span class="section__number">02</span>
+      <h2 class="section__title" data-i18n-html="capabilities.title">What We<br>Build</h2>
+      <p class="section__subtitle" data-i18n="capabilities.subtitle">Websites, systems, and everything between</p>
+    </div>
+    <div class="section__line"></div>
+    <div class="capabilities__grid">
+
+      <div class="capability" data-animate="fade-up">
+        <div class="capability__header">
+          <span class="capability__index">A</span>
+          <h3 class="capability__title" data-i18n="cap.a.title">Web Design & Development</h3>
+        </div>
+        <p class="capability__desc" data-i18n="cap.a.desc">The core of everything we do. Premium websites designed with architectural precision and built for performance. No templates, no page builders — every site is crafted from scratch.</p>
+        <ul class="capability__list">
+          <li data-i18n="cap.a.l1">Custom Website Design</li>
+          <li data-i18n="cap.a.l2">Responsive Development</li>
+          <li data-i18n="cap.a.l3">CMS Integration</li>
+          <li data-i18n="cap.a.l4">Performance Optimization</li>
+        </ul>
+      </div>
+
+      <div class="capability" data-animate="fade-up">
+        <div class="capability__header">
+          <span class="capability__index">B</span>
+          <h3 class="capability__title" data-i18n="cap.b.title">Brand & Digital Identity</h3>
+        </div>
+        <p class="capability__desc" data-i18n="cap.b.desc">Your website is only as strong as the identity behind it. We build cohesive visual systems — from logo and typography to the tone of every page — so your brand feels intentional everywhere.</p>
+        <ul class="capability__list">
+          <li data-i18n="cap.b.l1">Visual Identity Design</li>
+          <li data-i18n="cap.b.l2">Typography & Color Systems</li>
+          <li data-i18n="cap.b.l3">Brand Guidelines</li>
+          <li data-i18n="cap.b.l4">Social & Collateral Design</li>
+        </ul>
+      </div>
+
+      <div class="capability" data-animate="fade-up">
+        <div class="capability__header">
+          <span class="capability__index">C</span>
+          <h3 class="capability__title" data-i18n="cap.c.title">AI-Enhanced Workflows</h3>
+        </div>
+        <p class="capability__desc" data-i18n="cap.c.desc">AI isn't our product — it's how we work. We use intelligent tools to accelerate design, automate content workflows, and build smarter systems. You get better results, faster.</p>
+        <ul class="capability__list">
+          <li data-i18n="cap.c.l1">AI-Assisted Content</li>
+          <li data-i18n="cap.c.l2">Automated Workflows</li>
+          <li data-i18n="cap.c.l3">Smart Integrations</li>
+          <li data-i18n="cap.c.l4">Intelligent Automation</li>
+        </ul>
+      </div>
+
+      <div class="capability" data-animate="fade-up">
+        <div class="capability__header">
+          <span class="capability__index">D</span>
+          <h3 class="capability__title" data-i18n="cap.d.title">SEO & Content Strategy</h3>
+        </div>
+        <p class="capability__desc" data-i18n="cap.d.desc">A beautiful website that nobody finds is a wasted investment. We build SEO into the architecture from day one — technical structure, content strategy, and keyword systems designed to rank.</p>
+        <ul class="capability__list">
+          <li data-i18n="cap.d.l1">Technical SEO</li>
+          <li data-i18n="cap.d.l2">Content Architecture</li>
+          <li data-i18n="cap.d.l3">Keyword Strategy</li>
+          <li data-i18n="cap.d.l4">Local & National SEO</li>
+        </ul>
+      </div>
+
+      <div class="capability" data-animate="fade-up">
+        <div class="capability__header">
+          <span class="capability__index">E</span>
+          <h3 class="capability__title" data-i18n="cap.e.title">Ads & Paid Acquisition</h3>
+        </div>
+        <p class="capability__desc" data-i18n="cap.e.desc">Drive the right traffic to the right pages. We manage Google Ads and paid social campaigns built on real data — not guesswork. Every dollar tracked, every conversion measured.</p>
+        <ul class="capability__list">
+          <li data-i18n="cap.e.l1">Google Ads Management</li>
+          <li data-i18n="cap.e.l2">Social Media Ads</li>
+          <li data-i18n="cap.e.l3">Landing Page Design</li>
+          <li data-i18n="cap.e.l4">Conversion Tracking</li>
+        </ul>
+      </div>
+
+      <div class="capability" data-animate="fade-up">
+        <div class="capability__header">
+          <span class="capability__index">F</span>
+          <h3 class="capability__title" data-i18n="cap.f.title">Analytics & Growth</h3>
+        </div>
+        <p class="capability__desc" data-i18n="cap.f.desc">What gets measured gets improved. We set up analytics that actually tell you something useful — dashboards, conversion funnels, and reporting that help you make smarter business decisions.</p>
+        <ul class="capability__list">
+          <li data-i18n="cap.f.l1">Analytics Setup</li>
+          <li data-i18n="cap.f.l2">Conversion Optimization</li>
+          <li data-i18n="cap.f.l3">Performance Dashboards</li>
+          <li data-i18n="cap.f.l4">Monthly Reporting</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════ AI INTEGRATION ═══════════════ -->
+  <section id="ai-integration" class="section ai-section">
+    <div class="section__header" data-animate="fade-up">
+      <span class="section__number">03</span>
+      <h2 class="section__title" data-i18n-html="ai.title">Built With<br>Intelligence</h2>
+      <p class="section__subtitle" data-i18n="ai.subtitle">AI as advantage, not gimmick</p>
+    </div>
+    <div class="section__line"></div>
+
+    <div class="ai-section__statement" data-animate="fade-up">
+      <p class="ai-section__large-text" data-i18n-html="ai.statement">AI isn't our product — it's our <em>advantage</em>.<br>Every website, every system, every workflow<br>we deliver is smarter because of how we build it.</p>
+    </div>
+
+    <div class="ai-section__workflow">
+      <div class="ai-step" data-animate="fade-up">
+        <div class="ai-step__connector" aria-hidden="true"></div>
+        <div class="ai-step__number">01</div>
+        <div class="ai-step__content">
+          <h3 class="ai-step__title" data-i18n="ai.s1.title">Smarter Research</h3>
+          <p class="ai-step__desc" data-i18n="ai.s1.desc">AI-powered market analysis, competitor audits, and content research. We understand your landscape faster and deeper than traditional methods allow.</p>
+        </div>
+      </div>
+      <div class="ai-step" data-animate="fade-up">
+        <div class="ai-step__connector" aria-hidden="true"></div>
+        <div class="ai-step__number">02</div>
+        <div class="ai-step__content">
+          <h3 class="ai-step__title" data-i18n="ai.s2.title">Accelerated Design</h3>
+          <p class="ai-step__desc" data-i18n="ai.s2.desc">AI-assisted prototyping and content generation lets us explore more ideas, faster. You see better options in less time — without cutting corners on quality.</p>
+        </div>
+      </div>
+      <div class="ai-step" data-animate="fade-up">
+        <div class="ai-step__connector" aria-hidden="true"></div>
+        <div class="ai-step__number">03</div>
+        <div class="ai-step__content">
+          <h3 class="ai-step__title" data-i18n="ai.s3.title">Intelligent Automation</h3>
+          <p class="ai-step__desc" data-i18n="ai.s3.desc">Automated content workflows, smart form handling, and AI-powered chat — we build systems that keep working when you're not watching.</p>
+        </div>
+      </div>
+      <div class="ai-step" data-animate="fade-up">
+        <div class="ai-step__connector" aria-hidden="true"></div>
+        <div class="ai-step__number">04</div>
+        <div class="ai-step__content">
+          <h3 class="ai-step__title" data-i18n="ai.s4.title">Continuous Optimization</h3>
+          <p class="ai-step__desc" data-i18n="ai.s4.desc">AI-driven analytics surface what's working and what isn't. We refine copy, layouts, and campaigns based on real performance data — not hunches.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ WHAT YOU GET ═══════════════ -->
+  <section id="digital-systems" class="section systems-section">
+    <div class="section__header" data-animate="fade-up">
+      <span class="section__number">04</span>
+      <h2 class="section__title" data-i18n-html="systems.title">What You<br>Get</h2>
+      <p class="section__subtitle" data-i18n="systems.subtitle">Every piece of your digital presence, handled</p>
+    </div>
+    <div class="section__line"></div>
+
+    <div class="systems__grid">
+      <div class="system-card" data-animate="fade-up">
+        <div class="system-card__icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
+            <rect x="4" y="4" width="32" height="32"/>
+            <line x1="4" y1="20" x2="36" y2="20"/>
+            <line x1="20" y1="4" x2="20" y2="36"/>
+          </svg>
+        </div>
+        <h3 class="system-card__title" data-i18n-html="sys.a.title">Your<br>Website</h3>
+        <p class="system-card__desc" data-i18n="sys.a.desc">A premium, fully custom website that looks exceptional and performs even better. Fast, responsive, SEO-ready — designed to make your business look as good as it actually is.</p>
+      </div>
+      <div class="system-card" data-animate="fade-up">
+        <div class="system-card__icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
+            <circle cx="20" cy="20" r="16"/>
+            <circle cx="20" cy="20" r="8"/>
+            <circle cx="20" cy="20" r="2"/>
+          </svg>
+        </div>
+        <h3 class="system-card__title" data-i18n-html="sys.b.title">Content<br>System</h3>
+        <p class="system-card__desc" data-i18n="sys.b.desc">A CMS you can actually use. Update pages, publish posts, manage content — without needing a developer every time. Simple for you, powerful under the hood.</p>
+      </div>
+      <div class="system-card" data-animate="fade-up">
+        <div class="system-card__icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
+            <polyline points="4,30 14,18 24,24 36,10"/>
+            <circle cx="14" cy="18" r="2"/>
+            <circle cx="24" cy="24" r="2"/>
+            <circle cx="36" cy="10" r="2"/>
+          </svg>
+        </div>
+        <h3 class="system-card__title" data-i18n-html="sys.c.title">SEO<br>Foundation</h3>
+        <p class="system-card__desc" data-i18n="sys.c.desc">Technical SEO baked into every page. Clean structure, fast load times, schema markup, and content architecture designed to rank on Google from launch day.</p>
+      </div>
+      <div class="system-card" data-animate="fade-up">
+        <div class="system-card__icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
+            <polygon points="20,4 36,12 36,28 20,36 4,28 4,12"/>
+            <line x1="20" y1="4" x2="20" y2="36"/>
+            <line x1="4" y1="12" x2="36" y2="28"/>
+            <line x1="36" y1="12" x2="4" y2="28"/>
+          </svg>
+        </div>
+        <h3 class="system-card__title" data-i18n-html="sys.d.title">Ad<br>Campaigns</h3>
+        <p class="system-card__desc" data-i18n="sys.d.desc">Google Ads and paid social campaigns set up, managed, and optimized. Landing pages that convert, budgets that make sense, and reporting you can actually read.</p>
+      </div>
+      <div class="system-card" data-animate="fade-up">
+        <div class="system-card__icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
+            <rect x="4" y="8" width="14" height="10"/>
+            <rect x="22" y="8" width="14" height="10"/>
+            <rect x="4" y="22" width="14" height="10"/>
+            <rect x="22" y="22" width="14" height="10"/>
+          </svg>
+        </div>
+        <h3 class="system-card__title" data-i18n-html="sys.e.title">Analytics<br>Dashboard</h3>
+        <p class="system-card__desc" data-i18n="sys.e.desc">Know exactly what's happening on your site. Visitor tracking, conversion funnels, and performance metrics — all in a clear dashboard you'll actually check.</p>
+      </div>
+      <div class="system-card" data-animate="fade-up">
+        <div class="system-card__icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M4,20 Q12,4 20,20 Q28,36 36,20"/>
+            <line x1="4" y1="20" x2="36" y2="20" stroke-dasharray="2,2"/>
+          </svg>
+        </div>
+        <h3 class="system-card__title" data-i18n-html="sys.f.title">Ongoing<br>Support</h3>
+        <p class="system-card__desc" data-i18n="sys.f.desc">Websites aren't set-and-forget. Updates, content changes, performance tweaks, and strategic guidance — we stay with you after launch to keep things running and improving.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ VISUAL DIRECTION ═══════════════ -->
+  <section id="visual-direction" class="section visual-section">
+    <div class="visual-section__inner">
+      <div class="visual-section__left" data-animate="fade-up">
+        <span class="section__number">05</span>
+        <h2 class="visual-section__title" data-i18n-html="visual.title">Design<br>Philosophy</h2>
+        <p class="visual-section__desc" data-i18n="visual.desc">A website isn't just a page — it's the first impression your business makes. We treat every project like a piece of architecture: structurally sound, visually commanding, and built to last. This website is our proof.</p>
+      </div>
+      <div class="visual-section__right" data-animate="fade-up">
+        <div class="visual-section__principles">
+          <div class="visual-principle">
+            <span class="visual-principle__label" data-i18n="visual.p1.label">Typography</span>
+            <span class="visual-principle__value" data-i18n="visual.p1.value">Type sets the tone before a single word is read. We choose every font with intent.</span>
+          </div>
+          <div class="visual-principle">
+            <span class="visual-principle__label" data-i18n="visual.p2.label">Layout</span>
+            <span class="visual-principle__value" data-i18n="visual.p2.value">Grid-based, mathematically precise composition. Nothing is placed randomly.</span>
+          </div>
+          <div class="visual-principle">
+            <span class="visual-principle__label" data-i18n="visual.p3.label">Motion</span>
+            <span class="visual-principle__value" data-i18n="visual.p3.value">Subtle, cinematic animation that guides attention without demanding it.</span>
+          </div>
+          <div class="visual-principle">
+            <span class="visual-principle__label" data-i18n="visual.p4.label">Space</span>
+            <span class="visual-principle__value" data-i18n="visual.p4.value">Generous whitespace that lets the design breathe and the message land.</span>
+          </div>
+          <div class="visual-principle">
+            <span class="visual-principle__label" data-i18n="visual.p5.label">Detail</span>
+            <span class="visual-principle__value" data-i18n="visual.p5.value">The difference between good and premium is in the details nobody notices consciously.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PROCESS ═══════════════ -->
+  <section id="process" class="section process-section">
+    <div class="section__header" data-animate="fade-up">
+      <span class="section__number">06</span>
+      <h2 class="section__title" data-i18n-html="process.title">How It<br>Works</h2>
+      <p class="section__subtitle" data-i18n="process.subtitle">Clear process, no surprises</p>
+    </div>
+    <div class="section__line"></div>
+
+    <div class="process__grid">
+      <div class="process-step" data-animate="fade-up">
+        <span class="process-step__phase" data-i18n="process.s1.phase">Phase I</span>
+        <h3 class="process-step__title" data-i18n-html="process.s1.title">Conversation &amp;<br>Strategy</h3>
+        <p class="process-step__desc" data-i18n="process.s1.desc">We talk. I learn your business, your audience, and what you actually need — not what a template tells you to buy. We define the scope, the goals, and the direction before anything gets designed.</p>
+        <div class="process-step__duration">
+          <span data-i18n="process.duration_label">Typical Duration</span>
+          <span data-i18n="process.s1.duration">1 Week</span>
+        </div>
+      </div>
+
+      <div class="process-step" data-animate="fade-up">
+        <span class="process-step__phase" data-i18n="process.s2.phase">Phase II</span>
+        <h3 class="process-step__title" data-i18n-html="process.s2.title">Design &amp;<br>Direction</h3>
+        <p class="process-step__desc" data-i18n="process.s2.desc">Visual direction, layout concepts, and the design system take shape. You see exactly what your site will look and feel like before a single line of code is written. Revisions are built into the process.</p>
+        <div class="process-step__duration">
+          <span data-i18n="process.duration_label">Typical Duration</span>
+          <span data-i18n="process.s2.duration">1–2 Weeks</span>
+        </div>
+      </div>
+
+      <div class="process-step" data-animate="fade-up">
+        <span class="process-step__phase" data-i18n="process.s3.phase">Phase III</span>
+        <h3 class="process-step__title" data-i18n-html="process.s3.title">Build &amp;<br>Refinement</h3>
+        <p class="process-step__desc" data-i18n="process.s3.desc">The design becomes a live website. Responsive development, CMS setup, SEO foundation, performance optimization, and all the integrations your business needs. Tested thoroughly before launch.</p>
+        <div class="process-step__duration">
+          <span data-i18n="process.duration_label">Typical Duration</span>
+          <span data-i18n="process.s3.duration">2–4 Weeks</span>
+        </div>
+      </div>
+
+      <div class="process-step" data-animate="fade-up">
+        <span class="process-step__phase" data-i18n="process.s4.phase">Phase IV</span>
+        <h3 class="process-step__title" data-i18n-html="process.s4.title">Launch &amp;<br>Growth</h3>
+        <p class="process-step__desc" data-i18n="process.s4.desc">Your site goes live — but we don't disappear. Ads setup, analytics monitoring, content updates, and performance optimization. The relationship continues as your business grows.</p>
+        <div class="process-step__duration">
+          <span data-i18n="process.duration_label">Typical Duration</span>
+          <span data-i18n="process.s4.duration">Ongoing</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ RESULTS ═══════════════ -->
+  <section id="intelligence" class="section intelligence-section">
+    <div class="section__header" data-animate="fade-up">
+      <span class="section__number">07</span>
+      <h2 class="section__title" data-i18n-html="intel.title">Results &amp;<br>Performance</h2>
+      <p class="section__subtitle" data-i18n="intel.subtitle">Built to grow your business, not just look good</p>
+    </div>
+    <div class="section__line"></div>
+
+    <div class="intelligence__content">
+      <div class="intelligence__statement" data-animate="fade-up">
+        <p class="intelligence__large-text" data-i18n="intel.statement">A premium website should be more than beautiful — it should work. Every site we build is engineered to rank on Google, convert visitors into customers, and give you clear data on what's happening with your business online.</p>
+      </div>
+
+      <div class="intelligence__metrics" data-animate="fade-up">
+        <div class="metric">
+          <span class="metric__number" data-metric-target="97" data-metric-suffix="%">0%</span>
+          <span class="metric__label" data-i18n-html="intel.m1">Google PageSpeed<br>Score Average</span>
+        </div>
+        <div class="metric">
+          <span class="metric__number" data-metric-target="3.2" data-metric-suffix="×">0.0×</span>
+          <span class="metric__label" data-i18n-html="intel.m2">Lead Generation<br>Improvement</span>
+        </div>
+        <div class="metric">
+          <span class="metric__number" data-metric-target="40" data-metric-suffix="%">0%</span>
+          <span class="metric__label" data-i18n-html="intel.m3">Lower Cost<br>Per Acquisition</span>
+        </div>
+        <div class="metric">
+          <span class="metric__number" data-metric-target="1" data-metric-suffix="∞">0</span>
+          <span class="metric__label" data-i18n-html="intel.m4">Scalability<br>Ceiling</span>
+        </div>
+      </div>
+
+      <div class="intelligence__pillars">
+        <div class="pillar" data-animate="fade-up">
+          <h3 class="pillar__title" data-i18n="intel.pill1.title">SEO & Organic Growth</h3>
+          <p class="pillar__desc" data-i18n="intel.pill1.desc">Websites built to rank. Technical SEO, content structure, and keyword architecture that bring in organic traffic — the kind of growth that compounds and doesn't cost you per click.</p>
+        </div>
+        <div class="pillar" data-animate="fade-up">
+          <h3 class="pillar__title" data-i18n="intel.pill2.title">Paid Ads & Acquisition</h3>
+          <p class="pillar__desc" data-i18n="intel.pill2.desc">Google Ads and paid social campaigns managed with real strategy. Targeted audiences, optimized landing pages, and continuous refinement — every dollar accounted for.</p>
+        </div>
+        <div class="pillar" data-animate="fade-up">
+          <h3 class="pillar__title" data-i18n="intel.pill3.title">Analytics & Insights</h3>
+          <p class="pillar__desc" data-i18n="intel.pill3.desc">Clear dashboards that show you what's working. Visitor behavior, conversion rates, campaign performance — real numbers that help you make real business decisions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PRICING ═══════════════ -->
+  <section id="pricing" class="section pricing-section">
+    <div class="section__header" data-animate="fade-up">
+      <span class="section__number">08</span>
+      <h2 class="section__title" data-i18n-html="pricing.title">Clear Pricing.<br>No Surprises.</h2>
+      <p class="section__subtitle" data-i18n="pricing.subtitle">Setup + Monthly maintenance. Everything you need included.</p>
+    </div>
+    <div class="section__line"></div>
+
+    <div class="pricing__grid">
+      <!-- Plan 1 -->
+      <div class="pricing-card" data-animate="fade-up">
+        <div class="pricing-card__header">
+          <span class="pricing-card__tag" data-i18n="pricing.p1.tag">Ideal to start</span>
+          <h3 class="pricing-card__title" data-i18n="pricing.p1.title">Landing</h3>
+          <div class="pricing-card__price">
+            <span class="pricing-card__amount">$200</span>
+            <span class="pricing-card__period" data-i18n="pricing.setup">USD setup</span>
+          </div>
+          <div class="pricing-card__monthly">
+            <span class="pricing-card__plus">+</span>
+            <span class="pricing-card__amount-small">$29</span>
+            <span class="pricing-card__period" data-i18n="pricing.monthly">USD/mo</span>
+          </div>
+          <p class="pricing-card__terms" data-i18n="pricing.terms">50% upfront to begin</p>
+        </div>
+        <ul class="pricing-card__features">
+          <li data-i18n="pricing.p1.f1">Custom Design</li>
+          <li data-i18n="pricing.p1.f2">1 Optimized Page</li>
+          <li data-i18n="pricing.p1.f3">Video Background</li>
+          <li data-i18n="pricing.p1.f4">Basic SEO</li>
+          <li data-i18n="pricing.p1.f5">Hosting + SSL Included</li>
+          <li data-i18n="pricing.p1.f6">2 Weeks Delivery</li>
+        </ul>
+      </div>
+
+      <!-- Plan 2 -->
+      <div class="pricing-card pricing-card--featured" data-animate="fade-up">
+        <div class="pricing-card__header">
+          <span class="pricing-card__tag" data-i18n="pricing.p2.tag">Most chosen</span>
+          <h3 class="pricing-card__title" data-i18n="pricing.p2.title">Professional</h3>
+          <div class="pricing-card__price">
+            <span class="pricing-card__amount">$300</span>
+            <span class="pricing-card__period" data-i18n="pricing.setup">USD setup</span>
+          </div>
+          <div class="pricing-card__monthly">
+            <span class="pricing-card__plus">+</span>
+            <span class="pricing-card__amount-small">$29</span>
+            <span class="pricing-card__period" data-i18n="pricing.monthly">USD/mo</span>
+          </div>
+          <p class="pricing-card__terms" data-i18n="pricing.terms">50% upfront to begin</p>
+        </div>
+        <ul class="pricing-card__features">
+          <li data-i18n="pricing.p2.f1">Custom Design</li>
+          <li data-i18n="pricing.p2.f2">Up to 5 Pages</li>
+          <li data-i18n="pricing.p2.f3">Photo Gallery</li>
+          <li data-i18n="pricing.p2.f4">Smart Filters</li>
+          <li data-i18n="pricing.p2.f5">Optimized SEO</li>
+          <li data-i18n="pricing.p2.f6">Admin Panel Included</li>
+          <li data-i18n="pricing.p2.f7">Hosting + SSL Included</li>
+          <li data-i18n="pricing.p2.f8">2-3 Weeks Delivery</li>
+        </ul>
+      </div>
+
+      <!-- Plan 3 -->
+      <div class="pricing-card" data-animate="fade-up">
+        <div class="pricing-card__header">
+          <span class="pricing-card__tag" data-i18n="pricing.p3.tag">For products</span>
+          <h3 class="pricing-card__title" data-i18n="pricing.p3.title">Catalog</h3>
+          <div class="pricing-card__price">
+            <span class="pricing-card__amount">$450</span>
+            <span class="pricing-card__period" data-i18n="pricing.setup">USD setup</span>
+          </div>
+          <div class="pricing-card__monthly">
+            <span class="pricing-card__plus">+</span>
+            <span class="pricing-card__amount-small">$49</span>
+            <span class="pricing-card__period" data-i18n="pricing.monthly">USD/mo</span>
+          </div>
+          <p class="pricing-card__terms" data-i18n="pricing.terms">50% upfront to begin</p>
+        </div>
+        <ul class="pricing-card__features">
+          <li data-i18n="pricing.p3.f1">Custom Design</li>
+          <li data-i18n="pricing.p3.f2">Product Catalog</li>
+          <li data-i18n="pricing.p3.f3">Advanced Filters</li>
+          <li data-i18n="pricing.p3.f4">Premium SEO</li>
+          <li data-i18n="pricing.p3.f5">Full Admin Panel</li>
+          <li data-i18n="pricing.p3.f6">Hosting + SSL Included</li>
+          <li data-i18n="pricing.p3.f7">3-4 Weeks Delivery</li>
+        </ul>
+      </div>
+
+      <!-- Plan 4 -->
+      <div class="pricing-card" data-animate="fade-up">
+        <div class="pricing-card__header">
+          <span class="pricing-card__tag" data-i18n="pricing.p4.tag">Full online store</span>
+          <h3 class="pricing-card__title" data-i18n="pricing.p4.title">Ecommerce</h3>
+          <div class="pricing-card__price">
+            <span class="pricing-card__amount">$450</span>
+            <span class="pricing-card__period" data-i18n="pricing.setup">USD setup</span>
+          </div>
+          <div class="pricing-card__monthly">
+            <span class="pricing-card__plus">+</span>
+            <span class="pricing-card__amount-small">$89</span>
+            <span class="pricing-card__period" data-i18n="pricing.monthly">USD/mo</span>
+          </div>
+          <p class="pricing-card__terms" data-i18n="pricing.terms">50% upfront to begin</p>
+        </div>
+        <ul class="pricing-card__features">
+          <li data-i18n="pricing.p4.f1">Custom Design</li>
+          <li data-i18n="pricing.p4.f2">Full Online Store</li>
+          <li data-i18n="pricing.p4.f3">Shopping Cart</li>
+          <li data-i18n="pricing.p4.f4">Payment Gateway</li>
+          <li data-i18n="pricing.p4.f5">Premium SEO</li>
+          <li data-i18n="pricing.p4.f6">Full Admin Panel</li>
+          <li data-i18n="pricing.p4.f7">Hosting + SSL Included</li>
+          <li data-i18n="pricing.p4.f8">3-4 Weeks Delivery</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ MARQUEE ═══════════════ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span class="marquee__text" data-i18n="marquee.1">Web Design</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__text" data-i18n="marquee.2">Development</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__text" data-i18n="marquee.3">SEO</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__text" data-i18n="marquee.4">Google Ads</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__text" data-i18n="marquee.5">Brand Identity</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__text" data-i18n="marquee.6">AI Workflows</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__text" data-i18n="marquee.1">Web Design</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__text" data-i18n="marquee.2">Development</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__text" data-i18n="marquee.3">SEO</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__text" data-i18n="marquee.4">Google Ads</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__text" data-i18n="marquee.5">Brand Identity</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__text" data-i18n="marquee.6">AI Workflows</span>
+      <span class="marquee__sep">◆</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════ CONTACT ═══════════════ -->
+  <section id="contact" class="section contact-section">
+    <div class="contact__inner">
+      <div class="contact__left" data-animate="fade-up">
+        <span class="section__number">09</span>
+        <h2 class="contact__title" data-i18n-html="contact.title">Let's Build<br>Your Next<br>Website</h2>
+      </div>
+      <div class="contact__right" data-animate="fade-up">
+        <p class="contact__desc" data-i18n="contact.desc">If you're looking for a website that actually reflects the quality of your business — not a template with your logo on it — let's talk. I work directly with every client, from first conversation to launch and beyond.</p>
+        <div class="contact__links">
+          <a href="mailto:hello@wolfim.com" class="contact__link" id="contact-email">
+            <span class="contact__link-label">Email</span>
+            <span class="contact__link-value">hello@wolfim.com</span>
+          </a>
+          <a href="#" class="contact__link" id="contact-schedule">
+            <span class="contact__link-label" data-i18n="contact.schedule_label">Schedule</span>
+            <span class="contact__link-value" data-i18n="contact.schedule_value">Book a free intro call</span>
+          </a>
+        </div>
+        <div class="contact__availability">
+          <span class="contact__avail-dot"></span>
+          <span data-i18n="contact.availability">Currently taking on new projects for Q3 2026</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="footer">
+    <div class="footer__line"></div>
+    <div class="footer__inner">
+      <div class="footer__left">
+        <span class="footer__logo">WOLFIM STUDIO</span>
+        <span class="footer__copy" data-i18n="footer.copy">© 2024 — All rights reserved</span>
+      </div>
+      <div class="footer__right">
+        <a href="#" class="footer__link">LinkedIn</a>
+        <a href="#" class="footer__link">Twitter / X</a>
+        <a href="#" class="footer__link">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
