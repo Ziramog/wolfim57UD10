@@ -965,8 +965,8 @@
   ];
 
   function getScrambleStyle(text) {
-    if (text.length > 12) return { fontSize: '0.35em' };
-    if (text.length > 6) return { fontSize: '0.45em' };
+    if (text.length > 20) return { fontSize: '0.35em' };
+    if (text.length > 16) return { fontSize: '0.45em' };
     return {};
   }
 
