@@ -862,8 +862,12 @@
         heroScrambleEl.classList.remove('hero__coded--waiting');
         scrambleText(heroScrambleEl, SCRAMBLE_FINAL, {
           cycleDuration: 800,
-          charStagger: 180, // slightly more separated
+          charStagger: 180,
           cycleSpeed: 60,
+          onComplete: function() {
+            // After 57UD10 resolves, wait 3s then start the word sequence
+            setTimeout(startHeroSequence, 3000);
+          }
         });
       }
     }, 1800);
@@ -948,6 +952,65 @@
         char.style.opacity = 0.8;
       });
     });
+  }
+
+  // ─── HERO SCRAMBLE SEQUENCE ───
+  // Cycles through words after the initial 57UD10 resolves
+  const HERO_SEQUENCE = [
+    { text: 'AI', delay: 3000 },
+    { text: 'DESIGN', delay: 3000 },
+    { text: 'vibe coding', delay: 3000 },
+    { text: 'design systems', delay: 3000 },
+    { text: 'ads', delay: 3000 },
+  ];
+
+  function getScrambleStyle(text) {
+    if (text.length > 12) return { fontSize: '0.35em' };
+    if (text.length > 6) return { fontSize: '0.45em' };
+    return {};
+  }
+
+  function startHeroSequence() {
+    var seqIndex = 0;
+
+    function runNext() {
+      if (seqIndex >= HERO_SEQUENCE.length) {
+        // Loop back to 57UD10
+        seqIndex = 0;
+        heroScrambleEl.style.fontSize = '';
+        scrambleText(heroScrambleEl, SCRAMBLE_FINAL, {
+          cycleDuration: 800,
+          charStagger: 180,
+          cycleSpeed: 60,
+          onComplete: function() {
+            setTimeout(runNext, HERO_SEQUENCE[0].delay); // 3000ms, consistent with initial pause
+          }
+        });
+        return;
+      }
+
+      var item = HERO_SEQUENCE[seqIndex];
+      seqIndex++;
+
+      // Apply dynamic font size for longer phrases
+      var style = getScrambleStyle(item.text);
+      if (style.fontSize) {
+        heroScrambleEl.style.fontSize = style.fontSize;
+      } else {
+        heroScrambleEl.style.fontSize = '';
+      }
+
+      scrambleText(heroScrambleEl, item.text, {
+        cycleDuration: 800,
+        charStagger: 100,
+        cycleSpeed: 50,
+        onComplete: function() {
+          setTimeout(runNext, item.delay);
+        }
+      });
+    }
+
+    runNext();
   }
 
   // Hover replay — re-scramble on mouseenter
