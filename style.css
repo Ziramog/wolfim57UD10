@@ -323,11 +323,16 @@ img {
   transition: all var(--duration-fast) var(--ease-out);
 }
 
-.nav__menu-btn.active span:first-child {
+.nav__menu-btn.active span:nth-child(1) {
   transform: rotate(45deg) translateY(5px);
 }
 
-.nav__menu-btn.active span:last-child {
+.nav__menu-btn.active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.nav__menu-btn.active span:nth-child(3) {
   transform: rotate(-45deg) translateY(-5px);
 }
 
@@ -343,7 +348,7 @@ img {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: var(--black);
+  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 50%, #1a1a1a 100%);
   z-index: 999;
   display: flex;
   align-items: center;
