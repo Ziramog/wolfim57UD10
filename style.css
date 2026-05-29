@@ -383,6 +383,31 @@ img {
   color: var(--black);
 }
 
+.mobile-menu__socials {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.mobile-menu__socials img {
+  width: 32px;
+  height: 32px;
+  filter: brightness(0);
+}
+
+.mobile-menu__socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.mobile-menu__socials a:hover {
+  transform: scale(1.1);
+}
+
 
 /* ─── HERO ─── */
 .hero {
