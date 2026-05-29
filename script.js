@@ -737,10 +737,11 @@
       mobileMenu.classList.add('active');
       menuBtn.classList.add('open');
 
-      // Force reflow, then animate to full
-      mobileMenu.offsetHeight;
-      mobileMenu.style.transition = '';
-      mobileMenu.style.clipPath = 'inset(0% 0% 0% 0%)';
+      // Small pause before animating open
+      setTimeout(() => {
+        mobileMenu.style.transition = '';
+        mobileMenu.style.clipPath = 'inset(0% 0% 0% 0%)';
+      }, 30);
     } else {
       // Close: start from full, animate to burger button rect
       const r = menuBtn.getBoundingClientRect();
