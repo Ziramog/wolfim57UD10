@@ -390,10 +390,12 @@ img {
   line-height: 1.1;
   color: var(--black);
   text-align: left;
+  padding: 10px 0;
+  display: block;
 }
 
 .menu-link-prefix {
-  opacity: 0.4;
+  opacity: 1;
   margin-right: 0.25rem;
 }
 
