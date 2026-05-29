@@ -724,18 +724,50 @@
     }
   });
 
-  // Mobile menu toggle
+  // Mobile menu toggle with burger displacement effect
   menuBtn.addEventListener('click', () => {
-    menuBtn.classList.toggle('active');
-    mobileMenu.classList.toggle('active');
-    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    const isOpening = !mobileMenu.classList.contains('active');
+
+    if (isOpening) {
+      // Snap to burger button rect (no transition), then animate to full screen
+      const r = menuBtn.getBoundingClientRect();
+      const inset = `inset(${r.top}px ${window.innerWidth - r.right}px ${window.innerHeight - r.bottom}px ${r.left}px)`;
+      mobileMenu.style.clipPath = inset;
+      mobileMenu.style.transition = 'none';
+      mobileMenu.classList.add('active');
+      menuBtn.classList.add('open');
+
+      // Force reflow, then animate to full
+      mobileMenu.offsetHeight;
+      mobileMenu.style.transition = '';
+      mobileMenu.style.clipPath = 'inset(0% 0% 0% 0%)';
+    } else {
+      // Close: start from full, animate to burger button rect
+      const r = menuBtn.getBoundingClientRect();
+      const inset = `inset(${r.top}px ${window.innerWidth - r.right}px ${window.innerHeight - r.bottom}px ${r.left}px)`;
+      menuBtn.classList.remove('open');
+      mobileMenu.style.clipPath = inset;
+
+      mobileMenu.addEventListener('transitionend', () => {
+        mobileMenu.classList.remove('active');
+      }, { once: true });
+    }
+
+    document.body.style.overflow = isOpening ? 'hidden' : '';
   });
 
   // Close mobile menu on link click
   document.querySelectorAll('.mobile-menu__link').forEach((link) => {
     link.addEventListener('click', () => {
-      menuBtn.classList.remove('active');
-      mobileMenu.classList.remove('active');
+      const r = menuBtn.getBoundingClientRect();
+      const inset = `inset(${r.top}px ${window.innerWidth - r.right}px ${window.innerHeight - r.bottom}px ${r.left}px)`;
+      menuBtn.classList.remove('active', 'open');
+      mobileMenu.style.clipPath = inset;
+
+      mobileMenu.addEventListener('transitionend', () => {
+        mobileMenu.classList.remove('active');
+        mobileMenu.style.clipPath = '';
+      }, { once: true });
       document.body.style.overflow = '';
     });
   });
