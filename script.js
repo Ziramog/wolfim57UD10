@@ -611,14 +611,27 @@
 
   let cursorX = 0, cursorY = 0;
   let targetX = 0, targetY = 0;
+  let glowX = 0, glowY = 0;
+  let glowVisible = false;
 
   document.addEventListener('mousemove', (e) => {
     targetX = e.clientX;
     targetY = e.clientY;
-    
-    // Activate glow on first mouse movement
-    if (cursorGlow && !cursorGlow.classList.contains('is-active')) {
-      cursorGlow.classList.add('is-active');
+  });
+
+  document.addEventListener('mouseenter', () => {
+    if (cursorGlow) {
+      glowX = targetX;
+      glowY = targetY;
+      glowVisible = true;
+      cursorGlow.style.opacity = '1';
+    }
+  });
+
+  document.addEventListener('mouseleave', () => {
+    if (cursorGlow) {
+      cursorGlow.style.opacity = '0';
+      glowVisible = false;
     }
   });
 
@@ -637,10 +650,17 @@
     cursorY += (targetY - cursorY) * 0.12;
     cursor.style.left = cursorX + 'px';
     cursor.style.top = cursorY + 'px';
-    
-    if (cursorGlow) {
-      cursorGlow.style.left = cursorX + 'px';
-      cursorGlow.style.top = cursorY + 'px';
+
+    if (cursorGlow && glowVisible) {
+      glowX += (targetX - glowX) * 0.06;
+      glowY += (targetY - glowY) * 0.06;
+      cursorGlow.style.transform = `translate(${glowX}px, ${glowY}px)`;
+
+      if (document.body.classList.contains('system-awake')) {
+        cursorGlow.style.background = 'radial-gradient(circle, rgba(80,79,237,0.22) 0%, rgba(80,79,237,0.07) 40%, transparent 70%)';
+      } else {
+        cursorGlow.style.background = 'radial-gradient(circle, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 40%, transparent 70%)';
+      }
     }
 
     if (document.body.classList.contains('system-awake')) {
@@ -654,7 +674,7 @@
         heroGridLines.style.transform = `translate(${offsetX * 15}px, ${offsetY * 15}px)`;
       }
     }
-    
+
     requestAnimationFrame(animateCursor);
   }
   animateCursor();

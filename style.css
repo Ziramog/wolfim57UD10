@@ -2251,18 +2251,13 @@ img {
   position: fixed;
   width: 600px;
   height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(10,47,47,0.08) 0%, rgba(10,47,47,0.03) 40%, rgba(0,0,0,0) 70%);
+  border-radius: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 40%, transparent 70%);
   pointer-events: none;
   z-index: -2;
-  transform: translate(-50%, -50%);
   opacity: 0;
-  transition: opacity 1.5s var(--ease-out);
-  will-change: transform, opacity;
-}
-
-.cursor-glow.is-active {
-  opacity: 1;
+  will-change: transform;
+  transform: translate(0px, 0px);
 }
 
 .sr-only {
