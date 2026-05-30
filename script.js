@@ -729,7 +729,7 @@
     const isOpening = !mobileMenu.classList.contains('active');
 
     if (isOpening) {
-      // Open: slide down from burger button
+      // Open: slide from burger button outward
       const r = menuBtn.getBoundingClientRect();
       const inset = `inset(${r.top}px ${window.innerWidth - r.right}px ${window.innerHeight - r.bottom}px ${r.left}px)`;
       mobileMenu.style.clipPath = inset;
@@ -742,11 +742,14 @@
         mobileMenu.style.clipPath = 'inset(0% 0% 0% 0%)';
       }, 30);
     } else {
-      // Close: slide up to burger button
+      // Close: slide from full screen back to burger button
+      // Capture rect BEFORE removing open class to avoid transform shift
       const r = menuBtn.getBoundingClientRect();
       const inset = `inset(${r.top}px ${window.innerWidth - r.right}px ${window.innerHeight - r.bottom}px ${r.left}px)`;
-      menuBtn.classList.remove('open');
+      mobileMenu.style.clipPath = 'inset(0% 0% 0% 0%)';
+      mobileMenu.style.transition = '';
       mobileMenu.style.clipPath = inset;
+      menuBtn.classList.remove('open');
 
       mobileMenu.addEventListener('transitionend', () => {
         mobileMenu.classList.remove('active');
@@ -763,8 +766,10 @@
     closeBtn.addEventListener('click', () => {
       const r = menuBtn.getBoundingClientRect();
       const inset = `inset(${r.top}px ${window.innerWidth - r.right}px ${window.innerHeight - r.bottom}px ${r.left}px)`;
-      menuBtn.classList.remove('open');
+      mobileMenu.style.clipPath = 'inset(0% 0% 0% 0%)';
+      mobileMenu.style.transition = '';
       mobileMenu.style.clipPath = inset;
+      menuBtn.classList.remove('open');
 
       mobileMenu.addEventListener('transitionend', () => {
         mobileMenu.classList.remove('active');
@@ -779,8 +784,10 @@
     link.addEventListener('click', () => {
       const r = menuBtn.getBoundingClientRect();
       const inset = `inset(${r.top}px ${window.innerWidth - r.right}px ${window.innerHeight - r.bottom}px ${r.left}px)`;
-      menuBtn.classList.remove('active', 'open');
+      mobileMenu.style.clipPath = 'inset(0% 0% 0% 0%)';
+      mobileMenu.style.transition = '';
       mobileMenu.style.clipPath = inset;
+      menuBtn.classList.remove('active', 'open');
 
       mobileMenu.addEventListener('transitionend', () => {
         mobileMenu.classList.remove('active');
