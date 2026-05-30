@@ -360,11 +360,12 @@ img {
 }
 
 .mobile-menu.active {
-  clip-path: inset(0% 0% 0% 0%);
+  clip-path: inset(0px 0px 0% 0%);
   pointer-events: all;
 }
 
 .mobile-menu:not(.active) {
+  clip-path: inset(0px 0px 100% 100%);
   transition: clip-path 0.65s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
