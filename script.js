@@ -758,6 +758,23 @@
     document.body.style.overflow = isOpening ? 'hidden' : '';
   });
 
+  // Close button (X) in top-right corner
+  const closeBtn = document.getElementById('mobile-menu-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      const r = menuBtn.getBoundingClientRect();
+      const inset = `inset(${r.top}px ${window.innerWidth - r.right}px ${window.innerHeight - r.bottom}px ${r.left}px)`;
+      menuBtn.classList.remove('open');
+      mobileMenu.style.clipPath = inset;
+
+      mobileMenu.addEventListener('transitionend', () => {
+        mobileMenu.classList.remove('active');
+        mobileMenu.style.clipPath = '';
+      }, { once: true });
+      document.body.style.overflow = '';
+    });
+  }
+
   // Close mobile menu on link click
   document.querySelectorAll('.mobile-menu__link').forEach((link) => {
     link.addEventListener('click', () => {
