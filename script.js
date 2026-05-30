@@ -729,7 +729,7 @@
     const isOpening = !mobileMenu.classList.contains('active');
 
     if (isOpening) {
-      // Open: snap to burger rect, then animate to full (100% from bottom = hidden)
+      // Open: snap to burger rect, then animate to full screen
       const r = menuBtn.getBoundingClientRect();
       const inset = `inset(${r.top}px ${window.innerWidth - r.right}px ${window.innerHeight - r.bottom}px ${r.left}px)`;
       mobileMenu.style.clipPath = inset;
@@ -739,11 +739,11 @@
 
       setTimeout(() => {
         mobileMenu.style.transition = '';
-        mobileMenu.style.clipPath = 'inset(0px 0px 100% 100%)';
+        mobileMenu.style.clipPath = 'inset(0px 0px 0px 0px)';
       }, 30);
     } else {
-      // Close: animate from full screen (100% bottom) to burger rect
-      mobileMenu.style.clipPath = 'inset(0px 0px 100% 100%)';
+      // Close: animate from full screen to burger rect
+      mobileMenu.style.clipPath = 'inset(0px 0px 0px 0px)';
       mobileMenu.style.transition = '';
       const r = menuBtn.getBoundingClientRect();
       const inset = `inset(${r.top}px ${window.innerWidth - r.right}px ${window.innerHeight - r.bottom}px ${r.left}px)`;
@@ -763,7 +763,7 @@
   const closeBtn = document.getElementById('mobile-menu-close');
   if (closeBtn) {
     closeBtn.addEventListener('click', () => {
-      mobileMenu.style.clipPath = 'inset(0px 0px 100% 100%)';
+      mobileMenu.style.clipPath = 'inset(0px 0px 0px 0px)';
       mobileMenu.style.transition = '';
       const r = menuBtn.getBoundingClientRect();
       const inset = `inset(${r.top}px ${window.innerWidth - r.right}px ${window.innerHeight - r.bottom}px ${r.left}px)`;
@@ -781,7 +781,7 @@
   // Close mobile menu on link click
   document.querySelectorAll('.mobile-menu__link').forEach((link) => {
     link.addEventListener('click', () => {
-      mobileMenu.style.clipPath = 'inset(0px 0px 100% 100%)';
+      mobileMenu.style.clipPath = 'inset(0px 0px 0px 0px)';
       mobileMenu.style.transition = '';
       const r = menuBtn.getBoundingClientRect();
       const inset = `inset(${r.top}px ${window.innerWidth - r.right}px ${window.innerHeight - r.bottom}px ${r.left}px)`;

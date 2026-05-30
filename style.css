@@ -360,7 +360,7 @@ img {
 }
 
 .mobile-menu.active {
-  clip-path: inset(0px 0px 0% 0%);
+  clip-path: inset(0px 0px 0px 0px);
   pointer-events: all;
 }
 
