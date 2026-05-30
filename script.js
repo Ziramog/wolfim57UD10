@@ -729,7 +729,7 @@
     const isOpening = !mobileMenu.classList.contains('active');
 
     if (isOpening) {
-      // Open: slide from burger button outward
+      // Open: snap to burger rect, then animate to full (100% from bottom = hidden)
       const r = menuBtn.getBoundingClientRect();
       const inset = `inset(${r.top}px ${window.innerWidth - r.right}px ${window.innerHeight - r.bottom}px ${r.left}px)`;
       mobileMenu.style.clipPath = inset;
@@ -739,15 +739,14 @@
 
       setTimeout(() => {
         mobileMenu.style.transition = '';
-        mobileMenu.style.clipPath = 'inset(0% 0% 0% 0%)';
+        mobileMenu.style.clipPath = 'inset(0px 0px 100% 100%)';
       }, 30);
     } else {
-      // Close: slide from full screen back to burger button
-      // Capture rect BEFORE removing open class to avoid transform shift
+      // Close: animate from full screen (100% bottom) to burger rect
+      mobileMenu.style.clipPath = 'inset(0px 0px 100% 100%)';
+      mobileMenu.style.transition = '';
       const r = menuBtn.getBoundingClientRect();
       const inset = `inset(${r.top}px ${window.innerWidth - r.right}px ${window.innerHeight - r.bottom}px ${r.left}px)`;
-      mobileMenu.style.clipPath = 'inset(0% 0% 0% 0%)';
-      mobileMenu.style.transition = '';
       mobileMenu.style.clipPath = inset;
       menuBtn.classList.remove('open');
 
@@ -764,10 +763,10 @@
   const closeBtn = document.getElementById('mobile-menu-close');
   if (closeBtn) {
     closeBtn.addEventListener('click', () => {
+      mobileMenu.style.clipPath = 'inset(0px 0px 100% 100%)';
+      mobileMenu.style.transition = '';
       const r = menuBtn.getBoundingClientRect();
       const inset = `inset(${r.top}px ${window.innerWidth - r.right}px ${window.innerHeight - r.bottom}px ${r.left}px)`;
-      mobileMenu.style.clipPath = 'inset(0% 0% 0% 0%)';
-      mobileMenu.style.transition = '';
       mobileMenu.style.clipPath = inset;
       menuBtn.classList.remove('open');
 
@@ -782,10 +781,10 @@
   // Close mobile menu on link click
   document.querySelectorAll('.mobile-menu__link').forEach((link) => {
     link.addEventListener('click', () => {
+      mobileMenu.style.clipPath = 'inset(0px 0px 100% 100%)';
+      mobileMenu.style.transition = '';
       const r = menuBtn.getBoundingClientRect();
       const inset = `inset(${r.top}px ${window.innerWidth - r.right}px ${window.innerHeight - r.bottom}px ${r.left}px)`;
-      mobileMenu.style.clipPath = 'inset(0% 0% 0% 0%)';
-      mobileMenu.style.transition = '';
       mobileMenu.style.clipPath = inset;
       menuBtn.classList.remove('active', 'open');
 
