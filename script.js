@@ -751,6 +751,7 @@
 
       mobileMenu.addEventListener('transitionend', () => {
         mobileMenu.classList.remove('active');
+        mobileMenu.style.clipPath = '';
       }, { once: true });
     }
 
