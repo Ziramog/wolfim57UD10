@@ -915,6 +915,8 @@ img {
 .project__video {
   object-fit: cover;
   display: block;
+  width: 100%;
+  height: 100%;
 }
 
 /* Architectural abstract patterns for project images */
