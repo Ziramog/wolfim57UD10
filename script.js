@@ -39,10 +39,10 @@
       'projects.p3.tag1': 'Construction Website',
       'projects.p3.tag2': 'Visual Identity & AI',
       'projects.p3.desc': 'Immersive digital presence for a construction company. Custom visual identity, AI image generation, and strategic WhatsApp CTA integration — designed to build trust and capture leads directly.',
-      'projects.p4.title': 'Apex<br>Digital',
-      'projects.p4.tag1': 'Website & Growth',
-      'projects.p4.tag2': 'Ads & Analytics',
-      'projects.p4.desc': 'Website, ad campaigns, and analytics infrastructure for a growing tech company. Google Ads management, conversion tracking, and performance dashboards — a complete digital growth engine.',
+      'projects.p4.title': 'KORANTIS<br>.COM',
+      'projects.p4.tag1': 'AI Search Engine',
+      'projects.p4.tag2': 'Web Platform',
+      'projects.p4.desc': 'AI-powered restaurant and coffee shop search engine with conversational recommendations. Intelligent filtering, personalized suggestions, and a sleek interface that finds the perfect spot before you finish typing.',
 
       // Capabilities
       'capabilities.title': 'What We<br>Build',
@@ -261,10 +261,10 @@
       'projects.p3.tag1': 'Sitio Web Constructora',
       'projects.p3.tag2': 'Identidad Visual e IA',
       'projects.p3.desc': 'Presencia digital inmersiva para empresa constructora. Identidad visual, generación de imágenes con IA, y un CTA estratégico de WhatsApp — diseñado para generar confianza y captar clientes de manera directa.',
-      'projects.p4.title': 'Apex<br>Digital',
-      'projects.p4.tag1': 'Web & Crecimiento',
-      'projects.p4.tag2': 'Ads & Analítica',
-      'projects.p4.desc': 'Sitio web, campañas publicitarias e infraestructura analítica para una empresa tech en crecimiento. Gestión de Google Ads, seguimiento de conversiones y dashboards de rendimiento — un motor completo de crecimiento digital.',
+      'projects.p4.title': 'KORANTIS<br>.COM',
+      'projects.p4.tag1': 'Motor de Búsqueda IA',
+      'projects.p4.tag2': 'Plataforma Web',
+      'projects.p4.desc': 'Motor de búsqueda de restaurantes y cafeterías con IA conversacional. Filtrado inteligente, sugerencias personalizadas y una interfaz elegante que encuentra el lugar perfecto antes de que termines de escribir.',
 
       // Capabilities
       'capabilities.title': 'Qué<br>Construimos',
