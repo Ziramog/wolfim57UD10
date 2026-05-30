@@ -431,36 +431,6 @@ img {
   margin-right: 0.25rem;
 }
 
-.mobile-menu__socials {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 1.5rem 20px 20px;
-  border-top: 1px solid var(--border);
-  gap: 1.5rem;
-}
-
-.mobile-menu__socials-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-  color: var(--gray-400);
-  opacity: 0.45;
-}
-
-.mobile-menu__socials-link:hover {
-  opacity: 1;
-  transform: scale(1.1);
-}
-
-.mobile-menu__socials-icon {
-  width: 32px;
-  height: 32px;
-  fill: currentColor;
-}
-
 
 /* ─── HERO ─── */
 .hero {

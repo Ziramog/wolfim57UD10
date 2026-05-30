@@ -729,7 +729,7 @@
     const isOpening = !mobileMenu.classList.contains('active');
 
     if (isOpening) {
-      // Snap to burger button rect (no transition), then animate to full screen
+      // Open: slide down from burger button
       const r = menuBtn.getBoundingClientRect();
       const inset = `inset(${r.top}px ${window.innerWidth - r.right}px ${window.innerHeight - r.bottom}px ${r.left}px)`;
       mobileMenu.style.clipPath = inset;
@@ -737,13 +737,12 @@
       mobileMenu.classList.add('active');
       menuBtn.classList.add('open');
 
-      // Small pause before animating open
       setTimeout(() => {
         mobileMenu.style.transition = '';
         mobileMenu.style.clipPath = 'inset(0% 0% 0% 0%)';
       }, 30);
     } else {
-      // Close: start from full, animate to burger button rect
+      // Close: slide up to burger button
       const r = menuBtn.getBoundingClientRect();
       const inset = `inset(${r.top}px ${window.innerWidth - r.right}px ${window.innerHeight - r.bottom}px ${r.left}px)`;
       menuBtn.classList.remove('open');
