@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>montone/studio — Marcin Baran · Design Advisory &amp; Product Design</title>
+<meta name="description" content="Design consultant helping tech companies build better products, more coherent design systems, and stronger design cultures. Design Advisory, Product Design &amp; Design Systems.">
+<meta name="author" content="Marcin Baran">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://montone.studio/">
+<meta name="theme-color" content="#504FED">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<!-- Open Graph -->
+<meta property="og:type"               content="website">
+<meta property="og:site_name"          content="montone/studio">
+<meta property="og:url"                content="https://montone.studio/">
+<meta property="og:title"              content="montone/studio — Marcin Baran · Design Advisory &amp; Product Design">
+<meta property="og:description"        content="Design consultant helping tech companies build better products, more coherent design systems, and stronger design cultures.">
+<meta property="og:image"              content="https://montone.studio/og-image.png">
+<meta property="og:image:secure_url"   content="https://montone.studio/og-image.png">
+<meta property="og:image:type"         content="image/png">
+<meta property="og:image:width"        content="1200">
+<meta property="og:image:height"       content="630">
+<meta property="og:image:alt"          content="montone/studio — Design Advisory &amp; Product Design by Marcin Baran">
+
+<!-- Twitter / X -->
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:url"         content="https://montone.studio/">
+<meta name="twitter:title"       content="montone/studio — Marcin Baran · Design Advisory &amp; Product Design">
+<meta name="twitter:description" content="Design consultant helping tech companies build better products, more coherent design systems, and stronger design cultures.">
+<meta name="twitter:image"       content="https://montone.studio/og-image.png">
+<meta name="twitter:image:alt"   content="montone/studio — Design Advisory &amp; Product Design by Marcin Baran">
+
+<!-- Structured Data (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://montone.studio/#person",
+      "name": "Marcin Baran",
+      "url": "https://montone.studio/",
+      "image": "https://montone.studio/og-image.png",
+      "jobTitle": "Design Consultant",
+      "description": "Design consultant helping tech companies build better products, more coherent design systems, and stronger design cultures.",
+      "sameAs": [
+        "https://www.linkedin.com/in/marcinbaran/",
+        "https://www.behance.net/montonemarcin"
+      ],
+      "knowsAbout": ["Design Advisory", "Product Design", "Design Systems", "UX Strategy", "Design Leadership", "eCommerce UX"],
+      "worksFor": {
+        "@type": "Organization",
+        "@id": "https://montone.studio/#organization"
+      }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://montone.studio/#organization",
+      "name": "montone/studio",
+      "url": "https://montone.studio/",
+      "logo": "https://montone.studio/favicon.svg",
+      "image": "https://montone.studio/og-image.png",
+      "description": "Design advisory, product design and design systems consultancy.",
+      "founder": { "@id": "https://montone.studio/#person" },
+      "address": { "@type": "PostalAddress", "addressLocality": "Wrocław", "addressCountry": "PL" },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "montone.marcin@gmail.com",
+        "contactType": "customer service"
+      },
+      "serviceType": ["Design Advisory", "Product Design", "Design Systems", "UX Audit", "Fractional Head of Design"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://montone.studio/#website",
+      "url": "https://montone.studio/",
+      "name": "montone/studio",
+      "publisher": { "@id": "https://montone.studio/#organization" }
+    }
+  ]
+}
+</script>
+
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+</head>
+<body>
+<!-- NAV -->
+<nav>
+  <a href="#top" class="nav-logo">
+    <svg width="140" height="51" viewBox="0 0 1733 633" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-inline">
+      <path d="M1571.65 339.828L1678.64 0H1732.92L1625.54 339.828H1571.65Z" fill="#504FED"/>
+      <path d="M1474.94 291.393C1405.43 291.393 1365.99 244.129 1365.99 185.538C1365.99 126.166 1410.51 79.2932 1474.94 79.2932C1543.27 79.2932 1579.59 132.025 1579.59 185.538V206.241H1423.78C1431.2 230.458 1451.12 241.786 1474.94 241.786C1506.17 241.786 1522.97 224.599 1528.04 214.053L1571 239.833C1563.19 257.41 1533.12 291.393 1474.94 291.393ZM1424.95 161.711H1520.62C1519.06 149.603 1505.78 127.728 1474.16 127.728C1453.85 127.728 1433.15 138.666 1424.95 161.711Z" fill="#504FED"/>
+      <path d="M1163.9 287.877V82.8087H1220.52V107.808C1229.5 92.1832 1249.42 79.2932 1274.8 79.2932C1320.09 79.2932 1348.6 112.495 1348.6 150.384V287.877H1291.98V170.305C1291.98 148.431 1275.97 133.978 1256.45 133.978C1233.8 133.978 1220.52 149.993 1220.52 170.305V287.877H1163.9Z" fill="#504FED"/>
+      <path d="M1030.72 291.783C969.022 291.783 919.04 249.989 919.04 185.538C919.04 121.088 969.022 79.2932 1030.72 79.2932C1092.41 79.2932 1142.4 121.088 1142.4 185.538C1142.4 249.989 1092.41 291.783 1030.72 291.783ZM976.832 185.538C976.832 215.225 999.48 238.27 1030.72 238.27C1061.96 238.27 1084.61 215.225 1084.61 185.538C1084.61 155.852 1061.96 132.806 1030.72 132.806C999.48 132.806 976.832 155.852 976.832 185.538Z" fill="#504FED"/>
+      <path d="M804.967 287.878V135.541H772.166V82.8088H806.138V34.7642H861.587V82.8088H910.397V135.541H861.587V233.193H911.178V287.878H804.967Z" fill="#504FED"/>
+      <path d="M572.028 287.877V82.8087H628.648V107.808C637.63 92.1832 657.544 79.2932 682.926 79.2932C728.222 79.2932 756.727 112.495 756.727 150.384V287.877H700.107V170.305C700.107 148.431 684.097 133.978 664.573 133.978C641.925 133.978 628.648 149.993 628.648 170.305V287.877H572.028Z" fill="#504FED"/>
+      <path d="M438.845 291.783C377.149 291.783 327.167 249.989 327.167 185.538C327.167 121.088 377.149 79.2932 438.845 79.2932C500.542 79.2932 550.524 121.088 550.524 185.538C550.524 249.989 500.542 291.783 438.845 291.783ZM384.959 185.538C384.959 215.225 407.607 238.27 438.845 238.27C470.084 238.27 492.732 215.225 492.732 185.538C492.732 155.852 470.084 132.806 438.845 132.806C407.607 132.806 384.959 155.852 384.959 185.538Z" fill="#504FED"/>
+      <path d="M0 287.877V82.8087H56.6201V107.808C65.6013 92.1832 84.735 79.2932 110.116 79.2932C136.279 79.2932 156.193 90.2302 168.689 106.636C180.403 92.5739 200.709 79.2932 231.166 79.2932C276.462 79.2932 309.654 112.885 309.654 150.774V287.877H253.033V170.305C253.033 148.431 237.805 133.978 218.28 133.978C195.632 133.978 183.137 149.993 183.137 170.305V287.877H126.517V170.305C126.517 148.431 111.288 133.978 91.7637 133.978C69.1156 133.978 56.6201 149.993 56.6201 170.305V287.877H0Z" fill="#504FED"/>
+      <path d="M963.084 632.393C901.388 632.393 859.216 587.864 859.216 529.273C859.216 470.682 902.169 425.762 963.084 425.762C1024 425.762 1066.95 470.682 1066.95 529.273C1066.95 587.473 1024.78 632.393 963.084 632.393ZM892.407 529.273C892.407 572.63 923.646 602.316 963.084 602.316C1002.91 602.316 1033.76 572.63 1033.76 529.273C1033.76 485.915 1002.91 455.838 963.084 455.838C923.255 455.838 892.407 485.915 892.407 529.273Z" fill="#504FED"/>
+      <path d="M789.449 628.877V429.277H822.249V628.877H789.449ZM779.687 367.952C779.687 353.109 791.011 341.781 805.849 341.781C820.687 341.781 832.011 353.109 832.011 367.952C832.011 382.795 820.687 394.123 805.849 394.123C791.011 394.123 779.687 382.795 779.687 367.952Z" fill="#504FED"/>
+      <path d="M637.624 632.393C582.175 632.393 540.784 593.332 540.394 528.882C540.784 469.9 581.394 425.762 637.624 425.762C666.52 425.762 693.854 439.433 705.959 457.01V339.828H738.759V628.877H705.959V602.316C692.682 619.893 664.177 632.393 637.624 632.393ZM573.585 528.882C573.585 569.114 598.576 602.316 639.967 602.316C681.749 602.316 706.74 568.724 706.74 528.882C706.74 489.431 681.749 455.838 639.967 455.838C598.576 455.838 573.585 489.04 573.585 528.882Z" fill="#504FED"/>
+      <path d="M415.953 632.393C369.485 632.393 336.685 599.191 336.685 554.271V429.277H369.485V548.412C369.485 582.786 391.743 602.316 420.639 602.316C449.144 602.316 472.182 581.223 472.182 548.412V429.277H504.983V588.645L519.041 628.877H485.069L476.868 607.785C468.668 618.722 448.363 632.393 415.953 632.393Z" fill="#504FED"/>
+      <path d="M215.056 628.877V457.01H177.96V429.277H215.837V375.764H247.857V429.277H300.572V457.01H247.857V598.41H301.353V628.877H215.056Z" fill="#504FED"/>
+      <path d="M83.954 632.393C32.4101 632.393 7.02871 601.144 0 578.489L27.7242 564.427C31.629 580.833 51.1533 603.097 83.954 603.097C112.069 603.097 129.25 590.989 129.25 573.411C129.25 560.131 119.878 549.975 100.354 546.069L62.4772 538.647C30.4576 532.397 10.9335 513.648 10.9335 483.181C10.9335 450.761 40.2197 425.762 84.7349 425.762C134.326 425.762 154.632 454.667 160.879 474.197L133.545 487.478C130.031 472.244 114.412 454.276 84.7349 454.276C57.7915 454.276 42.1721 467.166 42.1721 483.181C42.1721 497.633 52.3248 505.836 67.9442 508.961L108.945 517.164C144.088 524.195 162.441 546.069 162.441 573.411C162.441 608.956 129.641 632.393 83.954 632.393Z" fill="#504FED"/>
+    </svg>
+  </a>
+  <button class="burger" id="burger" aria-label="Open menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- FULLSCREEN MENU -->
+<div class="menu-overlay" id="menuOverlay">
+
+  <!-- Close button -->
+  <button class="menu-close" id="menuClose" aria-label="Close menu">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="2" y1="2" x2="18" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="18" y1="2" x2="2" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <span class="menu-close-label">Close</span>
+  </button>
+
+  <ul class="menu-nav">
+    <li><a href="#advisory" class="menu-link"><b>/</b>services</a></li>
+    <li><a href="#portfolio" class="menu-link"><b>/</b>work</a></li>
+    <li><a href="#about" class="menu-link"><b>/</b>about</a></li>
+  </ul>
+
+  <!-- CTA -->
+  <a href="mailto:montone.marcin@gmail.com" class="menu-cta menu-link">
+    <span class="menu-cta-label">Let's connect</span>
+    <span class="menu-cta-arrow">→</span>
+  </a>
+
+
+
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-content-wrap" id="heroContentWrap">
+    <div class="hero-bottom">
+      <h1 class="hero-wordmark">
+        <span class="hero-prefix">montone/</span><span class="hero-word-slot" id="heroSlot">studio</span>
+      </h1>
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <div class="hero-scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATEMENT -->
+<section class="statement-section" id="statementSection">
+  <div class="statement-sticky">
+    <p class="statement-text">
+      <span class="statement-line">i help companies turn</span>
+      <span class="statement-line">design chaos into clarity</span>
+      <span class="statement-line statement-line--slash"><b>/</b>sharper products, systems that scale,</span>
+      <span class="statement-line statement-line--light">and teams that actually know</span>
+      <span class="statement-line statement-line--light">what "good" looks like.</span>
+    </p>
+    <div class="clients-inner" id="clientsSection">
+      <div class="clients-logos-row" id="clientsLogosRow">
+        <div class="client-slot"></div>
+        <div class="client-slot"></div>
+        <div class="client-slot"></div>
+        <div class="client-slot"></div>
+        <div class="client-slot"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVISORY -->
+<section class="advisory" id="advisory">
+
+  <div class="services-stack">
+
+    <div class="service-card" data-card="0">
+      <div class="service-card-inner">
+        <div class="service-title-row">
+          <span class="service-ghost-num">01</span>
+          <h3 class="service-title"><span class="service-slash">/</span>design advisory &amp; strategy</h3>
+        </div>
+        <p class="service-desc">I can help you make sharper product decisions, untangle design debt, and build a clear direction - so your team starts shipping with confidence. Having built products like Storefront UI and CommerceBooster UI from the ground up, I know what it takes not just to deliver, but to maintain and evolve a product over time.</p>
+      </div>
+    </div>
+
+    <div class="service-card" data-card="1">
+      <div class="service-card-inner">
+        <div class="service-title-row">
+          <span class="service-ghost-num">02</span>
+          <h3 class="service-title"><span class="service-slash">/</span>creative direction &amp; ux/ui</h3>
+        </div>
+        <p class="service-desc">From early concept to polished interface. I shape the product experience — information architecture, interaction patterns, visual language — and art-direct execution so design and brand stay coherent at every touchpoint.</p>
+      </div>
+    </div>
+
+    <div class="service-card" data-card="2">
+      <div class="service-card-inner">
+        <div class="service-title-row">
+          <span class="service-ghost-num">03</span>
+          <h3 class="service-title"><span class="service-slash">/</span>designing for the ai era</h3>
+        </div>
+        <p class="service-desc">I use AI to compress timelines, not corners — vibe-coding interactive prototypes, AI-powered eCommerce UX, AI-assisted research, and embedding AI into design workflows. Iteration that used to take weeks now happens in days.</p>
+      </div>
+    </div>
+
+    <div class="service-card" data-card="3">
+      <div class="service-card-inner">
+        <div class="service-title-row">
+          <span class="service-ghost-num">04</span>
+          <h3 class="service-title"><span class="service-slash">/</span>design systems &amp; frameworks</h3>
+        </div>
+        <p class="service-desc">Scalable component libraries and design languages built to last. Whether you're starting from scratch or inheriting chaos, I build systems that let your team move faster without breaking consistency.</p>
+      </div>
+    </div>
+
+    <div class="service-card" data-card="4">
+      <div class="service-card-inner">
+        <div class="service-title-row">
+          <span class="service-ghost-num">05</span>
+          <h3 class="service-title"><span class="service-slash">/</span>ecommerce experience design</h3>
+        </div>
+        <p class="service-desc">15+ years designing for commerce — from headless storefronts to checkout optimisation. I know what converts, what builds trust, and how to design for the full purchase journey across platforms and frameworks.</p>
+      </div>
+    </div>
+
+
+  </div></section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="portfolio-sticky">
+    <div class="portfolio-header">
+      <div>
+        <h2 class="section-title"><b>/</b>projects that<br>left a mark.</h2>
+      </div>
+      <div class="portfolio-progress">
+        <div class="portfolio-progress-bar"><div class="portfolio-progress-fill" id="portfolioFill"></div></div>
+        <span id="portfolioCounter">1 / 8</span>
+      </div>
+    </div>
+
+  <div class="portfolio-scroll-wrap">
+    <button class="portfolio-arrow portfolio-arrow--prev" id="portfolioPrev" aria-label="Previous">←</button>
+    <button class="portfolio-arrow portfolio-arrow--next" id="portfolioNext" aria-label="Next">→</button>
+  <div class="portfolio-track" id="portfolioTrack">
+    <!-- Featured: CommerceBooster UI -->
+    <a href="https://commercebooster.io/" target="_blank" rel="noopener noreferrer" class="project-card featured">
+      <div class="project-thumb" style="background-image: url('images/cbui.jpg');"></div>
+
+      <div class="project-info">
+        <h3 class="project-name"><b>/</b>commercebooster ui — storefront modules</h3>
+        <div class="project-desc">A front-end component library accelerating B2B eCommerce development — modular, multi-framework, and fully customisable storefront modules that cut delivery time by up to 60%.</div>
+      </div>
+    </a>
+
+    <!-- Marc O'Polo -->
+    <a href="https://www.behance.net/gallery/160482235/Marc-Opolo-eCommerce" target="_blank" rel="noopener noreferrer" class="project-card">
+      <div class="project-thumb" style="background-image: url('images/mp.jpg');"></div>
+      <div class="project-info">
+        <h3 class="project-name"><b>/</b>marc o'polo — ecommerce platform</h3>
+        <div class="project-desc">Premium fashion eCommerce redesign — reimagining the product discovery, PDP experience, and checkout flow for a global lifestyle brand.</div>
+      </div>
+    </a>
+
+    <!-- Storefront UI -->
+    <a href="https://alokai.com/product/storefront-ui" target="_blank" rel="noopener noreferrer" class="project-card">
+      <div class="project-thumb" style="background-image: url('images/stui.jpg');"></div>
+      <div class="project-info">
+        <h3 class="project-name"><b>/</b>storefront ui — open source design system</h3>
+        <div class="project-desc">A comprehensive, open-source UI component library powering hundreds of eCommerce projects. Co-designed the first version of the design system — including component library, visual language, and documentation standards — now used by thousands of developers globally.</div>
+      </div>
+    </a>
+
+    <!-- PlusWorkflow -->
+    <a href="https://www.behance.net/gallery/107513343/PlusWorkflow-Management-Desktop-App" target="_blank" rel="noopener noreferrer" class="project-card">
+      <div class="project-thumb" style="background-image: url('images/workflow.jpg');"></div>
+      <div class="project-info">
+        <h3 class="project-name"><b>/</b>plusworkflow — management desktop app</h3>
+        <div class="project-desc">A complex workflow management tool for enterprise teams — bringing clarity to dense information hierarchies through systematic design thinking and component-driven UI.</div>
+      </div>
+    </a>
+
+    <!-- Mirka Partner Portal -->
+    <a href="https://www.cloudflight.io/en/project/mirka/" target="_blank" rel="noopener noreferrer" class="project-card">
+      <div class="project-thumb" style="background-image: url('images/image-56.webp');"></div>
+      <div class="project-info">
+        <h3 class="project-name"><b>/</b>mirka — b2b partner portal</h3>
+        <div class="project-desc">Turning an 80-year-old industry leader into a digital pioneer — a multi-market B2B partner portal unifying commerce, brand, and distribution across 5 global regions.</div>
+      </div>
+    </a>
+
+    <!-- meinestadt.de -->
+    <a href="https://www.cloudflight.io/en/project/meinestadt-ecommerce-platform/" target="_blank" rel="noopener noreferrer" class="project-card">
+      <div class="project-thumb" style="background-image: url('images/meine.jpg');"></div>
+      <div class="project-info">
+        <h3 class="project-name"><b>/</b>meinestadt.de — ecommerce platform</h3>
+        <div class="project-desc">A future-proof, AI-powered self-service eCommerce platform enabling employers to publish job listings in minutes — reducing recruiting costs and accelerating vacancy filling across 11,000 German cities.</div>
+      </div>
+    </a>
+
+    <!-- Solar Redesign -->
+    <a href="https://www.cloudflight.io/en/project/solar-redesign/" target="_blank" rel="noopener noreferrer" class="project-card">
+      <div class="project-thumb" style="background-image: url('images/vertical-4-min.webp');"></div>
+      <div class="project-info">
+        <h3 class="project-name"><b>/</b>solar — ecommerce redesign</h3>
+        <div class="project-desc">A full eCommerce redesign for a Polish fashion retail brand — overhauling mobile UX, product listings, and checkout flow, delivering 70% YoY revenue growth and a 24% conversion uplift within 8 weeks.</div>
+      </div>
+    </a>
+
+    <!-- Click & Collect -->
+    <a href="https://www.behance.net/gallery/108460947/Click-Collect-Accelerator" target="_blank" rel="noopener noreferrer" class="project-card">
+      <div class="project-thumb" style="background-image: url('images/Dribble.png');"></div>
+      <div class="project-info">
+        <h3 class="project-name"><b>/</b>click &amp; collect accelerator</h3>
+        <div class="project-desc">A retail UX accelerator streamlining the buy-online, pick-up-in-store experience — from browsing and checkout to in-store handoff flows designed for speed and clarity.</div>
+      </div>
+    </a>
+  </div><!-- /portfolio-track -->
+  </div><!-- /portfolio-scroll-wrap -->
+  </div><!-- /portfolio-sticky -->
+</section>
+
+
+<!-- PHOTO STRIP -->
+<!-- TESTIMONIALS -->
+<div class="testi-pin-wrap">
+<section class="testimonials-section">
+  <div class="testi-layout">
+    <div class="testi-left">
+      <h2 class="testi-heading fade-up" data-delay="120"><b>/</b>what<br>people<br>say.</h2>
+    </div>
+    <div class="testi-right">
+      <div class="testi-vertical-marquee">
+        <div class="testi-vertical-inner">
+            <div class="testi-card">
+              <div class="testi-quote">I had the pleasure of working with Marcin on the Storefront UI design system that became a foundation for Alokai Storefronts, adopted by more than 3000 eCommerce applications. He is a really skilled designer with good attention to detail. Marcin also has a strong product lens, which makes the collaboration very productive.</div>
+              <div class="testi-person">
+                <img class="testi-avatar" src="images/filip.jpg" alt="Filip Rakowski" width="400" height="400" loading="lazy">
+                <div>
+                  <div class="testi-name">Filip Rakowski</div>
+                  <div class="testi-role">Co-Founder &amp; CTO, Alokai</div>
+                </div>
+              </div>
+            </div>            <div class="testi-card">
+              <div class="testi-quote">I worked with Marcin on several projects. He's a very structured and open minded, out of the box thinker. Furthermore he has a great expertise and ability of challenging his own ideas. Marcin is a fantastic sparring partner who elevates the creativity in the team.</div>
+              <div class="testi-person">
+                <img class="testi-avatar" src="images/paulina.jpg" alt="Paulina Panas" width="400" height="400" loading="lazy">
+                <div>
+                  <div class="testi-name">Paulina Panas</div>
+                  <div class="testi-role">Founder &amp; Creative Director, Marc O'Polo</div>
+                </div>
+              </div>
+            </div>            <div class="testi-card">
+              <div class="testi-quote">I've had the pleasure of working closely with Marcin, a UX designer whose creativity and expertise are truly unmatched. Marcin consistently delivers top-notch designs, particularly in the ecommerce space, where his innovative approaches have significantly enhanced user experiences.</div>
+              <div class="testi-person">
+                <img class="testi-avatar" src="images/markus.jpg" alt="Markus Lorenz" width="400" height="400" loading="lazy">
+                <div>
+                  <div class="testi-name">Markus Lorenz</div>
+                  <div class="testi-role">CEO, datrycs</div>
+                </div>
+              </div>
+            </div>            <div class="testi-card">
+              <div class="testi-quote">He has a rare ability to balance being a supportive friend and a structured team leader, which created a positive and highly productive team environment. Thanks to his creative vision and strategic thinking, we completed several top-leading projects that earned us industry recognition.</div>
+              <div class="testi-person">
+                <img class="testi-avatar" src="images/sveta.jpg" alt="Sviatlana Havaka" width="400" height="400" loading="lazy">
+                <div>
+                  <div class="testi-name">Sviatlana Havaka</div>
+                  <div class="testi-role">Senior Product Designer</div>
+                </div>
+              </div>
+            </div>            <div class="testi-card">
+              <div class="testi-quote">I can honestly recommend working with Marcin. A great man, an excellent leader with a focus on action and approach to set goals. Massive knowledge of business, good practices &amp; e-commerce, and using it for the development of each business.</div>
+              <div class="testi-person">
+                <img class="testi-avatar" src="images/piotr.jpg" alt="Maciej Wilk" width="400" height="400" loading="lazy">
+                <div>
+                  <div class="testi-name">Maciej Wilk</div>
+                  <div class="testi-role">Project Manager / Delivery Manager</div>
+                </div>
+              </div>
+            </div>            <div class="testi-card">
+              <div class="testi-quote">Working with Marcin has been a great example of how creativity and strategy can truly complement each other. We value partners who bring not only strong design thinking but also reliability and openness in collaboration - and Marcin consistently delivers on all fronts.</div>
+              <div class="testi-person">
+                <img class="testi-avatar" src="images/sebastian.jpg" alt="Sebastian Mojsa" width="400" height="400" loading="lazy">
+                <div>
+                  <div class="testi-name">Sebastian Mojsa</div>
+                  <div class="testi-role">Founder, Transatlantico Studio</div>
+                </div>
+              </div>
+            </div>
+            <div class="testi-card">
+              <div class="testi-quote">I had the pleasure of working with Marcin on the Storefront UI design system that became a foundation for Alokai Storefronts, adopted by more than 3000 eCommerce applications. He is a really skilled designer with good attention to detail. Marcin also has a strong product lens, which makes the collaboration very productive.</div>
+              <div class="testi-person">
+                <img class="testi-avatar" src="images/filip.jpg" alt="Filip Rakowski" width="400" height="400" loading="lazy">
+                <div>
+                  <div class="testi-name">Filip Rakowski</div>
+                  <div class="testi-role">Co-Founder &amp; CTO, Alokai</div>
+                </div>
+              </div>
+            </div>            <div class="testi-card">
+              <div class="testi-quote">I worked with Marcin on several projects. He's a very structured and open minded, out of the box thinker. Furthermore he has a great expertise and ability of challenging his own ideas. Marcin is a fantastic sparring partner who elevates the creativity in the team.</div>
+              <div class="testi-person">
+                <img class="testi-avatar" src="images/paulina.jpg" alt="Paulina Panas" width="400" height="400" loading="lazy">
+                <div>
+                  <div class="testi-name">Paulina Panas</div>
+                  <div class="testi-role">Founder &amp; Creative Director, Marc O'Polo</div>
+                </div>
+              </div>
+            </div>            <div class="testi-card">
+              <div class="testi-quote">I've had the pleasure of working closely with Marcin, a UX designer whose creativity and expertise are truly unmatched. Marcin consistently delivers top-notch designs, particularly in the ecommerce space, where his innovative approaches have significantly enhanced user experiences.</div>
+              <div class="testi-person">
+                <img class="testi-avatar" src="images/markus.jpg" alt="Markus Lorenz" width="400" height="400" loading="lazy">
+                <div>
+                  <div class="testi-name">Markus Lorenz</div>
+                  <div class="testi-role">CEO, datrycs</div>
+                </div>
+              </div>
+            </div>            <div class="testi-card">
+              <div class="testi-quote">He has a rare ability to balance being a supportive friend and a structured team leader, which created a positive and highly productive team environment. Thanks to his creative vision and strategic thinking, we completed several top-leading projects that earned us industry recognition.</div>
+              <div class="testi-person">
+                <img class="testi-avatar" src="images/sveta.jpg" alt="Sviatlana Havaka" width="400" height="400" loading="lazy">
+                <div>
+                  <div class="testi-name">Sviatlana Havaka</div>
+                  <div class="testi-role">Senior Product Designer</div>
+                </div>
+              </div>
+            </div>            <div class="testi-card">
+              <div class="testi-quote">I can honestly recommend working with Marcin. A great man, an excellent leader with a focus on action and approach to set goals. Massive knowledge of business, good practices &amp; e-commerce, and using it for the development of each business.</div>
+              <div class="testi-person">
+                <img class="testi-avatar" src="images/piotr.jpg" alt="Maciej Wilk" width="400" height="400" loading="lazy">
+                <div>
+                  <div class="testi-name">Maciej Wilk</div>
+                  <div class="testi-role">Project Manager / Delivery Manager</div>
+                </div>
+              </div>
+            </div>            <div class="testi-card">
+              <div class="testi-quote">Working with Marcin has been a great example of how creativity and strategy can truly complement each other. We value partners who bring not only strong design thinking but also reliability and openness in collaboration - and Marcin consistently delivers on all fronts.</div>
+              <div class="testi-person">
+                <img class="testi-avatar" src="images/sebastian.jpg" alt="Sebastian Mojsa" width="400" height="400" loading="lazy">
+                <div>
+                  <div class="testi-name">Sebastian Mojsa</div>
+                  <div class="testi-role">Founder, Transatlantico Studio</div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div><!-- /testi-pin-wrap -->
+
+<!-- ABOUT -->
+<div class="about-pin-wrap">
+<section class="about-section" id="about">
+
+  <!-- Image preview that follows cursor -->
+  <div class="about-img-preview" id="aboutImgPreview">
+    <img src="" alt="" id="aboutImgPreviewImg">
+  </div>
+
+  <!-- Heading row -->
+  <div class="about-header fade-up">
+    <h2 class="about-title"><b>/</b>behind the work.</h2>
+    <p class="about-intro">/my name is Marcin Baran. father. husband. designer. cyclist without lycra shirts. geek. warhammer painter and player. i'm in love with the design process — not just the output, but what happens in between.</p>
+  </div>
+
+  <!-- Text link buttons -->
+  <div class="about-links">
+
+    <a href="https://www.youtube.com/watch?v=SkHv1UQwq54&t=1s" target="_blank" rel="noopener noreferrer"
+       class="about-link" data-img="images/divantespeech.jpg">
+      <span class="about-link-tag">Talk</span>
+      <span class="about-link-label">You can create a design system alone. Not!</span>
+      <span class="about-link-arrow">↗</span>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=OUbXMvXl_8Y" target="_blank" rel="noopener noreferrer"
+       class="about-link" data-img="images/questions.png">
+      <span class="about-link-tag">Video</span>
+      <span class="about-link-label">Rapid Questions — Divante Designers</span>
+      <span class="about-link-arrow">↗</span>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=aep6sbJRDNE" target="_blank" rel="noopener noreferrer"
+       class="about-link" data-img="images/w praktyce.png">
+      <span class="about-link-tag">Interview</span>
+      <span class="about-link-label">eCommerce platform isn't the end of your journey</span>
+      <span class="about-link-arrow">↗</span>
+    </a>
+
+    <a href="https://open.spotify.com/episode/3BuXgchMMXZtWfgeY53p72?si=7b4fa108c45e4b15&nd=1&dlsi=66527526274340f4" target="_blank" rel="noopener noreferrer"
+       class="about-link" data-img="images/19_instagram-feed.jpg">
+      <span class="about-link-tag">Podcast</span>
+      <span class="about-link-label">Apploads Podcast</span>
+      <span class="about-link-arrow">↗</span>
+    </a>
+
+  </div>
+
+</section>
+</div><!-- /about-pin-wrap -->
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-wordmark-wrap">
+    <svg class="footer-logo-svg" viewBox="0 0 1733 633" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1571.65 339.828L1678.64 0H1732.92L1625.54 339.828H1571.65Z" fill="currentColor"/>
+      <path d="M1474.94 291.393C1405.43 291.393 1365.99 244.129 1365.99 185.538C1365.99 126.166 1410.51 79.2932 1474.94 79.2932C1543.27 79.2932 1579.59 132.025 1579.59 185.538V206.241H1423.78C1431.2 230.458 1451.12 241.786 1474.94 241.786C1506.17 241.786 1522.97 224.599 1528.04 214.053L1571 239.833C1563.19 257.41 1533.12 291.393 1474.94 291.393ZM1424.95 161.711H1520.62C1519.06 149.603 1505.78 127.728 1474.16 127.728C1453.85 127.728 1433.15 138.666 1424.95 161.711Z" fill="currentColor"/>
+      <path d="M1163.9 287.877V82.8087H1220.52V107.808C1229.5 92.1832 1249.42 79.2932 1274.8 79.2932C1320.09 79.2932 1348.6 112.495 1348.6 150.384V287.877H1291.98V170.305C1291.98 148.431 1275.97 133.978 1256.45 133.978C1233.8 133.978 1220.52 149.993 1220.52 170.305V287.877H1163.9Z" fill="currentColor"/>
+      <path d="M1030.72 291.783C969.022 291.783 919.04 249.989 919.04 185.538C919.04 121.088 969.022 79.2932 1030.72 79.2932C1092.41 79.2932 1142.4 121.088 1142.4 185.538C1142.4 249.989 1092.41 291.783 1030.72 291.783ZM976.832 185.538C976.832 215.225 999.48 238.27 1030.72 238.27C1061.96 238.27 1084.61 215.225 1084.61 185.538C1084.61 155.852 1061.96 132.806 1030.72 132.806C999.48 132.806 976.832 155.852 976.832 185.538Z" fill="currentColor"/>
+      <path d="M804.967 287.878V135.541H772.166V82.8088H806.138V34.7642H861.587V82.8088H910.397V135.541H861.587V233.193H911.178V287.878H804.967Z" fill="currentColor"/>
+      <path d="M572.028 287.877V82.8087H628.648V107.808C637.63 92.1832 657.544 79.2932 682.926 79.2932C728.222 79.2932 756.727 112.495 756.727 150.384V287.877H700.107V170.305C700.107 148.431 684.097 133.978 664.573 133.978C641.925 133.978 628.648 149.993 628.648 170.305V287.877H572.028Z" fill="currentColor"/>
+      <path d="M438.845 291.783C377.149 291.783 327.167 249.989 327.167 185.538C327.167 121.088 377.149 79.2932 438.845 79.2932C500.542 79.2932 550.524 121.088 550.524 185.538C550.524 249.989 500.542 291.783 438.845 291.783ZM384.959 185.538C384.959 215.225 407.607 238.27 438.845 238.27C470.084 238.27 492.732 215.225 492.732 185.538C492.732 155.852 470.084 132.806 438.845 132.806C407.607 132.806 384.959 155.852 384.959 185.538Z" fill="currentColor"/>
+      <path d="M0 287.877V82.8087H56.6201V107.808C65.6013 92.1832 84.735 79.2932 110.116 79.2932C136.279 79.2932 156.193 90.2302 168.689 106.636C180.403 92.5739 200.709 79.2932 231.166 79.2932C276.462 79.2932 309.654 112.885 309.654 150.774V287.877H253.033V170.305C253.033 148.431 237.805 133.978 218.28 133.978C195.632 133.978 183.137 149.993 183.137 170.305V287.877H126.517V170.305C126.517 148.431 111.288 133.978 91.7637 133.978C69.1156 133.978 56.6201 149.993 56.6201 170.305V287.877H0Z" fill="currentColor"/>
+      <path d="M963.084 632.393C901.388 632.393 859.216 587.864 859.216 529.273C859.216 470.682 902.169 425.762 963.084 425.762C1024 425.762 1066.95 470.682 1066.95 529.273C1066.95 587.473 1024.78 632.393 963.084 632.393ZM892.407 529.273C892.407 572.63 923.646 602.316 963.084 602.316C1002.91 602.316 1033.76 572.63 1033.76 529.273C1033.76 485.915 1002.91 455.838 963.084 455.838C923.255 455.838 892.407 485.915 892.407 529.273Z" fill="currentColor"/>
+      <path d="M789.449 628.877V429.277H822.249V628.877H789.449ZM779.687 367.952C779.687 353.109 791.011 341.781 805.849 341.781C820.687 341.781 832.011 353.109 832.011 367.952C832.011 382.795 820.687 394.123 805.849 394.123C791.011 394.123 779.687 382.795 779.687 367.952Z" fill="currentColor"/>
+      <path d="M637.624 632.393C582.175 632.393 540.784 593.332 540.394 528.882C540.784 469.9 581.394 425.762 637.624 425.762C666.52 425.762 693.854 439.433 705.959 457.01V339.828H738.759V628.877H705.959V602.316C692.682 619.893 664.177 632.393 637.624 632.393ZM573.585 528.882C573.585 569.114 598.576 602.316 639.967 602.316C681.749 602.316 706.74 568.724 706.74 528.882C706.74 489.431 681.749 455.838 639.967 455.838C598.576 455.838 573.585 489.04 573.585 528.882Z" fill="currentColor"/>
+      <path d="M415.953 632.393C369.485 632.393 336.685 599.191 336.685 554.271V429.277H369.485V548.412C369.485 582.786 391.743 602.316 420.639 602.316C449.144 602.316 472.182 581.223 472.182 548.412V429.277H504.983V588.645L519.041 628.877H485.069L476.868 607.785C468.668 618.722 448.363 632.393 415.953 632.393Z" fill="currentColor"/>
+      <path d="M215.056 628.877V457.01H177.96V429.277H215.837V375.764H247.857V429.277H300.572V457.01H247.857V598.41H301.353V628.877H215.056Z" fill="currentColor"/>
+      <path d="M83.954 632.393C32.4101 632.393 7.02871 601.144 0 578.489L27.7242 564.427C31.629 580.833 51.1533 603.097 83.954 603.097C112.069 603.097 129.25 590.989 129.25 573.411C129.25 560.131 119.878 549.975 100.354 546.069L62.4772 538.647C30.4576 532.397 10.9335 513.648 10.9335 483.181C10.9335 450.761 40.2197 425.762 84.7349 425.762C134.326 425.762 154.632 454.667 160.879 474.197L133.545 487.478C130.031 472.244 114.412 454.276 84.7349 454.276C57.7915 454.276 42.1721 467.166 42.1721 483.181C42.1721 497.633 52.3248 505.836 67.9442 508.961L108.945 517.164C144.088 524.195 162.441 546.069 162.441 573.411C162.441 608.956 129.641 632.393 83.954 632.393Z" fill="currentColor"/>
+    </svg>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Marcin Baran. Wrocław, Poland. All rights reserved. Vibe-coded by Marcin Baran.</span>
+    <div class="footer-nav">
+      <a href="#portfolio">work</a>
+      <a href="#advisory">services</a>
+      <a href="#about">about</a>
+      <a href="mailto:montone.marcin@gmail.com">let's connect</a>
+    </div>
+    <div class="footer-social">
+<a href="https://www.linkedin.com/in/marcinbaran/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="mailto:montone.marcin@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  // Hero word cycling
+  const heroWords = ['studio', 'design', 'AI', 'vibe coding', 'design systems', 'design advisory', 'creative direction', 'ux', 'ui'];
+  let heroIndex = 0;
+  const heroSlot = document.getElementById('heroSlot');
+
+  function cycleWord() {
+    if (!heroSlot) return;
+    heroSlot.classList.add('exit');
+    setTimeout(() => {
+      heroIndex = (heroIndex + 1) % heroWords.length;
+      heroSlot.textContent = heroWords[heroIndex];
+      heroSlot.classList.remove('exit');
+      heroSlot.classList.add('enter');
+      setTimeout(() => heroSlot.classList.remove('enter'), 320);
+    }, 220);
+  }
+
+  setInterval(cycleWord, 2200);
+
+  // Hero content scale-down on scroll
+  const heroContentWrap = document.getElementById('heroContentWrap');
+  function updateHeroScale() {
+    if (!heroContentWrap) return;
+    const progress = Math.min(1, window.scrollY / window.innerHeight);
+    const scale = 1 - progress * 0.08;
+    const opacity = 1 - progress * 1.4;
+    heroContentWrap.style.transform = `scale(${scale})`;
+    heroContentWrap.style.opacity = Math.max(0, opacity);
+  }
+  window.addEventListener('scroll', updateHeroScale, { passive: true });
+
+  // Nav hide on scroll down / show on scroll up
+  const nav = document.querySelector('nav');
+  let lastScrollY = window.scrollY;
+  window.addEventListener('scroll', () => {
+    if (!nav) return;
+    const currentY = window.scrollY;
+    const delta = currentY - lastScrollY;
+    if (currentY < window.innerHeight) {
+      nav.classList.remove('nav-hidden');
+    } else if (delta > 0) {
+      nav.classList.add('nav-hidden');
+    } else if (delta < 0) {
+      nav.classList.remove('nav-hidden');
+    }
+    lastScrollY = currentY;
+  }, { passive: true });
+
+  // Burger menu toggle
+  const burger = document.getElementById('burger');
+  const overlay = document.getElementById('menuOverlay');
+
+  function burgerInset() {
+    const r  = burger.getBoundingClientRect();
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+    return `inset(${r.top}px ${vw - r.right}px ${vh - r.bottom}px ${r.left}px)`;
+  }
+
+  burger.addEventListener('click', () => {
+    if (overlay.classList.contains('open')) {
+      // close
+      overlay.style.clipPath = burgerInset();
+      overlay.classList.remove('open');
+      burger.classList.remove('open');
+      document.body.style.overflow = '';
+      overlay.addEventListener('transitionend', () => {
+        overlay.style.clipPath = 'inset(0px 0px 100% 100%)';
+      }, { once: true });
+    } else {
+      // open: snap to burger rect (no transition), then animate to full screen
+      overlay.style.transition = 'none';
+      overlay.style.clipPath = burgerInset();
+      overlay.classList.add('open');
+      burger.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        overlay.style.transition = '';
+        overlay.style.clipPath = 'inset(0px 0px 0px 0px)';
+      }));
+    }
+  });
+
+  // Close button
+  const menuClose = document.getElementById('menuClose');
+  const closeMenu = () => {
+    overlay.style.clipPath = burgerInset();
+    overlay.classList.remove('open');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+    overlay.addEventListener('transitionend', () => {
+      overlay.style.clipPath = 'inset(0px 0px 100% 100%)';
+    }, { once: true });
+  };
+  menuClose.addEventListener('click', closeMenu);
+
+  // Close on link click
+  document.querySelectorAll('.menu-link').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Section-level entrance observer (hidden state set in CSS via section:not(.hero))
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('section-visible');
+        sectionObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+
+  document.querySelectorAll('section:not(.hero)').forEach(s => sectionObserver.observe(s));
+
+  // Portfolio pinned horizontal scroll
+  const portfolioSection = document.getElementById('portfolio');
+  const portfolioTrack   = document.getElementById('portfolioTrack');
+  const portfolioFill    = document.getElementById('portfolioFill');
+  const portfolioCounter = document.getElementById('portfolioCounter');
+  const cardCount        = portfolioTrack ? portfolioTrack.querySelectorAll('.project-card').length : 0;
+
+  function initPortfolio() {
+    if (!portfolioSection || !portfolioTrack || window.innerWidth <= 900) return;
+    const totalHScroll = portfolioTrack.scrollWidth - portfolioSection.offsetWidth + 96;
+    portfolioSection.style.height = (window.innerHeight + totalHScroll * 1.3) + 'px';
+  }
+
+  function updatePortfolio() {
+    if (!portfolioSection || !portfolioTrack || window.innerWidth <= 900) return;
+    const rect      = portfolioSection.getBoundingClientRect();
+    const maxScroll = portfolioSection.offsetHeight - window.innerHeight;
+    const rawProgress = Math.max(0, Math.min(1, -rect.top / maxScroll));
+
+    // Delay first card: stay at 0 for first 14% of scroll travel
+    const DELAY = 0.14;
+    const progress = rawProgress < DELAY ? 0 : (rawProgress - DELAY) / (1 - DELAY);
+
+    const totalHScroll = portfolioTrack.scrollWidth - portfolioSection.offsetWidth + 96;
+    const tx = -progress * totalHScroll;
+    portfolioTrack.style.transform = `translateX(${tx}px)`;
+
+    // Parallax: shift each card's background-position based on actual viewport position
+    const viewCX = window.innerWidth / 2;
+    portfolioTrack.querySelectorAll('.project-card').forEach(card => {
+      const thumb = card.querySelector('.project-thumb');
+      if (!thumb) return;
+      const cardRect = card.getBoundingClientRect();
+      const cardCX   = cardRect.left + cardRect.width / 2;
+      const dist     = cardCX - viewCX;
+      const shift    = dist * 0.06; // parallax factor
+      thumb.style.backgroundPosition = `calc(50% + ${shift.toFixed(2)}px) 50%`;
+    });
+
+    if (portfolioFill)    portfolioFill.style.width = (rawProgress * 100) + '%';
+    if (portfolioCounter) {
+      const current = Math.min(cardCount, Math.ceil(progress * cardCount) + 1);
+      portfolioCounter.textContent = `${current} / ${cardCount}`;
+    }
+  }
+
+  initPortfolio();
+  window.addEventListener('resize', () => { initPortfolio(); updatePortfolio(); });
+  window.addEventListener('scroll', updatePortfolio, { passive: true });
+
+  // Portfolio arrows (mobile/tablet)
+  const portfolioPrev = document.getElementById('portfolioPrev');
+  const portfolioNext = document.getElementById('portfolioNext');
+  if (portfolioPrev && portfolioNext && portfolioTrack) {
+    function updateArrows() {
+      portfolioPrev.disabled = portfolioTrack.scrollLeft <= 0;
+      portfolioNext.disabled = portfolioTrack.scrollLeft >= portfolioTrack.scrollWidth - portfolioTrack.clientWidth - 4;
+    }
+    function scrollByCard(dir) {
+      const card = portfolioTrack.querySelector('.project-card');
+      const amount = card ? card.offsetWidth + 16 : portfolioTrack.clientWidth * 0.8;
+      portfolioTrack.scrollBy({ left: dir * amount, behavior: 'smooth' });
+    }
+    portfolioPrev.addEventListener('click', () => scrollByCard(-1));
+    portfolioNext.addEventListener('click', () => scrollByCard(1));
+    portfolioTrack.addEventListener('scroll', updateArrows, { passive: true });
+    updateArrows();
+  }
+
+  // Statement scroll-driven colour reveal + logo horizontal scroll
+  const statementSection = document.getElementById('statementSection');
+  const statementLines = document.querySelectorAll('.statement-line');
+  const clientsInner = document.querySelector('.clients-inner');
+
+  const TEXT_END = 0.7;
+  // "/sharper" is line index 2 of 5 — show logos when it starts revealing
+  const LOGOS_SHOW_AT = (2 / statementLines.length) / 1; // textProgress threshold
+
+  function updateStatement() {
+    if (!statementSection || !statementLines.length) return;
+    const rect = statementSection.getBoundingClientRect();
+    const scrollable = statementSection.offsetHeight - window.innerHeight;
+    const progress = Math.max(0, Math.min(1, -rect.top / scrollable));
+
+    // Text reveal phase
+    const textProgress = Math.min(1, progress / TEXT_END);
+    const total = statementLines.length;
+    statementLines.forEach((line, i) => {
+      const start = i / total;
+      const end = (i + 0.8) / total;
+      const p = Math.max(0, Math.min(1, (textProgress - start) / (end - start)));
+      line.style.color = `rgba(255,255,255,${(0.18 + p * 0.82).toFixed(3)})`;
+    });
+
+    // Show logos when scroll reaches the "/sharper" line
+    if (clientsInner) {
+      clientsInner.style.opacity = textProgress >= LOGOS_SHOW_AT ? '1' : '0';
+    }
+  }
+  window.addEventListener('scroll', updateStatement, { passive: true });
+  updateStatement();
+
+  // Element-level scroll reveal
+  const fadeEls = document.querySelectorAll('.fade-up, .fade-left, .fade-right');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const delay = entry.target.dataset.delay != null
+          ? +entry.target.dataset.delay
+          : 0;
+        entry.target.style.transitionDelay = delay + 'ms';
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+
+  fadeEls.forEach(el => observer.observe(el));
+
+  // Testimonials section scroll intro
+  const testiSection = document.querySelector('.testimonials-section');
+  if (testiSection) {
+    const testiObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          testiSection.classList.add('testi-visible');
+          testiObserver.unobserve(testiSection);
+        }
+      });
+    }, { threshold: 0.15 });
+    testiObserver.observe(testiSection);
+  }
+
+  // About section — image preview follows cursor
+  const aboutPreview    = document.getElementById('aboutImgPreview');
+  const aboutPreviewImg = document.getElementById('aboutImgPreviewImg');
+  const aboutLinks      = document.querySelectorAll('.about-link');
+  if (aboutPreview && aboutLinks.length) {
+    let previewVisible = false;
+
+    aboutLinks.forEach(link => {
+      link.addEventListener('mouseenter', () => {
+        aboutPreviewImg.src = link.dataset.img || '';
+        aboutPreview.classList.add('is-visible');
+        previewVisible = true;
+      });
+      link.addEventListener('mouseleave', () => {
+        aboutPreview.classList.remove('is-visible');
+        previewVisible = false;
+      });
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (!previewVisible) return;
+      const offset = 24;
+      let x = e.clientX + offset;
+      let y = e.clientY + offset;
+      // keep inside viewport
+      if (x + 260 > window.innerWidth)  x = e.clientX - 260 - offset;
+      if (y + 180 > window.innerHeight) y = e.clientY - 180 - offset;
+      aboutPreview.style.left = x + 'px';
+      aboutPreview.style.top  = y + 'px';
+    });
+  }
+
+  // Stacking cards scale animation
+  const serviceCards = document.querySelectorAll('.service-card');
+  const CARD_TOP = 80;
+  const MAX_SCALE_LOSS = 0.06;
+
+  function updateCardScale() {
+    serviceCards.forEach((card, i) => {
+      const rect = card.getBoundingClientRect();
+      const distFromTop = rect.top - CARD_TOP;
+      if (distFromTop <= 0 && i < serviceCards.length - 1) {
+        const nextCards = serviceCards.length - 1 - i;
+        const overlap = Math.min(1, Math.abs(distFromTop) / card.offsetHeight);
+        const scale = 1 - (overlap * MAX_SCALE_LOSS * nextCards * 0.25);
+        card.style.transform = `scale(${Math.max(0.88, scale)})`;
+        card.style.opacity = Math.max(0.5, 1 - overlap * 0.4);
+      } else {
+        card.style.transform = 'scale(1)';
+        card.style.opacity = '1';
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateCardScale, { passive: true });
+  updateCardScale();
+
+    // Smooth scroll via Lenis
+  const lenis = new Lenis({
+    duration: 1.4,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smoothWheel: true,
+    wheelMultiplier: 0.8,
+  });
+  function lenisRaf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(lenisRaf);
+  }
+  requestAnimationFrame(lenisRaf);
+
+  // Cursor glow
+  const glow = document.createElement('div');
+  glow.className = 'cursor-glow';
+  document.body.appendChild(glow);
+
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let glowX = mouseX;
+  let glowY = mouseY;
+  let glowVisible = false;
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    if (!glowVisible) {
+      glowX = mouseX;
+      glowY = mouseY;
+      glowVisible = true;
+      glow.style.opacity = '1';
+    }
+  });
+
+  document.addEventListener('mouseleave', () => {
+    glow.style.opacity = '0';
+    glowVisible = false;
+  });
+
+  const menuOverlayEl = document.getElementById('menuOverlay');
+  (function tickGlow() {
+    glowX += (mouseX - glowX) * 0.06;
+    glowY += (mouseY - glowY) * 0.06;
+    glow.style.transform = `translate(${glowX}px, ${glowY}px)`;
+    if (menuOverlayEl && menuOverlayEl.classList.contains('open')) {
+      glow.style.background = 'radial-gradient(circle, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 40%, transparent 70%)';
+    } else {
+      glow.style.background = 'radial-gradient(circle, rgba(80,79,237,0.22) 0%, rgba(80,79,237,0.07) 40%, transparent 70%)';
+    }
+    requestAnimationFrame(tickGlow);
+  })();
+
+  // ── Clients logo shuffle ─────────────────────────────────────────────────
+  (function () {
+    const logos = [
+      { src: 'images/google.svg',    alt: 'Google' },
+      { src: 'images/creditsuisse.svg', alt: 'Credit Suisse' },
+      { src: 'images/ey.svg',        alt: 'EY' },
+      { src: 'images/sap.svg',       alt: 'SAP' },
+      { src: 'images/alokai.svg',    alt: 'Alokai' },
+      { src: 'images/yope.webp',     alt: 'Yope' },
+      { src: 'images/cloudflight-dl.png', alt: 'Cloudflight' },
+      { src: 'images/ardentcode-dl.png',  alt: 'ArdentCode' },
+      { src: 'images/marko.png',     alt: "Marc O'Polo" },
+      { src: 'images/mirka_logo_koeraga.png', alt: 'Mirka' },
+      { src: 'images/32f650a2c1a98b7f779ae1e917ece0af8a4cdb9c.png', alt: 'Euroflorist' },
+    ];
+
+    const slots = document.querySelectorAll('.client-slot');
+    if (!slots.length) return;
+
+    // Shuffle array to get a random initial order
+    const shuffled = logos.slice().sort(() => Math.random() - 0.5);
+
+    function setLogo(slot, logo) {
+      slot.innerHTML = `<img src="${logo.src}" alt="${logo.alt}">`;
+      slot.dataset.idx = logos.indexOf(logo);
+    }
+
+    // Init each slot with a unique logo
+    slots.forEach((slot, i) => setLogo(slot, shuffled[i % logos.length]));
+
+    function getNext(slot) {
+      const occupied = new Set(Array.from(slots).map(s => +s.dataset.idx));
+      let idx, tries = 0;
+      do { idx = Math.floor(Math.random() * logos.length); tries++; }
+      while (occupied.has(idx) && tries < 40);
+      return logos[idx];
+    }
+
+    function scheduleNext(slot) {
+      const delay = 1600 + Math.random() * 2800;
+      setTimeout(() => {
+        slot.classList.add('logo-fade-out');
+        setTimeout(() => {
+          setLogo(slot, getNext(slot));
+          slot.classList.remove('logo-fade-out');
+          scheduleNext(slot);
+        }, 380);
+      }, delay);
+    }
+
+    // Stagger startup so they don't all fire together
+    slots.forEach((slot, i) => {
+      setTimeout(() => scheduleNext(slot), i * 300 + Math.random() * 600);
+    });
+  })();
+</script>
+
+<!-- Awwwards Nominee Ribbon -->
+<div id="awwwards" style="position: fixed; z-index: 999; transform: translateY(-50%); top: 50%; right: 0;"><a href="https://www.awwwards.com/sites/motone-studio" target="_blank"><svg width="53.08" height="171.358"><path class="js-color-bg" fill="#5ABDB2" d="M0 0h53.08v171.358H0z"/><g class="js-color-text" fill="#fff"><path d="M20.048 153.585v-2.002l6.752-3.757h-6.752v-1.9h10.23v2.002l-6.752 3.757h6.752v1.9zM29.899 142.382a3.317 3.317 0 0 1-1.359 1.293c-.575.297-1.223.446-1.944.446-.721 0-1.369-.149-1.944-.446a3.317 3.317 0 0 1-1.359-1.293c-.331-.564-.497-1.232-.497-2.003 0-.769.166-1.437.497-2.002a3.332 3.332 0 0 1 1.359-1.294c.575-.297 1.224-.445 1.944-.445.722 0 1.369.148 1.944.445a3.326 3.326 0 0 1 1.359 1.294c.33.565.496 1.233.496 2.002.001.77-.166 1.438-.496 2.003m-1.703-3.348c-.435-.331-.967-.497-1.601-.497s-1.167.166-1.601.497c-.434.332-.65.78-.65 1.345s.217 1.014.65 1.346c.434.33.967.496 1.601.496s1.166-.166 1.601-.496c.434-.332.649-.78.649-1.346.001-.565-.215-1.013-.649-1.345M22.912 134.996v-1.812h1.185c-.43-.283-.752-.593-.973-.929-.219-.336-.329-.732-.329-1.19 0-.479.127-.902.38-1.272.254-.37.635-.633 1.141-.79-.478-.262-.851-.591-1.118-.985a2.221 2.221 0 0 1-.402-1.265c0-.682.2-1.218.599-1.607.4-.391.957-.585 1.668-.585h5.218v1.812H25.37c-.682 0-1.023.303-1.023.907 0 .467.264.85.789 1.146.527.299 1.286.446 2.28.446h2.865v1.813H25.37c-.682 0-1.023.303-1.023.906 0 .468.275.851.826 1.147.551.298 1.352.446 2.404.446h2.704v1.812h-7.369zM21.626 122.457c-.225.224-.502.336-.833.336s-.608-.112-.833-.336a1.128 1.128 0 0 1-.336-.833c0-.331.111-.609.336-.833.225-.225.502-.336.833-.336s.608.111.833.336c.225.224.337.502.337.833 0 .332-.112.608-.337.833m1.286-1.739h7.366v1.813h-7.366v-1.813zM22.912 118.668v-1.812h1.185a3.348 3.348 0 0 1-.951-1.009 2.434 2.434 0 0 1-.351-1.272c0-.681.19-1.229.57-1.644.38-.414.931-.621 1.651-.621h5.263v1.812h-4.722c-.418 0-.727.096-.92.285-.195.19-.293.447-.293.769 0 .302.116.58.351.833.233.254.577.458 1.03.613.453.156.992.234 1.615.234h2.938v1.812h-7.366zM29.833 109.129a3.33 3.33 0 0 1-1.432 1.169 4.535 4.535 0 0 1-1.805.373 4.537 4.537 0 0 1-1.807-.373c-.579-.248-1.057-.638-1.432-1.169s-.563-1.196-.563-1.995c0-.771.183-1.413.549-1.93a3.28 3.28 0 0 1 1.382-1.141 4.221 4.221 0 0 1 1.709-.364h.746v5.071c.447-.02.838-.183 1.168-.49.332-.307.498-.724.498-1.248 0-.41-.093-.754-.277-1.031-.186-.278-.473-.529-.863-.753l.542-1.462c.69.303 1.224.724 1.592 1.265.371.541.556 1.235.556 2.083 0 .799-.188 1.464-.563 1.995m-4.085-3.574c-.41.088-.746.261-1.009.52-.262.258-.395.61-.395 1.06 0 .428.137.784.409 1.067.272.282.604.458.994.525v-3.172zM29.833 100.878c-.375.531-.852.921-1.432 1.169a4.552 4.552 0 0 1-3.612 0c-.579-.248-1.057-.638-1.432-1.169s-.563-1.196-.563-1.995c0-.77.183-1.412.549-1.93a3.278 3.278 0 0 1 1.382-1.14 4.222 4.222 0 0 1 1.709-.365h.746v5.072a1.794 1.794 0 0 0 1.168-.49c.332-.307.498-.724.498-1.249 0-.41-.093-.753-.277-1.031-.186-.277-.473-.528-.863-.753l.542-1.462c.69.302 1.224.724 1.592 1.265.371.541.556 1.234.556 2.083 0 .799-.188 1.464-.563 1.995m-4.085-3.573c-.41.088-.746.261-1.009.519-.262.258-.395.611-.395 1.06 0 .429.137.784.409 1.067.272.282.604.458.994.526v-3.172zM35.481 16.926l-4.782 14.969h-3.266l-2.584-9.682-2.584 9.682h-3.268l-4.781-14.969h3.713l2.673 10.276 2.524-10.276h3.445l2.524 10.276 2.674-10.276zM37.979 27.083c1.426 0 2.495 1.068 2.495 2.495 0 1.425-1.069 2.495-2.495 2.495-1.425 0-2.495-1.07-2.495-2.495-.001-1.427 1.07-2.495 2.495-2.495"/></g></svg></a></div>
+
+</body>
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'sxb1plzcpnl508967'},{'dcenter':'sxb1'},{'cp_id':'10885837'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='https://img1.wsimg.com/traffic-assets/js/tccl.min.js'></script></html>
