@@ -509,13 +509,13 @@ img {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: 1fr 42vw;
+  grid-template-columns: 52% 44%;
   grid-template-rows: auto 1fr auto;
   grid-template-areas:
     "title    video"
     ".        video"
     "scroll   video";
-  gap: 3rem 4rem;
+  gap: 2rem 4%;
   padding: 0;
   align-items: start;
   animation: ambientFloat 15s ease-in-out infinite alternate-reverse;
@@ -558,7 +558,7 @@ img {
 .hero__title {
   grid-area: title;
   font-family: var(--font-display);
-  font-size: var(--text-hero);
+  font-size: clamp(4rem, 10vw, 12rem);
   font-weight: 700;
   line-height: 0.95;
   letter-spacing: -0.04em;
@@ -569,7 +569,10 @@ img {
   position: relative;
   z-index: 3;
   width: 100%;
-  max-width: 90vw;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 /* Hero Video Frame — Gallery Style */
@@ -640,14 +643,19 @@ img {
 }
 
 .hero__title-line--secondary {
-  padding-left: clamp(2rem, 8vw, 12rem);
-  font-size: 0.35em;
+  padding-left: clamp(0.5rem, 2vw, 3rem);
+  font-size: 0.28em;
   font-weight: 400;
   color: var(--gray-400);
   opacity: 0.45;
   letter-spacing: 0.08em;
   line-height: 1;
   margin-top: 0.5rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  max-width: 100%;
+  display: block;
 }
 
 .hero__title-sep {
@@ -2203,16 +2211,19 @@ img {
   .hero__title {
     margin-top: 0;
     margin-bottom: 0;
-    font-size: clamp(3rem, 15vw, 5rem);
+    font-size: clamp(3rem, 12vw, 5rem);
     width: 100%;
     order: 2;
     line-height: 0.90;
     text-align: center;
+    white-space: normal;
   }
 
   .hero__title-line--secondary {
     padding-left: 0;
     text-align: center;
+    font-size: 0.25em;
+    max-width: 100%;
   }
 
   .hero__description {
