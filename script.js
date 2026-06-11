@@ -27,7 +27,7 @@
       // Projects
       'projects.title': 'Selected<br>Work',
       'projects.subtitle': 'Websites and digital systems, built to perform',
-      'projects.p1.title': 'Roggero<br>&amp; Roma',
+      'projects.p1.title': 'Silvia Roggero<br>de Roma',
       'projects.p1.tag1': 'Real Estate Platform',
       'projects.p1.tag2': 'Immersive Web',
       'projects.p1.desc': 'Immersive website and premium branding for real estate developments. Integrated quoting engine, advanced SEO optimization, direct Google Reviews connection, and interactive maps — designed to elevate brand authority and convert leads.',
@@ -249,7 +249,7 @@
       // Projects
       'projects.title': 'Trabajos<br>Seleccionados',
       'projects.subtitle': 'Sitios web y sistemas digitales, construidos para rendir',
-      'projects.p1.title': 'Roggero<br>&amp; Roma',
+      'projects.p1.title': 'Silvia Roggero<br>de Roma',
       'projects.p1.tag1': 'Plataforma Inmobiliaria',
       'projects.p1.tag2': 'Web Inmersiva',
       'projects.p1.desc': 'Sitio web inmersivo e imagen premium para desarrollos inmobiliarios. Generación de presupuestos integrados, optimización SEO avanzada, conexión directa con reseñas de Google y mapas interactivos — diseñado para posicionar la marca y convertir leads.',
