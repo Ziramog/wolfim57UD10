@@ -168,7 +168,7 @@ img {
 
 @media (max-width: 768px) {
   :root {
-    --container-padding: 10px;
+  --container-padding: clamp(2rem, 5vw, 6rem);
     --hero-title-size: 15vw;
     --space-section: clamp(3.5rem, 10vw, 5rem);
     --space-lg: clamp(2.5rem, 6vw, 4rem);
@@ -510,13 +510,11 @@ img {
   z-index: 2;
   display: grid;
   grid-template-columns: 1fr 42vw;
-  grid-template-rows: auto auto 1fr auto auto;
+  grid-template-rows: auto 1fr auto;
   grid-template-areas:
-    "eyebrow  video"
     "title    video"
-    "desc     video"
-    "ctas     video"
-    "location scroll";
+    ".        video"
+    "scroll   video";
   gap: 3rem 4rem;
   padding: 0;
   align-items: start;
@@ -644,11 +642,13 @@ img {
 
 .hero__title-line--secondary {
   padding-left: clamp(2rem, 8vw, 12rem);
-  font-size: 0.6em;
+  font-size: 0.35em;
   font-weight: 400;
   color: var(--gray-400);
   opacity: 0.45;
   letter-spacing: 0.02em;
+  line-height: 1;
+  margin-top: 0.5rem;
 }
 
 .hero__title-sep {
@@ -812,6 +812,53 @@ img {
   100% { top: 100%; }
 }
 
+
+/* ─── HERO STATEMENT ─── */
+.hero-statement {
+  padding: var(--space-xl) var(--container-padding);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-statement__content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "desc     location"
+    "ctas     ctas";
+  gap: 2rem 4rem;
+  align-items: start;
+}
+
+.hero-statement .hero__description {
+  grid-area: desc;
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  line-height: 1.6;
+  color: var(--gray-200);
+  max-width: 55ch;
+}
+
+.hero-statement .hero__ctas {
+  grid-area: ctas;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.hero-statement .hero__location {
+  grid-area: location;
+  justify-self: end;
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  color: var(--gray-300);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: right;
+}
 
 /* ─── SECTION COMMONS ─── */
 .section {
@@ -2129,6 +2176,34 @@ img {
 
   .hero__scroll {
     display: none;
+  }
+
+  .hero-statement {
+    padding: var(--space-lg) var(--container-padding);
+  }
+
+  .hero-statement__content {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "desc"
+      "ctas"
+      "location";
+    gap: 1.5rem;
+  }
+
+  .hero-statement .hero__description {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .hero-statement .hero__ctas {
+    justify-content: center;
+    margin-top: 0;
+  }
+
+  .hero-statement .hero__location {
+    justify-self: center;
+    text-align: center;
   }
 
   .project {
