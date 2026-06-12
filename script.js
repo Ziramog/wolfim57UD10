@@ -19,6 +19,7 @@
       // Hero
       'hero.label': 'Digital Design & Creative Technology',
       'hero.eyebrow': 'Studio · Est. 2024',
+      'hero.location': 'Buenos Aires · Serving clients worldwide',
       'hero.desc': 'We design and build premium websites and digital systems for modern businesses. Every project combines architectural design thinking, AI-enhanced workflows, and a relentless focus on what actually drives growth.',
       'hero.desc_mobile': 'We build digital systems for the next generation of business. Design with intent, AI with purpose, technology that scales — an atmosphere built for exponential growth.',
       'hero.cta_projects': 'View Work',
@@ -238,6 +239,7 @@
       // Hero
       'hero.label': 'Diseño Digital & Tecnología Creativa',
       'hero.eyebrow': 'Studio · Est. 2024',
+      'hero.location': 'Buenos Aires · Servicio mundial remoto',
       'hero.desc': 'Diseño con intención. Tecnología con propósito. Cada proyecto es una arquitectura digital construida desde cero — con IA en el proceso y el crecimiento como única métrica.',
       'hero.desc_mobile': 'Construimos sistemas digitales para la próxima generación de negocios. Diseño con intención, IA con propósito, tecnología que escala — una atmósfera construida para crecer de forma exponencial.',
       'hero.cta_projects': 'Ver Proyectos',
@@ -1037,9 +1039,9 @@
   const HERO_SEQUENCE = [
     { text: 'AI', delay: 3000 },
     { text: 'DESIGN', delay: 3000 },
-    { text: 'vibe coding', delay: 3000 },
-    { text: 'design systems', delay: 3000 },
-    { text: 'ads', delay: 3000 },
+    { text: 'VIBE', delay: 3000 },
+    { text: 'SYSTEMS', delay: 3000 },
+    { text: 'ADS', delay: 3000 },
   ];
 
   function getScrambleStyle(text) {
