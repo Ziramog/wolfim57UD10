@@ -1882,6 +1882,26 @@ img {
   margin-top: 0.4em;
 }
 
+/* ─── PRICING CARD MICROCOPY ─── */
+.pricing-card__note {
+  font-size: var(--text-small);
+  line-height: 1.6;
+  color: var(--gray-500);
+  font-weight: 300;
+  margin-top: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--border);
+}
+
+.pricing-card__disclaimer {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  line-height: 1.5;
+  color: var(--gray-400);
+  letter-spacing: 0.05em;
+  margin-top: var(--space-sm);
+}
+
 /* ─── PRICING NOTE ─── */
 .pricing__note {
   max-width: 1400px;
