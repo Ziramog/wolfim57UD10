@@ -793,6 +793,14 @@ img {
   display: inline-block;
 }
 
+.hero__logo-img {
+  height: 1.5em;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  object-fit: contain;
+}
+
 .hero__title-line--secondary {
   padding-left: 0.5em;
   font-size: 1em;
