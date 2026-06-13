@@ -20,8 +20,6 @@
       'hero.label': 'Digital Design & Creative Technology',
       'hero.eyebrow': 'Studio · Est. 2024',
       'hero.location': 'Buenos Aires · Serving clients worldwide',
-      'hero.desc': 'Premium web design, catalogs and reconstructed sites to sell better.',
-      'hero.desc_mobile': 'Custom websites, site reconstruction, visual catalogs and AI visual production. For brands, properties, products and services.',
       'hero.cta_projects': 'View Work',
       'hero.cta_pricing': 'Pricing',
       'hero.scroll': 'Scroll',
