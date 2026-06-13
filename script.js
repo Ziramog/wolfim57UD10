@@ -251,8 +251,6 @@
       'hero.label': 'Diseño Digital & Tecnología Creativa',
       'hero.eyebrow': 'Studio · Est. 2024',
       'hero.location': 'Buenos Aires · Servicio mundial remoto',
-      'hero.desc': 'Diseño web premium, catálogos y sitios reconstruidos para vender mejor.',
-      'hero.desc_mobile': 'Webs a medida, reconstrucción de sitios, catálogos visuales y producción visual con IA. Para marcas, propiedades, productos y servicios.',
       'hero.cta_projects': 'Ver Proyectos',
       'hero.cta_pricing': 'Precios',
       'hero.focus_label': 'Enfoque',
