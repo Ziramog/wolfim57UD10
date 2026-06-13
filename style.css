@@ -457,7 +457,7 @@ img {
 /* ─── HERO ─── */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: calc(100vh - 72px);
   display: grid;
   grid-template-rows: 1fr auto;
   padding: var(--container-padding);
@@ -581,33 +581,33 @@ img {
 
 .hero__statement {
   font-family: var(--font-display);
-  font-size: clamp(2.25rem, 4.2vw, 3.75rem);
+  font-size: clamp(1.75rem, 3.2vw, 2.75rem);
   font-weight: 400;
-  line-height: 1.08;
-  letter-spacing: -0.035em;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
   color: var(--black);
-  max-width: 520px;
+  max-width: 480px;
   margin: 0;
   text-transform: none;
 }
 
 .hero__subtext {
   font-family: var(--font-body);
-  font-size: var(--text-body);
-  line-height: 1.6;
+  font-size: var(--text-small);
+  line-height: 1.5;
   color: var(--gray-500);
-  max-width: 420px;
-  margin-top: var(--space-sm);
+  max-width: 400px;
+  margin-top: var(--space-xs);
   font-weight: 300;
 }
 
 .hero__tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.25rem;
+  gap: 0.75rem;
   list-style: none;
-  padding: var(--space-sm) 0;
-  margin: var(--space-md) 0 0;
+  padding: 0.5rem 0;
+  margin: 0.75rem 0 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   width: 100%;
@@ -615,12 +615,12 @@ img {
 
 .hero__tags li {
   font-family: var(--font-mono);
-  font-size: var(--text-micro);
-  letter-spacing: 0.12em;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--gray-500);
   position: relative;
-  padding-right: 1.25rem;
+  padding-right: 0.75rem;
 }
 
 .hero__tags li:not(:last-child)::after {
@@ -635,14 +635,14 @@ img {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin-top: auto;
-  padding-top: var(--space-sm);
-  gap: 2rem;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  gap: 1rem;
 }
 
 .hero__location-inline {
   font-family: var(--font-mono);
-  font-size: var(--text-micro);
+  font-size: 0.65rem;
   color: var(--gray-400);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -651,8 +651,8 @@ img {
 }
 
 .hero__cta-wrapper {
-  margin-top: var(--space-md);
-  padding-top: var(--space-sm);
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
   border-top: 1px solid var(--border);
   width: 100%;
 }
@@ -973,13 +973,14 @@ img {
 }
 
 .hero__scroll {
-  grid-area: scroll;
-  justify-self: end;
-  align-self: end;
+  grid-area: auto;
+  justify-self: start;
+  align-self: auto;
   display: flex;
   align-items: center;
   gap: 0.75rem;
   padding: 0.5rem 0;
+  margin-top: 0.5rem;
   cursor: pointer;
   transition: opacity var(--duration-fast) var(--ease-out);
 }
