@@ -591,6 +591,16 @@ img {
   text-transform: none;
 }
 
+.hero__subtext {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: 1.6;
+  color: var(--gray-500);
+  max-width: 420px;
+  margin-top: var(--space-sm);
+  font-weight: 300;
+}
+
 .hero__tags {
   display: flex;
   flex-wrap: wrap;
@@ -2475,6 +2485,10 @@ img {
     max-width: 100%;
     margin: 0 auto;
     line-height: 1.1;
+  }
+
+  .hero__subtext {
+    display: none;
   }
 
   .hero__tags {
