@@ -594,24 +594,6 @@ img {
   z-index: 2;
 }
 
-.hero__meta {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  padding-bottom: 0;
-  border-bottom: none;
-  margin-bottom: var(--space-sm);
-}
-
-.hero__eyebrow {
-  font-family: var(--font-mono);
-  font-size: var(--text-micro);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--gray-400);
-}
-
 .hero__counter {
   font-family: var(--font-mono);
   font-size: var(--text-micro);
@@ -792,23 +774,6 @@ img {
 
 .hero__content::before {
   display: none;
-}
-
-.hero__eyebrow {
-  grid-area: eyebrow;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: var(--space-sm);
-  border-bottom: 1px solid var(--border);
-}
-
-.hero__label {
-  font-family: var(--font-mono);
-  font-size: var(--text-micro);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--gray-400);
 }
 
 .hero__year {
@@ -2424,10 +2389,6 @@ img {
     display: none;
   }
 
-  .hero__eyebrow {
-    display: none;
-  }
-
   .hero__scene {
     position: relative;
     width: 100%;
@@ -2530,10 +2491,6 @@ img {
     width: 100%;
     padding-bottom: 0;
     order: 2;
-  }
-
-  .hero__meta {
-    display: none;
   }
 
   .hero__statement {
