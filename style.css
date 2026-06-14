@@ -675,6 +675,20 @@ img {
   font-weight: 500;
 }
 
+.hero__location-dot {
+  display: inline-block;
+  color: #25D366;
+  font-size: 0.5em;
+  vertical-align: middle;
+  margin: 0 0.2em;
+  animation: locationPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes locationPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.3); }
+}
+
 .hero__video-footer {
   margin-top: auto;
   padding-top: 1.5rem;

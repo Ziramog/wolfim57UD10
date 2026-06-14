@@ -19,7 +19,7 @@
       // Hero
       'hero.label': 'Digital Design & Creative Technology',
       'hero.eyebrow': 'Studio · Est. 2024',
-      'hero.location': 'Buenos Aires · Serving clients worldwide',
+      'hero.location': 'Buenos Aires <span class="hero__location-dot">●</span> Serving clients worldwide',
       'hero.cta_projects': 'View Work',
       'hero.cta_pricing': 'Pricing',
       'hero.scroll': 'Scroll',
@@ -248,7 +248,7 @@
       // Hero
       'hero.label': 'Diseño Digital & Tecnología Creativa',
       'hero.eyebrow': 'Studio · Est. 2024',
-      'hero.location': 'Buenos Aires · Servicio mundial remoto',
+      'hero.location': 'Buenos Aires <span class="hero__location-dot">●</span> Servicio mundial remoto',
       'hero.cta_projects': 'Ver Proyectos',
       'hero.cta_pricing': 'Precios',
       'hero.focus_label': 'Enfoque',
