@@ -978,6 +978,30 @@
       });
     }, 2400);
 
+    // 3000ms: Scroll cipher animation begins
+    setTimeout(() => {
+      const scrollCipherEl = document.getElementById('scroll-cipher');
+      if (scrollCipherEl) {
+        scrambleText(scrollCipherEl, 'SCROLL', {
+          cycleDuration: 600,
+          charStagger: 120,
+          cycleSpeed: 50,
+          onComplete: function() {
+            // After SCROLL resolves, restart scramble loop every 5s
+            setInterval(function() {
+              if (!scrambleAnimating) {
+                scrambleText(scrollCipherEl, 'SCROLL', {
+                  cycleDuration: 600,
+                  charStagger: 120,
+                  cycleSpeed: 50
+                });
+              }
+            }, 5000);
+          }
+        });
+      }
+    }, 3000);
+
     // 2800ms: System awake (ambient parallax begins)
     setTimeout(() => {
       document.body.classList.add('system-awake');
