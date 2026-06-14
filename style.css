@@ -687,7 +687,7 @@ img {
 .hero__logo-stack {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   gap: 0.25rem;
   font-family: var(--font-mono);
   color: var(--black);
@@ -701,23 +701,32 @@ img {
   object-fit: contain;
 }
 
+.hero__logo-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.15rem;
+  margin-top: 0.25rem;
+}
+
 .hero__logo-divider {
   color: var(--gray-400);
   font-weight: 300;
-  margin: 0.25rem 0;
-  font-size: 1rem;
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1;
 }
 
 .hero__scramble {
   color: var(--black);
   font-weight: 400;
   opacity: 0.6;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   min-width: 4.5rem;
   display: inline-block;
-  text-align: center;
+  text-align: right;
+  line-height: 1;
 }
 
 .hero__cta-wrapper {
