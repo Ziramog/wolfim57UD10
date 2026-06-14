@@ -589,6 +589,7 @@ img {
   align-items: flex-start;
   height: 100%;
   padding-bottom: 2rem;
+  padding-right: 70px;
   gap: 0;
   position: relative;
   z-index: 2;
