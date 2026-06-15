@@ -2595,6 +2595,7 @@ img {
     padding-left: var(--container-padding);
     padding-right: var(--container-padding);
     margin-bottom: 1.5rem;
+    border-top: none;
   }
 
   .hero__location {
