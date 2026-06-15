@@ -196,8 +196,10 @@
       </div>
       <div class="hero__logo-fixed">
         <img src="wolfim_nobg.png" alt="Wolfim" class="hero__logo-img" width="80" height="28">
-        <span class="hero__logo-divider">/</span>
-        <span class="hero__scramble" id="hero-scramble-mobile">57UD10</span>
+        <div class="hero__logo-row">
+          <span class="hero__logo-divider">/</span>
+          <span class="hero__scramble" id="hero-scramble-mobile">57UD10</span>
+        </div>
       </div>
     </div>
   </header>
@@ -660,44 +662,72 @@
     </div>
     <div class="section__line"></div>
 
-    <div class="process__grid">
-      <div class="process-step" data-animate="fade-up">
-        <span class="process-step__phase" data-i18n="process.s1.phase">Phase I</span>
-        <h3 class="process-step__title" data-i18n-html="process.s1.title">Conversation &amp;<br>Strategy</h3>
-        <p class="process-step__desc" data-i18n="process.s1.desc">We talk. I learn your business, your audience, and what you actually need — not what a template tells you to buy. We define the scope, the goals, and the direction before anything gets designed.</p>
-        <div class="process-step__duration">
-          <span data-i18n="process.duration_label">Typical Duration</span>
-          <span data-i18n="process.s1.duration">1 Week</span>
+    <div class="process-stack">
+      <div class="process-card" data-card="0">
+        <div class="process-card-inner">
+          <div class="process-card__header">
+            <span class="process-ghost-num">01</span>
+            <div class="process-card__meta">
+              <span class="process-step__phase" data-i18n="process.s1.phase">Phase I</span>
+              <h3 class="process-step__title" data-i18n-html="process.s1.title">Conversation &amp;<br>Strategy</h3>
+            </div>
+          </div>
+          <p class="process-step__desc" data-i18n="process.s1.desc">We talk. I learn your business, your audience, and what you actually need — not what a template tells you to buy. We define the scope, the goals, and the direction before anything gets designed.</p>
+          <div class="process-step__duration">
+            <span data-i18n="process.duration_label">Typical Duration</span>
+            <span data-i18n="process.s1.duration">1 Week</span>
+          </div>
         </div>
       </div>
 
-      <div class="process-step" data-animate="fade-up">
-        <span class="process-step__phase" data-i18n="process.s2.phase">Phase II</span>
-        <h3 class="process-step__title" data-i18n-html="process.s2.title">Design &amp;<br>Direction</h3>
-        <p class="process-step__desc" data-i18n="process.s2.desc">Visual direction, layout concepts, and the design system take shape. You see exactly what your site will look and feel like before a single line of code is written. Revisions are built into the process.</p>
-        <div class="process-step__duration">
-          <span data-i18n="process.duration_label">Typical Duration</span>
-          <span data-i18n="process.s2.duration">1–2 Weeks</span>
+      <div class="process-card" data-card="1">
+        <div class="process-card-inner">
+          <div class="process-card__header">
+            <span class="process-ghost-num">02</span>
+            <div class="process-card__meta">
+              <span class="process-step__phase" data-i18n="process.s2.phase">Phase II</span>
+              <h3 class="process-step__title" data-i18n-html="process.s2.title">Design &amp;<br>Direction</h3>
+            </div>
+          </div>
+          <p class="process-step__desc" data-i18n="process.s2.desc">Visual direction, layout concepts, and the design system take shape. You see exactly what your site will look and feel like before a single line of code is written. Revisions are built into the process.</p>
+          <div class="process-step__duration">
+            <span data-i18n="process.duration_label">Typical Duration</span>
+            <span data-i18n="process.s2.duration">1–2 Weeks</span>
+          </div>
         </div>
       </div>
 
-      <div class="process-step" data-animate="fade-up">
-        <span class="process-step__phase" data-i18n="process.s3.phase">Phase III</span>
-        <h3 class="process-step__title" data-i18n-html="process.s3.title">Build &amp;<br>Refinement</h3>
-        <p class="process-step__desc" data-i18n="process.s3.desc">The design becomes a live website. Responsive development, CMS setup, SEO foundation, performance optimization, and all the integrations your business needs. Tested thoroughly before launch.</p>
-        <div class="process-step__duration">
-          <span data-i18n="process.duration_label">Typical Duration</span>
-          <span data-i18n="process.s3.duration">2–4 Weeks</span>
+      <div class="process-card" data-card="2">
+        <div class="process-card-inner">
+          <div class="process-card__header">
+            <span class="process-ghost-num">03</span>
+            <div class="process-card__meta">
+              <span class="process-step__phase" data-i18n="process.s3.phase">Phase III</span>
+              <h3 class="process-step__title" data-i18n-html="process.s3.title">Build &amp;<br>Refinement</h3>
+            </div>
+          </div>
+          <p class="process-step__desc" data-i18n="process.s3.desc">The design becomes a live website. Responsive development, CMS setup, SEO foundation, performance optimization, and all the integrations your business needs. Tested thoroughly before launch.</p>
+          <div class="process-step__duration">
+            <span data-i18n="process.duration_label">Typical Duration</span>
+            <span data-i18n="process.s3.duration">2–4 Weeks</span>
+          </div>
         </div>
       </div>
 
-      <div class="process-step" data-animate="fade-up">
-        <span class="process-step__phase" data-i18n="process.s4.phase">Phase IV</span>
-        <h3 class="process-step__title" data-i18n-html="process.s4.title">Launch &amp;<br>Growth</h3>
-        <p class="process-step__desc" data-i18n="process.s4.desc">Your site goes live — but we don't disappear. Ads setup, analytics monitoring, content updates, and performance optimization. The relationship continues as your business grows.</p>
-        <div class="process-step__duration">
-          <span data-i18n="process.duration_label">Typical Duration</span>
-          <span data-i18n="process.s4.duration">Ongoing</span>
+      <div class="process-card" data-card="3">
+        <div class="process-card-inner">
+          <div class="process-card__header">
+            <span class="process-ghost-num">04</span>
+            <div class="process-card__meta">
+              <span class="process-step__phase" data-i18n="process.s4.phase">Phase IV</span>
+              <h3 class="process-step__title" data-i18n-html="process.s4.title">Launch &amp;<br>Growth</h3>
+            </div>
+          </div>
+          <p class="process-step__desc" data-i18n="process.s4.desc">Your site goes live — but we don't disappear. Ads setup, analytics monitoring, content updates, and performance optimization. The relationship continues as your business grows.</p>
+          <div class="process-step__duration">
+            <span data-i18n="process.duration_label">Typical Duration</span>
+            <span data-i18n="process.s4.duration">Ongoing</span>
+          </div>
         </div>
       </div>
     </div>

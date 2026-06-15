@@ -1413,4 +1413,29 @@
     });
   }
 
+  // ─── PROCESS STACKING CARDS ───
+  const processCards = document.querySelectorAll('.process-card');
+  const PROCESS_TOP = 100;
+  const MAX_SCALE_LOSS = 0.06;
+
+  function updateProcessStack() {
+    processCards.forEach((card, i) => {
+      const rect = card.getBoundingClientRect();
+      const distFromTop = rect.top - PROCESS_TOP;
+      if (distFromTop <= 0 && i < processCards.length - 1) {
+        const nextCards = processCards.length - 1 - i;
+        const overlap = Math.min(1, Math.abs(distFromTop) / card.offsetHeight);
+        const scale = 1 - (overlap * MAX_SCALE_LOSS * nextCards * 0.25);
+        card.style.transform = `scale(${Math.max(0.88, scale)})`;
+        card.style.opacity = Math.max(0.5, 1 - overlap * 0.4);
+      } else {
+        card.style.transform = 'scale(1)';
+        card.style.opacity = '1';
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateProcessStack, { passive: true });
+  updateProcessStack();
+
 })();
