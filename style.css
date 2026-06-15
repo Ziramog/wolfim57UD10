@@ -610,7 +610,7 @@ img {
   line-height: 1.1;
   letter-spacing: -0.03em;
   color: var(--black);
-  max-width: 480px;
+  max-width: 700px;
   margin: 0;
   text-transform: none;
 }
@@ -620,7 +620,7 @@ img {
   font-size: var(--text-small);
   line-height: 1.5;
   color: var(--gray-500);
-  max-width: 400px;
+  max-width: 600px;
   margin-top: var(--space-xs);
   font-weight: 300;
 }
