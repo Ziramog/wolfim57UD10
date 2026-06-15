@@ -2389,7 +2389,7 @@ img {
 
   /* ── Mobile hero: vertical stack, text first ── */
   .hero {
-    padding-top: 6.875rem;
+    padding-top: 5rem;
     padding-left: 0;
     padding-right: 0;
     min-height: 100svh;
@@ -2518,8 +2518,7 @@ img {
   .hero__footer {
     order: 7;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 1rem;
     padding-left: var(--container-padding);
@@ -2527,14 +2526,18 @@ img {
   }
 
   .hero__location {
-    text-align: left;
+    text-align: center;
     font-size: 0.68rem;
   }
 
-  .hero__logo-stamp {
+  .hero__logo-fixed {
     display: flex;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 5rem;
     align-items: center;
     gap: 0.5rem;
+    z-index: 100;
     font-family: var(--font-mono);
     font-size: 0.65rem;
     letter-spacing: 0.1em;
@@ -2542,20 +2545,20 @@ img {
     color: var(--black);
   }
 
-  .hero__logo-stamp .hero__logo-img {
+  .hero__logo-fixed .hero__logo-img {
     height: 1.2rem;
     width: auto;
     display: block;
     object-fit: contain;
   }
 
-  .hero__logo-stamp .hero__logo-divider {
+  .hero__logo-fixed .hero__logo-divider {
     color: var(--gray-400);
     font-weight: 300;
     margin: 0 0.15rem;
   }
 
-  .hero__logo-stamp .hero__scramble {
+  .hero__logo-fixed .hero__scramble {
     color: var(--black);
     font-weight: 400;
     opacity: 0.6;
@@ -2735,6 +2738,32 @@ img {
   z-index: 100;
   color: var(--black);
   transition: all var(--duration-fast) var(--ease-out);
+}
+
+/* ─── MOBILE LOGO FIXED ─── */
+.hero__logo-fixed {
+  display: none;
+}
+
+.hero__logo-fixed .hero__logo-img {
+  height: 1.2rem;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.hero__logo-fixed .hero__logo-divider {
+  color: var(--gray-400);
+  font-weight: 300;
+  margin: 0 0.15rem;
+}
+
+.hero__logo-fixed .hero__scramble {
+  color: var(--black);
+  font-weight: 400;
+  opacity: 0.6;
+  font-size: 0.9em;
+  letter-spacing: 0.1em;
 }
 
 .whatsapp-sticky:hover {
