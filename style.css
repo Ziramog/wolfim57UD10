@@ -2492,8 +2492,6 @@ img {
     flex-direction: column;
     gap: 8px;
     margin-bottom: 1.5rem;
-    padding-left: var(--container-padding);
-    padding-right: var(--container-padding);
   }
 
   .hero__cta--primary {
