@@ -2395,24 +2395,21 @@ img {
     justify-content: flex-start;
     padding-top: 0;
     padding-bottom: 0.75rem;
-    gap: 1rem;
+    gap: 0;
   }
 
   .hero__content::before {
     display: none;
   }
 
-  /* 1. Título antes que imagen */
+  /* display: contents hace que los hijos de .hero__left
+     participen directamente en el flex del padre */
   .hero__left {
-    display: block;
-    width: 100%;
-    padding-bottom: 0;
-    order: 1;
+    display: contents;
   }
 
-  /* 2. Título — left-aligned */
   .hero__statement {
-    display: block;
+    order: 1;
     font-size: clamp(1.9rem, 8vw, 2.4rem);
     text-align: left;
     max-width: 100%;
@@ -2420,29 +2417,28 @@ img {
     line-height: 1.1;
   }
 
-  /* 3. Subtexto — visible en mobile */
   .hero__subtext {
-    display: block;
+    order: 2;
     font-size: 12px;
     line-height: 1.6;
     margin-bottom: 1.2rem;
     text-align: left;
   }
 
-  /* 4. Tags — left-aligned */
   .hero__tags {
-    display: flex;
+    order: 3;
     justify-content: flex-start;
     margin-bottom: 1.4rem;
   }
 
-  /* 5. Botones — full width */
   .hero__cta-wrapper {
+    order: 4;
     display: flex;
     flex-direction: column;
     gap: 8px;
     margin-bottom: 1.5rem;
   }
+
   .hero__cta--primary,
   .hero__cta--secondary {
     width: 100%;
@@ -2450,17 +2446,21 @@ img {
     justify-content: center;
   }
 
-  /* 6. Video — después del texto */
+  .hero__cta--secondary {
+    border: 1px solid #999;
+  }
+
   .hero__video-frame {
-    order: 2;
+    order: 5;
     width: 100%;
+    height: 220px;
     margin-bottom: 1.2rem;
   }
 
   .hero__scene {
     position: relative;
     width: 100%;
-    height: 200px;
+    height: 220px;
     overflow: hidden;
     pointer-events: auto;
     transform: none;
@@ -2472,11 +2472,10 @@ img {
     object-fit: cover;
     object-position: center 30%;
     width: 100%;
-    height: 200px;
+    height: 220px;
     filter: saturate(0.8) contrast(1.02);
   }
 
-  /* 7. Fade superior sobre imagen */
   .hero__video-frame::before {
     content: '';
     position: absolute;
@@ -2496,10 +2495,12 @@ img {
   }
 
   .hero__scroll {
+    order: 6;
     display: none;
   }
 
   .hero__footer {
+    order: 7;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
@@ -2507,7 +2508,6 @@ img {
   }
 
   .hero__location {
-    order: 5;
     text-align: center;
     font-size: 0.68rem;
   }
