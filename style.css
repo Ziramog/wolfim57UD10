@@ -2534,7 +2534,7 @@ img {
     display: flex;
     position: fixed;
     bottom: 1.5rem;
-    right: 5rem;
+    left: var(--container-padding);
     align-items: center;
     gap: 0.5rem;
     z-index: 100;

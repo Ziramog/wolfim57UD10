@@ -976,6 +976,22 @@
           }
         });
       }
+
+      // Also animate mobile scramble element
+      const heroScrambleMobile = document.getElementById('hero-scramble-mobile');
+      if (heroScrambleMobile) {
+        heroScrambleMobile.classList.remove('hero__coded--waiting');
+        scrambleText(heroScrambleMobile, SCRAMBLE_FINAL, {
+          cycleDuration: 800,
+          charStagger: 180,
+          cycleSpeed: 60,
+          onComplete: function() {
+            setTimeout(function() {
+              startMobileHeroSequence();
+            }, 3000);
+          }
+        });
+      }
     }, 1800);
 
     // 2400ms: Description text and other fade-ups
@@ -1143,11 +1159,68 @@
     runNext();
   }
 
+  // Mobile hero sequence — same words but on mobile element
+  function startMobileHeroSequence() {
+    var seqIndex = 0;
+    var mobileEl = document.getElementById('hero-scramble-mobile');
+    if (!mobileEl) return;
+
+    function runNext() {
+      if (seqIndex >= HERO_SEQUENCE.length) {
+        seqIndex = 0;
+        mobileEl.style.fontSize = '';
+        scrambleText(mobileEl, SCRAMBLE_FINAL, {
+          cycleDuration: 800,
+          charStagger: 180,
+          cycleSpeed: 60,
+          onComplete: function() {
+            setTimeout(runNext, HERO_SEQUENCE[0].delay);
+          }
+        });
+        return;
+      }
+
+      var item = HERO_SEQUENCE[seqIndex];
+      seqIndex++;
+
+      var style = getScrambleStyle(item.text);
+      if (style.fontSize) {
+        mobileEl.style.fontSize = style.fontSize;
+      } else {
+        mobileEl.style.fontSize = '';
+      }
+
+      scrambleText(mobileEl, item.text, {
+        cycleDuration: 800,
+        charStagger: 100,
+        cycleSpeed: 50,
+        onComplete: function() {
+          setTimeout(runNext, item.delay);
+        }
+      });
+    }
+
+    runNext();
+  }
+
   // Hover replay — re-scramble on mouseenter
   if (heroScrambleEl) {
     heroScrambleEl.addEventListener('mouseenter', () => {
       if (!scrambleAnimating) {
         scrambleText(heroScrambleEl, SCRAMBLE_FINAL, {
+          cycleDuration: 600,
+          charStagger: 120,
+          cycleSpeed: 50,
+        });
+      }
+    });
+  }
+
+  var mobileScrambleEl = document.getElementById('hero-scramble-mobile');
+  if (mobileScrambleEl) {
+    mobileScrambleEl.addEventListener('mouseenter', () => {
+      if (!scrambleAnimating) {
+        scrambleText(mobileScrambleEl, SCRAMBLE_FINAL, {
           cycleDuration: 600,
           charStagger: 120,
           cycleSpeed: 50,
