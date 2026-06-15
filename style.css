@@ -2380,7 +2380,7 @@ img {
     text-align: right;
   }
 
-  /* ── Mobile hero: compact vertical stack ── */
+  /* ── Mobile hero: vertical stack, text first ── */
   .hero {
     padding-top: 3.5rem;
     min-height: 100svh;
@@ -2395,25 +2395,98 @@ img {
     justify-content: flex-start;
     padding-top: 0;
     padding-bottom: 0.75rem;
-    gap: 1.5rem;
+    gap: 1rem;
   }
 
   .hero__content::before {
     display: none;
   }
 
+  /* 1. Título antes que imagen */
+  .hero__left {
+    display: block;
+    width: 100%;
+    padding-bottom: 0;
+    order: 1;
+  }
+
+  /* 2. Título — left-aligned */
+  .hero__statement {
+    display: block;
+    font-size: clamp(1.9rem, 8vw, 2.4rem);
+    text-align: left;
+    max-width: 100%;
+    margin: 0 0 1rem;
+    line-height: 1.1;
+  }
+
+  /* 3. Subtexto — visible en mobile */
+  .hero__subtext {
+    display: block;
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+    text-align: left;
+  }
+
+  /* 4. Tags — left-aligned */
+  .hero__tags {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 1.4rem;
+  }
+
+  /* 5. Botones — full width */
+  .hero__cta-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+  }
+  .hero__cta--primary,
+  .hero__cta--secondary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* 6. Video — después del texto */
+  .hero__video-frame {
+    order: 2;
+    width: 100%;
+    margin-bottom: 1.2rem;
+  }
+
   .hero__scene {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 8;
-    margin-top: 8px;
-    margin-bottom: 0.15rem;
+    height: 200px;
     overflow: hidden;
     pointer-events: auto;
     transform: none;
     -webkit-mask-image: none;
     mask-image: none;
-    order: 1;
+  }
+
+  .hero__scene-video {
+    object-fit: cover;
+    object-position: center 30%;
+    width: 100%;
+    height: 200px;
+    filter: saturate(0.8) contrast(1.02);
+  }
+
+  /* 7. Fade superior sobre imagen */
+  .hero__video-frame::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: linear-gradient(to bottom, #FAFAF8, transparent);
+    z-index: 2;
+    pointer-events: none;
   }
 
   .system-awake .hero__scene {
@@ -2422,104 +2495,7 @@ img {
     animation: none;
   }
 
-  .system-awake .hero__scene.scene-zoomed {
-    transform: scale(1.15);
-  }
-
-  .system-awake .hero__scene.scene-dropped {
-    transform: translateY(20px);
-  }
-
-  .system-awake .hero__scene.scene-mega-drop {
-    transform: translateY(40px) scale(1.3);
-  }
-
-  .hero__scene-video {
-    filter: saturate(0.8) contrast(1.02);
-  }
-
-  .hero__title {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: clamp(3rem, 12vw, 5rem);
-    width: 100%;
-    order: 2;
-    line-height: 0.90;
-    text-align: center;
-    white-space: normal;
-  }
-
-  .hero__title-line--secondary {
-    padding-left: 0;
-    text-align: center;
-    font-size: 0.25em;
-    max-width: 100%;
-  }
-
-  .hero__ctas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.25rem;
-    padding-right: 0;
-    order: 4;
-    width: 100%;
-  }
-
-  .hero__cta--whatsapp {
-    display: none !important;
-  }
-
-  .hero__cta {
-    padding: 0.9rem 1.5rem;
-    font-size: 0.78rem;
-    border-radius: 0;
-  }
-
-  .hero__cta--whatsapp {
-    width: 100%;
-    max-width: 100%;
-    order: -1;
-  }
-
-  .hero__cta--primary,
-  .hero__cta--secondary {
-    flex: 1 1 45%;
-    max-width: 180px;
-  }
-
-  .hero__cta-note {
-    text-align: center;
-    width: 100%;
-  }
-
-  .hero__location {
-    order: 5;
-    text-align: center;
-    font-size: 0.68rem;
-  }
-
-  .hero__left {
-    display: block;
-    width: 100%;
-    padding-bottom: 0;
-    order: 2;
-  }
-
-  .hero__statement {
-    display: block;
-    font-size: clamp(2rem, 8vw, 3rem);
-    text-align: center;
-    max-width: 100%;
-    margin: 0 auto;
-    line-height: 1.1;
-  }
-
-  .hero__subtext {
-    display: none;
-  }
-
-  .hero__cta-wrapper {
+  .hero__scroll {
     display: none;
   }
 
@@ -2530,12 +2506,10 @@ img {
     text-align: center;
   }
 
-  .hero__video-frame {
-    order: 1;
-  }
-
-  .hero__scroll {
-    display: none;
+  .hero__location {
+    order: 5;
+    text-align: center;
+    font-size: 0.68rem;
   }
 
   .project {
