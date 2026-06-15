@@ -627,49 +627,30 @@
   cursor.classList.add('cursor');
   document.body.appendChild(cursor);
 
-  const cursorGlow = document.getElementById('cursor-glow');
+  const glow = document.createElement('div');
+  glow.className = 'cursor-glow';
+  document.body.appendChild(glow);
 
-  // Create secondary smoke layer
-  let cursorSmoke = document.querySelector('.cursor-glow--smoke');
-  if (!cursorSmoke) {
-    cursorSmoke = document.createElement('div');
-    cursorSmoke.className = 'cursor-glow--smoke';
-    document.body.appendChild(cursorSmoke);
-  }
-
-  let cursorX = 0, cursorY = 0;
-  let targetX = 0, targetY = 0;
-  let glowX = 0, glowY = 0;
-  let smokeX = 0, smokeY = 0;
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let glowX = mouseX;
+  let glowY = mouseY;
   let glowVisible = false;
 
   document.addEventListener('mousemove', (e) => {
-    targetX = e.clientX;
-    targetY = e.clientY;
-  });
-
-  document.addEventListener('mouseenter', () => {
-    if (cursorGlow) {
-      glowX = targetX;
-      glowY = targetY;
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    if (!glowVisible) {
+      glowX = mouseX;
+      glowY = mouseY;
       glowVisible = true;
-      cursorGlow.style.opacity = '1';
-    }
-    if (cursorSmoke) {
-      smokeX = targetX;
-      smokeY = targetY;
-      cursorSmoke.style.opacity = '0.7';
+      glow.style.opacity = '1';
     }
   });
 
   document.addEventListener('mouseleave', () => {
-    if (cursorGlow) {
-      cursorGlow.style.opacity = '0';
-      glowVisible = false;
-    }
-    if (cursorSmoke) {
-      cursorSmoke.style.opacity = '0';
-    }
+    glow.style.opacity = '0';
+    glowVisible = false;
   });
 
   const heroContent = document.querySelector('.hero__content');
@@ -682,30 +663,24 @@
     windowHeight = window.innerHeight;
   });
 
+  let cursorX = 0, cursorY = 0;
+  let targetX = 0, targetY = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    targetX = e.clientX;
+    targetY = e.clientY;
+  });
+
   function animateCursor() {
     cursorX += (targetX - cursorX) * 0.12;
     cursorY += (targetY - cursorY) * 0.12;
     cursor.style.left = cursorX + 'px';
     cursor.style.top = cursorY + 'px';
 
-    if (cursorGlow && glowVisible) {
-      // Tight tracking for smoke cloud (0.15 = faster follow)
-      glowX += (targetX - glowX) * 0.15;
-      glowY += (targetY - glowY) * 0.15;
-      cursorGlow.style.transform = `translate(${glowX - 200}px, ${glowY - 200}px)`;
-
-      if (document.body.classList.contains('system-awake')) {
-        cursorGlow.style.background = 'radial-gradient(circle, rgba(80,79,237,0.22) 0%, rgba(80,79,237,0.07) 40%, transparent 70%)';
-      } else {
-        cursorGlow.style.background = 'radial-gradient(circle, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 40%, transparent 70%)';
-      }
-    }
-
-    if (cursorSmoke && glowVisible) {
-      // Secondary layer with slight delay for smoke trail effect
-      smokeX += (targetX - smokeX) * 0.08;
-      smokeY += (targetY - smokeY) * 0.08;
-      cursorSmoke.style.transform = `translate(${smokeX - 125}px, ${smokeY - 125}px)`;
+    if (glowVisible) {
+      glowX += (mouseX - glowX) * 0.06;
+      glowY += (mouseY - glowY) * 0.06;
+      glow.style.transform = `translate(${glowX}px, ${glowY}px)`;
     }
 
     if (document.body.classList.contains('system-awake')) {
