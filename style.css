@@ -2433,9 +2433,19 @@ img {
   }
 
   .hero__video-frame {
+    display: contents;
+  }
+
+  .hero__scene {
     order: 3;
+    position: relative;
     width: 100%;
     height: 220px;
+    overflow: hidden;
+    pointer-events: auto;
+    transform: none;
+    -webkit-mask-image: none;
+    mask-image: none;
     margin-bottom: 1.2rem;
   }
 
@@ -2458,47 +2468,30 @@ img {
     color: var(--gray-500);
   }
 
-  .hero__cta-wrapper {
+  /* Logo stack debajo de tags */
+  .hero__video-footer {
     order: 5;
+    margin-bottom: 1.4rem;
+  }
+
+  .hero__cta-wrapper {
+    order: 6;
     display: flex;
     flex-direction: column;
     gap: 8px;
     margin-bottom: 1.5rem;
   }
 
-  .hero__cta--primary,
-  .hero__cta--secondary {
+  .hero__cta--primary {
     width: 100%;
     text-align: center;
     justify-content: center;
-  }
-
-  .hero__cta--primary {
     border: 1px solid #25D366;
     color: #25D366;
   }
 
   .hero__cta--secondary {
-    border: 1px solid #999;
-  }
-
-  .hero__scene {
-    position: relative;
-    width: 100%;
-    height: 220px;
-    overflow: hidden;
-    pointer-events: auto;
-    transform: none;
-    -webkit-mask-image: none;
-    mask-image: none;
-  }
-
-  .hero__scene-video {
-    object-fit: cover;
-    object-position: center 30%;
-    width: 100%;
-    height: 220px;
-    filter: saturate(0.8) contrast(1.02);
+    display: none;
   }
 
   .hero__video-frame::before {
@@ -2520,7 +2513,7 @@ img {
   }
 
   .hero__scroll {
-    order: 6;
+    order: 8;
     display: none;
   }
 
