@@ -2389,7 +2389,9 @@ img {
 
   /* ── Mobile hero: vertical stack, text first ── */
   .hero {
-    padding-top: 3.5rem;
+    padding-top: 5rem;
+    padding-left: 0;
+    padding-right: 0;
     min-height: 100svh;
     display: flex;
     flex-direction: column;
@@ -2422,6 +2424,8 @@ img {
     max-width: 100%;
     margin: 0 0 1rem;
     line-height: 1.1;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
   }
 
   .hero__subtext {
@@ -2430,6 +2434,8 @@ img {
     line-height: 1.6;
     margin-bottom: 1.2rem;
     text-align: left;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
   }
 
   .hero__video-frame {
@@ -2447,6 +2453,8 @@ img {
     -webkit-mask-image: none;
     mask-image: none;
     margin-bottom: 1.2rem;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
   }
 
   .hero__tags {
@@ -2456,6 +2464,8 @@ img {
     gap: 8px;
     justify-content: flex-start;
     margin-bottom: 1.4rem;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
   }
 
   .hero__tag {
@@ -2472,6 +2482,8 @@ img {
   .hero__video-footer {
     order: 5;
     margin-bottom: 1.4rem;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
   }
 
   .hero__cta-wrapper {
@@ -2480,6 +2492,8 @@ img {
     flex-direction: column;
     gap: 8px;
     margin-bottom: 1.5rem;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
   }
 
   .hero__cta--primary {
@@ -2523,6 +2537,8 @@ img {
     align-items: center;
     gap: 1rem;
     text-align: center;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
   }
 
   .hero__location {
