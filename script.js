@@ -18,6 +18,11 @@
 
       // Hero
       'hero.label': 'Digital Design & Creative Technology',
+      'hero.statement': 'Premium web design, digital catalogs and rebuilt sites that convert.',
+      'hero.subtext': 'Custom websites, site reconstructions, visual catalogs and AI-powered production. For brands, properties, products and services.',
+      'hero.tags': 'Web · Catalog · Rebuild · AI · SEO',
+      'hero.cta_primary': 'Contact via WhatsApp',
+      'hero.cta_secondary': 'Pricing',
       'hero.location': 'Buenos Aires <span class="hero__location-dot">●</span> Serving clients worldwide',
       'hero.cta_projects': 'View Work',
       'hero.cta_pricing': 'Pricing',
@@ -246,6 +251,11 @@
 
       // Hero
       'hero.label': 'Diseño Digital & Tecnología Creativa',
+      'hero.statement': 'Diseño web premium, catálogos y sitios reconstruidos para vender mejor.',
+      'hero.subtext': 'Webs a medida, reconstrucción de sitios, catálogos visuales y producción con IA. Para marcas, propiedades, productos y servicios.',
+      'hero.tags': 'Web · Catálogo · Reconstrucción · AI · SEO',
+      'hero.cta_primary': 'Consultar por WhatsApp',
+      'hero.cta_secondary': 'Precios',
       'hero.location': 'Buenos Aires <span class="hero__location-dot">●</span> Servicio mundial remoto',
       'hero.cta_projects': 'Ver Proyectos',
       'hero.cta_pricing': 'Precios',
