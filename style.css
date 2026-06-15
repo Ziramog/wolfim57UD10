@@ -2540,8 +2540,8 @@ img {
   }
 
   .hero__tag {
-    border: 1px solid var(--border);
-    padding: 4px 12px;
+    border: none;
+    padding: 4px 0;
     font-family: var(--font-mono);
     font-size: 0.65rem;
     letter-spacing: 0.1em;
@@ -2587,7 +2587,7 @@ img {
   }
 
   .hero__footer {
-    order: 7;
+    order: 10;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -2606,7 +2606,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    order: 9;
+    order: 7;
     position: static;
     margin-top: auto;
     padding-left: var(--container-padding);
