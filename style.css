@@ -817,18 +817,6 @@ img {
   position: relative;
 }
 
-.hero__video-frame::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  background: linear-gradient(to bottom, #FAFAF8, transparent);
-  z-index: 2;
-  pointer-events: none;
-}
-
 .hero__video-header {
   display: flex;
   align-items: center;
