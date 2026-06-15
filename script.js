@@ -629,9 +629,18 @@
 
   const cursorGlow = document.getElementById('cursor-glow');
 
+  // Create secondary smoke layer
+  let cursorSmoke = document.querySelector('.cursor-glow--smoke');
+  if (!cursorSmoke) {
+    cursorSmoke = document.createElement('div');
+    cursorSmoke.className = 'cursor-glow--smoke';
+    document.body.appendChild(cursorSmoke);
+  }
+
   let cursorX = 0, cursorY = 0;
   let targetX = 0, targetY = 0;
   let glowX = 0, glowY = 0;
+  let smokeX = 0, smokeY = 0;
   let glowVisible = false;
 
   document.addEventListener('mousemove', (e) => {
@@ -646,12 +655,20 @@
       glowVisible = true;
       cursorGlow.style.opacity = '1';
     }
+    if (cursorSmoke) {
+      smokeX = targetX;
+      smokeY = targetY;
+      cursorSmoke.style.opacity = '0.7';
+    }
   });
 
   document.addEventListener('mouseleave', () => {
     if (cursorGlow) {
       cursorGlow.style.opacity = '0';
       glowVisible = false;
+    }
+    if (cursorSmoke) {
+      cursorSmoke.style.opacity = '0';
     }
   });
 
@@ -672,15 +689,23 @@
     cursor.style.top = cursorY + 'px';
 
     if (cursorGlow && glowVisible) {
-      glowX += (targetX - glowX) * 0.06;
-      glowY += (targetY - glowY) * 0.06;
-      cursorGlow.style.transform = `translate(${glowX}px, ${glowY}px)`;
+      // Tight tracking for smoke cloud (0.15 = faster follow)
+      glowX += (targetX - glowX) * 0.15;
+      glowY += (targetY - glowY) * 0.15;
+      cursorGlow.style.transform = `translate(${glowX - 200}px, ${glowY - 200}px)`;
 
       if (document.body.classList.contains('system-awake')) {
         cursorGlow.style.background = 'radial-gradient(circle, rgba(80,79,237,0.22) 0%, rgba(80,79,237,0.07) 40%, transparent 70%)';
       } else {
         cursorGlow.style.background = 'radial-gradient(circle, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 40%, transparent 70%)';
       }
+    }
+
+    if (cursorSmoke && glowVisible) {
+      // Secondary layer with slight delay for smoke trail effect
+      smokeX += (targetX - smokeX) * 0.08;
+      smokeY += (targetY - smokeY) * 0.08;
+      cursorSmoke.style.transform = `translate(${smokeX - 125}px, ${smokeY - 125}px)`;
     }
 
     if (document.body.classList.contains('system-awake')) {
