@@ -2740,32 +2740,6 @@ img {
   transition: all var(--duration-fast) var(--ease-out);
 }
 
-/* ─── MOBILE LOGO FIXED ─── */
-.hero__logo-fixed {
-  display: none;
-}
-
-.hero__logo-fixed .hero__logo-img {
-  height: 1.2rem;
-  width: auto;
-  display: block;
-  object-fit: contain;
-}
-
-.hero__logo-fixed .hero__logo-divider {
-  color: var(--gray-400);
-  font-weight: 300;
-  margin: 0 0.15rem;
-}
-
-.hero__logo-fixed .hero__scramble {
-  color: var(--black);
-  font-weight: 400;
-  opacity: 0.6;
-  font-size: 0.9em;
-  letter-spacing: 0.1em;
-}
-
 .whatsapp-sticky:hover {
   color: #25D366;
   transform: translateY(-2px);
