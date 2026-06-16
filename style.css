@@ -2547,7 +2547,7 @@ img {
     flex-wrap: wrap;
     gap: 8px;
     justify-content: flex-start;
-    margin-bottom: 1.4rem;
+    margin-bottom: 0;
     padding-left: var(--container-padding);
     padding-right: 0;
   }
@@ -2575,6 +2575,7 @@ img {
     width: 100%;
     padding-left: var(--container-padding);
     padding-right: var(--container-padding);
+    margin-top: 7px;
     margin-bottom: 1.2rem;
   }
 
