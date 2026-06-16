@@ -221,6 +221,7 @@
       'pricing.p4.note': 'Ideal for businesses that want to sell online with payments, cart and order management.',
       'pricing.p4.disclaimer': 'Final scope depends on products, payment methods, shipping and integrations.',
       'pricing.note': 'Monthly maintenance includes hosting, SSL, basic backups, technical support, security and minor changes according to plan. New sections, bulk content uploads, redesigns, integrations or additional functionalities are quoted separately.',
+      'pricing.cta_button': 'Contact via WhatsApp',
 
       // Marquee
       'marquee.1': 'Web Design',
@@ -254,8 +255,8 @@
       'hero.statement': 'Diseño web premium, catálogos y sitios reconstruidos para vender mejor.',
       'hero.subtext': 'Webs a medida, reconstrucción de sitios, catálogos visuales y producción con IA. Para marcas, propiedades, productos y servicios.',
       'hero.tags': 'Web · Catálogo · Reconstrucción · AI · SEO',
-      'hero.cta_primary': 'Consultar por WhatsApp',
-      'hero.cta_secondary': 'Precios',
+      'hero.cta_primary': 'Empezar proyecto',
+      'hero.cta_secondary': 'Ver trabajos',
       'hero.location': 'Buenos Aires <span class="hero__location-dot">●</span> Servicio mundial remoto',
       'hero.cta_projects': 'Ver Proyectos',
       'hero.cta_pricing': 'Precios',
@@ -458,6 +459,7 @@
       'pricing.p4.note': 'Ideal para negocios que quieren vender online con pagos, carrito y gestión de pedidos.',
       'pricing.p4.disclaimer': 'El alcance final depende de productos, medios de pago, envíos e integraciones.',
       'pricing.note': 'El mantenimiento mensual incluye hosting, SSL, backups básicos, soporte técnico, seguridad y cambios menores según el plan. Nuevas secciones, carga masiva de contenido, rediseños, integraciones o funcionalidades adicionales se cotizan aparte.',
+      'pricing.cta_button': 'Consultar por WhatsApp',
 
       // Marquee
       'marquee.1': 'Diseño Web',
