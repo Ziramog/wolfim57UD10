@@ -2575,7 +2575,7 @@ img {
     width: 100%;
     padding-left: var(--container-padding);
     padding-right: var(--container-padding);
-    margin-top: 7px;
+    margin-top: 1.2rem;
     margin-bottom: 1.2rem;
   }
 
@@ -2662,7 +2662,7 @@ img {
     align-items: flex-start;
     order: 7;
     position: static;
-    margin-top: auto;
+    margin-top: 0;
     padding-left: var(--container-padding);
     padding-right: var(--container-padding);
     padding-bottom: 2.5rem;
