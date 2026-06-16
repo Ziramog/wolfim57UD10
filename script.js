@@ -21,7 +21,7 @@
       'hero.statement': 'Premium web design, digital catalogs and rebuilt sites that convert.',
       'hero.subtext': 'Custom websites, site reconstructions, visual catalogs and AI-powered production. For brands, properties, products and services.',
       'hero.tags': 'Web · Catalog · Rebuild · AI · SEO',
-      'hero.cta_primary': 'Contact via WhatsApp',
+      'hero.cta_primary': 'Start my project',
       'hero.cta_secondary': 'Pricing',
       'hero.location': 'Buenos Aires <span class="hero__location-dot">●</span> Serving clients worldwide',
       'hero.cta_projects': 'View Work',

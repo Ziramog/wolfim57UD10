@@ -2568,11 +2568,50 @@ img {
   }
 
   .hero__cta-wrapper {
-    display: none;
+    order: 5;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    width: 100%;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+    margin-bottom: 1.2rem;
   }
 
   .hero__cta--primary,
   .hero__cta--secondary {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .hero__cta--primary {
+    flex: 1.4;
+    padding: 13px 12px;
+    background: #25D366;
+    color: #ffffff;
+    border: 1px solid #25D366;
+  }
+
+  .hero__cta--secondary {
+    flex: 1;
+    padding: 12px 12px;
+    background: transparent;
+    color: var(--black);
+    border: 1px solid var(--black);
+  }
+
+  .hero__cta--primary svg {
     display: none;
   }
 
