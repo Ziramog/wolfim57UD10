@@ -2506,7 +2506,7 @@ img {
     font-size: clamp(1.7rem, 8vw, 2.2rem);
     text-align: left;
     max-width: 100%;
-    margin: 10px 0 1rem;
+    margin: 10px 0 8px;
     line-height: 1.1;
     padding-left: var(--container-padding);
     padding-right: var(--container-padding);
