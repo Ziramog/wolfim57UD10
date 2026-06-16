@@ -177,7 +177,7 @@ img {
   }
 
   .nav {
-    height: 72px;
+    height: 62px;
     padding: 0 var(--container-padding);
     display: flex;
   }
@@ -219,20 +219,27 @@ img {
   text-decoration: none;
 }
 
+.nav__logo-text-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.15rem;
+}
+
 .nav__logo-sep {
-  font-weight: 300;
-  opacity: 0.4;
+  font-weight: 700;
+  opacity: 1;
+  color: var(--black);
   margin: 0 0.1rem;
 }
 
 .nav__logo-sub {
   font-weight: 400;
   opacity: 0.6;
-  font-size: 0.9em;
+  font-size: 0.75em;
 }
 
 .nav__logo-img {
-  height: 28px;
+  height: 25px;
   width: auto;
   display: block;
   object-fit: contain;
@@ -2445,8 +2452,15 @@ img {
     height: 100%;
   }
 
+  .nav__logo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.1rem;
+    line-height: 1;
+  }
+
   .nav__logo-img {
-    height: 32px;
+    height: 29px;
   }
 
   .nav__time {
