@@ -1,0 +1,786 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Dise�o web premium y cat�logos digitales | Wolfim Studio">
+
+  <!-- ═══════════════ AMBIENT ELEMENTS ═══════════════ -->
+  <div id="cinematic-bg" aria-hidden="true"></div>
+  <div class="film-grain" aria-hidden="true"></div>
+
+  <!-- ═══════════════ NAVIGATION ═══════════════ -->
+  <nav id="nav-main" class="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo" id="nav-logo">
+        <img src="wolfim_nobg.png" alt="Wolfim" class="nav__logo-img" width="100" height="35">
+        <span class="nav__logo-text-row">
+          <span class="nav__logo-sep">/</span>
+          <span class="nav__logo-sub">57UD10</span>
+        </span>
+      </a>
+      <div class="nav__links" id="nav-links">
+        <a href="#projects" class="nav__link" data-i18n="nav.projects">Trabajos</a>
+        <a href="#capabilities" class="nav__link" data-i18n="nav.capabilities">Servicios</a>
+        <a href="#pricing" class="nav__link" data-i18n="nav.pricing">Precios</a>
+        <a href="#process" class="nav__link" data-i18n="nav.process">Proceso</a>
+        <a href="#contact" class="nav__link" data-i18n="nav.contact">Contacto</a>
+      </div>
+      <div class="nav__meta">
+        <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">
+          <span class="lang-toggle__option" data-lang="en">EN</span>
+          <span class="lang-toggle__divider">/</span>
+          <span class="lang-toggle__option lang-toggle__option--active" data-lang="es">ES</span>
+        </button>
+        <span class="nav__time" id="nav-time"></span>
+        <button class="nav__menu-btn" id="nav-menu-btn" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav__line"></div>
+  </nav>
+
+  <!-- Mobile overlay -->
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-menu__close" id="mobile-menu-close" aria-label="Cerrar menú">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <div class="mobile-menu__inner">
+      <div class="mobile-menu__links">
+        <a href="#projects" class="mobile-menu__link"><span class="menu-link-prefix">/</span><span data-i18n="nav.projects">Trabajos</span></a>
+        <a href="#capabilities" class="mobile-menu__link"><span class="menu-link-prefix">/</span><span data-i18n="nav.capabilities">Servicios</span></a>
+        <a href="#pricing" class="mobile-menu__link"><span class="menu-link-prefix">/</span><span data-i18n="nav.pricing">Precios</span></a>
+        <a href="#process" class="mobile-menu__link"><span class="menu-link-prefix">/</span><span data-i18n="nav.process">Proceso</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <header id="hero" class="hero">
+    <div class="hero__grid-lines" id="hero-grid" aria-hidden="true">
+      <!-- Horizontal lines for mobile -->
+      <div class="hero__hline hline-1"></div>
+      <div class="hero__hline hline-2"></div>
+      <div class="hero__hline hline-3"></div>
+
+      <div class="hero__scan-line"></div>
+    </div>
+
+    <div class="hero__content">
+      <div class="hero__left">
+
+        <h1 class="hero__statement" data-animate="fade-up" data-i18n="hero.statement">Diseño web premium para catálogos y sitios que venden mejor.</h1>
+        <p class="hero__subtext" data-animate="fade-up" data-i18n="hero.subtext">Diseño web a medida, rediseño de sitios, catálogos digitales y producción visual con IA para marcas, propiedades, productos y servicios.</p>
+        <div class="hero__tags" data-animate="fade-up" data-i18n="hero.tags">
+          <span class="hero__tag">Web</span>
+          <span class="hero__tag">Catálogo</span>
+          <span class="hero__tag">Reconstrucción</span>
+          <span class="hero__tag">IA</span>
+          <span class="hero__tag">SEO</span>
+        </div>
+        <div class="hero__cta-wrapper" data-animate="fade-up">
+          <a href="https://wa.me/5491173858454?text=Hola%2C%20quisiera%20consultar%20por%20un%20proyecto" class="hero__cta hero__cta--primary" target="_blank" rel="noopener noreferrer" data-i18n="hero.cta_primary">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="margin-right: 0.75rem;">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.405-.883-.733-1.48-1.638-1.653-1.935-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Empezar proyecto
+          </a>
+          <a href="#pricing" class="hero__cta hero__cta--secondary" data-i18n="hero.cta_secondary">Ver trabajos</a>
+        </div>
+      </div>
+      <div class="hero__video-frame" data-animate="fade-up">
+        <div class="hero__scene">
+          <video class="hero__scene-video" autoplay loop muted playsinline preload="auto">
+            <source src="herolast.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="hero__video-footer">
+          <div class="hero__logo-stack">
+            <img src="wolfim_nobg.png" alt="Wolfim" class="hero__logo-img" width="300" height="105">
+            <div class="hero__logo-row">
+              <span class="hero__logo-divider">/</span>
+              <span class="hero__scramble" id="hero-scramble">57UD10</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll" data-animate="fade-up">
+        <span class="hero__scroll-cipher" id="scroll-cipher" data-i18n="hero.scroll">Desplazar</span>
+      </div>
+      <div class="hero__footer">
+        <span class="hero__location" data-i18n-html="hero.location">Buenos Aires <span class="hero__location-dot">●</span> Servicio remoto para clientes de todo el mundo</span>
+      </div>
+      <div class="hero__logo-fixed">
+        <img src="wolfim_nobg.png" alt="Wolfim" class="hero__logo-img" width="80" height="28">
+        <div class="hero__logo-row">
+          <span class="hero__logo-divider">/</span>
+          <span class="hero__scramble" id="hero-scramble-mobile">57UD10</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════ SELECTED PROJECTS ══════════════ -->
+  <section id="projects" class="section projects">
+    <div class="section__header" data-animate="fade-up">
+      <span class="section__number">01</span>
+      <h2 class="section__title" data-i18n-html="projects.title">Trabajos<br>recientes</h2>
+      <p class="section__subtitle" data-i18n="projects.subtitle">Sitios web y sistemas digitales construidos para rendir</p>
+    </div>
+    <div class="section__line"></div>
+    <div class="projects__grid">
+
+      <article class="project" data-animate="fade-up">
+        <div class="project__image">
+          <video class="project__image-inner project__video" autoplay loop muted playsinline preload="auto" aria-label="Video de presentación del sitio web inmersivo para Silvia Roggero de Roma, Negocios Inmobiliarios">
+            <source src="roggeroyroma_hero2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="project__info">
+          <span class="project__number">001</span>
+          <h3 class="project__title" data-i18n-html="projects.p1.title">Silvia Roggero<br>de Roma</h3>
+          <div class="project__meta">
+          <span class="project__tag" data-i18n="projects.p1.tag1">Reconstrucción Web Inmersiva</span>
+          <span class="project__tag" data-i18n="projects.p1.tag2">Real Estate</span>
+          </div>
+          <p class="project__desc" data-i18n="projects.p1.desc">Rediseño completo para una inmobiliaria con presencia previa. Nuevo sitio desde cero con estética premium, hero en video, catálogo de propiedades, mapas interactivos, reseñas y herramientas comerciales para elevar la percepción de marca y ordenar las consultas.</p>
+        </div>
+      </article>
+
+      <article class="project project--reverse" data-animate="fade-up">
+        <div class="project__image">
+          <video class="project__image-inner project__video" autoplay loop muted playsinline preload="auto" aria-label="Video de presentación de la plataforma digital S&P Cars para agencia de autos premium">
+            <source src="SPCars.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="project__info">
+          <span class="project__number">002</span>
+          <h3 class="project__title" data-i18n-html="projects.p2.title">S&amp;P<br>Cars</h3>
+          <div class="project__meta">
+            <span class="project__tag" data-i18n="projects.p2.tag1">Plataforma automotriz</span>
+            <span class="project__tag" data-i18n="projects.p2.tag2">IA y automatización</span>
+          </div>
+          <p class="project__desc" data-i18n="projects.p2.desc">Plataforma digital de alto rendimiento para agencia de autos premium nuevos y usados. Descripciones de vehículos potenciadas por IA, arquitectura SEO avanzada, comparativas lado a lado y presupuestos automatizados para convertir tráfico de búsqueda en ventas.</p>
+        </div>
+      </article>
+
+      <article class="project" data-animate="fade-up">
+        <div class="project__image">
+          <video class="project__image-inner project__video" autoplay loop muted playsinline preload="auto" aria-label="Video de presentación del catálogo comercial digital para Construvial S.A.">
+            <source src="construvial-2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="project__info">
+          <span class="project__number">003</span>
+          <h3 class="project__title" data-i18n-html="projects.p3.title">Construvial<br>S.A.</h3>
+          <div class="project__meta">
+            <span class="project__tag" data-i18n="projects.p3.tag1">Catálogo Comercial Digital</span>
+            <span class="project__tag" data-i18n="projects.p3.tag2">Construcción & Maquinaria</span>
+          </div>
+          <p class="project__desc" data-i18n="projects.p3.desc">Catálogo comercial para empresa de construcción y maquinaria. Organización de servicios, equipos, categorías, imágenes y datos técnicos en una pieza visual clara, profesional y lista para compartir por WhatsApp, email o PDF.</p>
+        </div>
+      </article>
+
+      <article class="project project--reverse" data-animate="fade-up">
+        <div class="project__image">
+          <video class="project__image-inner project__video" autoplay loop muted playsinline preload="auto" aria-label="Video de presentación de Korantis - búsqueda de restaurantes y cafeterías con IA">
+            <source src="Korantis_web_UI_showcase.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="project__info">
+          <span class="project__number">004</span>
+          <h3 class="project__title" data-i18n-html="projects.p4.title">KORANTIS<br>.COM</h3>
+          <div class="project__meta">
+            <span class="project__tag" data-i18n="projects.p4.tag1">Buscador con IA</span>
+            <span class="project__tag" data-i18n="projects.p4.tag2">Plataforma web</span>
+          </div>
+          <p class="project__desc" data-i18n="projects.p4.desc">Motor de búsqueda de restaurantes y cafeterías con recomendaciones conversacionales potenciadas por IA. Filtros inteligentes, sugerencias personalizadas e interfaz precisa para encontrar el lugar ideal antes de terminar de escribir.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════ PRICING ═══════════════ -->
+  <section id="pricing" class="section pricing-section">
+    <div class="section__header" data-animate="fade-up">
+      <h2 class="section__title" data-i18n-html="pricing.title">Precios claros.<br>Sin sorpresas.</h2>
+      <p class="section__subtitle" data-i18n="pricing.subtitle">Precios base para estructuras estándar o adaptables.</p>
+    </div>
+    <div class="section__line"></div>
+
+    <div class="pricing__grid">
+      <!-- Plan 1 -->
+      <div class="pricing-card" data-animate="fade-up">
+        <div class="pricing-card__header">
+          <span class="pricing-card__tag" data-i18n="pricing.p1.tag">Ideal para empezar</span>
+          <h3 class="pricing-card__title" data-i18n="pricing.p1.title">Landing</h3>
+          <div class="pricing-card__price">
+            <span class="pricing-card__amount">$200</span>
+            <span class="pricing-card__period" data-i18n="pricing.setup">USD setup</span>
+          </div>
+          <div class="pricing-card__monthly">
+            <span class="pricing-card__plus">+</span>
+            <span class="pricing-card__amount-small">$25</span>
+            <span class="pricing-card__period" data-i18n="pricing.monthly">USD/mes</span>
+          </div>
+          <p class="pricing-card__terms" data-i18n="pricing.terms">50% por adelantado para comenzar</p>
+        </div>
+        <ul class="pricing-card__features">
+          <li data-i18n="pricing.p1.f1">Diseño personalizado</li>
+          <li data-i18n="pricing.p1.f2">1 página optimizada</li>
+          <li data-i18n="pricing.p1.f3">Secciones esenciales del negocio</li>
+          <li data-i18n="pricing.p1.f4">WhatsApp + formulario</li>
+          <li data-i18n="pricing.p1.f5">SEO básico</li>
+          <li data-i18n="pricing.p1.f6">Hosting + SSL incluido</li>
+          <li data-i18n="pricing.p1.f7">Entrega en 2 semanas</li>
+        </ul>
+        <p class="pricing-card__note" data-i18n="pricing.p1.note">Ideal para servicios, profesionales, marcas personales y negocios que necesitan presencia simple.</p>
+      </div>
+
+      <!-- Plan 2 -->
+      <div class="pricing-card pricing-card--featured" data-animate="fade-up">
+        <div class="pricing-card__header">
+          <span class="pricing-card__tag" data-i18n="pricing.p2.tag">El más elegido</span>
+          <h3 class="pricing-card__title" data-i18n="pricing.p2.title">Profesional</h3>
+          <div class="pricing-card__price">
+            <span class="pricing-card__amount">$300</span>
+            <span class="pricing-card__period" data-i18n="pricing.setup">USD setup</span>
+          </div>
+          <div class="pricing-card__monthly">
+            <span class="pricing-card__plus">+</span>
+            <span class="pricing-card__amount-small">$29</span>
+            <span class="pricing-card__period" data-i18n="pricing.monthly">USD/mes</span>
+          </div>
+          <p class="pricing-card__terms" data-i18n="pricing.terms">50% por adelantado para comenzar</p>
+        </div>
+        <ul class="pricing-card__features">
+          <li data-i18n="pricing.p2.f1">Diseño personalizado</li>
+          <li data-i18n="pricing.p2.f2">Hasta 5 páginas</li>
+          <li data-i18n="pricing.p2.f3">Servicios, empresa, trabajos y contacto</li>
+          <li data-i18n="pricing.p2.f4">Galería de fotos</li>
+          <li data-i18n="pricing.p2.f5">SEO optimizado</li>
+          <li data-i18n="pricing.p2.f6">Formulario + WhatsApp</li>
+          <li data-i18n="pricing.p2.f7">Hosting + SSL incluido</li>
+          <li data-i18n="pricing.p2.f8">Entrega en 2-3 semanas</li>
+        </ul>
+        <p class="pricing-card__note" data-i18n="pricing.p2.note">Ideal para empresas, constructoras, estudios, clínicas, industrias y negocios con más contenido institucional.</p>
+      </div>
+
+      <!-- Plan 3 -->
+      <div class="pricing-card" data-animate="fade-up">
+        <div class="pricing-card__header">
+          <span class="pricing-card__tag" data-i18n="pricing.p3.tag">Para productos y propiedades</span>
+          <h3 class="pricing-card__title" data-i18n="pricing.p3.title">Catálogo</h3>
+          <div class="pricing-card__price">
+            <span class="pricing-card__amount">Desde $450</span>
+            <span class="pricing-card__period" data-i18n="pricing.setup">USD setup</span>
+          </div>
+          <div class="pricing-card__monthly">
+            <span class="pricing-card__plus">+</span>
+            <span class="pricing-card__amount-small">$39</span>
+            <span class="pricing-card__period" data-i18n="pricing.monthly">USD/mes</span>
+          </div>
+          <p class="pricing-card__terms" data-i18n="pricing.terms">50% por adelantado para comenzar</p>
+        </div>
+        <ul class="pricing-card__features">
+          <li data-i18n="pricing.p3.f1">Diseño personalizado</li>
+          <li data-i18n="pricing.p3.f2">Web catálogo adaptable</li>
+          <li data-i18n="pricing.p3.f3">Fichas individuales</li>
+          <li data-i18n="pricing.p3.f4">Filtros y buscador</li>
+          <li data-i18n="pricing.p3.f5">WhatsApp por ítem</li>
+          <li data-i18n="pricing.p3.f6">Panel simple de publicación</li>
+          <li data-i18n="pricing.p3.f7">SEO por ficha</li>
+          <li data-i18n="pricing.p3.f8">Hosting + SSL incluido</li>
+          <li data-i18n="pricing.p3.f9">Entrega en 3-4 semanas</li>
+        </ul>
+        <p class="pricing-card__note" data-i18n="pricing.p3.note">Ideal para inmobiliarias, agencias de autos, loteos, maquinaria, repuestos y negocios que necesitan mostrar lo que venden en una web propia.</p>
+        <p class="pricing-card__disclaimer" data-i18n="pricing.p3.disclaimer">El precio base aplica sobre una estructura replicable. Diseños, filtros, flujos o funcionalidades diferentes se cotizan aparte.</p>
+      </div>
+
+      <!-- Plan 4 -->
+      <div class="pricing-card" data-animate="fade-up">
+        <div class="pricing-card__header">
+          <span class="pricing-card__tag" data-i18n="pricing.p4.tag">Tienda completa</span>
+          <h3 class="pricing-card__title" data-i18n="pricing.p4.title">Ecommerce</h3>
+          <div class="pricing-card__price">
+            <span class="pricing-card__amount">Desde $450</span>
+            <span class="pricing-card__period" data-i18n="pricing.setup">USD setup</span>
+          </div>
+          <div class="pricing-card__monthly">
+            <span class="pricing-card__plus">+</span>
+            <span class="pricing-card__amount-small">$59</span>
+            <span class="pricing-card__period" data-i18n="pricing.monthly">USD/mes</span>
+          </div>
+          <p class="pricing-card__terms" data-i18n="pricing.terms">50% por adelantado para comenzar</p>
+        </div>
+        <ul class="pricing-card__features">
+          <li data-i18n="pricing.p4.f1">Diseño personalizado</li>
+          <li data-i18n="pricing.p4.f2">Tienda online completa</li>
+          <li data-i18n="pricing.p4.f3">Productos, carrito y checkout</li>
+          <li data-i18n="pricing.p4.f4">Pasarela de pagos</li>
+          <li data-i18n="pricing.p4.f5">Gestión de pedidos</li>
+          <li data-i18n="pricing.p4.f6">SEO premium</li>
+          <li data-i18n="pricing.p4.f7">Panel de admin completo</li>
+          <li data-i18n="pricing.p4.f8">Hosting + SSL incluido</li>
+          <li data-i18n="pricing.p4.f9">Entrega en 3-4 semanas</li>
+        </ul>
+        <p class="pricing-card__note" data-i18n="pricing.p4.note">Ideal para negocios que quieren vender online con pagos, carrito y gestión de pedidos.</p>
+        <p class="pricing-card__disclaimer" data-i18n="pricing.p4.disclaimer">El alcance final depende de productos, medios de pago, envíos e integraciones.</p>
+      </div>
+    </div>
+
+    <div class="pricing__cta" data-animate="fade-up">
+      <a href="https://wa.me/5491173858454?text=Hola%2C%20estoy%20interesado%20en%20un%20sitio%20web" class="pricing__cta-button" target="_blank" rel="noopener noreferrer">
+        <span data-i18n="pricing.cta_button">Consultar por WhatsApp</span>
+      </a>
+    </div>
+
+    <div class="pricing__note" data-animate="fade-up">
+      <p class="pricing__note-text" data-i18n="pricing.note">Reconstrucciones inmersivas, catálogos especiales, producción visual con IA o funcionalidades a medida se cotizan según alcance.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CAPABILITIES ═══════════════ -->
+  <section id="capabilities" class="section capabilities">
+    <div class="section__header" data-animate="fade-up">
+      <span class="section__number">02</span>
+      <h2 class="section__title" data-i18n-html="capabilities.title">Qué<br>construimos</h2>
+      <p class="section__subtitle" data-i18n="capabilities.subtitle">Sitios web, catálogos digitales y sistemas comerciales</p>
+    </div>
+    <div class="section__line"></div>
+    <div class="capabilities__grid">
+
+      <div class="capability" data-animate="fade-up">
+        <div class="capability__header">
+          <span class="capability__index">A</span>
+          <h3 class="capability__title" data-i18n="cap.a.title">Diseño web a medida</h3>
+        </div>
+        <p class="capability__desc" data-i18n="cap.a.desc">Sitios web premium diseñados a medida, rápidos, responsivos y preparados para convertir visitas en consultas reales.</p>
+        <ul class="capability__list">
+          <li data-i18n="cap.a.l1">Diseño personalizado</li>
+          <li data-i18n="cap.a.l2">Desarrollo responsivo</li>
+          <li data-i18n="cap.a.l3">Gestión de contenido</li>
+          <li data-i18n="cap.a.l4">Optimización de rendimiento</li>
+        </ul>
+      </div>
+
+      <div class="capability" data-animate="fade-up">
+        <div class="capability__header">
+          <span class="capability__index">B</span>
+          <h3 class="capability__title" data-i18n="cap.b.title">Reconstrucción Web</h3>
+        </div>
+        <p class="capability__desc" data-i18n="cap.b.desc">Transformamos webs antiguas, genéricas o desactualizadas en experiencias digitales modernas, visuales y comerciales.</p>
+        <ul class="capability__list">
+          <li data-i18n="cap.b.l1">Rediseño de sitio web</li>
+          <li data-i18n="cap.b.l2">Nueva estructura comercial</li>
+          <li data-i18n="cap.b.l3">Hero inmersivo</li>
+          <li data-i18n="cap.b.l4">Mobile first</li>
+        </ul>
+      </div>
+
+      <div class="capability" data-animate="fade-up">
+        <div class="capability__header">
+          <span class="capability__index">C</span>
+          <h3 class="capability__title" data-i18n="cap.c.title">Catálogo digital</h3>
+        </div>
+        <p class="capability__desc" data-i18n="cap.c.desc">Catálogos digitales para propiedades, vehículos, lotes, maquinaria o productos, con fichas individuales, filtros, buscador y consultas por WhatsApp.</p>
+        <ul class="capability__list">
+          <li data-i18n="cap.c.l1">Fichas individuales</li>
+          <li data-i18n="cap.c.l2">Filtros y buscador</li>
+          <li data-i18n="cap.c.l3">Panel simple de publicación</li>
+          <li data-i18n="cap.c.l4">WhatsApp por ítem</li>
+        </ul>
+      </div>
+
+      <div class="capability" data-animate="fade-up">
+        <div class="capability__header">
+          <span class="capability__index">D</span>
+          <h3 class="capability__title" data-i18n="cap.d.title">Catálogo Express</h3>
+        </div>
+        <p class="capability__desc" data-i18n="cap.d.desc">Catálogos comerciales en HTML o PDF para presentar productos, servicios o listas comerciales de forma clara y profesional.</p>
+        <ul class="capability__list">
+          <li data-i18n="cap.d.l1">Diseño visual</li>
+          <li data-i18n="cap.d.l2">Categorías y datos técnicos</li>
+          <li data-i18n="cap.d.l3">PDF para compartir</li>
+          <li data-i18n="cap.d.l4">Entrega rápida</li>
+        </ul>
+      </div>
+
+      <div class="capability" data-animate="fade-up">
+        <div class="capability__header">
+          <span class="capability__index">E</span>
+          <h3 class="capability__title" data-i18n="cap.e.title">Producción visual con IA</h3>
+        </div>
+        <p class="capability__desc" data-i18n="cap.e.desc">Uso de IA para mejorar imágenes, crear videos de fondo y piezas visuales que elevan la presentación de propiedades, productos o marcas.</p>
+        <ul class="capability__list">
+          <li data-i18n="cap.e.l1">Mejora de imágenes</li>
+          <li data-i18n="cap.e.l2">Videos para hero</li>
+          <li data-i18n="cap.e.l3">Piezas para redes</li>
+          <li data-i18n="cap.e.l4">Antes / después</li>
+        </ul>
+      </div>
+
+      <div class="capability" data-animate="fade-up">
+        <div class="capability__header">
+          <span class="capability__index">F</span>
+          <h3 class="capability__title" data-i18n="cap.f.title">SEO, Ads y crecimiento</h3>
+        </div>
+        <p class="capability__desc" data-i18n="cap.f.desc">SEO técnico, campañas y optimización para que la web no solo se vea bien, sino que empiece a generar oportunidades.</p>
+        <ul class="capability__list">
+          <li data-i18n="cap.f.l1">SEO técnico</li>
+          <li data-i18n="cap.f.l2">Google Ads</li>
+          <li data-i18n="cap.f.l3">Conversión y medición</li>
+          <li data-i18n="cap.f.l4">Reportes mensuales</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="capabilities__method" data-animate="fade-up">
+      <p class="capabilities__method-text" data-i18n="cap.method.text">La IA no aparece como una capa aparte: atraviesa investigación, prototipado, producción visual y optimización para construir mejor cada servicio de arriba.</p>
+      <div class="capabilities__method-tags" aria-label="Método de trabajo asistido por IA">
+        <span data-i18n="cap.method.k1">Investigación asistida</span>
+        <span data-i18n="cap.method.k2">Prototipado</span>
+        <span data-i18n="cap.method.k3">Automatización</span>
+        <span data-i18n="cap.method.k4">Optimización</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ WHAT YOU GET ═══════════════ -->
+  <section id="digital-systems" class="section systems-section">
+    <div class="section__header" data-animate="fade-up">
+      <span class="section__number">03</span>
+      <h2 class="section__title" data-i18n-html="systems.title">Qué<br>recibís</h2>
+      <p class="section__subtitle" data-i18n="systems.subtitle">Entregables claros al final del proyecto</p>
+    </div>
+    <div class="section__line"></div>
+
+    <div class="systems__grid">
+      <div class="system-card" data-animate="fade-up">
+        <div class="system-card__icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
+            <rect x="4" y="4" width="32" height="32"/>
+            <line x1="4" y1="20" x2="36" y2="20"/>
+            <line x1="20" y1="4" x2="20" y2="36"/>
+          </svg>
+        </div>
+        <h3 class="system-card__title" data-i18n-html="sys.a.title">Tu sitio<br>web</h3>
+        <p class="system-card__desc" data-i18n="sys.a.desc">El sitio final publicado, responsivo, rápido y preparado para que tu negocio pueda recibir consultas desde el primer día.</p>
+      </div>
+      <div class="system-card" data-animate="fade-up">
+        <div class="system-card__icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
+            <circle cx="20" cy="20" r="16"/>
+            <circle cx="20" cy="20" r="8"/>
+            <circle cx="20" cy="20" r="2"/>
+          </svg>
+        </div>
+        <h3 class="system-card__title" data-i18n-html="sys.b.title">Sistema de<br>contenido</h3>
+        <p class="system-card__desc" data-i18n="sys.b.desc">Acceso al CMS para actualizar páginas, publicar contenido y hacer cambios simples sin depender de un desarrollador para cada ajuste.</p>
+      </div>
+      <div class="system-card" data-animate="fade-up">
+        <div class="system-card__icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
+            <polyline points="4,30 14,18 24,24 36,10"/>
+            <circle cx="14" cy="18" r="2"/>
+            <circle cx="24" cy="24" r="2"/>
+            <circle cx="36" cy="10" r="2"/>
+          </svg>
+        </div>
+        <h3 class="system-card__title" data-i18n-html="sys.c.title">Dashboard<br>configurado</h3>
+        <p class="system-card__desc" data-i18n="sys.c.desc">Acceso a tu dashboard de Google Analytics ya configurado, con eventos básicos y métricas clave listas para revisar.</p>
+      </div>
+      <div class="system-card" data-animate="fade-up">
+        <div class="system-card__icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
+            <polygon points="20,4 36,12 36,28 20,36 4,28 4,12"/>
+            <line x1="20" y1="4" x2="20" y2="36"/>
+            <line x1="4" y1="12" x2="36" y2="28"/>
+            <line x1="36" y1="12" x2="4" y2="28"/>
+          </svg>
+        </div>
+        <h3 class="system-card__title" data-i18n-html="sys.d.title">Credenciales<br>y accesos</h3>
+        <p class="system-card__desc" data-i18n="sys.d.desc">Usuarios, accesos de administración y referencias de hosting o dominio ordenados para que sepas qué queda bajo tu control.</p>
+      </div>
+      <div class="system-card" data-animate="fade-up">
+        <div class="system-card__icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
+            <rect x="4" y="8" width="14" height="10"/>
+            <rect x="22" y="8" width="14" height="10"/>
+            <rect x="4" y="22" width="14" height="10"/>
+            <rect x="22" y="22" width="14" height="10"/>
+          </svg>
+        </div>
+        <h3 class="system-card__title" data-i18n-html="sys.e.title">Guía<br>de uso</h3>
+        <p class="system-card__desc" data-i18n="sys.e.desc">Una guía básica para usar el CMS, editar contenidos frecuentes y entender qué cambios conviene pedir como soporte.</p>
+      </div>
+      <div class="system-card" data-animate="fade-up">
+        <div class="system-card__icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M4,20 Q12,4 20,20 Q28,36 36,20"/>
+            <line x1="4" y1="20" x2="36" y2="20" stroke-dasharray="2,2"/>
+          </svg>
+        </div>
+        <h3 class="system-card__title" data-i18n-html="sys.f.title">Soporte<br>continuo</h3>
+        <p class="system-card__desc" data-i18n="sys.f.desc">Acompañamiento post-lanzamiento para resolver ajustes, cambios menores y dudas operativas cuando el sitio ya está en uso.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PROCESS ═══════════════ -->
+  <section id="process" class="section process-section">
+    <div class="section__header" data-animate="fade-up">
+      <span class="section__number">04</span>
+      <h2 class="section__title" data-i18n-html="process.title">Cómo<br>trabajamos</h2>
+      <p class="section__subtitle" data-i18n="process.subtitle">Proceso claro, sin sorpresas</p>
+    </div>
+    <div class="section__line"></div>
+
+    <div class="process-stack">
+      <div class="process-card" data-card="0">
+        <div class="process-card-inner">
+          <div class="process-card__header">
+            <span class="process-ghost-num">01</span>
+            <div class="process-card__meta">
+              <span class="process-step__phase" data-i18n="process.s1.phase">Fase I</span>
+              <h3 class="process-step__title" data-i18n-html="process.s1.title">Conversación &amp;<br>estrategia</h3>
+            </div>
+          </div>
+          <p class="process-step__desc" data-i18n="process.s1.desc">Hablamos. Entiendo tu negocio, tu audiencia y lo que realmente necesitás. Definimos alcance, objetivos y dirección antes de diseñar cualquier pantalla.</p>
+          <div class="process-step__duration">
+            <span data-i18n="process.duration_label">Duración típica</span>
+            <span data-i18n="process.s1.duration">1 semana</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="process-card" data-card="1">
+        <div class="process-card-inner">
+          <div class="process-card__header">
+            <span class="process-ghost-num">02</span>
+            <div class="process-card__meta">
+              <span class="process-step__phase" data-i18n="process.s2.phase">Fase II</span>
+              <h3 class="process-step__title" data-i18n-html="process.s2.title">Diseño &amp;<br>dirección</h3>
+            </div>
+          </div>
+          <p class="process-step__desc" data-i18n="process.s2.desc">La dirección visual, los layouts y el sistema de diseño toman forma. Ves cómo se va a sentir tu sitio antes de escribir una sola línea de código.</p>
+          <div class="process-step__duration">
+            <span data-i18n="process.duration_label">Duración típica</span>
+            <span data-i18n="process.s2.duration">1-2 semanas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="process-card" data-card="2">
+        <div class="process-card-inner">
+          <div class="process-card__header">
+            <span class="process-ghost-num">03</span>
+            <div class="process-card__meta">
+              <span class="process-step__phase" data-i18n="process.s3.phase">Fase III</span>
+              <h3 class="process-step__title" data-i18n-html="process.s3.title">Construcción &amp;<br>ajuste</h3>
+            </div>
+          </div>
+          <p class="process-step__desc" data-i18n="process.s3.desc">El diseño se convierte en un sitio web real. Desarrollo responsivo, CMS, estructura técnica, optimización de rendimiento e integraciones necesarias, todo probado antes del lanzamiento.</p>
+          <div class="process-step__duration">
+            <span data-i18n="process.duration_label">Duración típica</span>
+            <span data-i18n="process.s3.duration">2-4 semanas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="process-card" data-card="3">
+        <div class="process-card-inner">
+          <div class="process-card__header">
+            <span class="process-ghost-num">04</span>
+            <div class="process-card__meta">
+              <span class="process-step__phase" data-i18n="process.s4.phase">Fase IV</span>
+              <h3 class="process-step__title" data-i18n-html="process.s4.title">Lanzamiento &amp;<br>crecimiento</h3>
+            </div>
+          </div>
+          <p class="process-step__desc" data-i18n="process.s4.desc">El sitio sale en vivo, revisamos estabilidad, dejamos accesos ordenados y acompañamos los primeros ajustes para que la transición sea clara.</p>
+          <div class="process-step__duration">
+            <span data-i18n="process.duration_label">Duración típica</span>
+            <span data-i18n="process.s4.duration">Continuo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ RESULTS ═══════════════ -->
+  <!-- ═══════════════ TESTIMONIALS ═══════════════ -->
+  <section id="testimonials" class="section testimonials-section">
+    <div class="section__header" data-animate="fade-up">
+      <span class="section__number">05</span>
+      <h2 class="section__title" data-i18n-html="testimonials.title">Lo que dicen<br>nuestros clientes</h2>
+      <p class="section__subtitle" data-i18n="testimonials.subtitle">Resultados reales, negocios que crecen</p>
+    </div>
+    <div class="section__line"></div>
+
+    <div class="testimonials__grid">
+      <div class="testimonial" data-animate="fade-up">
+        <div class="testimonial__content">
+          <p class="testimonial__quote" data-i18n="testimonials.t1.quote">"El sitio de Silvia Roggero de Roma quedó impecable. En 10 días teníamos una plataforma inmobiliaria con cotizador integrado, SEO avanzado y conexión directa con Google Reviews. Los leads aumentaron desde el primer mes."</p>
+        </div>
+        <div class="testimonial__author">
+          <span class="testimonial__name" data-i18n="testimonials.t1.name">Silvia Roggero</span>
+          <span class="testimonial__role" data-i18n="testimonials.t1.role">Negocios Inmobiliarios, Buenos Aires</span>
+        </div>
+      </div>
+
+      <div class="testimonial" data-animate="fade-up">
+        <div class="testimonial__content">
+          <p class="testimonial__quote" data-i18n="testimonials.t2.quote">"Wolfim entendió exactamente lo que necesitábamos para S&P Cars. La plataforma carga en menos de 2 segundos, el SEO está optimizado y los clientes pueden comparar vehículos lado a lado. Ventas directas desde el sitio."</p>
+        </div>
+        <div class="testimonial__author">
+          <span class="testimonial__name" data-i18n="testimonials.t2.name">S&P Cars</span>
+          <span class="testimonial__role" data-i18n="testimonials.t2.role">Agencia de autos premium, Buenos Aires</span>
+        </div>
+      </div>
+
+      <div class="testimonial" data-animate="fade-up">
+        <div class="testimonial__content">
+          <p class="testimonial__quote" data-i18n="testimonials.t3.quote">"Korantis.com necesitaba una búsqueda con IA que funcionara de verdad. Wolfim entregó una plataforma donde los usuarios encuentran restaurantes en segundos, con recomendaciones conversacionales. La retención de usuarios subió un 40%."</p>
+        </div>
+        <div class="testimonial__author">
+          <span class="testimonial__name" data-i18n="testimonials.t3.name">Korantis</span>
+          <span class="testimonial__role" data-i18n="testimonials.t3.role">Plataforma de búsqueda con IA, Argentina</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PRICING MOVED TO AFTER WORK ═══════════════ -->
+
+  <!-- ═══════════════ MARQUEE ═══════════════ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span class="marquee__text" data-i18n="marquee.1">Web a medida</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__text" data-i18n="marquee.2">Catálogos</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__text" data-i18n="marquee.3">CMS</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__text" data-i18n="marquee.4">Accesos</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__text" data-i18n="marquee.5">Soporte</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__text" data-i18n="marquee.6">Lanzamiento</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__text" data-i18n="marquee.1">Web a medida</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__text" data-i18n="marquee.2">Catálogos</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__text" data-i18n="marquee.3">CMS</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__text" data-i18n="marquee.4">Accesos</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__text" data-i18n="marquee.5">Soporte</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__text" data-i18n="marquee.6">Lanzamiento</span>
+      <span class="marquee__sep">◆</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════ CONTACT ═══════════════ -->
+  <section id="contact" class="section contact-section">
+    <div class="contact__inner">
+      <div class="contact__left" data-animate="fade-up">
+        <span class="section__number">06</span>
+        <h2 class="contact__title" data-i18n-html="contact.title">Construyamos la próxima<br>versión digital de tu negocio</h2>
+      </div>
+      <div class="contact__right" data-animate="fade-up">
+        <p class="contact__desc" data-i18n="contact.desc">Si buscás una web que refleje la calidad real de tu negocio — no una plantilla con tu logo — hablemos. Trabajo directamente con cada cliente, desde la primera conversación hasta el lanzamiento.</p>
+        <div class="contact__links">
+          <a href="https://wa.me/5491173858454?text=Hola%2C%20estoy%20interesado%20en%20un%20sitio%20web" class="contact__link contact__link--whatsapp" target="_blank" rel="noopener noreferrer">
+            <span class="contact__link-label">WhatsApp</span>
+            <span class="contact__link-value">+54 9 11 7385-8454</span>
+          </a>
+          <a href="mailto:hello@wolfim.com" class="contact__link" id="contact-email">
+            <span class="contact__link-label">Email</span>
+            <span class="contact__link-value">hello@wolfim.com</span>
+          </a>
+        </div>
+        <div class="contact__availability">
+          <span class="contact__avail-dot"></span>
+          <span data-i18n="contact.availability">Agenda abierta para nuevos proyectos.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="footer">
+    <div class="footer__line"></div>
+    <div class="footer__inner">
+      <div class="footer__left">
+        <span class="footer__logo">WOLFIM STUDIO</span>
+        <span class="footer__copy" data-i18n="footer.copy">© 2024 — Todos los derechos reservados</span>
+      </div>
+      <div class="footer__right">
+        <span class="footer__link">LinkedIn</span>
+        <span class="footer__link">Twitter / X</span>
+        <span class="footer__link">GitHub</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Sticky Button -->
+  <a href="https://wa.me/5491173858454?text=Hola%2C%20estoy%20interesado%20en%20un%20sitio%20web" class="whatsapp-sticky" target="_blank" rel="noopener noreferrer" aria-label="Chatear por WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+      <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+    </svg>
+  </a>
+
+  <!-- Main Script -->
+  <script>import "../scripts/script.js";</script>
+
+
+<script>
+  import { trackEvent } from '../lib/analytics';
+  import { captureUTMs } from '../lib/utm';
+
+  // 1. Capture UTMs
+  captureUTMs();
+
+  // 2. Attach GA4 Events
+  document.addEventListener('DOMContentLoaded', () => {
+    // Hero WhatsApp
+    const heroPrimary = document.querySelector('.hero__cta--primary');
+    if (heroPrimary) {
+      heroPrimary.addEventListener('click', () => trackEvent('click_whatsapp', { cta_location: 'hero' }));
+    }
+
+    // Hero secondary
+    const heroSecondary = document.querySelector('.hero__cta--secondary');
+    if (heroSecondary) {
+      heroSecondary.addEventListener('click', () => trackEvent('click_service', { service_name: 'Ver trabajos', cta_location: 'hero' }));
+    }
+
+    // Projects
+    const projects = document.querySelectorAll('.project');
+    projects.forEach((proj) => {
+      proj.addEventListener('click', () => {
+        const titleEl = proj.querySelector('.project__title');
+        const title = titleEl ? titleEl.textContent.trim().replace(/\s+/g, ' ') : 'Unknown';
+        trackEvent('click_project', { project_name: title });
+      });
+    });
+
+    // Pricing WhatsApp
+    const pricingCtas = document.querySelectorAll('.pricing__cta-button');
+    pricingCtas.forEach((cta) => {
+      cta.addEventListener('click', () => trackEvent('click_whatsapp', { cta_location: 'pricing' }));
+    });
+  });
+</script>
+</Layout>
+
+
