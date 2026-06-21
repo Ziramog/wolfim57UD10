@@ -46,6 +46,26 @@ const { title, description = "Diseño web premium a medida, rediseño de sitios,
   <link rel="alternate" hreflang="es" href="https://wolfim.com/">
   <link rel="alternate" hreflang="en" href="https://wolfim.com/?lang=en">
   <link rel="alternate" hreflang="x-default" href="https://wolfim.com/">
+  <!-- Schema Markup (JSON-LD) -->
+  <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Wolfim Studio",
+      "url": "https://wolfim.com/",
+      "logo": "https://wolfim.com/wolfim_nobg.png",
+      "image": "https://wolfim.com/og-image.jpg",
+      "description": "Diseño web premium a medida, rediseño de sitios, catálogos digitales, SEO y Google Ads para marcas, inmobiliarias, agencias de autos y negocios.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "AR"
+      },
+      "priceRange": "$$$",
+      "sameAs": [
+        "https://www.instagram.com/wolfim.studio/"
+      ]
+    }
+  </script>
 </head>
 <body>
   <slot />
