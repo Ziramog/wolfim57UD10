@@ -238,13 +238,16 @@
 
       // Contact
       'contact.title': 'Let\'s Build the Next<br>Digital Version of<br>Your Business',
+
+      // Contact
+      'contact.title': 'Let\'s Build the Next<br>Digital Version of<br>Your Business',
       'contact.desc': 'If you\'re looking for a website that reflects the real quality of your business — not a template with your logo on it — let\'s talk. I work directly with every client, from first conversation to launch.',
       'contact.schedule_label': 'Schedule',
       'contact.schedule_value': 'Book a free intro call',
       'contact.availability': 'Open agenda for new projects.',
 
       // Footer
-      'footer.copy': '© 2024 — All rights reserved',
+      'footer.copy': '© ' + new Date().getFullYear() + ' — All rights reserved',
     },
 
     es: {
@@ -487,7 +490,7 @@
       'contact.availability': 'Agenda abierta para nuevos proyectos.',
 
       // Footer
-      'footer.copy': '© 2024 — Todos los derechos reservados',
+      'footer.copy': '© ' + new Date().getFullYear() + ' — Todos los derechos reservados',
     },
   };
 
