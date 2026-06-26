@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Dise�o web premium y cat�logos digitales | Wolfim Studio">
+<Layout title="Dise�o web premium y cat�logos digitales | Wolfim Studio">
 
   <!-- ═══════════════ AMBIENT ELEMENTS ═══════════════ -->
   <div id="cinematic-bg" aria-hidden="true"></div>
@@ -755,13 +755,13 @@ import Layout from '../layouts/Layout.astro';
     // Hero WhatsApp
     const heroPrimary = document.querySelector('.hero__cta--primary');
     if (heroPrimary) {
-      heroPrimary.addEventListener('click', () => trackEvent('click_whatsapp', { cta_location: 'hero' }));
+      heroPrimary.addEventListener('click', () => trackEvent('click_whatsapp', { component: 'hero' }));
     }
 
     // Hero secondary
     const heroSecondary = document.querySelector('.hero__cta--secondary');
     if (heroSecondary) {
-      heroSecondary.addEventListener('click', () => trackEvent('click_service', { service_name: 'Ver trabajos', cta_location: 'hero' }));
+      heroSecondary.addEventListener('click', () => trackEvent('click_service', { service_name: 'Ver trabajos', component: 'hero' }));
     }
 
     // Projects
@@ -777,7 +777,7 @@ import Layout from '../layouts/Layout.astro';
     // Pricing WhatsApp
     const pricingCtas = document.querySelectorAll('.pricing__cta-button');
     pricingCtas.forEach((cta) => {
-      cta.addEventListener('click', () => trackEvent('click_whatsapp', { cta_location: 'pricing' }));
+      cta.addEventListener('click', () => trackEvent('click_whatsapp', { component: 'pricing' }));
     });
   });
 </script>

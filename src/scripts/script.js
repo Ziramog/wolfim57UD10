@@ -1428,7 +1428,15 @@
   // WhatsApp clicks
   document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
     link.addEventListener('click', () => {
-      trackEvent('whatsapp_click', { location: link.closest('.contact__links') ? 'contact_section' : 'sticky_button' });
+      trackEvent('click_whatsapp', { component: link.closest('.contact__links') ? 'contact' : 'sticky' });
+    });
+  });
+
+  
+  // Email clicks
+  document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+    link.addEventListener('click', () => {
+      trackEvent('click_email', { component: 'contact' });
     });
   });
 

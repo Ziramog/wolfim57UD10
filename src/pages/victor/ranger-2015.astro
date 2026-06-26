@@ -283,7 +283,7 @@ const images = [
 
       whatsappLink.addEventListener('click', () => {
         if (typeof window !== 'undefined' && window.gtag) {
-          window.gtag('event', 'whatsapp_click_victor_ranger_2015');
+          window.gtag('event', 'click_whatsapp', { component: 'victor_landing', vehicle: 'ranger-2015' });
         }
       });
     });
