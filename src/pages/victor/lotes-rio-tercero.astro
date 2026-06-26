@@ -49,24 +49,24 @@ const images = [
     }
   </script>
 </head>
-<body class="font-sans antialiased bg-gray-50 text-gray-900 min-h-screen pb-[140px] md:pb-0">
+<body class="font-sans antialiased bg-gray-900 text-gray-900 h-[100dvh] overflow-hidden">
   
-  <div class="flex flex-col md:flex-row min-h-[100dvh] w-full bg-white overflow-hidden max-w-[1400px] mx-auto shadow-2xl relative">
+  <div class="flex flex-col md:flex-row h-[100dvh] w-full bg-white overflow-hidden max-w-[1400px] mx-auto relative shadow-2xl">
     
     <!-- LEFT / TOP: Image Gallery Area -->
-    <div class="relative flex-1 flex flex-col bg-gray-100 md:bg-gray-900 overflow-hidden h-[45dvh] md:h-auto border-b md:border-b-0 md:border-r border-gray-200 md:border-gray-800">
+    <div class="relative flex-1 flex flex-col bg-gray-900 overflow-hidden h-[42dvh] md:h-full shrink-0">
       
       <!-- Badge superior (Dueño directo) over the main image on mobile -->
-      <div class="absolute top-4 left-4 z-10 md:hidden">
-        <div class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-green-600/90 backdrop-blur-sm text-white text-[11px] font-bold uppercase tracking-wider rounded-lg shadow-lg">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+      <div class="absolute top-3 left-3 z-10 md:hidden">
+        <div class="inline-flex items-center gap-1 px-2.5 py-1 bg-green-600/90 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider rounded-md shadow-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
           Dueño directo
         </div>
       </div>
 
       <!-- Main Image Viewer -->
       <div 
-        class="flex-1 relative flex items-center justify-center overflow-hidden cursor-pointer group bg-gray-200 md:bg-[#0a0a0a]"
+        class="flex-1 relative flex items-center justify-center overflow-hidden cursor-pointer group bg-[#0a0a0a]"
         id="main-viewer"
       >
         <img 
@@ -77,175 +77,126 @@ const images = [
           onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' fill=\'%23e5e7eb\'><rect width=\'100%\' height=\'100%\'/><text x=\'50%\' y=\'50%\' font-family=\'sans-serif\' font-size=\'20\' text-anchor=\'middle\' fill=\'%239ca3af\'>Imagen no encontrada</text></svg>'"
         />
         <!-- Enlarge Hint -->
-        <div class="absolute top-4 right-4 bg-black/60 text-white p-2.5 rounded-full backdrop-blur-md opacity-0 md:opacity-80 group-hover:opacity-100 transition-opacity flex items-center justify-center shadow-lg pointer-events-none">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+        <div class="absolute top-3 right-3 md:top-4 md:right-4 bg-black/60 text-white p-2 rounded-full backdrop-blur-md opacity-80 group-hover:opacity-100 transition-opacity flex items-center justify-center shadow-lg pointer-events-none">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
         </div>
       </div>
 
       <!-- Thumbnail Strip -->
-      <div class="h-[80px] md:h-[110px] bg-white md:bg-gray-950 flex gap-2 p-2 md:p-3 overflow-x-auto items-center justify-start snap-x shrink-0 border-t border-gray-200 md:border-t-0" style="scrollbar-width: none;">
+      <div class="h-[75px] md:h-[110px] bg-gray-950 flex gap-1.5 md:gap-2 p-2 md:p-3 overflow-x-auto items-center justify-start snap-x shrink-0" style="scrollbar-width: none;">
         {images.map((img, idx) => (
           <button 
             data-index={idx}
             data-src={img.src}
             data-alt={img.alt}
-            class={`thumb-btn relative h-full shrink-0 aspect-[4/3] rounded-md md:rounded-lg overflow-hidden snap-center transition-all duration-300 ${idx === 0 ? 'ring-2 ring-blue-600 md:ring-white opacity-100 md:shadow-[0_0_15px_rgba(255,255,255,0.3)]' : 'opacity-60 md:opacity-40 hover:opacity-100 ring-1 ring-gray-200 md:ring-0'}`}
+            class={`thumb-btn relative h-full shrink-0 aspect-[4/3] rounded-md overflow-hidden snap-center transition-all duration-300 ${idx === 0 ? 'ring-2 ring-white opacity-100 shadow-[0_0_15px_rgba(255,255,255,0.3)]' : 'opacity-40 hover:opacity-100'}`}
           >
             <img src={img.src} alt={img.alt} class="w-full h-full object-cover" onerror="this.style.display='none'" />
-            <div class="absolute inset-0 bg-gray-200 -z-10 flex items-center justify-center text-gray-400 text-xs">Foto</div>
           </button>
         ))}
       </div>
     </div>
 
     <!-- RIGHT / BOTTOM: Info & CTA Area -->
-    <div class="w-full md:w-[450px] lg:w-[500px] bg-white h-auto md:h-full flex flex-col shrink-0 relative overflow-y-auto">
+    <div class="w-full md:w-[420px] lg:w-[480px] bg-white h-[58dvh] md:h-full flex flex-col shrink-0 relative shadow-[-10px_0_20px_rgba(0,0,0,0.1)]">
       
       <!-- Content area -->
-      <div class="flex-1 p-5 md:p-8 flex flex-col pb-[30px] md:pb-8">
+      <div class="flex-1 p-3 md:p-6 flex flex-col justify-center md:pb-6 relative z-10 h-full overflow-hidden">
         
-        <div class="mb-5 md:mb-6">
-          <div class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 bg-green-50 text-green-700 text-xs font-bold uppercase tracking-wider rounded-lg border border-green-200 mb-4">
+        <div class="mb-2 md:mb-5">
+          <div class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 bg-green-50 text-green-700 text-xs font-bold uppercase tracking-wider rounded-lg border border-green-200 mb-3">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
             Dueño directo
           </div>
           
-          <h1 class="text-[28px] md:text-4xl font-extrabold text-gray-900 leading-tight mb-1.5 tracking-tight">
+          <h1 class="text-[20px] md:text-3xl font-extrabold text-gray-900 leading-tight mb-0.5 tracking-tight">
             Lotes en Río Tercero
           </h1>
-          <h2 class="text-[15px] md:text-lg font-semibold text-blue-600 mb-3 md:mb-4">
-            Barrio Marín Marotto · Desde USD 32.000 · Servicios completos
+          <h2 class="text-[13px] md:text-[15px] font-semibold text-blue-600 mb-1.5 md:mb-3">
+            Barrio Marín Marotto · Desde USD 32.000
           </h2>
-          <p class="text-[14px] md:text-[15px] font-normal text-gray-600 leading-relaxed">
-            Lotes urbanos en zona Av. General Savio / Mendoza, con infraestructura completa y escrituración inmediata. Consultas directas con Victor.
+          <p class="text-[11px] md:text-[14px] font-normal text-gray-600 leading-snug hidden md:block mb-3">
+            Lotes urbanos en zona Av. General Savio / Mendoza, con infraestructura completa y escrituración inmediata.
           </p>
         </div>
 
         <!-- Cards principales -->
-        <div class="flex flex-col gap-3 mb-6 md:mb-8">
-          <div class="flex items-center justify-between bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
+        <div class="grid grid-cols-2 md:flex md:flex-col gap-2 md:gap-3 mb-3 md:mb-5">
+          <div class="bg-gray-50 p-2.5 md:p-4 rounded-xl border border-gray-100 flex flex-col justify-center items-center md:flex-row md:justify-between text-center md:text-left">
             <div>
-              <p class="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-0.5">11 lotes de 12 x 30 m</p>
-              <p class="font-black text-gray-900 text-xl">USD 32.000 <span class="text-sm font-medium text-gray-500">c/u</span></p>
+              <p class="text-[9.5px] md:text-xs text-gray-500 font-semibold uppercase tracking-wider mb-0.5">11 lotes de 12 x 30 m</p>
+              <p class="font-black text-gray-900 text-sm md:text-lg">USD 32.000 <span class="text-[10px] md:text-xs font-medium text-gray-500">c/u</span></p>
             </div>
-            <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg>
+            <div class="hidden md:flex w-8 h-8 rounded-full bg-blue-50 items-center justify-center text-blue-600">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg>
             </div>
           </div>
-          <div class="flex items-center justify-between bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
+          <div class="bg-gray-50 p-2.5 md:p-4 rounded-xl border border-gray-100 flex flex-col justify-center items-center md:flex-row md:justify-between text-center md:text-left">
             <div>
-              <p class="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-0.5">2 lotes de 24 x 30 m</p>
-              <p class="font-black text-gray-900 text-xl">USD 64.000 <span class="text-sm font-medium text-gray-500">c/u</span></p>
+              <p class="text-[9.5px] md:text-xs text-gray-500 font-semibold uppercase tracking-wider mb-0.5">2 lotes de 24 x 30 m</p>
+              <p class="font-black text-gray-900 text-sm md:text-lg">USD 64.000 <span class="text-[10px] md:text-xs font-medium text-gray-500">c/u</span></p>
             </div>
-            <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg>
+            <div class="hidden md:flex w-8 h-8 rounded-full bg-blue-50 items-center justify-center text-blue-600">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg>
             </div>
           </div>
         </div>
 
         <!-- Servicios -->
-        <div class="mb-6 md:mb-8 bg-gray-50 p-4 md:p-5 rounded-xl border border-gray-100">
-          <h3 class="text-xs font-bold text-gray-800 uppercase tracking-widest mb-3.5">Servicios incluidos</h3>
-          <div class="grid grid-cols-2 gap-y-3 gap-x-4 text-[14px] text-gray-700 font-medium">
-            <div class="flex items-center gap-2.5">
-              <div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div> Asfalto
-            </div>
-            <div class="flex items-center gap-2.5">
-              <div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div> Cordón cuneta
-            </div>
-            <div class="flex items-center gap-2.5">
-              <div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div> Luz
-            </div>
-            <div class="flex items-center gap-2.5">
-              <div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div> Agua
-            </div>
-            <div class="flex items-center gap-2.5">
-              <div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div> Gas natural
-            </div>
-            <div class="flex items-center gap-2.5">
-              <div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div> Cloacas
-            </div>
+        <div class="mb-3 md:mb-5 bg-white md:bg-gray-50 md:p-4 rounded-lg md:border border-gray-100">
+          <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1 hidden md:block">Servicios incluidos</p>
+          <p class="text-[11px] md:hidden text-gray-700 font-medium leading-tight">
+            <span class="font-bold text-gray-900">Servicios:</span> Asfalto, cordón cuneta, luz, agua, gas natural, cloacas.
+          </p>
+          <div class="hidden md:grid grid-cols-2 gap-y-2 gap-x-2 text-[12px] text-gray-700 font-medium">
+            <div class="flex items-center gap-1.5"><div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div> Asfalto</div>
+            <div class="flex items-center gap-1.5"><div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div> Cordón cuneta</div>
+            <div class="flex items-center gap-1.5"><div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div> Luz</div>
+            <div class="flex items-center gap-1.5"><div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div> Agua</div>
+            <div class="flex items-center gap-1.5"><div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div> Gas natural</div>
+            <div class="flex items-center gap-1.5"><div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div> Cloacas</div>
           </div>
         </div>
 
         <!-- Confianza -->
-        <div class="bg-blue-50/50 p-4 md:p-5 rounded-xl border border-blue-100 mb-6 md:mb-8">
-          <ul class="space-y-3 text-[14px] text-gray-800 font-medium">
-            <li class="flex items-start gap-3">
-              <span class="flex items-center justify-center w-5 h-5 mt-0 rounded-full bg-blue-100 text-blue-700 text-xs shrink-0 font-bold">✓</span> 
-              Trato directo con dueño
+        <div class="mb-2 md:mb-6">
+          <ul class="space-y-1.5 md:space-y-2.5 text-[11px] md:text-[13px] text-gray-800 font-medium">
+            <li class="flex items-start gap-2">
+              <span class="flex items-center justify-center w-3.5 h-3.5 md:w-4 md:h-4 mt-0.5 rounded-full bg-blue-100 text-blue-700 text-[9px] shrink-0 font-bold">✓</span> 
+              Trato directo con dueño y escrituración inmediata
             </li>
-            <li class="flex items-start gap-3">
-              <span class="flex items-center justify-center w-5 h-5 mt-0 rounded-full bg-blue-100 text-blue-700 text-xs shrink-0 font-bold">✓</span> 
-              Escrituración inmediata
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="flex items-center justify-center w-5 h-5 mt-0 rounded-full bg-blue-100 text-blue-700 text-xs shrink-0 font-bold">✓</span> 
-              Posibilidad de financiación
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="flex items-center justify-center w-5 h-5 mt-0 rounded-full bg-blue-100 text-blue-700 text-xs shrink-0 font-bold">✓</span> 
-              Zona urbana consolidada
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="flex items-center justify-center w-5 h-5 mt-0 rounded-full bg-blue-100 text-blue-700 text-xs shrink-0 font-bold">✓</span> 
-              Ideal para vivienda o inversión
+            <li class="flex items-start gap-2">
+              <span class="flex items-center justify-center w-3.5 h-3.5 md:w-4 md:h-4 mt-0.5 rounded-full bg-blue-100 text-blue-700 text-[9px] shrink-0 font-bold">✓</span> 
+              Posibilidad de financiación disponible
             </li>
           </ul>
         </div>
         
-        <div class="hidden md:flex flex-col gap-2 w-full mt-auto">
-          <a 
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-cta="whatsapp-victor-lotes-rio-tercero"
-            data-campaign="victor-lotes-rio-tercero"
-            id="whatsapp-link-desktop"
-            class="w-full bg-[#25D366] hover:bg-[#20b858] text-white text-center font-bold py-4 px-6 rounded-xl shadow-[0_4px_14px_0_rgba(37,211,102,0.3)] transition-transform transform active:scale-[0.98] flex items-center justify-center text-lg gap-2.5"
-          >
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
-            </svg>
-            Consultar por WhatsApp
-          </a>
-          
-          <div class="text-center text-[13px] text-gray-600 font-medium mt-1 mb-3">
-            <p>Consultas directas con Victor</p>
-            <p class="font-bold text-gray-900 text-[14px]">WhatsApp: +54 9 3571 54-1588</p>
-          </div>
-          
-          <p class="text-center text-[11px] text-gray-400 mt-2 border-t border-gray-100 pt-3">
-            Publicación gestionada por Wolfim. Operación y consultas directas con el dueño.
-          </p>
+        <!-- Push button to bottom -->
+        <div class="mt-auto"></div>
+
+      </div>
+      
+      <!-- Fixed Bottom CTA Area (Shared for desktop and mobile) -->
+      <div class="p-3 md:p-6 bg-white border-t border-gray-100 shrink-0 relative z-20">
+        <a 
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-cta="whatsapp-victor-lotes-rio-tercero"
+          data-campaign="victor-lotes-rio-tercero"
+          id="whatsapp-link-desktop"
+          class="w-full bg-[#25D366] hover:bg-[#20b858] text-white text-center font-bold py-3 md:py-4 px-6 rounded-xl md:rounded-2xl shadow-[0_4px_14px_0_rgba(37,211,102,0.3)] transition-transform transform active:scale-[0.98] flex items-center justify-center text-[15px] md:text-lg gap-2"
+        >
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+          </svg>
+          Consultar por WhatsApp
+        </a>
+        <div class="text-center text-[10px] md:text-[12px] text-gray-500 font-medium leading-tight mt-1.5">
+          <p>Consultas directas con Victor: <span class="font-bold text-gray-800">WhatsApp +54 9 3571 54-1588</span></p>
         </div>
-
       </div>
-    </div>
-
-    <!-- Mobile Fixed Bottom CTA -->
-    <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 shadow-[0_-10px_20px_-5px_rgba(0,0,0,0.1)] z-40 md:hidden flex flex-col pb-6">
-      <a 
-        href={whatsappUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        data-cta="whatsapp-victor-lotes-rio-tercero"
-        data-campaign="victor-lotes-rio-tercero"
-        id="whatsapp-link-mobile"
-        class="w-full bg-[#25D366] hover:bg-[#20b858] text-white text-center font-bold py-3.5 px-6 rounded-xl shadow-[0_4px_14px_0_rgba(37,211,102,0.3)] transition-transform transform active:scale-[0.98] flex items-center justify-center text-[17px] gap-2 mb-2"
-      >
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
-        </svg>
-        Consultar por WhatsApp
-      </a>
-      <div class="text-center text-[12px] text-gray-600 font-medium leading-tight">
-        <p>Consultas directas con Victor</p>
-        <p class="font-bold text-gray-900 text-[13px]">WhatsApp: +54 9 3571 54-1588</p>
-      </div>
-      <p class="text-center text-[10px] text-gray-400 mt-2">
-        Publicación gestionada por Wolfim. Operación con dueño.
-      </p>
     </div>
 
     <!-- Fullscreen Zoom Modal (Hidden by default) -->
