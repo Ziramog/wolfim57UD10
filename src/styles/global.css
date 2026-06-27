@@ -2041,8 +2041,7 @@ img {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  flex: 1;
+  gap: 0.5rem;
 }
 
 .pricing-card__features li {
@@ -2063,8 +2062,8 @@ img {
 
 /* ─── PRICING CARD MICROCOPY ─── */
 .pricing-card__note {
-  font-size: var(--text-small);
-  line-height: 1.6;
+  font-size: 0.75rem;
+  line-height: 1.4;
   color: var(--gray-500);
   font-weight: 300;
   margin-top: var(--space-sm);
