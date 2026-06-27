@@ -512,7 +512,7 @@
       'marquee.6': 'Lanzamiento',
 
       // Contact
-      'contact.title': 'Creemos la Próxima<br>Versión Digital de tu<br>Negocio',
+      'contact.title': 'Armemos la Próxima<br>Versión Digital de tu<br>Negocio',
       'contact.desc': 'Si buscás una web que refleje la calidad real de tu negocio — no una plantilla con tu logo — hablemos. Trabajo directamente con cada cliente, desde la primera conversación hasta el lanzamiento.',
       'contact.schedule_label': 'Agendar',
       'contact.schedule_value': 'Reservar una llamada introductoria gratuita',
