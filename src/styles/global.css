@@ -3001,12 +3001,12 @@ img {
   border: none;
   color: var(--color-white);
   padding: 1.5rem 0;
-  font-size: 1.25rem;
+  font-size: var(--text-medium);
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: inherit;
+  font-family: var(--font-display);
 }
 .faq-item__icon {
   font-size: 1.5rem;
@@ -3027,6 +3027,8 @@ img {
   padding-bottom: 1.5rem;
   color: var(--color-text-dim);
   line-height: 1.6;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
 }
 
 .contact__form {
@@ -3041,7 +3043,8 @@ img {
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.1);
   color: var(--color-white);
-  font-family: inherit;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
   border-radius: 4px;
 }
 .contact__textarea {
