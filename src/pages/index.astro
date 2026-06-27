@@ -728,21 +728,10 @@ import Layout from '../layouts/Layout.astro';
       </div>
       <div class="contact__right" data-animate="fade-up">
         <p class="contact__desc" data-i18n="contact.desc">Si buscás una web que refleje la calidad real de tu negocio — no una plantilla con tu logo — hablemos. Trabajo directamente con cada cliente, desde la primera conversación hasta el lanzamiento.</p>
-        <div class="contact__links">
-          <a href="https://wa.me/5491173858454?text=Hola%2C%20estoy%20interesado%20en%20un%20sitio%20web" class="contact__link contact__link--whatsapp" target="_blank" rel="noopener noreferrer">
-            <span class="contact__link-label">WhatsApp</span>
-            <span class="contact__link-value">+54 9 11 7385-8454</span>
-          </a>
-          <a href="mailto:hello@wolfim.com" class="contact__link" id="contact-email">
-            <span class="contact__link-label">Email</span>
-            <span class="contact__link-value">hello@wolfim.com</span>
-          </a>
-        </div>
-        
         <form class="contact__form" id="contact-form" action="#" method="POST" data-animate="fade-up">
-          <input type="text" placeholder="Nombre / Empresa" class="contact__input" required>
-          <input type="email" placeholder="Email" class="contact__input" required>
-          <textarea placeholder="¿Qué necesitas?" class="contact__textarea" required></textarea>
+          <input type="text" name="name" placeholder="Nombre / Empresa" class="contact__input" required>
+          <input type="email" name="email" placeholder="Email" class="contact__input" required>
+          <textarea name="message" placeholder="¿Qué necesitas?" class="contact__textarea" required></textarea>
           <button type="submit" class="contact__submit">Enviar Mensaje</button>
         </form>
 

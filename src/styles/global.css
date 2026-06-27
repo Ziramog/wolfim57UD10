@@ -61,6 +61,8 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -70,6 +72,7 @@ body {
   color: var(--black);
   background-color: #FAFAF8; /* Ultra-soft off-white */
   overflow-x: hidden;
+  width: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -78,7 +81,7 @@ body {
 #cinematic-bg {
   position: fixed;
   inset: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background: radial-gradient(circle at 50% 30%, rgba(0,0,0,0.015) 0%, rgba(0,0,0,0.03) 100%);
   z-index: -999;
@@ -2153,6 +2156,9 @@ img {
   line-height: 0.95;
   letter-spacing: -0.03em;
   text-transform: uppercase;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .contact__title .section__number {
@@ -2968,16 +2974,16 @@ img {
   display: inline-block;
   margin-top: 1.5rem;
   padding: 0.5rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: var(--color-white);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: var(--black);
   text-decoration: none;
   font-size: 0.85rem;
   border-radius: 4px;
   transition: all 0.3s ease;
 }
 .project__link:hover {
-  background: var(--color-white);
-  color: var(--color-bg);
+  background: var(--black);
+  color: var(--white);
 }
 
 .testimonial__stars {
@@ -2992,14 +2998,14 @@ img {
   margin: 0 auto;
 }
 .faq-item {
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid var(--border);
 }
 .faq-item__question {
   width: 100%;
   text-align: left;
   background: none;
   border: none;
-  color: var(--color-white);
+  color: var(--black);
   padding: 1.5rem 0;
   font-size: var(--text-medium);
   cursor: pointer;
@@ -3025,7 +3031,7 @@ img {
 }
 .faq-item__answer p {
   padding-bottom: 1.5rem;
-  color: var(--color-text-dim);
+  color: var(--gray-500);
   line-height: 1.6;
   font-family: var(--font-body);
   font-size: var(--text-body);
@@ -3040,9 +3046,9 @@ img {
 .contact__input, .contact__textarea {
   width: 100%;
   padding: 1rem;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  color: var(--color-white);
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.15);
+  color: var(--black);
   font-family: var(--font-body);
   font-size: var(--text-body);
   border-radius: 4px;
@@ -3053,18 +3059,24 @@ img {
 }
 .contact__input:focus, .contact__textarea:focus {
   outline: none;
-  border-color: rgba(255,255,255,0.4);
+  border-color: var(--black);
 }
 .contact__submit {
-  padding: 1rem;
-  background: var(--color-white);
-  color: var(--color-bg);
+  padding: 1rem 2rem;
+  background: var(--black);
+  color: var(--white);
   border: none;
   font-weight: 600;
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   cursor: pointer;
   border-radius: 4px;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
+  width: 100%;
 }
 .contact__submit:hover {
   opacity: 0.9;
+  transform: translateY(-2px);
 }
