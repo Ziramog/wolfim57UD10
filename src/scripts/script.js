@@ -34,6 +34,8 @@
       'projects.p1.title': 'Silvia Roggero<br>de Roma',
       'projects.p1.tag1': 'Immersive Web Reconstruction',
       'projects.p1.tag2': 'Real Estate',
+      'projects.visit': 'Visitar sitio en vivo ↗',
+      'projects.visit': 'Visit live site ↗',
       'projects.p1.desc': 'Complete redesign for a real estate company with existing presence. New site from scratch with premium aesthetics, video hero, property catalog, interactive maps, reviews and commercial tools to elevate brand perception and organize inquiries.',
       'projects.p2.title': 'S&amp;P<br>Cars',
       'projects.p2.tag1': 'Automotive Platform',
@@ -228,6 +230,32 @@
       'pricing.note': 'Monthly maintenance includes hosting, SSL, basic backups, technical support, security and minor changes according to plan. New sections, bulk content uploads, redesigns, integrations or additional functionalities are quoted separately.',
       'pricing.cta_button': 'Contact via WhatsApp',
 
+      
+      // FAQ
+      'faq.title': 'Preguntas<br>frecuentes',
+      'faq.subtitle': 'Resolvemos tus dudas antes de empezar',
+      'faq.q1': '¿Qué incluye el pago mensual?',
+      'faq.a1': 'Incluye hosting premium, certificado SSL, copias de seguridad diarias, seguridad avanzada y soporte técnico.',
+      'faq.q2': '¿Tengo que proveer los textos y fotos?',
+      'faq.a2': 'Idealmente sí, pero si no los tienes podemos utilizar Inteligencia Artificial para redactar contenido profesional e imágenes.',
+      'faq.q3': '¿En qué plataforma construyen los sitios?',
+      'faq.a3': 'Usamos Astro y Next.js para un rendimiento ultrarrápido, superior a WordPress. Esto mejora tu SEO y experiencia de usuario.',
+      'faq.q4': '¿Puedo actualizar el contenido yo mismo?',
+      'faq.a4': 'Sí, entregamos un panel autoadministrable (CMS) intuitivo donde podrás editar textos, imágenes y proyectos sin tocar código.',
+
+      
+      // FAQ
+      'faq.title': 'Frequently Asked<br>Questions',
+      'faq.subtitle': 'Clearing your doubts before starting',
+      'faq.q1': 'What does the monthly payment include?',
+      'faq.a1': 'It includes premium hosting, SSL certificate, daily backups, advanced security and technical support.',
+      'faq.q2': 'Do I have to provide texts and photos?',
+      'faq.a2': 'Ideally yes, but if you don\'t have them we can use AI to write professional content and generate images.',
+      'faq.q3': 'What platform do you use?',
+      'faq.a3': 'We use Astro and Next.js for ultra-fast performance, superior to WordPress. This improves SEO and user experience.',
+      'faq.q4': 'Can I update the content myself?',
+      'faq.a4': 'Yes, we provide an intuitive CMS dashboard where you can edit texts, images and projects without touching code.',
+
       // Marquee
       'marquee.1': 'Custom Web',
       'marquee.2': 'Catalogs',
@@ -244,7 +272,7 @@
       'contact.desc': 'If you\'re looking for a website that reflects the real quality of your business — not a template with your logo on it — let\'s talk. I work directly with every client, from first conversation to launch.',
       'contact.schedule_label': 'Schedule',
       'contact.schedule_value': 'Book a free intro call',
-      'contact.availability': 'Open agenda for new projects.',
+      'contact.availability': 'We only take 4 new projects per month to guarantee premium quality. Check availability.',
 
       // Footer
       'footer.copy': '© ' + new Date().getFullYear() + ' — All rights reserved',
@@ -263,7 +291,8 @@
       'hero.statement': 'Diseño web premium para catálogos y sitios que venden mejor.',
       'hero.subtext': 'Diseño web a medida, rediseño de sitios, catálogos digitales y producción visual con IA para marcas, propiedades, productos y servicios.',
       'hero.tags': 'Web · Catálogo · Rediseño · IA · SEO',
-      'hero.cta_primary': 'Empezar proyecto',
+      'hero.cta_primary': 'Obtener presupuesto',
+      'hero.trust': 'Más de 20 proyectos entregados con éxito',
       'hero.cta_secondary': 'Ver trabajos',
       'hero.location': 'Buenos Aires <span class="hero__location-dot">●</span> Servicio remoto para clientes de todo el mundo',
       'hero.cta_projects': 'Ver Proyectos',
@@ -487,7 +516,7 @@
       'contact.desc': 'Si buscás una web que refleje la calidad real de tu negocio — no una plantilla con tu logo — hablemos. Trabajo directamente con cada cliente, desde la primera conversación hasta el lanzamiento.',
       'contact.schedule_label': 'Agendar',
       'contact.schedule_value': 'Reservar una llamada introductoria gratuita',
-      'contact.availability': 'Agenda abierta para nuevos proyectos.',
+      'contact.availability': 'Solo tomamos 4 proyectos nuevos por mes para garantizar calidad premium. Consulta disponibilidad.',
 
       // Footer
       'footer.copy': '© ' + new Date().getFullYear() + ' — Todos los derechos reservados',
@@ -1504,3 +1533,13 @@
   updateProcessStack();
 
 })();
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-item__question').forEach(button => {
+    button.addEventListener('click', () => {
+      const parent = button.parentElement;
+      const wasActive = parent.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+      if (!wasActive) parent.classList.add('active');
+    });
+  });
