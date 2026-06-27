@@ -165,7 +165,7 @@ img {
   transform: translateY(-100%);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   :root {
   --container-padding: clamp(2rem, 5vw, 6rem);
     --hero-title-size: 15vw;
@@ -182,7 +182,7 @@ img {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   /* ─── MOBILE GRID RECONFIGURATION ─── */
   .hero__hline { display: block; }
   .hero__hline.hline-1 { top: 25%; }
@@ -2481,7 +2481,7 @@ img {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .nav__links {
     display: none;
   }
