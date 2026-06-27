@@ -729,10 +729,10 @@ import Layout from '../layouts/Layout.astro';
       <div class="contact__right" data-animate="fade-up">
         <p class="contact__desc" data-i18n="contact.desc">Si buscás una web que refleje la calidad real de tu negocio — no una plantilla con tu logo — hablemos. Trabajo directamente con cada cliente, desde la primera conversación hasta el lanzamiento.</p>
         <form class="contact__form" id="contact-form" action="#" method="POST" data-animate="fade-up">
-          <input type="text" name="name" placeholder="Nombre / Empresa" class="contact__input" required>
-          <input type="email" name="email" placeholder="Email" class="contact__input" required>
-          <textarea name="message" placeholder="¿Qué necesitas?" class="contact__textarea" required></textarea>
-          <button type="submit" class="contact__submit">Enviar Mensaje</button>
+          <input type="text" name="name" placeholder="Nombre / Empresa" class="contact__input" required data-i18n-placeholder="contact.form_name">
+          <input type="email" name="email" placeholder="Email" class="contact__input" required data-i18n-placeholder="contact.form_email">
+          <textarea name="message" placeholder="¿Qué necesitas?" class="contact__textarea" required data-i18n-placeholder="contact.form_message"></textarea>
+          <button type="submit" class="contact__submit" data-i18n="contact.form_submit">Enviar Mensaje</button>
         </form>
 
         <div class="contact__availability">
@@ -746,16 +746,14 @@ import Layout from '../layouts/Layout.astro';
   <!-- ═══════════════ FOOTER ═══════════════ -->
   <footer class="footer">
     <div class="footer__line"></div>
-    <div class="footer__inner">
+    <div class="footer__inner" style="display: flex; justify-content: space-between; align-items: center; position: relative;">
       <div class="footer__left" style="display: flex; align-items: center; gap: 12px;">
-        <img src="/wolfim_logos/favicom_redsquare.svg" alt="Wolfim Icon" style="width: 24px; height: 24px; opacity: 0.8;">
         <span class="footer__logo">WOLFIM STUDIO</span>
-        <span class="footer__copy" data-i18n="footer.copy">© 2024 — Todos los derechos reservados</span>
+        <span style="opacity: 0.3;">|</span>
+        <span class="footer__copy" data-i18n="footer.copy">© 2024</span>
       </div>
-      <div class="footer__right">
-        <span class="footer__link">LinkedIn</span>
-        <span class="footer__link">Twitter / X</span>
-        <span class="footer__link">GitHub</span>
+      <div class="footer__center" style="position: absolute; left: 50%; transform: translateX(-50%);">
+        <img src="/wolfim_logos/favicom_redsquare.svg" alt="Wolfim Icon" style="width: 48px; height: 48px; opacity: 0.9;">
       </div>
     </div>
   </footer>

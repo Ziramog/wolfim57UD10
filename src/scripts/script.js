@@ -270,6 +270,10 @@
       // Contact
       'contact.title': 'Let\'s Build the Next<br>Digital Version of<br>Your Business',
       'contact.desc': 'If you\'re looking for a website that reflects the real quality of your business — not a template with your logo on it — let\'s talk. I work directly with every client, from first conversation to launch.',
+      'contact.form_name': 'Name / Company',
+      'contact.form_email': 'Email',
+      'contact.form_message': 'What do you need?',
+      'contact.form_submit': 'Send Message',
       'contact.schedule_label': 'Schedule',
       'contact.schedule_value': 'Book a free intro call',
       'contact.availability': 'We only take 4 new projects per month to guarantee premium quality. Check availability.',
@@ -514,6 +518,10 @@
       // Contact
       'contact.title': 'Armemos la Próxima<br>Versión Digital de tu<br>Negocio',
       'contact.desc': 'Si buscás una web que refleje la calidad real de tu negocio — no una plantilla con tu logo — hablemos. Trabajo directamente con cada cliente, desde la primera conversación hasta el lanzamiento.',
+      'contact.form_name': 'Nombre / Empresa',
+      'contact.form_email': 'Email',
+      'contact.form_message': '¿Qué necesitas?',
+      'contact.form_submit': 'Enviar Mensaje',
       'contact.schedule_label': 'Agendar',
       'contact.schedule_value': 'Reservar una llamada introductoria gratuita',
       'contact.availability': 'Solo tomamos 4 proyectos nuevos por mes para garantizar calidad premium. Consulta disponibilidad.',
@@ -579,6 +587,14 @@
       const key = el.getAttribute('data-i18n-html');
       if (dict[key]) {
         el.innerHTML = dict[key];
+      }
+    });
+
+    // Update placeholder elements
+    document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (dict[key]) {
+        el.setAttribute('placeholder', dict[key]);
       }
     });
 
@@ -838,6 +854,12 @@
 
   function updateNav() {
     const scrollY = window.scrollY;
+
+    if (scrollY > 20) {
+      nav.classList.add('is-scrolled');
+    } else {
+      nav.classList.remove('is-scrolled');
+    }
 
     if (scrollY > 100) {
       if (scrollY > lastScrollY && scrollY > 300) {
