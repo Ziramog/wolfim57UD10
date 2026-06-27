@@ -2588,10 +2588,10 @@ img {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    justify-content: flex-start;
+    justify-content: center;
     margin-bottom: 0;
     padding-left: var(--container-padding);
-    padding-right: 0;
+    padding-right: var(--container-padding);
   }
 
   .hero__tag {
