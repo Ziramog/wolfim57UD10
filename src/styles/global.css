@@ -201,7 +201,8 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.8rem var(--container-padding);
+  padding: 0 var(--container-padding);
+  height: 100%;
 }
 
 .nav__logo {
