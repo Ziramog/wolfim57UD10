@@ -204,187 +204,231 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- ═══════════════ PRICING ═══════════════ -->
+    <!-- ═══════════════ PRICING ═══════════════ -->
   <section id="pricing" class="section pricing-section">
     <div class="section__header" data-animate="fade-up">
       <span class="section__number" data-i18n="pricing.headline">SOLUCIONES WOLFIM</span>
-      <h2 class="section__title" data-i18n="pricing.title">Soluciones digitales premium para negocios que necesitan vender mejor.</h2>
-      <p class="section__subtitle" data-i18n="pricing.subtitle">Sitios, catálogos y sistemas comerciales con diseño cuidado, WhatsApp, medición y estructura lista para campañas.</p>
+      <h2 class="section__title" data-i18n="pricing.title">Soluciones premium para vender mejor.</h2>
+      <p class="section__subtitle" data-i18n="pricing.subtitle">Sitios, catálogos y sistemas con WhatsApp, medición y estructura para campañas.</p>
     </div>
     <div class="section__line"></div>
 
     <div class="pricing__grid">
-      <!-- Plan 1: Presencia Comercial -->
+      <!-- Plan 1 -->
       <div class="pricing-card" data-animate="fade-up">
-        <div class="pricing-card__header">
-          <i data-lucide="briefcase" class="pricing-card__icon" style="margin-bottom: 1rem; width: 24px; height: 24px;"></i>
-          <br>
-          <span class="pricing-card__tag" data-i18n="pricing.p1.tag">PYMES & PROFESIONALES</span>
-          <h3 class="pricing-card__title" data-i18n="pricing.p1.title">Presencia Comercial</h3>
-          <div class="pricing-card__price">
-            <span class="pricing-card__period" style="margin-right:0.25rem" data-i18n="pricing.from">Desde</span>
+        <div class="pricing-card__left">
+          <div class="pricing-card__brand">
+            <div class="pricing-card__icon-wrapper">
+              <i data-lucide="user" class="pricing-card__icon"></i>
+            </div>
+            <div class="pricing-card__titles">
+              <div class="pricing-card__tags">
+                <span class="pricing-card__tag" data-i18n="pricing.p1.tag">PYMES & PROFESIONALES</span>
+              </div>
+              <h3 class="pricing-card__title" data-i18n="pricing.p1.title">Presencia Comercial</h3>
+            </div>
+          </div>
+          <ul class="pricing-card__features">
+            <li data-i18n="pricing.p1.f1">Sitio premium compacto</li>
+            <li class="desktop-only" data-i18n="pricing.p1.f2">Propuesta de valor clara</li>
+            <li class="desktop-only" data-i18n="pricing.p1.f3">Servicios + contacto</li>
+            <li data-i18n="pricing.p1.f4">WhatsApp + formulario</li>
+            <li data-i18n="pricing.p1.f5">SEO básico + medición</li>
+          </ul>
+          <p class="pricing-card__note desktop-only" data-i18n="pricing.p1.note">Para negocios que necesitan verse serios.</p>
+        </div>
+        <div class="pricing-card__right">
+          <div class="pricing-card__price-group">
+            <span class="pricing-card__period" data-i18n="pricing.from">Desde</span>
             <span class="pricing-card__amount">USD 200</span>
+            <div class="pricing-card__monthly">
+              <span class="pricing-card__plus">+</span>
+              <span class="pricing-card__amount-small">USD 25</span>
+              <span class="pricing-card__period" data-i18n="pricing.monthly">/mes</span>
+            </div>
           </div>
-          <div class="pricing-card__monthly">
-            <span class="pricing-card__plus">+</span>
-            <span class="pricing-card__amount-small">USD 25</span>
-            <span class="pricing-card__period" data-i18n="pricing.monthly">/mes</span>
+          <div class="pricing-card__actions">
+            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Presencia%20Comercial." class="pricing-card__desktop-cta desktop-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_plan">Consultar este plan &rarr;</a>
+            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Presencia%20Comercial." class="pricing-card__mobile-cta mobile-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_mobile">CONSULTAR</a>
           </div>
-        </div>
-        <ul class="pricing-card__features">
-          <li data-i18n="pricing.p1.f1">Sitio premium compacto</li>
-          <li data-i18n="pricing.p1.f2">Propuesta de valor clara</li>
-          <li data-i18n="pricing.p1.f3">Servicios + contacto</li>
-          <li data-i18n="pricing.p1.f4">WhatsApp + formulario</li>
-          <li data-i18n="pricing.p1.f5">SEO básico + medición</li>
-        </ul>
-        <p class="pricing-card__note" data-i18n="pricing.p1.note">Para negocios que necesitan verse serios.</p>
-        <div class="pricing-card__actions">
-          <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Presencia%20Comercial." class="pricing-card__desktop-cta" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_plan">Consultar este plan &rarr;</a>
-          <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Presencia%20Comercial." class="pricing-card__mobile-cta" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_mobile">CONSULTAR</a>
         </div>
       </div>
 
-      <!-- Plan 2: Loteo Activo -->
+      <!-- Plan 2 -->
       <div class="pricing-card pricing-card--featured" data-animate="fade-up">
-        <div class="pricing-card__header">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
-            <i data-lucide="map" class="pricing-card__icon" style="width: 24px; height: 24px;"></i>
-            <span class="pricing-card__tag" style="border:1px solid var(--primary); color:var(--primary); padding:2px 6px; border-radius:4px; font-size:0.5rem;" data-i18n="pricing.p2.badge">MÁS VENDIDO</span>
+        <div class="pricing-card__left">
+          <div class="pricing-card__brand">
+            <div class="pricing-card__icon-wrapper">
+              <i data-lucide="flag" class="pricing-card__icon"></i>
+            </div>
+            <div class="pricing-card__titles">
+              <div class="pricing-card__tags">
+                <span class="pricing-card__tag" data-i18n="pricing.p2.tag">DESARROLLOS & LOTES</span>
+                <span class="pricing-card__badge" data-i18n="pricing.p2.badge">MÁS VENDIDO</span>
+              </div>
+              <h3 class="pricing-card__title" data-i18n="pricing.p2.title">Loteo Activo</h3>
+            </div>
           </div>
-          <span class="pricing-card__tag" data-i18n="pricing.p2.tag">DESARROLLOS & LOTES</span>
-          <h3 class="pricing-card__title" data-i18n="pricing.p2.title">Loteo Activo</h3>
-          <div class="pricing-card__price">
-            <span class="pricing-card__period" style="margin-right:0.25rem" data-i18n="pricing.from">Desde</span>
+          <ul class="pricing-card__features">
+            <li data-i18n="pricing.p2.f1">Landing premium</li>
+            <li class="desktop-only" data-i18n="pricing.p2.f2">Storytelling + ubicación</li>
+            <li class="desktop-only" data-i18n="pricing.p2.f3">Galería, video o recorrido</li>
+            <li data-i18n="pricing.p2.f4">Lotes, estados y precios</li>
+            <li data-i18n="pricing.p2.f5">Campaña Meta inicial</li>
+          </ul>
+          <p class="pricing-card__note desktop-only" data-i18n="pricing.p2.note">Para loteos, countries y tierras privadas.</p>
+        </div>
+        <div class="pricing-card__right">
+          <div class="pricing-card__price-group">
+            <span class="pricing-card__period" data-i18n="pricing.from">Desde</span>
             <span class="pricing-card__amount">USD 450</span>
+            <div class="pricing-card__monthly">
+              <span class="pricing-card__plus">+</span>
+              <span class="pricing-card__amount-small">USD 39</span>
+              <span class="pricing-card__period" data-i18n="pricing.monthly">/mes</span>
+            </div>
           </div>
-          <div class="pricing-card__monthly">
-            <span class="pricing-card__plus">+</span>
-            <span class="pricing-card__amount-small">USD 39</span>
-            <span class="pricing-card__period" data-i18n="pricing.monthly">/mes</span>
+          <div class="pricing-card__actions">
+            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Loteo%20Activo%20para%20un%20desarrollo%20o%20loteo." class="pricing-card__desktop-cta desktop-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_plan">Consultar este plan &rarr;</a>
+            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Loteo%20Activo%20para%20un%20desarrollo%20o%20loteo." class="pricing-card__mobile-cta pricing-card__mobile-cta--solid mobile-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_mobile">CONSULTAR</a>
           </div>
-        </div>
-        <ul class="pricing-card__features">
-          <li data-i18n="pricing.p2.f1">Landing premium</li>
-          <li data-i18n="pricing.p2.f2">Storytelling + ubicación</li>
-          <li data-i18n="pricing.p2.f3">Galería, video o recorrido</li>
-          <li data-i18n="pricing.p2.f4">Lotes, estados y precios</li>
-          <li data-i18n="pricing.p2.f5">Campaña Meta inicial</li>
-        </ul>
-        <p class="pricing-card__note" data-i18n="pricing.p2.note">Para loteos, countries y tierras privadas.</p>
-        <div class="pricing-card__actions">
-          <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Loteo%20Activo%20para%20un%20desarrollo%20o%20loteo." class="pricing-card__desktop-cta" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_plan">Consultar este plan &rarr;</a>
-          <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Loteo%20Activo%20para%20un%20desarrollo%20o%20loteo." class="pricing-card__mobile-cta" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_mobile">CONSULTAR</a>
         </div>
       </div>
 
-      <!-- Plan 3: AutoLead Catálogo -->
+      <!-- Plan 3 -->
       <div class="pricing-card" data-animate="fade-up">
-        <div class="pricing-card__header">
-          <i data-lucide="car-front" class="pricing-card__icon" style="margin-bottom: 1rem; width: 24px; height: 24px;"></i>
-          <br>
-          <span class="pricing-card__tag" data-i18n="pricing.p3.tag">AUTOS & AGENCIAS</span>
-          <h3 class="pricing-card__title" data-i18n="pricing.p3.title">AutoLead Catálogo</h3>
-          <div class="pricing-card__price">
-            <span class="pricing-card__period" style="margin-right:0.25rem" data-i18n="pricing.from">Desde</span>
+        <div class="pricing-card__left">
+          <div class="pricing-card__brand">
+            <div class="pricing-card__icon-wrapper">
+              <i data-lucide="car-front" class="pricing-card__icon"></i>
+            </div>
+            <div class="pricing-card__titles">
+              <div class="pricing-card__tags">
+                <span class="pricing-card__tag" data-i18n="pricing.p3.tag">AUTOS & AGENCIAS</span>
+              </div>
+              <h3 class="pricing-card__title" data-i18n="pricing.p3.title">AutoLead Catálogo</h3>
+            </div>
+          </div>
+          <ul class="pricing-card__features">
+            <li data-i18n="pricing.p3.f1">Catálogo de unidades</li>
+            <li class="desktop-only" data-i18n="pricing.p3.f2">Fichas individuales</li>
+            <li class="desktop-only" data-i18n="pricing.p3.f3">Fotos, datos y precio</li>
+            <li data-i18n="pricing.p3.f4">WhatsApp por vehículo</li>
+            <li data-i18n="pricing.p3.f5">Panel de actualización</li>
+          </ul>
+          <p class="pricing-card__note desktop-only" data-i18n="pricing.p3.note">Para agencias con stock cambiante.</p>
+        </div>
+        <div class="pricing-card__right">
+          <div class="pricing-card__price-group">
+            <span class="pricing-card__period" data-i18n="pricing.from">Desde</span>
             <span class="pricing-card__amount">USD 450</span>
+            <div class="pricing-card__monthly">
+              <span class="pricing-card__plus">+</span>
+              <span class="pricing-card__amount-small">USD 39</span>
+              <span class="pricing-card__period" data-i18n="pricing.monthly">/mes</span>
+            </div>
           </div>
-          <div class="pricing-card__monthly">
-            <span class="pricing-card__plus">+</span>
-            <span class="pricing-card__amount-small">USD 39</span>
-            <span class="pricing-card__period" data-i18n="pricing.monthly">/mes</span>
+          <div class="pricing-card__actions">
+            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20AutoLead%20Cat%C3%A1logo%20para%20autos%20o%20agencia." class="pricing-card__desktop-cta desktop-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_plan">Consultar este plan &rarr;</a>
+            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20AutoLead%20Cat%C3%A1logo%20para%20autos%20o%20agencia." class="pricing-card__mobile-cta mobile-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_mobile">CONSULTAR</a>
           </div>
-        </div>
-        <ul class="pricing-card__features">
-          <li data-i18n="pricing.p3.f1">Catálogo de unidades</li>
-          <li data-i18n="pricing.p3.f2">Fichas individuales</li>
-          <li data-i18n="pricing.p3.f3">Fotos, datos y precio</li>
-          <li data-i18n="pricing.p3.f4">WhatsApp por vehículo</li>
-          <li data-i18n="pricing.p3.f5">Panel de actualización</li>
-        </ul>
-        <p class="pricing-card__note" data-i18n="pricing.p3.note">Para agencias con stock cambiante.</p>
-        <div class="pricing-card__actions">
-          <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20AutoLead%20Cat%C3%A1logo%20para%20autos%20o%20agencia." class="pricing-card__desktop-cta" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_plan">Consultar este plan &rarr;</a>
-          <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20AutoLead%20Cat%C3%A1logo%20para%20autos%20o%20agencia." class="pricing-card__mobile-cta" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_mobile">CONSULTAR</a>
         </div>
       </div>
 
-      <!-- Plan 4: Portal Inmobiliario -->
+      <!-- Plan 4 -->
       <div class="pricing-card" data-animate="fade-up">
-        <div class="pricing-card__header">
-          <i data-lucide="home" class="pricing-card__icon" style="margin-bottom: 1rem; width: 24px; height: 24px;"></i>
-          <br>
-          <span class="pricing-card__tag" data-i18n="pricing.p4.tag">INMOBILIARIAS</span>
-          <h3 class="pricing-card__title" data-i18n="pricing.p4.title">Portal Inmobiliario</h3>
-          <div class="pricing-card__price">
-            <span class="pricing-card__period" style="margin-right:0.25rem" data-i18n="pricing.from">Desde</span>
-            <span class="pricing-card__amount">USD 650</span>
+        <div class="pricing-card__left">
+          <div class="pricing-card__brand">
+            <div class="pricing-card__icon-wrapper">
+              <i data-lucide="building-2" class="pricing-card__icon"></i>
+            </div>
+            <div class="pricing-card__titles">
+              <div class="pricing-card__tags">
+                <span class="pricing-card__tag" data-i18n="pricing.p4.tag">INMOBILIARIAS</span>
+              </div>
+              <h3 class="pricing-card__title" data-i18n="pricing.p4.title">Portal Inmobiliario</h3>
+            </div>
           </div>
-          <div class="pricing-card__monthly">
-            <span class="pricing-card__plus">+</span>
-            <span class="pricing-card__amount-small">USD 49</span>
-            <span class="pricing-card__period" data-i18n="pricing.monthly">/mes</span>
-          </div>
+          <ul class="pricing-card__features">
+            <li class="desktop-only" data-i18n="pricing.p4.f1">Home premium</li>
+            <li data-i18n="pricing.p4.f2">Catálogo de propiedades</li>
+            <li class="desktop-only" data-i18n="pricing.p4.f3">Fichas individuales</li>
+            <li data-i18n="pricing.p4.f4">Filtros / buscador</li>
+            <li data-i18n="pricing.p4.f5">CMS para propiedades</li>
+          </ul>
+          <p class="pricing-card__note desktop-only" data-i18n="pricing.p4.note">Para venta, alquileres, tasaciones e inversores.</p>
         </div>
-        <ul class="pricing-card__features">
-          <li data-i18n="pricing.p4.f1">Home premium</li>
-          <li data-i18n="pricing.p4.f2">Catálogo de propiedades</li>
-          <li data-i18n="pricing.p4.f3">Fichas individuales</li>
-          <li data-i18n="pricing.p4.f4">Filtros / buscador</li>
-          <li data-i18n="pricing.p4.f5">CMS para propiedades</li>
-        </ul>
-        <p class="pricing-card__note" data-i18n="pricing.p4.note">Para venta, alquileres, tasaciones e inversores.</p>
-        <div class="pricing-card__actions">
-          <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Portal%20Inmobiliario." class="pricing-card__desktop-cta" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_plan">Consultar este plan &rarr;</a>
-          <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Portal%20Inmobiliario." class="pricing-card__mobile-cta" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_mobile">CONSULTAR</a>
+        <div class="pricing-card__right">
+          <div class="pricing-card__price-group">
+            <span class="pricing-card__period" data-i18n="pricing.from">Desde</span>
+            <span class="pricing-card__amount">USD 650</span>
+            <div class="pricing-card__monthly">
+              <span class="pricing-card__plus">+</span>
+              <span class="pricing-card__amount-small">USD 49</span>
+              <span class="pricing-card__period" data-i18n="pricing.monthly">/mes</span>
+            </div>
+          </div>
+          <div class="pricing-card__actions">
+            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Portal%20Inmobiliario." class="pricing-card__desktop-cta desktop-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_plan">Consultar este plan &rarr;</a>
+            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Portal%20Inmobiliario." class="pricing-card__mobile-cta mobile-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_mobile">CONSULTAR</a>
+          </div>
         </div>
       </div>
 
-      <!-- Plan 5: Tienda Online -->
+      <!-- Plan 5 -->
       <div class="pricing-card" data-animate="fade-up">
-        <div class="pricing-card__header">
-          <i data-lucide="shopping-bag" class="pricing-card__icon" style="margin-bottom: 1rem; width: 24px; height: 24px;"></i>
-          <br>
-          <span class="pricing-card__tag" data-i18n="pricing.p5.tag">ECOMMERCE</span>
-          <h3 class="pricing-card__title" data-i18n="pricing.p5.title">Tienda Online</h3>
-          <div class="pricing-card__price">
-            <span class="pricing-card__period" style="margin-right:0.25rem" data-i18n="pricing.from">Desde</span>
-            <span class="pricing-card__amount">USD 650</span>
+        <div class="pricing-card__left">
+          <div class="pricing-card__brand">
+            <div class="pricing-card__icon-wrapper">
+              <i data-lucide="shopping-bag" class="pricing-card__icon"></i>
+            </div>
+            <div class="pricing-card__titles">
+              <div class="pricing-card__tags">
+                <span class="pricing-card__tag" data-i18n="pricing.p5.tag">ECOMMERCE</span>
+              </div>
+              <h3 class="pricing-card__title" data-i18n="pricing.p5.title">Tienda Online</h3>
+            </div>
           </div>
-          <div class="pricing-card__monthly">
-            <span class="pricing-card__plus">+</span>
-            <span class="pricing-card__amount-small">USD 59</span>
-            <span class="pricing-card__period" data-i18n="pricing.monthly">/mes</span>
-          </div>
+          <ul class="pricing-card__features">
+            <li data-i18n="pricing.p5.f1">Catálogo de productos</li>
+            <li data-i18n="pricing.p5.f2">Carrito + checkout</li>
+            <li class="desktop-only" data-i18n="pricing.p5.f3">Pagos online</li>
+            <li class="desktop-only" data-i18n="pricing.p5.f4">Gestión de pedidos</li>
+            <li data-i18n="pricing.p5.f5">Panel administrativo</li>
+          </ul>
+          <p class="pricing-card__note desktop-only" data-i18n="pricing.p5.note">Para negocios listos para vender online.</p>
         </div>
-        <ul class="pricing-card__features">
-          <li data-i18n="pricing.p5.f1">Catálogo de productos</li>
-          <li data-i18n="pricing.p5.f2">Carrito + checkout</li>
-          <li data-i18n="pricing.p5.f3">Pagos online</li>
-          <li data-i18n="pricing.p5.f4">Gestión de pedidos</li>
-          <li data-i18n="pricing.p5.f5">Panel administrativo</li>
-        </ul>
-        <p class="pricing-card__note" data-i18n="pricing.p5.note">Para negocios listos para vender online.</p>
-        <div class="pricing-card__actions">
-          <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Tienda%20Online." class="pricing-card__desktop-cta" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_plan">Consultar este plan &rarr;</a>
-          <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Tienda%20Online." class="pricing-card__mobile-cta" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_mobile">CONSULTAR</a>
+        <div class="pricing-card__right">
+          <div class="pricing-card__price-group">
+            <span class="pricing-card__period" data-i18n="pricing.from">Desde</span>
+            <span class="pricing-card__amount">USD 650</span>
+            <div class="pricing-card__monthly">
+              <span class="pricing-card__plus">+</span>
+              <span class="pricing-card__amount-small">USD 59</span>
+              <span class="pricing-card__period" data-i18n="pricing.monthly">/mes</span>
+            </div>
+          </div>
+          <div class="pricing-card__actions">
+            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Tienda%20Online." class="pricing-card__desktop-cta desktop-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_plan">Consultar este plan &rarr;</a>
+            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Tienda%20Online." class="pricing-card__mobile-cta mobile-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_mobile">CONSULTAR</a>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="pricing__cta" data-animate="fade-up">
+    <div class="pricing__cta desktop-only" data-animate="fade-up">
       <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20una%20soluci%C3%B3n%20digital%20premium." class="pricing__cta-button" target="_blank" rel="noopener noreferrer">
         <span data-i18n="pricing.cta_button">CONSULTAR POR WHATSAPP</span>
       </a>
     </div>
 
-    <div class="pricing__note" data-animate="fade-up">
-      <p class="pricing__note-text" data-i18n="pricing.note">Mantenimiento incluye hosting, SSL, soporte técnico, backups, seguridad básica, medición y cambios menores de contenido. Campañas y gestión comercial se cotizan aparte.</p>
+    <div class="pricing__note mobile-only" data-animate="fade-up" style="margin-top:2rem;">
+      <p class="pricing__note-text" data-i18n="pricing.note" style="white-space: pre-line; text-align: center;">Mantenimiento: hosting, SSL, soporte, backups, medición y cambios menores.
+Campañas y gestión comercial aparte.</p>
     </div>
 
-    <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20una%20soluci%C3%B3n%20digital%20premium." class="pricing__secondary-cta" target="_blank" rel="noopener noreferrer" data-i18n="pricing.secondary_cta" data-animate="fade-up">NO SÉ QUÉ NECESITO — HABLAR CON WOLFIM</a>
+    <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20una%20soluci%C3%B3n%20digital%20premium." class="pricing__secondary-cta mobile-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.secondary_cta" data-animate="fade-up" style="display:block;">NO SÉ QUÉ NECESITO — HABLAR CON WOLFIM</a>
   </section>
-
 
   <!-- ═══════════════ FAQ ═══════════════ -->
   <section id="faq" class="section faq-section">
