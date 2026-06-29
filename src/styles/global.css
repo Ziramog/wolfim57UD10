@@ -3207,7 +3207,7 @@ li.desktop-only { display: flex !important; }
     gap: 1rem;
     padding: 1.5rem;
     background: var(--white);
-    border-radius: 12px;
+    border-radius: 0;
     border: 1px solid var(--border);
     position: relative;
     box-shadow: 0 4px 12px rgba(0,0,0,0.03);
@@ -3359,7 +3359,7 @@ li.desktop-only { display: flex !important; }
     flex-direction: column;
     padding: 20px 18px;
     gap: 16px;
-    border-radius: 12px;
+    border-radius: 0;
   }
 
   /* Remove grid and vertical divider */
