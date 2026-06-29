@@ -176,7 +176,7 @@
 
       // Pricing
       'pricing.headline': 'WOLFIM SOLUTIONS',
-      'pricing.title': 'Premium solutions to sell better.',
+      'pricing.title': 'Premium web design plans — from USD 200',
       'pricing.subtitle': 'Sites, catalogs and systems with WhatsApp, tracking and structure for campaigns.',
       'pricing.setup': 'USD',
       'pricing.from': 'From USD',
@@ -193,7 +193,7 @@
       'pricing.p1.note': 'For businesses that need to look serious.',
 
       'pricing.p2.tag': 'DEVELOPMENTS & LOTS',
-      'pricing.p2.badge': 'BEST SELLER',
+      'pricing.p2.badge': 'INCLUDES META CAMPAIGN',
       'pricing.p2.title': 'Active Subdivision',
       'pricing.p2.f1': 'Premium landing',
       'pricing.p2.f2': 'Storytelling + location',
@@ -231,7 +231,7 @@
 
       'pricing.note': 'Maintenance includes hosting, SSL, technical support, backups, basic security, tracking and minor content changes. Campaigns and commercial management are quoted separately.',
       'pricing.cta_button': 'CONTACT VIA WHATSAPP',
-      'pricing.consult_plan': 'Consult this plan →',
+      'pricing.consult_plan': 'I want this plan →',
       'pricing.consult_mobile': 'INQUIRE',
       'pricing.secondary_cta': 'I DON\'T KNOW WHAT I NEED — TALK TO WOLFIM',
 
@@ -458,7 +458,7 @@
 
       // Precios
       'pricing.headline': 'SOLUCIONES WOLFIM',
-      'pricing.title': 'Soluciones premium para vender mejor.',
+      'pricing.title': 'Planes de diseño web premium — desde USD 200',
       'pricing.subtitle': 'Sitios, catálogos y sistemas con WhatsApp, medición y estructura para campañas.',
       'pricing.setup': 'USD',
       'pricing.from': 'Desde USD',
@@ -475,7 +475,7 @@
       'pricing.p1.note': 'Para negocios que necesitan verse serios.',
 
       'pricing.p2.tag': 'DESARROLLOS & LOTES',
-      'pricing.p2.badge': 'MÁS VENDIDO',
+      'pricing.p2.badge': 'INCLUYE CAMPAÑA META',
       'pricing.p2.title': 'Loteo Activo',
       'pricing.p2.f1': 'Landing premium',
       'pricing.p2.f2': 'Storytelling + ubicación',
@@ -513,7 +513,7 @@
 
       'pricing.note': 'Mantenimiento: hosting, SSL, soporte, backups, medición y cambios menores.\nCampañas y gestión comercial aparte.',
       'pricing.cta_button': 'CONSULTAR POR WHATSAPP',
-      'pricing.consult_plan': 'Consultar este plan →',
+      'pricing.consult_plan': 'Quiero este plan →',
       'pricing.consult_mobile': 'CONSULTAR',
       'pricing.secondary_cta': 'NO SÉ QUÉ NECESITO — HABLAR CON WOLFIM',
 

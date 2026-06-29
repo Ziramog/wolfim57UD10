@@ -208,14 +208,21 @@ import Layout from '../layouts/Layout.astro';
   <section id="pricing" class="section pricing-section">
     <div class="section__header" data-animate="fade-up">
       <span class="section__number" data-i18n="pricing.headline">SOLUCIONES WOLFIM</span>
-      <h2 class="section__title" data-i18n="pricing.title">Soluciones premium para vender mejor.</h2>
+      <h2 class="section__title" data-i18n="pricing.title">Planes de diseño web premium — desde USD 200</h2>
       <p class="section__subtitle" data-i18n="pricing.subtitle">Sitios, catálogos y sistemas con WhatsApp, medición y estructura para campañas.</p>
+      <div class="pricing__trust" data-i18n="pricing.trust">
+        <span class="pricing__trust-item">✦ +40 proyectos entregados</span>
+        <span class="pricing__trust-divider">·</span>
+        <span class="pricing__trust-item">Respuesta en &lt;24h</span>
+        <span class="pricing__trust-divider">·</span>
+        <span class="pricing__trust-item">Presupuesto sin compromiso</span>
+      </div>
     </div>
     <div class="section__line"></div>
 
     <div class="pricing__grid">
       <!-- Plan 1 -->
-      <div class="pricing-card" data-animate="fade-up">
+      <div class="pricing-card" id="plan-presencia-comercial" aria-labelledby="plan-p1-title" data-animate="fade-up">
         <div class="pricing-card__left">
           <div class="pricing-card__brand">
             <div class="pricing-card__icon-wrapper">
@@ -225,17 +232,17 @@ import Layout from '../layouts/Layout.astro';
               <div class="pricing-card__tags">
                 <span class="pricing-card__tag" data-i18n="pricing.p1.tag">PYMES & PROFESIONALES</span>
               </div>
-              <h3 class="pricing-card__title" data-i18n="pricing.p1.title">Presencia Comercial</h3>
+              <h3 class="pricing-card__title" id="plan-p1-title" data-i18n="pricing.p1.title">Presencia Comercial</h3>
             </div>
           </div>
           <ul class="pricing-card__features">
             <li data-i18n="pricing.p1.f1">Sitio premium compacto</li>
-            <li class="desktop-only" data-i18n="pricing.p1.f2">Propuesta de valor clara</li>
-            <li class="desktop-only" data-i18n="pricing.p1.f3">Servicios + contacto</li>
+            <li data-i18n="pricing.p1.f2">Propuesta de valor clara</li>
+            <li data-i18n="pricing.p1.f3">Servicios + contacto</li>
             <li data-i18n="pricing.p1.f4">WhatsApp + formulario</li>
             <li data-i18n="pricing.p1.f5">SEO básico + medición</li>
           </ul>
-          <p class="pricing-card__note desktop-only" data-i18n="pricing.p1.note">Para negocios que necesitan verse serios.</p>
+          <p class="pricing-card__note" data-i18n="pricing.p1.note">Para negocios que necesitan verse serios.</p>
         </div>
         <div class="pricing-card__right">
           <div class="pricing-card__price-group">
@@ -248,14 +255,14 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
           <div class="pricing-card__actions">
-            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Presencia%20Comercial." class="pricing-card__desktop-cta desktop-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_plan">Consultar este plan →</a>
-            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Presencia%20Comercial." class="pricing-card__mobile-cta mobile-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_mobile">CONSULTAR</a>
+            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Presencia%20Comercial." class="pricing-card__desktop-cta desktop-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_plan">Quiero este plan →</a>
+            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Presencia%20Comercial." class="pricing-card__mobile-cta mobile-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_mobile"><svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> CONSULTAR</a>
           </div>
         </div>
       </div>
 
       <!-- Plan 2 -->
-      <div class="pricing-card pricing-card--featured" data-animate="fade-up">
+      <div class="pricing-card" id="plan-loteo-activo" aria-labelledby="plan-p2-title" data-animate="fade-up">
         <div class="pricing-card__left">
           <div class="pricing-card__brand">
             <div class="pricing-card__icon-wrapper">
@@ -264,19 +271,19 @@ import Layout from '../layouts/Layout.astro';
             <div class="pricing-card__titles">
               <div class="pricing-card__tags">
                 <span class="pricing-card__tag" data-i18n="pricing.p2.tag">DESARROLLOS & LOTES</span>
-                <span class="pricing-card__badge" data-i18n="pricing.p2.badge">MÁS VENDIDO</span>
+                <span class="pricing-card__badge" data-i18n="pricing.p2.badge">INCLUYE CAMPAÑA META</span>
               </div>
-              <h3 class="pricing-card__title" data-i18n="pricing.p2.title">Loteo Activo</h3>
+              <h3 class="pricing-card__title" id="plan-p2-title" data-i18n="pricing.p2.title">Loteo Activo</h3>
             </div>
           </div>
           <ul class="pricing-card__features">
             <li data-i18n="pricing.p2.f1">Landing premium</li>
-            <li class="desktop-only" data-i18n="pricing.p2.f2">Storytelling + ubicación</li>
-            <li class="desktop-only" data-i18n="pricing.p2.f3">Galería, video o recorrido</li>
+            <li data-i18n="pricing.p2.f2">Storytelling + ubicación</li>
+            <li data-i18n="pricing.p2.f3">Galería, video o recorrido</li>
             <li data-i18n="pricing.p2.f4">Lotes, estados y precios</li>
             <li data-i18n="pricing.p2.f5">Campaña Meta inicial</li>
           </ul>
-          <p class="pricing-card__note desktop-only" data-i18n="pricing.p2.note">Para loteos, countries y tierras privadas.</p>
+          <p class="pricing-card__note" data-i18n="pricing.p2.note">Para loteos, countries y tierras privadas.</p>
         </div>
         <div class="pricing-card__right">
           <div class="pricing-card__price-group">
@@ -289,14 +296,14 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
           <div class="pricing-card__actions">
-            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Loteo%20Activo%20para%20un%20desarrollo%20o%20loteo." class="pricing-card__desktop-cta desktop-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_plan">Consultar este plan →</a>
-            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Loteo%20Activo%20para%20un%20desarrollo%20o%20loteo." class="pricing-card__mobile-cta pricing-card__mobile-cta--solid mobile-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_mobile">CONSULTAR</a>
+            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Loteo%20Activo%20para%20un%20desarrollo%20o%20loteo." class="pricing-card__desktop-cta desktop-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_plan">Quiero este plan →</a>
+            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Loteo%20Activo%20para%20un%20desarrollo%20o%20loteo." class="pricing-card__mobile-cta mobile-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_mobile"><svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> CONSULTAR</a>
           </div>
         </div>
       </div>
 
       <!-- Plan 3 -->
-      <div class="pricing-card" data-animate="fade-up">
+      <div class="pricing-card" id="plan-autolead-catalogo" aria-labelledby="plan-p3-title" data-animate="fade-up">
         <div class="pricing-card__left">
           <div class="pricing-card__brand">
             <div class="pricing-card__icon-wrapper">
@@ -306,17 +313,17 @@ import Layout from '../layouts/Layout.astro';
               <div class="pricing-card__tags">
                 <span class="pricing-card__tag" data-i18n="pricing.p3.tag">AUTOS & AGENCIAS</span>
               </div>
-              <h3 class="pricing-card__title" data-i18n="pricing.p3.title">AutoLead Catálogo</h3>
+              <h3 class="pricing-card__title" id="plan-p3-title" data-i18n="pricing.p3.title">AutoLead Catálogo</h3>
             </div>
           </div>
           <ul class="pricing-card__features">
             <li data-i18n="pricing.p3.f1">Catálogo de unidades</li>
-            <li class="desktop-only" data-i18n="pricing.p3.f2">Fichas individuales</li>
-            <li class="desktop-only" data-i18n="pricing.p3.f3">Fotos, datos y precio</li>
+            <li data-i18n="pricing.p3.f2">Fichas individuales</li>
+            <li data-i18n="pricing.p3.f3">Fotos, datos y precio</li>
             <li data-i18n="pricing.p3.f4">WhatsApp por vehículo</li>
             <li data-i18n="pricing.p3.f5">Panel de actualización</li>
           </ul>
-          <p class="pricing-card__note desktop-only" data-i18n="pricing.p3.note">Para agencias con stock cambiante.</p>
+          <p class="pricing-card__note" data-i18n="pricing.p3.note">Para agencias con stock cambiante.</p>
         </div>
         <div class="pricing-card__right">
           <div class="pricing-card__price-group">
@@ -329,14 +336,14 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
           <div class="pricing-card__actions">
-            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20AutoLead%20Cat%C3%A1logo%20para%20autos%20o%20agencia." class="pricing-card__desktop-cta desktop-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_plan">Consultar este plan →</a>
-            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20AutoLead%20Cat%C3%A1logo%20para%20autos%20o%20agencia." class="pricing-card__mobile-cta mobile-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_mobile">CONSULTAR</a>
+            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20AutoLead%20Cat%C3%A1logo%20para%20autos%20o%20agencia." class="pricing-card__desktop-cta desktop-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_plan">Quiero este plan →</a>
+            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20AutoLead%20Cat%C3%A1logo%20para%20autos%20o%20agencia." class="pricing-card__mobile-cta mobile-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_mobile"><svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> CONSULTAR</a>
           </div>
         </div>
       </div>
 
       <!-- Plan 4 -->
-      <div class="pricing-card" data-animate="fade-up">
+      <div class="pricing-card" id="plan-portal-inmobiliario" aria-labelledby="plan-p4-title" data-animate="fade-up">
         <div class="pricing-card__left">
           <div class="pricing-card__brand">
             <div class="pricing-card__icon-wrapper">
@@ -346,17 +353,17 @@ import Layout from '../layouts/Layout.astro';
               <div class="pricing-card__tags">
                 <span class="pricing-card__tag" data-i18n="pricing.p4.tag">INMOBILIARIAS</span>
               </div>
-              <h3 class="pricing-card__title" data-i18n="pricing.p4.title">Portal Inmobiliario</h3>
+              <h3 class="pricing-card__title" id="plan-p4-title" data-i18n="pricing.p4.title">Portal Inmobiliario</h3>
             </div>
           </div>
           <ul class="pricing-card__features">
-            <li class="desktop-only" data-i18n="pricing.p4.f1">Home premium</li>
+            <li data-i18n="pricing.p4.f1">Home premium</li>
             <li data-i18n="pricing.p4.f2">Catálogo de propiedades</li>
-            <li class="desktop-only" data-i18n="pricing.p4.f3">Fichas individuales</li>
+            <li data-i18n="pricing.p4.f3">Fichas individuales</li>
             <li data-i18n="pricing.p4.f4">Filtros / buscador</li>
             <li data-i18n="pricing.p4.f5">CMS para propiedades</li>
           </ul>
-          <p class="pricing-card__note desktop-only" data-i18n="pricing.p4.note">Para venta, alquileres, tasaciones e inversores.</p>
+          <p class="pricing-card__note" data-i18n="pricing.p4.note">Para venta, alquileres, tasaciones e inversores.</p>
         </div>
         <div class="pricing-card__right">
           <div class="pricing-card__price-group">
@@ -369,14 +376,14 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
           <div class="pricing-card__actions">
-            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Portal%20Inmobiliario." class="pricing-card__desktop-cta desktop-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_plan">Consultar este plan →</a>
-            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Portal%20Inmobiliario." class="pricing-card__mobile-cta mobile-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_mobile">CONSULTAR</a>
+            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Portal%20Inmobiliario." class="pricing-card__desktop-cta desktop-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_plan">Quiero este plan →</a>
+            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Portal%20Inmobiliario." class="pricing-card__mobile-cta mobile-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_mobile"><svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> CONSULTAR</a>
           </div>
         </div>
       </div>
 
       <!-- Plan 5 -->
-      <div class="pricing-card" data-animate="fade-up">
+      <div class="pricing-card" id="plan-tienda-online" aria-labelledby="plan-p5-title" data-animate="fade-up">
         <div class="pricing-card__left">
           <div class="pricing-card__brand">
             <div class="pricing-card__icon-wrapper">
@@ -386,17 +393,17 @@ import Layout from '../layouts/Layout.astro';
               <div class="pricing-card__tags">
                 <span class="pricing-card__tag" data-i18n="pricing.p5.tag">ECOMMERCE</span>
               </div>
-              <h3 class="pricing-card__title" data-i18n="pricing.p5.title">Tienda Online</h3>
+              <h3 class="pricing-card__title" id="plan-p5-title" data-i18n="pricing.p5.title">Tienda Online</h3>
             </div>
           </div>
           <ul class="pricing-card__features">
             <li data-i18n="pricing.p5.f1">Catálogo de productos</li>
             <li data-i18n="pricing.p5.f2">Carrito + checkout</li>
-            <li class="desktop-only" data-i18n="pricing.p5.f3">Pagos online</li>
-            <li class="desktop-only" data-i18n="pricing.p5.f4">Gestión de pedidos</li>
+            <li data-i18n="pricing.p5.f3">Pagos online</li>
+            <li data-i18n="pricing.p5.f4">Gestión de pedidos</li>
             <li data-i18n="pricing.p5.f5">Panel administrativo</li>
           </ul>
-          <p class="pricing-card__note desktop-only" data-i18n="pricing.p5.note">Para negocios listos para vender online.</p>
+          <p class="pricing-card__note" data-i18n="pricing.p5.note">Para negocios listos para vender online.</p>
         </div>
         <div class="pricing-card__right">
           <div class="pricing-card__price-group">
@@ -409,25 +416,26 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
           <div class="pricing-card__actions">
-            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Tienda%20Online." class="pricing-card__desktop-cta desktop-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_plan">Consultar este plan →</a>
-            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Tienda%20Online." class="pricing-card__mobile-cta mobile-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_mobile">CONSULTAR</a>
+            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Tienda%20Online." class="pricing-card__desktop-cta desktop-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_plan">Quiero este plan →</a>
+            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Tienda%20Online." class="pricing-card__mobile-cta mobile-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_mobile"><svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> CONSULTAR</a>
           </div>
         </div>
       </div>
     </div>
 
+    <div class="pricing__note" data-animate="fade-up">
+      <p class="pricing__note-text" data-i18n="pricing.note">Mantenimiento: hosting, SSL, soporte, backups, medición y cambios menores.
+Campañas y gestión comercial aparte.</p>
+    </div>
+
     <div class="pricing__cta desktop-only" data-animate="fade-up">
       <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20una%20soluci%C3%B3n%20digital%20premium." class="pricing__cta-button" target="_blank" rel="noopener noreferrer">
+        <svg class="wa-icon wa-icon--cta" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         <span data-i18n="pricing.cta_button">CONSULTAR POR WHATSAPP</span>
       </a>
     </div>
 
-    <div class="pricing__note mobile-only" data-animate="fade-up" style="margin-top:2rem;">
-      <p class="pricing__note-text" data-i18n="pricing.note" style="white-space: pre-line; text-align: center;">Mantenimiento: hosting, SSL, soporte, backups, medición y cambios menores.
-Campañas y gestión comercial aparte.</p>
-    </div>
-
-    <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20una%20soluci%C3%B3n%20digital%20premium." class="pricing__secondary-cta mobile-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.secondary_cta" data-animate="fade-up" style="display:block;">NO SÉ QUÉ NECESITO — HABLAR CON WOLFIM</a>
+    <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20una%20soluci%C3%B3n%20digital%20premium." class="pricing__secondary-cta mobile-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.secondary_cta" data-animate="fade-up">NO SÉ QUÉ NECESITO — HABLAR CON WOLFIM</a>
   </section>
 
   <!-- ═══════════════ FAQ ═══════════════ -->
