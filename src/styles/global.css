@@ -1943,7 +1943,7 @@ img {
 
 .pricing__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
@@ -2000,7 +2000,7 @@ img {
 
 .pricing-card__amount {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-size: clamp(1.5rem, 2.25vw, 2.25rem);
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.03em;
@@ -2080,6 +2080,45 @@ img {
   margin-top: var(--space-sm);
 }
 
+.pricing-card__actions {
+  margin-top: auto;
+  padding-top: var(--space-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-card__desktop-cta {
+  display: inline-block;
+  font-size: var(--text-small);
+  color: var(--black);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.25rem;
+  transition: opacity 0.2s ease;
+  align-self: flex-start;
+}
+
+.pricing-card__desktop-cta:hover {
+  opacity: 0.6;
+}
+
+.pricing-card__mobile-cta {
+  display: none;
+  width: 100%;
+  padding: 1rem;
+  background: var(--primary);
+  color: var(--white);
+  text-align: center;
+  font-weight: 500;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: var(--text-small);
+}
+
+.pricing-card__mobile-cta:hover {
+  background: var(--primary-dark);
+}
+
 /* ─── PRICING NOTE ─── */
 .pricing__note {
   max-width: 1400px;
@@ -2094,6 +2133,10 @@ img {
   font-size: var(--text-micro);
   color: var(--gray-400);
   letter-spacing: 0.05em;
+}
+
+.pricing__secondary-cta {
+  display: none;
 }
 
 /* ─── MARQUEE ─── */
@@ -2446,7 +2489,7 @@ img {
   }
 
   .pricing__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .systems__grid {
@@ -2795,6 +2838,35 @@ img {
 
   .pricing__grid {
     grid-template-columns: 1fr;
+  }
+
+  .pricing-card__desktop-cta {
+    display: none;
+  }
+
+  .pricing-card__mobile-cta {
+    display: block;
+  }
+
+  .pricing__cta {
+    display: none; /* Hide main centered CTA on mobile */
+  }
+
+  .pricing__note {
+    margin-top: var(--space-lg);
+  }
+
+  .pricing__secondary-cta {
+    display: block;
+    width: 100%;
+    margin-top: var(--space-md);
+    padding: 1.25rem;
+    text-align: center;
+    border: 1px solid var(--border);
+    color: var(--black);
+    text-decoration: none;
+    font-size: var(--text-small);
+    font-weight: 500;
   }
 
   .ai-section__workflow {
