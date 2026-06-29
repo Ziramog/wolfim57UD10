@@ -176,8 +176,8 @@
 
       // Pricing
       'pricing.headline': 'WOLFIM SOLUTIONS',
-      'pricing.title': 'Premium digital solutions for businesses that need to sell more.',
-      'pricing.subtitle': 'Sites, catalogs and commercial systems with careful design, WhatsApp, tracking and structure ready for campaigns.',
+      'pricing.title': 'Premium solutions to sell better.',
+      'pricing.subtitle': 'Sites, catalogs and systems with WhatsApp, tracking and structure for campaigns.',
       'pricing.setup': 'USD',
       'pricing.from': 'From USD',
       'pricing.monthly': 'USD/mo',
@@ -458,8 +458,8 @@
 
       // Precios
       'pricing.headline': 'SOLUCIONES WOLFIM',
-      'pricing.title': 'Soluciones digitales premium para negocios que necesitan vender mejor.',
-      'pricing.subtitle': 'Sitios, catálogos y sistemas comerciales con diseño cuidado, WhatsApp, medición y estructura lista para campañas.',
+      'pricing.title': 'Soluciones premium para vender mejor.',
+      'pricing.subtitle': 'Sitios, catálogos y sistemas con WhatsApp, medición y estructura para campañas.',
       'pricing.setup': 'USD',
       'pricing.from': 'Desde USD',
       'pricing.monthly': 'USD/mes',
@@ -511,7 +511,7 @@
       'pricing.p5.f5': 'Panel administrativo',
       'pricing.p5.note': 'Para negocios listos para vender online.',
 
-      'pricing.note': 'Mantenimiento incluye hosting, SSL, soporte técnico, backups, seguridad básica, medición y cambios menores de contenido. Campañas y gestión comercial se cotizan aparte.',
+      'pricing.note': 'Mantenimiento: hosting, SSL, soporte, backups, medición y cambios menores.\nCampañas y gestión comercial aparte.',
       'pricing.cta_button': 'CONSULTAR POR WHATSAPP',
       'pricing.consult_plan': 'Consultar este plan &rarr;',
       'pricing.consult_mobile': 'CONSULTAR',
