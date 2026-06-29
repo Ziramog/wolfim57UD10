@@ -231,7 +231,7 @@
 
       'pricing.note': 'Maintenance includes hosting, SSL, technical support, backups, basic security, tracking and minor content changes. Campaigns and commercial management are quoted separately.',
       'pricing.cta_button': 'CONTACT VIA WHATSAPP',
-      'pricing.consult_plan': 'Consult this plan &rarr;',
+      'pricing.consult_plan': 'Consult this plan →',
       'pricing.consult_mobile': 'INQUIRE',
       'pricing.secondary_cta': 'I DON\'T KNOW WHAT I NEED — TALK TO WOLFIM',
 
@@ -513,7 +513,7 @@
 
       'pricing.note': 'Mantenimiento: hosting, SSL, soporte, backups, medición y cambios menores.\nCampañas y gestión comercial aparte.',
       'pricing.cta_button': 'CONSULTAR POR WHATSAPP',
-      'pricing.consult_plan': 'Consultar este plan &rarr;',
+      'pricing.consult_plan': 'Consultar este plan →',
       'pricing.consult_mobile': 'CONSULTAR',
       'pricing.secondary_cta': 'NO SÉ QUÉ NECESITO — HABLAR CON WOLFIM',
 
