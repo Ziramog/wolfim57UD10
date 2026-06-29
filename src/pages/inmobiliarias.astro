@@ -1,0 +1,512 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "Página web para inmobiliarias — Portal con catálogo | Wolfim Studio";
+const description = "Portal inmobiliario con catálogo de propiedades, fichas, filtros, WhatsApp y CMS. Caso real: Roggero & Roma. Desde USD 450.";
+const ogImage = "https://wolfim.com/og-image.jpg";
+const canonical = "https://wolfim.com/inmobiliarias";
+---
+
+<Layout title={title} description={description} ogImage={ogImage} canonical={canonical}>
+  <div class="film-grain" aria-hidden="true"></div>
+
+  <!-- ═══════════════ NAVIGATION ═══════════════ -->
+  <nav id="nav-main" class="nav">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo" id="nav-logo">
+        <img src="/wolfim_logos/logo_wolfim_57UD10.svg" alt="Wolfim 57UD10" class="nav__logo-img" width="120" height="35">
+      </a>
+      <div class="nav__links" id="nav-links">
+        <a href="/#projects" class="nav__link">Trabajos</a>
+        <a href="/#capabilities" class="nav__link">Servicios</a>
+        <a href="/#pricing" class="nav__link">Precios</a>
+        <a href="/#process" class="nav__link">Proceso</a>
+        <a href="/#contact" class="nav__link">Contacto</a>
+      </div>
+      <div class="nav__meta">
+        <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">
+          <span class="lang-toggle__option" data-lang="en">EN</span>
+          <span class="lang-toggle__divider">/</span>
+          <span class="lang-toggle__option lang-toggle__option--active" data-lang="es">ES</span>
+        </button>
+        <span class="nav__time" id="nav-time"></span>
+        <button class="nav__menu-btn" id="nav-menu-btn" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav__line"></div>
+  </nav>
+
+  <!-- Mobile overlay -->
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-menu__close" id="mobile-menu-close" aria-label="Cerrar menú">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <div class="mobile-menu__inner">
+      <div class="mobile-menu__links">
+        <a href="/#projects" class="mobile-menu__link"><span class="menu-link-prefix">/</span><span>Trabajos</span></a>
+        <a href="/#capabilities" class="mobile-menu__link"><span class="menu-link-prefix">/</span><span>Servicios</span></a>
+        <a href="/#pricing" class="mobile-menu__link"><span class="menu-link-prefix">/</span><span>Precios</span></a>
+        <a href="/#process" class="mobile-menu__link"><span class="menu-link-prefix">/</span><span>Proceso</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ MAIN ═══════════════ -->
+  <main class="inmo">
+
+    <!-- Hero -->
+    <section class="inmo__hero">
+      <div class="inmo__hero-inner">
+        <h1 class="inmo__headline" data-animate="fade-up">
+          Portal inmobiliario<br>para inmobiliarias
+        </h1>
+        <p class="inmo__subtext" data-animate="fade-up">
+          Un portal propio con catálogo de propiedades, fichas individuales, filtros, buscador y consultas directas por WhatsApp. Sin depender de portales externos.
+        </p>
+        <a href="#caso" class="inmo__cta-link" data-animate="fade-up">
+          Ver caso real ↓
+        </a>
+      </div>
+    </section>
+
+    <div class="section__line" style="margin: 0 var(--container-padding);"></div>
+
+    <!-- Caso: Roggero & Roma -->
+    <section id="caso" class="section inmo__caso">
+      <div class="section__header" data-animate="fade-up">
+        <span class="section__number">01</span>
+        <h2 class="section__title">Caso real:<br>Roggero &amp; Roma</h2>
+        <p class="section__subtitle">Rediseño completo de portal inmobiliario en Río Tercero, Córdoba</p>
+      </div>
+      <div class="section__line"></div>
+
+      <div class="inmo__caso-grid" data-animate="fade-up">
+        <div class="inmo__caso-media">
+          <video class="inmo__caso-video" autoplay loop muted playsinline preload="auto" aria-label="Video del portal inmobiliario Roggero &amp; Roma">
+            <source src="roggeroyroma_hero2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="inmo__caso-content">
+          <p class="inmo__caso-desc">
+            Rediseño completo de portal inmobiliario. Catálogo de propiedades con fichas individuales, mapas interactivos, reseñas de Google, filtros avanzados y contacto por WhatsApp directamente desde cada propiedad.
+          </p>
+          <ul class="inmo__caso-list">
+            <li>Catálogo con filtros y buscador</li>
+            <li>Fichas individuales con galería</li>
+            <li>Mapas interactivos por propiedad</li>
+            <li>WhatsApp por cada inmueble</li>
+            <li>SEO por ficha y ubicación</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Qué incluye -->
+    <section class="section inmo__features">
+      <div class="section__header" data-animate="fade-up">
+        <span class="section__number">02</span>
+        <h2 class="section__title">Qué incluye</h2>
+        <p class="section__subtitle">Todo lo que necesitás para mostrar propiedades y captar consultas</p>
+      </div>
+      <div class="section__line"></div>
+
+      <div class="inmo__features-grid" data-animate="fade-up">
+        <div class="inmo__feature">
+          <span class="inmo__feature-index">01</span>
+          <h3 class="inmo__feature-title">Home institucional</h3>
+          <p class="inmo__feature-desc">Primera impresión premium con hero en video o imagen, propuesta de valor clara y acceso directo al catálogo.</p>
+        </div>
+        <div class="inmo__feature">
+          <span class="inmo__feature-index">02</span>
+          <h3 class="inmo__feature-title">Catálogo de propiedades</h3>
+          <p class="inmo__feature-desc">Grilla visual con fotos, precios, ubicación y estado. Filtros por tipo, precio, zona y características.</p>
+        </div>
+        <div class="inmo__feature">
+          <span class="inmo__feature-index">03</span>
+          <h3 class="inmo__feature-title">Fichas individuales</h3>
+          <p class="inmo__feature-desc">Cada propiedad con galería, descripción completa, mapa, amenities y botón de WhatsApp directo.</p>
+        </div>
+        <div class="inmo__feature">
+          <span class="inmo__feature-index">04</span>
+          <h3 class="inmo__feature-title">Filtros y buscador</h3>
+          <p class="inmo__feature-desc">Búsqueda por tipo, precio, zona, ambientes y más. Resultados instantáneos sin recargar la página.</p>
+        </div>
+        <div class="inmo__feature">
+          <span class="inmo__feature-index">05</span>
+          <h3 class="inmo__feature-title">WhatsApp por propiedad</h3>
+          <p class="inmo__feature-desc">El visitante consulta por WhatsApp directamente desde la ficha, con el código de la propiedad pre-cargado.</p>
+        </div>
+        <div class="inmo__feature">
+          <span class="inmo__feature-index">06</span>
+          <h3 class="inmo__feature-title">Formulario de contacto</h3>
+          <p class="inmo__feature-desc">Formulario de consulta general con validación y notificación directa al equipo comercial.</p>
+        </div>
+        <div class="inmo__feature">
+          <span class="inmo__feature-index">07</span>
+          <h3 class="inmo__feature-title">Panel CMS autoadministrable</h3>
+          <p class="inmo__feature-desc">Subís propiedades, editás precios, cambiás fotos y manejás el stock sin tocar código.</p>
+        </div>
+        <div class="inmo__feature">
+          <span class="inmo__feature-index">08</span>
+          <h3 class="inmo__feature-title">SEO por ficha</h3>
+          <p class="inmo__feature-desc">Cada propiedad tiene su propio título, descripción y estructura optimizada para aparecer en Google.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Precio -->
+    <section class="section inmo__pricing">
+      <div class="section__header" data-animate="fade-up">
+        <span class="section__number">03</span>
+        <h2 class="section__title">Inversión</h2>
+        <p class="section__subtitle">Portal inmobiliario listo para vender propiedades</p>
+      </div>
+      <div class="section__line"></div>
+
+      <div class="pricing__grid" data-animate="fade-up" style="max-width: 640px; margin: 0 auto;">
+        <div class="pricing-card" id="plan-portal-inmobiliario" aria-labelledby="plan-inmo-title">
+          <div class="pricing-card__left">
+            <div class="pricing-card__brand">
+              <div class="pricing-card__icon-wrapper">
+                <i data-lucide="building-2" class="pricing-card__icon"></i>
+              </div>
+              <div class="pricing-card__titles">
+                <div class="pricing-card__tags">
+                  <span class="pricing-card__tag">INMOBILIARIAS</span>
+                </div>
+                <h3 class="pricing-card__title" id="plan-inmo-title">Portal Inmobiliario</h3>
+              </div>
+            </div>
+            <ul class="pricing-card__features">
+              <li>Home premium</li>
+              <li>Catálogo de propiedades</li>
+              <li>Fichas individuales</li>
+              <li>Filtros / buscador</li>
+              <li>CMS para propiedades</li>
+              <li>WhatsApp por propiedad</li>
+              <li>SEO por ficha</li>
+              <li>Formulario de contacto</li>
+            </ul>
+            <p class="pricing-card__note">Para venta, alquileres, tasaciones e inversores.</p>
+          </div>
+          <div class="pricing-card__right">
+            <div class="pricing-card__price-group">
+              <span class="pricing-card__period">Desde</span>
+              <span class="pricing-card__amount">USD 450</span>
+              <div class="pricing-card__monthly">
+                <span class="pricing-card__plus">+</span>
+                <span class="pricing-card__amount-small">USD 39</span>
+                <span class="pricing-card__period">/mes</span>
+              </div>
+            </div>
+            <div class="pricing-card__actions">
+              <a href="https://wa.me/5491173858454?text=Hola%20Wolfim%2C%20quiero%20un%20portal%20inmobiliario%20para%20mi%20inmobiliaria." class="pricing-card__desktop-cta desktop-only" target="_blank" rel="noopener noreferrer">Quiero este plan →</a>
+              <a href="https://wa.me/5491173858454?text=Hola%20Wolfim%2C%20quiero%20un%20portal%20inmobiliario%20para%20mi%20inmobiliaria." class="pricing-card__mobile-cta mobile-only" target="_blank" rel="noopener noreferrer"><svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> CONSULTAR</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section class="section inmo__cta-section">
+      <div class="inmo__cta-inner" data-animate="fade-up">
+        <h2 class="inmo__cta-title">¿Tenés una inmobiliaria<br>y querés vender más?</h2>
+        <p class="inmo__cta-desc">
+          Hablemos de cómo un portal propio puede ordenar tus consultas y mostrar tus propiedades como se merecen.
+        </p>
+        <a href="https://wa.me/5491173858454?text=Hola%20Wolfim%2C%20quiero%20un%20portal%20para%20mi%20inmobiliaria." class="inmo__cta-btn" target="_blank" rel="noopener noreferrer">
+          Quiero un portal para mi inmobiliaria →
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="footer">
+    <div class="footer__line"></div>
+    <div class="footer__inner" style="display: flex; justify-content: space-between; align-items: center; position: relative;">
+      <div class="footer__left" style="display: flex; align-items: center; gap: 12px;">
+        <span class="footer__logo">WOLFIM STUDIO</span>
+        <span style="opacity: 0.3;">|</span>
+        <span class="footer__copy">© 2024</span>
+      </div>
+      <div class="footer__center" style="position: absolute; left: 50%; transform: translateX(-50%);">
+        <img src="/wolfim_logos/favicom_redsquare.svg" alt="Wolfim Icon" style="width: 48px; height: 48px; opacity: 0.9;">
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Sticky -->
+  <a href="https://wa.me/5491173858454?text=Hola%20Wolfim%2C%20estoy%20en%20la%20página%20de%20inmobiliarias%20y%20quiero%20consultar." class="whatsapp-sticky" target="_blank" rel="noopener noreferrer" aria-label="Chatear por WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+      <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+    </svg>
+  </a>
+
+  <!-- Scripts -->
+  <script>import "../scripts/script.js";</script>
+  <script is:inline src="https://unpkg.com/lucide@latest"></script>
+  <script is:inline>lucide.createIcons();</script>
+
+  <script>
+    import { trackEvent } from '../lib/analytics';
+    import { captureUTMs } from '../lib/utm';
+
+    captureUTMs();
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // WhatsApp CTA
+      const waLinks = document.querySelectorAll('a[href*="wa.me"]');
+      waLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          const text = link.textContent?.trim() || '';
+          trackEvent('click_whatsapp', {
+            component: 'inmobiliarias',
+            cta_label: text,
+          });
+        });
+      });
+
+      // Pricing CTA
+      const pricingCta = document.querySelector('.pricing-card__desktop-cta, .pricing-card__mobile-cta');
+      if (pricingCta) {
+        pricingCta.addEventListener('click', () => trackEvent('click_whatsapp', { component: 'inmobiliarias_pricing' }));
+      }
+    });
+  </script>
+
+  <!-- Page-specific styles -->
+  <style>
+    /* Hero */
+    .inmo__hero {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      padding: calc(60px + var(--space-lg)) var(--container-padding) var(--space-lg);
+    }
+
+    .inmo__hero-inner {
+      max-width: 800px;
+    }
+
+    .inmo__headline {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 7vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--black);
+      margin-bottom: 1.25rem;
+    }
+
+    .inmo__subtext {
+      font-family: var(--font-body);
+      font-size: var(--text-medium);
+      line-height: 1.6;
+      color: var(--gray-400);
+      margin-bottom: 2rem;
+      max-width: 560px;
+    }
+
+    .inmo__cta-link {
+      font-family: var(--font-mono);
+      font-size: var(--text-small);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      transition: color 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .inmo__cta-link:hover {
+      color: var(--black);
+    }
+
+    /* Caso */
+    .inmo__caso-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--grid-gap);
+      align-items: start;
+    }
+
+    .inmo__caso-media {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .inmo__caso-video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .inmo__caso-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .inmo__caso-desc {
+      font-family: var(--font-body);
+      font-size: var(--text-body);
+      line-height: 1.65;
+      color: var(--gray-500);
+    }
+
+    .inmo__caso-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .inmo__caso-list li {
+      font-family: var(--font-body);
+      font-size: var(--text-body);
+      color: var(--black);
+      padding-left: 1.25rem;
+      position: relative;
+    }
+
+    .inmo__caso-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gray-300);
+    }
+
+    /* Features */
+    .inmo__features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--grid-gap);
+    }
+
+    .inmo__feature {
+      padding: var(--space-md);
+      border: 1px solid var(--border);
+      transition: border-color 0.2s ease;
+    }
+    .inmo__feature:hover {
+      border-color: var(--border-strong);
+    }
+
+    .inmo__feature-index {
+      font-family: var(--font-mono);
+      font-size: var(--text-micro);
+      color: var(--gray-300);
+      letter-spacing: 0.05em;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .inmo__feature-title {
+      font-family: var(--font-display);
+      font-size: var(--text-medium);
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .inmo__feature-desc {
+      font-family: var(--font-body);
+      font-size: var(--text-body);
+      line-height: 1.55;
+      color: var(--gray-400);
+    }
+
+    /* CTA Section */
+    .inmo__cta-section {
+      padding: var(--space-xl) var(--container-padding);
+      text-align: center;
+    }
+
+    .inmo__cta-inner {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .inmo__cta-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      margin-bottom: 1rem;
+    }
+
+    .inmo__cta-desc {
+      font-family: var(--font-body);
+      font-size: var(--text-body);
+      line-height: 1.6;
+      color: var(--gray-400);
+      margin-bottom: 2rem;
+    }
+
+    .inmo__cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      font-family: var(--font-display);
+      font-size: var(--text-medium);
+      font-weight: 600;
+      color: var(--white);
+      background: var(--black);
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+    .inmo__cta-btn:hover {
+      background: var(--gray-500);
+    }
+    .inmo__cta-btn:active {
+      transform: scale(0.98);
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .inmo__caso-grid {
+        grid-template-columns: 1fr;
+      }
+      .inmo__features-grid {
+        grid-template-columns: 1fr;
+      }
+      .inmo__hero {
+        min-height: auto;
+        padding-top: calc(60px + var(--space-md));
+        padding-bottom: var(--space-md);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .inmo__headline {
+        font-size: clamp(1.8rem, 9vw, 2.4rem);
+      }
+      .inmo__subtext {
+        font-size: 0.95rem;
+      }
+      .inmo__feature {
+        padding: var(--space-sm);
+      }
+      .inmo__cta-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 0.875rem 1rem;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</Layout>

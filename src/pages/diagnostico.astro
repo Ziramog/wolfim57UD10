@@ -1,0 +1,381 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "Diagnóstico gratuito de tu web | Wolfim Studio";
+const description = "Análisis gratuito de tu sitio web en 24h. Descubrí los 3 errores que te hacen perder clientes y cómo solucionarlos.";
+---
+
+<Layout title={title} description={description}>
+  <!-- Film grain global -->
+  <div class="film-grain" aria-hidden="true"></div>
+
+  <!-- ═══════════════ DIAGNÓSTICO LANDING ═══════════════ -->
+  <main class="diagnostico">
+    <!-- Logo -->
+    <a href="/" class="diagnostico__logo">
+      <img src="/wolfim_logos/logo_wolfim_57UD10.svg" alt="Wolfim Studio" width="120" height="35">
+    </a>
+
+    <!-- Hero content -->
+    <div class="diagnostico__content">
+      <h1 class="diagnostico__headline">
+        ¿Tu web está<br>perdiendo clientes?
+      </h1>
+      <p class="diagnostico__subtext">
+        La mayoría de las PyMEs pierde consultas por 3 errores básicos en su sitio.
+        Te digo cuáles tiene la tuya. Sin cargo. En 24 horas.
+      </p>
+
+      <!-- Formulario -->
+      <form class="diagnostico__form" id="diagnostico-form" action="#" method="POST" novalidate>
+        <div class="diagnostico__field">
+          <input
+            type="text"
+            name="name"
+            placeholder="Nombre"
+            class="diagnostico__input"
+            required
+            autocomplete="name"
+          >
+          <span class="diagnostico__error" id="error-name"></span>
+        </div>
+
+        <div class="diagnostico__field">
+          <input
+            type="url"
+            name="website"
+            placeholder="Web de tu empresa (ej: tuempresa.com.ar)"
+            class="diagnostico__input"
+            required
+            autocomplete="url"
+          >
+          <span class="diagnostico__error" id="error-website"></span>
+        </div>
+
+        <div class="diagnostico__field">
+          <input
+            type="tel"
+            name="whatsapp"
+            placeholder="WhatsApp (con código de país)"
+            class="diagnostico__input"
+            required
+            autocomplete="tel"
+            minlength="8"
+          >
+          <span class="diagnostico__error" id="error-whatsapp"></span>
+        </div>
+
+        <button type="submit" class="diagnostico__cta">
+          Quiero el diagnóstico
+        </button>
+      </form>
+
+      <!-- Success message (hidden by default) -->
+      <div class="diagnostico__success" id="diagnostico-success" style="display: none;">
+        <p class="diagnostico__success-text">
+          Recibido. Juan te escribe por WhatsApp en menos de 24h con el diagnóstico.
+        </p>
+      </div>
+
+      <!-- Mini testimonio -->
+      <div class="diagnostico__testimonial">
+        <p class="diagnostico__quote">
+          "Wolfim nos modernizó el portal completo. Las consultas se ordenaron desde el primer mes."
+        </p>
+        <p class="diagnostico__author">— Silvia Roggero de Roma, Río Tercero</p>
+      </div>
+    </div>
+
+    <!-- Footer minimal -->
+    <footer class="diagnostico__footer">
+      <span>Wolfim Studio — Río Tercero, Córdoba</span>
+    </footer>
+  </main>
+
+  <style>
+    .diagnostico {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      background: #FAFAF8;
+      position: relative;
+    }
+
+    .diagnostico__logo {
+      position: absolute;
+      top: 1.5rem;
+      left: 1.5rem;
+      opacity: 0.7;
+      transition: opacity 0.2s ease;
+    }
+    .diagnostico__logo:hover {
+      opacity: 1;
+    }
+    .diagnostico__logo img {
+      height: 28px;
+      width: auto;
+    }
+
+    .diagnostico__content {
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .diagnostico__headline {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 7vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--black);
+      margin-bottom: 1.25rem;
+    }
+
+    .diagnostico__subtext {
+      font-family: var(--font-body);
+      font-size: var(--text-body);
+      line-height: 1.6;
+      color: var(--gray-400);
+      margin-bottom: 2rem;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .diagnostico__form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.875rem;
+      margin-bottom: 2rem;
+    }
+
+    .diagnostico__field {
+      position: relative;
+      text-align: left;
+    }
+
+    .diagnostico__input {
+      width: 100%;
+      padding: 1rem 1.125rem;
+      font-family: var(--font-body);
+      font-size: var(--text-body);
+      color: var(--black);
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 0;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+    .diagnostico__input::placeholder {
+      color: var(--gray-300);
+    }
+    .diagnostico__input:focus {
+      border-color: var(--black);
+    }
+    .diagnostico__input:invalid:not(:placeholder-shown) {
+      border-color: #dc2626;
+    }
+
+    .diagnostico__error {
+      display: block;
+      font-family: var(--font-body);
+      font-size: var(--text-micro);
+      color: #dc2626;
+      margin-top: 0.35rem;
+      min-height: 1.1em;
+    }
+
+    .diagnostico__cta {
+      width: 100%;
+      padding: 1rem 1.5rem;
+      font-family: var(--font-display);
+      font-size: var(--text-medium);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--white);
+      background: var(--black);
+      border: none;
+      border-radius: 0;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.15s ease;
+      margin-top: 0.5rem;
+    }
+    .diagnostico__cta:hover {
+      background: var(--gray-500);
+    }
+    .diagnostico__cta:active {
+      transform: scale(0.98);
+    }
+
+    .diagnostico__success {
+      padding: 1.5rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      margin-bottom: 2rem;
+    }
+    .diagnostico__success-text {
+      font-family: var(--font-body);
+      font-size: var(--text-body);
+      line-height: 1.6;
+      color: var(--black);
+    }
+
+    .diagnostico__testimonial {
+      margin-top: 0.5rem;
+    }
+    .diagnostico__quote {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      line-height: 1.55;
+      color: var(--gray-400);
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+    .diagnostico__author {
+      font-family: var(--font-body);
+      font-size: var(--text-micro);
+      color: var(--gray-300);
+      letter-spacing: 0.02em;
+    }
+
+    .diagnostico__footer {
+      position: absolute;
+      bottom: 1rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: var(--text-micro);
+      color: var(--gray-300);
+      letter-spacing: 0.05em;
+    }
+
+    /* Mobile: ensure above-the-fold */
+    @media (max-width: 480px) {
+      .diagnostico {
+        padding: 1.25rem 1rem;
+        justify-content: flex-start;
+        padding-top: 5rem;
+      }
+      .diagnostico__headline {
+        font-size: clamp(1.8rem, 9vw, 2.4rem);
+        margin-bottom: 1rem;
+      }
+      .diagnostico__subtext {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+      }
+      .diagnostico__input {
+        padding: 0.875rem 1rem;
+      }
+      .diagnostico__cta {
+        padding: 0.875rem 1rem;
+        font-size: 1rem;
+      }
+      .diagnostico__footer {
+        position: static;
+        margin-top: auto;
+        padding-top: 2rem;
+      }
+    }
+  </style>
+
+  <script>
+    import { trackEvent } from '../lib/analytics';
+    import { getUTMs } from '../lib/utm';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('diagnostico-form');
+      const success = document.getElementById('diagnostico-success');
+
+      if (!form || !success) return;
+
+      const htmlForm = form as HTMLFormElement;
+
+      htmlForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Clear previous errors
+        ['name', 'website', 'whatsapp'].forEach(field => {
+          const el = document.getElementById('error-' + field);
+          if (el) el.textContent = '';
+        });
+
+        const data = new FormData(htmlForm);
+        const name = (data.get('name') as string || '').trim();
+        const website = (data.get('website') as string || '').trim();
+        const whatsapp = (data.get('whatsapp') as string || '').trim();
+
+        let hasError = false;
+
+        if (!name) {
+          const err = document.getElementById('error-name');
+          if (err) err.textContent = 'Ingresá tu nombre';
+          hasError = true;
+        }
+        if (!website) {
+          const err = document.getElementById('error-website');
+          if (err) err.textContent = 'Ingresá la URL de tu web';
+          hasError = true;
+        } else {
+          try {
+            new URL(website.startsWith('http') ? website : 'https://' + website);
+          } catch {
+            const err = document.getElementById('error-website');
+            if (err) err.textContent = 'URL no válida';
+            hasError = true;
+          }
+        }
+        if (!whatsapp || whatsapp.replace(/\D/g, '').length < 8) {
+          const err = document.getElementById('error-whatsapp');
+          if (err) err.textContent = 'Ingresá un número válido';
+          hasError = true;
+        }
+
+        if (hasError) return;
+
+        // Track form submission
+        trackEvent('form_submit_diagnostico', {
+          component: 'diagnostico_landing',
+          utm_source: getUTMs().utm_source || 'direct',
+        });
+
+        // Try Supabase first, fallback to WhatsApp
+        try {
+          const res = await fetch('/api/leads', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name,
+              website,
+              whatsapp,
+              source: 'meta_ads_diagnostico',
+              utms: getUTMs(),
+            }),
+          });
+
+          if (res.ok) {
+            htmlForm.style.display = 'none';
+            success.style.display = 'block';
+            return;
+          }
+        } catch (err) {
+          console.warn('[Diagnóstico] API failed, falling back to WhatsApp', err);
+        }
+
+        // Fallback: open WhatsApp with pre-filled message
+        const msg = encodeURIComponent(
+          `Hola Juan, quiero el diagnóstico gratuito de mi web.\n\nMi web: ${website}\nSoy: ${name}\nWhatsApp: ${whatsapp}`
+        );
+        window.open(`https://wa.me/5491173858454?text=${msg}`, '_blank');
+
+        htmlForm.style.display = 'none';
+        success.style.display = 'block';
+      });
+    });
+  </script>
+</Layout>

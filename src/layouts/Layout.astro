@@ -4,9 +4,16 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
+  canonical?: string;
 }
 
-const { title, description = "Diseño web premium a medida, rediseño de sitios, catálogos digitales, SEO y Google Ads para marcas, inmobiliarias, agencias de autos y negocios." } = Astro.props;
+const { 
+  title, 
+  description = "Diseño web premium a medida, rediseño de sitios, catálogos digitales, SEO y Google Ads para marcas, inmobiliarias, agencias de autos y negocios.",
+  ogImage = "https://wolfim.com/og-image.jpg",
+  canonical = "https://wolfim.com/"
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -19,14 +26,16 @@ const { title, description = "Diseño web premium a medida, rediseño de sitios,
   <meta name="keywords" content="diseño web premium, diseño web a medida, rediseño de sitio web, catálogo digital de productos, catálogo online inmobiliaria, SEO para sitios web, Google Ads, sitios web para agencias de autos">
   <meta name="author" content="Wolfim Studio">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://wolfim.com/">
-  <meta property="og:title" content="Wolfim Studio — Diseño web premium y catálogos digitales">
-  <meta property="og:description" content="Sitios web a medida, rediseños, catálogos online y SEO para negocios que necesitan una presencia digital clara, rápida y comercial.">
+  <link rel="canonical" href={canonical}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://wolfim.com/og-image.jpg">
-  <meta property="og:url" content="https://wolfim.com/">
+  <meta property="og:image" content={ogImage}>
+  <meta property="og:url" content={canonical}>
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://wolfim.com/og-image.jpg">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content={ogImage}>
   <link rel="icon" type="image/svg+xml" href="/wolfim_logos/favicom_redsquare.svg">
   <link rel="apple-touch-icon" href="/wolfim_logos/favicom_redsquare.svg">
 
@@ -46,7 +55,6 @@ const { title, description = "Diseño web premium a medida, rediseño de sitios,
   <link rel="alternate" hreflang="es" href="https://wolfim.com/">
   <link rel="alternate" hreflang="en" href="https://wolfim.com/?lang=en">
   <link rel="alternate" hreflang="x-default" href="https://wolfim.com/">
-  <!-- Schema Markup (JSON-LD) -->
   <script type="application/ld+json" is:inline>
     {
       "@context": "https://schema.org",
@@ -63,7 +71,59 @@ const { title, description = "Diseño web premium a medida, rediseño de sitios,
       "priceRange": "$$$",
       "sameAs": [
         "https://www.instagram.com/wolfim.studio/"
-      ]
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Planes de diseño web premium",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Presencia Comercial",
+            "description": "Sitio premium compacto con propuesta de valor clara, servicios, WhatsApp, formulario y SEO básico. Para PYMES y profesionales.",
+            "priceCurrency": "USD",
+            "price": "200",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "200",
+              "priceCurrency": "USD",
+              "referenceQuantity": { "@type": "QuantitativeValue", "value": "1" }
+            },
+            "url": "https://wolfim.com/#plan-presencia-comercial"
+          },
+          {
+            "@type": "Offer",
+            "name": "Loteo Activo",
+            "description": "Landing premium con storytelling, ubicación, galería, video, lotes con estados y precios, y campaña Meta inicial. Para desarrollos y lotes.",
+            "priceCurrency": "USD",
+            "price": "450",
+            "url": "https://wolfim.com/#plan-loteo-activo"
+          },
+          {
+            "@type": "Offer",
+            "name": "AutoLead Catálogo",
+            "description": "Catálogo de unidades con fichas individuales, fotos, datos, precio, WhatsApp por vehículo y panel de actualización. Para agencias de autos.",
+            "priceCurrency": "USD",
+            "price": "450",
+            "url": "https://wolfim.com/#plan-autolead-catalogo"
+          },
+          {
+            "@type": "Offer",
+            "name": "Portal Inmobiliario",
+            "description": "Home premium con catálogo de propiedades, fichas individuales, filtros, buscador y CMS. Para inmobiliarias.",
+            "priceCurrency": "USD",
+            "price": "650",
+            "url": "https://wolfim.com/#plan-portal-inmobiliario"
+          },
+          {
+            "@type": "Offer",
+            "name": "Tienda Online",
+            "description": "Catálogo de productos con carrito, checkout, pagos online, gestión de pedidos y panel administrativo. Ecommerce completo.",
+            "priceCurrency": "USD",
+            "price": "650",
+            "url": "https://wolfim.com/#plan-tienda-online"
+          }
+        ]
+      }
     }
   </script>
 </head>
