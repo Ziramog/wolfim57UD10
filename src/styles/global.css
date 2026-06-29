@@ -1955,7 +1955,7 @@ img {
   padding: var(--space-md);
   display: flex;
   flex-direction: column;
-  border: 1px solid transparent;
+  border: 1px solid var(--border);
   transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -1968,7 +1968,7 @@ img {
 }
 
 .pricing-card--featured {
-  background: var(--gray-100);
+  background: var(--white);
 }
 
 .pricing-card__header {
@@ -3219,7 +3219,7 @@ li.desktop-only { display: flex !important; }
   }
   
   .pricing-card--featured {
-    border-color: transparent;
+    border-color: var(--border);
   }
 
   .pricing-card__left {
@@ -3365,6 +3365,7 @@ li.desktop-only { display: flex !important; }
     padding: 20px 18px;
     gap: 16px;
     border-radius: 0;
+    border: 1px solid var(--border);
   }
 
   /* Remove grid and vertical divider */
