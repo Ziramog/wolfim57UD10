@@ -70,6 +70,13 @@ const description = "Análisis gratuito de tu sitio web en 24h. Descubrí los 3 
         </button>
       </form>
 
+      <!-- WhatsApp direct option -->
+      <div class="diagnostico__wa-alt">
+        <a href="https://wa.me/5491173858454?text=Hola%20Juan%2C%20quiero%20el%20diagn%C3%B3stico%20gratuito%20de%20mi%20web." class="diagnostico__wa-link" target="_blank" rel="noopener noreferrer" id="wa-direct-link">
+          O escribime por WhatsApp →
+        </a>
+      </div>
+
       <!-- Success message (hidden by default) -->
       <div class="diagnostico__success" id="diagnostico-success" style="display: none;">
         <p class="diagnostico__success-text">
@@ -220,6 +227,24 @@ const description = "Análisis gratuito de tu sitio web en 24h. Descubrí los 3 
       font-size: var(--text-body);
       line-height: 1.6;
       color: var(--black);
+    }
+
+    .diagnostico__wa-alt {
+      margin-top: 1.25rem;
+      text-align: center;
+    }
+    .diagnostico__wa-link {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      color: var(--gray-400);
+      text-decoration: none;
+      border-bottom: 1px solid var(--gray-300);
+      padding-bottom: 1px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .diagnostico__wa-link:hover {
+      color: var(--black);
+      border-color: var(--black);
     }
 
     .diagnostico__testimonial {
@@ -374,6 +399,17 @@ const description = "Análisis gratuito de tu sitio web en 24h. Descubrí los 3 
         htmlForm.style.display = 'none';
         success.style.display = 'block';
       });
+
+      // Track WhatsApp direct link click
+      const waLink = document.getElementById('wa-direct-link');
+      if (waLink) {
+        waLink.addEventListener('click', () => {
+          trackEvent('click_whatsapp', {
+            component: 'diagnostico_wa_direct',
+            utm_source: getUTMs().utm_source || 'direct',
+          });
+        });
+      }
     });
   </script>
 </Layout>
