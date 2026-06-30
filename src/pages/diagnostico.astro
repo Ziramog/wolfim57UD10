@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 
 const title = "Diagnóstico gratuito de tu web | Wolfim Studio";
-const description = "Análisis gratuito de tu sitio web en 24h. Descubrí los 3 errores que te hacen perder clientes y cómo solucionarlos.";
+const description = "Detectá errores que frenan consultas en tu sitio web. Diagnóstico gratuito para PyMEs en 24 horas.";
 ---
 
 <Layout title={title} description={description}>
@@ -19,7 +19,7 @@ const description = "Análisis gratuito de tu sitio web en 24h. Descubrí los 3 
     <!-- Hero content -->
     <div class="diagnostico__content">
       <h1 class="diagnostico__headline">
-        ¿Tu web está<br>perdiendo clientes?
+        Tu web tiene 3 errores<br>que frenan consultas
       </h1>
       <p class="diagnostico__subtext">
         La mayoría de las PyMEs pierde consultas por 3 errores básicos en su sitio.
@@ -70,10 +70,11 @@ const description = "Análisis gratuito de tu sitio web en 24h. Descubrí los 3 
         </button>
       </form>
 
-      <!-- WhatsApp direct option -->
+      <!-- WhatsApp direct option (secondary, subtle) -->
       <div class="diagnostico__wa-alt">
+        <span class="diagnostico__wa-oro">¿Preferís escribir directo?</span>
         <a href="https://wa.me/5493513157202?text=Hola%20Juan%2C%20quiero%20el%20diagn%C3%B3stico%20gratuito%20de%20mi%20web." class="diagnostico__wa-link" target="_blank" rel="noopener noreferrer" id="wa-direct-link">
-          O escribime por WhatsApp →
+          Escribir por WhatsApp
         </a>
       </div>
 
@@ -95,7 +96,7 @@ const description = "Análisis gratuito de tu sitio web en 24h. Descubrí los 3 
 
     <!-- Footer minimal -->
     <footer class="diagnostico__footer">
-      <span>Buenos Aires — Remoto a todo el país</span>
+      <span>Wolfim Studio — Río Tercero, Córdoba</span>
     </footer>
   </main>
 
@@ -230,15 +231,27 @@ const description = "Análisis gratuito de tu sitio web en 24h. Descubrí los 3 
     }
 
     .diagnostico__wa-alt {
-      margin-top: 1.25rem;
+      margin-top: 1rem;
       text-align: center;
+      opacity: 0.6;
+      transition: opacity 0.2s ease;
+    }
+    .diagnostico__wa-alt:hover {
+      opacity: 1;
+    }
+    .diagnostico__wa-oro {
+      display: block;
+      font-family: var(--font-body);
+      font-size: var(--text-micro);
+      color: var(--gray-300);
+      margin-bottom: 0.35rem;
     }
     .diagnostico__wa-link {
       font-family: var(--font-body);
       font-size: var(--text-small);
       color: var(--gray-400);
       text-decoration: none;
-      border-bottom: 1px solid var(--gray-300);
+      border-bottom: 1px solid transparent;
       padding-bottom: 1px;
       transition: color 0.2s ease, border-color 0.2s ease;
     }
@@ -361,13 +374,20 @@ const description = "Análisis gratuito de tu sitio web en 24h. Descubrí los 3 
 
         if (hasError) return;
 
+        // Disable button while sending
+        const submitBtn = htmlForm.querySelector('button[type="submit"]') as HTMLButtonElement;
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Enviando...';
+        }
+
         // Track form submission
         trackEvent('form_submit_diagnostico', {
           component: 'diagnostico_landing',
           utm_source: getUTMs().utm_source || 'direct',
         });
 
-        // Try Supabase first, fallback to WhatsApp
+        // Try Supabase first
         try {
           const res = await fetch('/api/leads', {
             method: 'POST',
@@ -384,6 +404,10 @@ const description = "Análisis gratuito de tu sitio web en 24h. Descubrí los 3 
           if (res.ok) {
             htmlForm.style.display = 'none';
             success.style.display = 'block';
+            // Meta Pixel Lead event
+            if (typeof window !== 'undefined' && (window as any).fbq) {
+              (window as any).fbq('track', 'Lead');
+            }
             return;
           }
         } catch (err) {
@@ -398,6 +422,10 @@ const description = "Análisis gratuito de tu sitio web en 24h. Descubrí los 3 
 
         htmlForm.style.display = 'none';
         success.style.display = 'block';
+        // Meta Pixel Lead event (fallback path)
+        if (typeof window !== 'undefined' && (window as any).fbq) {
+          (window as any).fbq('track', 'Lead');
+        }
       });
 
       // Track WhatsApp direct link click
