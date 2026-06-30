@@ -71,7 +71,7 @@ const images = [
             data-index={idx}
             data-src={img.src}
             data-alt={img.alt}
-            class={`thumb-btn relative h-full shrink-0 aspect-[4/3] rounded-md overflow-hidden snap-center transition-all duration-300 ${idx === 0 ? 'ring-2 ring-white opacity-100 shadow-[0_0_15px_rgba(255,255,255,0.3)]' : 'opacity-40 hover:opacity-100'}`}
+            class={`thumb-btn relative h-full shrink-0 aspect-[4/3] rounded-md overflow-hidden snap-center transition-all duration-300 ${idx === 0 ? 'ring-2 ring-white opacity-100 shadow-[0_0_15px_rgba(255,255,255,0.3)]' : 'opacity-60 hover:opacity-100'}`}
           >
             <img src={img.src} alt={img.alt} class="w-full h-full object-cover" />
           </button>
@@ -187,7 +187,7 @@ const images = [
             data-index={idx}
             data-src={img.src}
             data-alt={img.alt}
-            class={`modal-thumb-btn h-full aspect-[4/3] rounded-lg overflow-hidden transition-all duration-300 ${idx === 0 ? 'ring-2 ring-white opacity-100 scale-105' : 'opacity-50 hover:opacity-100'}`}
+            class={`modal-thumb-btn h-full aspect-[4/3] rounded-lg overflow-hidden transition-all duration-300 ${idx === 0 ? 'ring-2 ring-white opacity-100 scale-105' : 'opacity-75 hover:opacity-100'}`}
           >
             <img src={img.src} alt={img.alt} class="w-full h-full object-cover" />
           </button>
@@ -226,10 +226,10 @@ const images = [
         thumbBtns.forEach((btn, idx) => {
           if (idx === index) {
             btn.classList.add('ring-2', 'ring-white', 'opacity-100', 'shadow-[0_0_15px_rgba(255,255,255,0.3)]');
-            btn.classList.remove('opacity-40');
+            btn.classList.remove('opacity-60');
           } else {
             btn.classList.remove('ring-2', 'ring-white', 'opacity-100', 'shadow-[0_0_15px_rgba(255,255,255,0.3)]');
-            btn.classList.add('opacity-40');
+            btn.classList.add('opacity-60');
           }
         });
 
@@ -237,10 +237,10 @@ const images = [
         modalThumbBtns.forEach((btn, idx) => {
           if (idx === index) {
             btn.classList.add('ring-2', 'ring-white', 'opacity-100', 'scale-105');
-            btn.classList.remove('opacity-50');
+            btn.classList.remove('opacity-75');
           } else {
             btn.classList.remove('ring-2', 'ring-white', 'opacity-100', 'scale-105');
-            btn.classList.add('opacity-50');
+            btn.classList.add('opacity-75');
           }
         });
       }
