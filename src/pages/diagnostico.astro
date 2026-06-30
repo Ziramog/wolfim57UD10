@@ -22,8 +22,7 @@ const description = "Detectá errores que frenan consultas en tu sitio web. Diag
         Tu web tiene 3 errores<br>que frenan consultas
       </h1>
       <p class="diagnostico__subtext">
-        La mayoría de las PyMEs pierde consultas por 3 errores básicos en su sitio.
-        Te digo cuáles tiene la tuya. Sin cargo. En 24 horas.
+        La mayoría de las PyMEs pierde consultas por errores básicos en su sitio. Te digo cuáles tiene la tuya. Sin cargo. En 24 horas.
       </p>
 
       <!-- Formulario -->
@@ -70,11 +69,10 @@ const description = "Detectá errores que frenan consultas en tu sitio web. Diag
         </button>
       </form>
 
-      <!-- WhatsApp direct option (secondary, subtle) -->
+      <!-- WhatsApp direct option (secondary, very subtle) -->
       <div class="diagnostico__wa-alt">
-        <span class="diagnostico__wa-oro">¿Preferís escribir directo?</span>
         <a href="https://wa.me/5493513157202?text=Hola%20Juan%2C%20quiero%20el%20diagn%C3%B3stico%20gratuito%20de%20mi%20web." class="diagnostico__wa-link" target="_blank" rel="noopener noreferrer" id="wa-direct-link">
-          Escribir por WhatsApp
+          ¿Preferís WhatsApp? Escribime
         </a>
       </div>
 
@@ -85,12 +83,11 @@ const description = "Detectá errores que frenan consultas en tu sitio web. Diag
         </p>
       </div>
 
-      <!-- Mini testimonio -->
+      <!-- Caso real -->
       <div class="diagnostico__testimonial">
         <p class="diagnostico__quote">
-          "Wolfim nos modernizó el portal completo. Las consultas se ordenaron desde el primer mes."
+          Caso real: portal completo para Roggero &amp; Roma, con catálogo, fichas, mapas, reseñas y consultas por WhatsApp.
         </p>
-        <p class="diagnostico__author">— Silvia Roggero de Roma, Río Tercero</p>
       </div>
     </div>
 
@@ -113,7 +110,7 @@ const description = "Detectá errores que frenan consultas en tu sitio web. Diag
     }
 
     .diagnostico__logo {
-      margin-bottom: 2.5rem;
+      margin-bottom: 1.75rem;
       opacity: 0.9;
       transition: opacity 0.2s ease;
     }
@@ -121,7 +118,7 @@ const description = "Detectá errores que frenan consultas en tu sitio web. Diag
       opacity: 1;
     }
     .diagnostico__logo img {
-      height: 64px;
+      height: 48px;
       width: auto;
     }
 
@@ -138,7 +135,7 @@ const description = "Detectá errores que frenan consultas en tu sitio web. Diag
       line-height: 1.05;
       letter-spacing: -0.03em;
       color: var(--black);
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
     }
 
     .diagnostico__subtext {
@@ -146,7 +143,7 @@ const description = "Detectá errores que frenan consultas en tu sitio web. Diag
       font-size: var(--text-body);
       line-height: 1.6;
       color: var(--gray-400);
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       max-width: 420px;
       margin-left: auto;
       margin-right: auto;
@@ -155,8 +152,8 @@ const description = "Detectá errores que frenan consultas en tu sitio web. Diag
     .diagnostico__form {
       display: flex;
       flex-direction: column;
-      gap: 0.875rem;
-      margin-bottom: 2rem;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
     }
 
     .diagnostico__field {
@@ -231,45 +228,29 @@ const description = "Detectá errores que frenan consultas en tu sitio web. Diag
     }
 
     .diagnostico__wa-alt {
-      margin-top: 1rem;
+      margin-top: 0.75rem;
       text-align: center;
-      opacity: 0.6;
-      transition: opacity 0.2s ease;
-    }
-    .diagnostico__wa-alt:hover {
-      opacity: 1;
-    }
-    .diagnostico__wa-oro {
-      display: block;
-      font-family: var(--font-body);
-      font-size: var(--text-micro);
-      color: var(--gray-300);
-      margin-bottom: 0.35rem;
     }
     .diagnostico__wa-link {
       font-family: var(--font-body);
-      font-size: var(--text-small);
-      color: var(--gray-400);
+      font-size: var(--text-micro);
+      color: var(--gray-300);
       text-decoration: none;
-      border-bottom: 1px solid transparent;
-      padding-bottom: 1px;
-      transition: color 0.2s ease, border-color 0.2s ease;
+      transition: color 0.2s ease;
     }
     .diagnostico__wa-link:hover {
-      color: var(--black);
-      border-color: var(--black);
+      color: var(--gray-400);
     }
 
     .diagnostico__testimonial {
-      margin-top: 0.5rem;
+      margin-top: 0.25rem;
     }
     .diagnostico__quote {
       font-family: var(--font-body);
-      font-size: var(--text-small);
-      line-height: 1.55;
-      color: var(--gray-400);
-      font-style: italic;
-      margin-bottom: 0.5rem;
+      font-size: var(--text-micro);
+      line-height: 1.5;
+      color: var(--gray-300);
+      margin: 0;
     }
     .diagnostico__author {
       font-family: var(--font-body);
@@ -293,29 +274,39 @@ const description = "Detectá errores que frenan consultas en tu sitio web. Diag
     /* Mobile: ensure above-the-fold */
     @media (max-width: 480px) {
       .diagnostico {
-        padding: 1.25rem 1rem;
+        padding: 1rem;
         justify-content: flex-start;
-        padding-top: 5rem;
+        padding-top: 3.5rem;
+      }
+      .diagnostico__logo {
+        margin-bottom: 1.25rem;
+      }
+      .diagnostico__logo img {
+        height: 36px;
       }
       .diagnostico__headline {
-        font-size: clamp(1.8rem, 9vw, 2.4rem);
-        margin-bottom: 1rem;
+        font-size: clamp(1.6rem, 8vw, 2.2rem);
+        margin-bottom: 0.75rem;
       }
       .diagnostico__subtext {
-        font-size: 0.9rem;
-        margin-bottom: 1.5rem;
+        font-size: 0.85rem;
+        margin-bottom: 1.25rem;
+        line-height: 1.5;
+      }
+      .diagnostico__form {
+        gap: 0.625rem;
+        margin-bottom: 1rem;
       }
       .diagnostico__input {
-        padding: 0.875rem 1rem;
+        padding: 0.75rem 0.875rem;
+        font-size: 0.9rem;
       }
       .diagnostico__cta {
         padding: 0.875rem 1rem;
-        font-size: 1rem;
+        font-size: 0.95rem;
       }
       .diagnostico__footer {
-        position: static;
-        margin-top: auto;
-        padding-top: 2rem;
+        display: none;
       }
     }
   </style>
