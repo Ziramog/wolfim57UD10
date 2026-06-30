@@ -303,7 +303,7 @@
       'hero.cta_primary': 'Obtener presupuesto',
       'hero.trust': 'Más de 20 proyectos entregados con éxito',
       'hero.cta_secondary': 'Ver trabajos',
-      'hero.location': 'Buenos Aires <span class="hero__location-dot">●</span> Servicio remoto para clientes de todo el mundo',
+      'hero.location': 'Buenos Aires <span class="hero__location-dot">●</span> Servicio Remoto Mundial',
       'hero.cta_projects': 'Ver Proyectos',
       'hero.cta_pricing': 'Precios',
       'hero.focus_label': 'Enfoque',
