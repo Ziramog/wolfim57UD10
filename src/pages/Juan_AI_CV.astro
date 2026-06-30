@@ -1,0 +1,700 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "Juan Manuel Gomariz — AI Evaluation Specialist | CV";
+const description = "AI Evaluation Specialist with 3+ years building multi-agent AI systems, evaluating AI-generated outputs, and performing structured quality assurance. Native Spanish (LATAM) with advanced English.";
+const canonical = "https://wolfim.com/Juan_AI_CV";
+---
+
+<Layout title={title} description={description} canonical={canonical}>
+  <div class="film-grain" aria-hidden="true"></div>
+
+  <main class="cv">
+    <!-- Header -->
+    <header class="cv__header">
+      <div class="cv__header-top">
+        <a href="/" class="cv__logo">Wolfim Studio</a>
+        <span class="cv__year">2026</span>
+      </div>
+
+      <h1 class="cv__name">Juan Manuel<br>Gomariz</h1>
+      <p class="cv__title">Speech AI Evaluation Specialist<br>AI Quality Assurance · Data Annotation</p>
+
+      <div class="cv__contact">
+        <span>Río Tercero, Córdoba, Argentina</span>
+        <span class="cv__sep">·</span>
+        <a href="mailto:ingjuangomariz@gmail.com">ingjuangomariz@gmail.com</a>
+        <span class="cv__sep">·</span>
+        <a href="tel:+5493513157202">+54 9 351 3157202</a>
+      </div>
+      <div class="cv__websites">
+        <a href="https://wolfim.com" target="_blank" rel="noopener noreferrer">wolfim.com</a>
+        <span class="cv__sep">·</span>
+        <a href="https://korantis.com" target="_blank" rel="noopener noreferrer">korantis.com</a>
+        <span class="cv__sep">·</span>
+        <a href="https://roggeroyroma.com" target="_blank" rel="noopener noreferrer">roggeroyroma.com</a>
+      </div>
+    </header>
+
+    <div class="cv__divider"></div>
+
+    <!-- Summary -->
+    <section class="cv__section">
+      <h2 class="cv__section-title">Professional Summary</h2>
+      <p class="cv__summary">
+        AI Evaluation Specialist with 3+ years of hands-on experience building and operating multi-agent AI systems, evaluating AI-generated outputs, and performing structured quality assurance on AI model responses. Architected <strong>Hermes</strong>, a production multi-agent orchestration system that coordinates 9 specialized AI agents with defined evaluation protocols, quality gates, and feedback loops. Native Spanish speaker (LATAM) with advanced English proficiency (B2–C1). Experienced in data annotation pipelines, AI response rating frameworks, and following strict evaluation guidelines.
+      </p>
+    </section>
+
+    <div class="cv__divider"></div>
+
+    <!-- Skills -->
+    <section class="cv__section">
+      <h2 class="cv__section-title">AI & Evaluation Skills</h2>
+      <div class="cv__skills-grid">
+        <div class="cv__skill">
+          <span class="cv__skill-cat">AI Response Evaluation</span>
+          <p>Rating AI outputs on relevance, accuracy, clarity, tone; rubric-based assessment; structured feedback writing</p>
+        </div>
+        <div class="cv__skill">
+          <span class="cv__skill-cat">Prompt Engineering</span>
+          <p>Crafting evaluation prompts for 9+ specialized AI profiles; contract-based system prompting (SOUL.md); chain-of-thought evaluation frameworks</p>
+        </div>
+        <div class="cv__skill">
+          <span class="cv__skill-cat">Data Annotation & Labeling</span>
+          <p>Lead qualification tagging; venue data categorization; AI output quality labeling; batch data processing</p>
+        </div>
+        <div class="cv__skill">
+          <span class="cv__skill-cat">Quality Assurance</span>
+          <p>Multi-agent audit workflows; automated quality gates; handoff verification protocols; pattern-based error detection</p>
+        </div>
+        <div class="cv__skill">
+          <span class="cv__skill-cat">AI/ML Familiarity</span>
+          <p>LLM evaluation (Claude, GPT, DeepSeek); vision model assessment (M3); model output comparison; token-usage optimization</p>
+        </div>
+        <div class="cv__skill">
+          <span class="cv__skill-cat">Conversational AI</span>
+          <p>Voice & WhatsApp bot integration (YCloud API); voice conversation scenarios; conversational AI evaluation frameworks</p>
+        </div>
+        <div class="cv__skill">
+          <span class="cv__skill-cat">Data Collection & Processing</span>
+          <p>Web scraping pipelines; structured data enrichment; batch processing (25+ venues); Supabase database management</p>
+        </div>
+        <div class="cv__skill">
+          <span class="cv__skill-cat">Documentation & Reporting</span>
+          <p>Detailed evaluation reports; Excel-based tracking; Notion/Google Workspace collaboration; Obsidian knowledge management</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="cv__divider"></div>
+
+    <!-- Experience -->
+    <section class="cv__section">
+      <h2 class="cv__section-title">AI Projects & Experience</h2>
+
+      <!-- Hermes -->
+      <div class="cv__experience">
+        <div class="cv__exp-header">
+          <h3 class="cv__exp-title">Hermes Multi-Agent AI System</h3>
+          <span class="cv__exp-role">Lead Architect & Operator</span>
+          <span class="cv__exp-date">2024 – Present</span>
+        </div>
+        <p class="cv__exp-desc">Designed, built, and operate a production multi-agent AI orchestration system that coordinates 9 specialized AI agents with distinct evaluation responsibilities.</p>
+        <ul class="cv__exp-list">
+          <li><strong>Agent Architecture:</strong> Created 9 specialized AI profiles (brain-vps, brain-local, wolfim-growth, ango-commercial, construvial-growth, korantis-ops, web-builder, web-auditor, pc-ops), each with contract-based behavioral instructions defining evaluation criteria and quality thresholds</li>
+          <li><strong>AI Quality Control:</strong> Built a dedicated web-auditor agent that independently evaluates AI-generated code and content against predefined quality rubrics</li>
+          <li><strong>Response Evaluation Protocols:</strong> Designed structured handoff verification protocols where AI outputs are evaluated against acceptance criteria before being approved for production use</li>
+          <li><strong>Pattern Recognition:</strong> Developed pattern-detection systems that identify recurring AI errors, hallucinations, and quality deviations — feeding corrections back into agent instructions</li>
+          <li><strong>24/7 Autonomous Operation:</strong> Deployed on VPS with cron-based autonomous execution, Telegram alerting, and Git-synchronized knowledge management via Obsidian vault</li>
+        </ul>
+        <div class="cv__tech-tags">
+          <span>Hermes Agent</span><span>Claude</span><span>GPT-4</span><span>DeepSeek</span><span>Python</span><span>Supabase</span><span>Git</span><span>Linux VPS</span><span>Docker</span><span>Telegram API</span><span>Obsidian</span>
+        </div>
+      </div>
+
+      <!-- Wolfim -->
+      <div class="cv__experience">
+        <div class="cv__exp-header">
+          <h3 class="cv__exp-title">Wolfim — AI-Powered Web Agency</h3>
+          <span class="cv__exp-role">Founder</span>
+          <span class="cv__exp-date">2025 – Present</span>
+        </div>
+        <p class="cv__exp-desc">Built an AI-assisted web development business with integrated AI evaluation workflows.</p>
+        <ul class="cv__exp-list">
+          <li><strong>AI-Assisted Development:</strong> Use LLM-based agents (web-builder) to generate website code, which is then independently audited by a separate AI agent (web-auditor) — creating an AI generates → AI evaluates → human approves pipeline</li>
+          <li><strong>Automated Outreach Pipeline:</strong> Built an end-to-end AI-powered lead generation system processing 122+ leads with AI-driven qualification and annotation</li>
+          <li><strong>WhatsApp AI Integration:</strong> Integrated YCloud WhatsApp API for AI-assisted conversational outreach, requiring evaluation of bot response quality and conversation flow</li>
+          <li><strong>Client Projects:</strong> Delivered websites for real estate and commercial clients using AI-assisted development with human-in-the-loop quality evaluation</li>
+        </ul>
+        <div class="cv__tech-tags">
+          <span>Next.js</span><span>Supabase</span><span>Resend API</span><span>YCloud API</span><span>Cloudflare</span><span>Make.com</span>
+        </div>
+      </div>
+
+      <!-- Korantis -->
+      <div class="cv__experience">
+        <div class="cv__exp-header">
+          <h3 class="cv__exp-title">Korantis — AI-Powered Venue Intelligence</h3>
+          <span class="cv__exp-role">Founder</span>
+          <span class="cv__exp-date">2025 – Present</span>
+        </div>
+        <p class="cv__exp-desc">Created an AI data pipeline for venue discovery and evaluation.</p>
+        <ul class="cv__exp-list">
+          <li><strong>Model Split Architecture:</strong> Designed a two-stage AI pipeline where a text model (M2.7) pre-screens venues, and a vision model (M3) evaluates interior photography quality — reducing vision API calls by 83.3%</li>
+          <li><strong>Data Annotation:</strong> Curated and labeled datasets of 25+ Buenos Aires venues, tagging attributes such as venue type, atmosphere, capacity, and photo quality</li>
+          <li><strong>AI Vision Evaluation:</strong> Developed criteria for AI vision model assessment of venue interiors, establishing quality thresholds and evaluation rubrics</li>
+          <li><strong>Quality Assurance:</strong> Validated AI-generated venue assessments against ground truth, identifying model strengths and failure modes</li>
+        </ul>
+        <div class="cv__tech-tags">
+          <span>Python</span><span>AI Vision APIs</span><span>Supabase</span><span>Data Curation</span>
+        </div>
+      </div>
+
+      <!-- Financial Markets -->
+      <div class="cv__experience">
+        <div class="cv__exp-header">
+          <h3 class="cv__exp-title">Independent Financial Markets Analyst</h3>
+          <span class="cv__exp-date">2018 – Present</span>
+        </div>
+        <ul class="cv__exp-list">
+          <li>Evaluate market data using AI-assisted structured decision frameworks</li>
+          <li>Maintain detailed evaluation records with rule-based assessment processes</li>
+          <li>Apply pattern recognition and analytical thinking to complex data evaluation</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="cv__divider"></div>
+
+    <!-- Technical Skills -->
+    <section class="cv__section">
+      <h2 class="cv__section-title">Technical Skills</h2>
+      <div class="cv__tech-grid">
+        <div class="cv__tech-row">
+          <span class="cv__tech-label">AI/LLM Platforms</span>
+          <span class="cv__tech-value">Hermes Agent, OpenAI (GPT-4), Anthropic (Claude), DeepSeek, AI Vision Models</span>
+        </div>
+        <div class="cv__tech-row">
+          <span class="cv__tech-label">Prompt Engineering</span>
+          <span class="cv__tech-value">Contract-based system prompts, chain-of-thought, structured evaluation prompts, few-shot prompting</span>
+        </div>
+        <div class="cv__tech-row">
+          <span class="cv__tech-label">Data & Automation</span>
+          <span class="cv__tech-value">Python, Supabase/SQL, Make.com, cron automation, web scraping</span>
+        </div>
+        <div class="cv__tech-row">
+          <span class="cv__tech-label">Business Tools</span>
+          <span class="cv__tech-value">Excel (advanced), SAP, Power BI, Google Workspace, Notion, Slack</span>
+        </div>
+        <div class="cv__tech-row">
+          <span class="cv__tech-label">Web Technologies</span>
+          <span class="cv__tech-value">Next.js, Astro, Docker, Git, Linux VPS, Cloudflare, API integrations</span>
+        </div>
+        <div class="cv__tech-row">
+          <span class="cv__tech-label">Quality & Documentation</span>
+          <span class="cv__tech-value">Rubric design, structured feedback, Obsidian knowledge management, detailed reporting</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="cv__divider"></div>
+
+    <!-- Languages -->
+    <section class="cv__section">
+      <h2 class="cv__section-title">Languages</h2>
+      <div class="cv__languages">
+        <div class="cv__lang">
+          <span class="cv__lang-name">Spanish</span>
+          <span class="cv__lang-level">Native</span>
+          <span class="cv__lang-detail">LATAM (Argentina). Full professional proficiency in all contexts.</span>
+        </div>
+        <div class="cv__lang">
+          <span class="cv__lang-name">English</span>
+          <span class="cv__lang-level">B2–C1 Advanced</span>
+          <span class="cv__lang-detail">Reading complex technical documentation daily. Writing evaluation reports and technical instructions. Conversational proficiency for voice interactions.</span>
+        </div>
+        <div class="cv__lang">
+          <span class="cv__lang-name">Portuguese</span>
+          <span class="cv__lang-level">Basic</span>
+          <span class="cv__lang-detail">Reading comprehension.</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="cv__divider"></div>
+
+    <!-- Education -->
+    <section class="cv__section">
+      <h2 class="cv__section-title">Education</h2>
+      <div class="cv__education">
+        <h3 class="cv__edu-title">Industrial Engineer</h3>
+        <p class="cv__edu-school">Universidad Católica de Córdoba, Argentina</p>
+        <p class="cv__edu-detail">Engineering background with strong foundations in: process optimization, quality control systems, statistical analysis, structured evaluation methodologies, and technical documentation.</p>
+      </div>
+    </section>
+
+    <div class="cv__divider"></div>
+
+    <!-- Why Strong Fit -->
+    <section class="cv__section">
+      <h2 class="cv__section-title">Why I'm a Strong Fit for Speech AI Evaluation</h2>
+      <div class="cv__fit-grid">
+        <div class="cv__fit">
+          <span class="cv__fit-num">01</span>
+          <h3>Real AI Evaluation Experience</h3>
+          <p>I don't just use AI — I actively evaluate AI outputs daily through my multi-agent system. I've built quality gates, assessment rubrics, and feedback loops that mirror the exact workflow required.</p>
+        </div>
+        <div class="cv__fit">
+          <span class="cv__fit-num">02</span>
+          <h3>Native Spanish + Strong English</h3>
+          <p>I'm a native LATAM Spanish speaker from Argentina who works daily in English — reading AI documentation, writing evaluation prompts, and communicating technical concepts.</p>
+        </div>
+        <div class="cv__fit">
+          <span class="cv__fit-num">03</span>
+          <h3>Guidelines Are My Operating System</h3>
+          <p>My entire Hermes system runs on contract-based protocols (SOUL.md). I'm trained to follow detailed evaluation guidelines precisely, document deviations, and provide structured, objective feedback.</p>
+        </div>
+        <div class="cv__fit">
+          <span class="cv__fit-num">04</span>
+          <h3>Data Quality Mindset</h3>
+          <p>From annotating venue datasets to qualifying leads to evaluating AI code quality, I approach every task with a quality-first, rubric-driven methodology.</p>
+        </div>
+        <div class="cv__fit">
+          <span class="cv__fit-num">05</span>
+          <h3>Self-Directed & Reliable</h3>
+          <p>I've built and operate a complex AI system independently. I manage my own time, meet deadlines, and deliver consistent quality without supervision.</p>
+        </div>
+        <div class="cv__fit">
+          <span class="cv__fit-num">06</span>
+          <h3>Analytical Rigor</h3>
+          <p>My engineering background trained me in systematic evaluation, pattern recognition, and data-driven decision making. I don't guess — I assess against criteria and document my reasoning.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="cv__footer">
+      <p>Available immediately · Flexible schedule (10+ hours/week) · Remote only</p>
+      <span>Wolfim Studio 2026</span>
+    </footer>
+  </main>
+
+  <style>
+    /* Base */
+    .cv {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 2rem 4rem;
+      background: #FAFAF8;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    .cv__header {
+      margin-bottom: 2rem;
+    }
+
+    .cv__header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .cv__logo {
+      font-family: var(--font-display);
+      font-size: var(--text-small);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--black);
+      text-decoration: none;
+    }
+
+    .cv__year {
+      font-family: var(--font-mono);
+      font-size: var(--text-micro);
+      color: var(--gray-300);
+    }
+
+    .cv__name {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--black);
+      margin-bottom: 0.75rem;
+    }
+
+    .cv__title {
+      font-family: var(--font-body);
+      font-size: var(--text-medium);
+      line-height: 1.5;
+      color: var(--gray-400);
+      margin-bottom: 1.5rem;
+    }
+
+    .cv__contact,
+    .cv__websites {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      color: var(--gray-400);
+      line-height: 1.8;
+    }
+
+    .cv__contact a,
+    .cv__websites a {
+      color: var(--gray-400);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .cv__contact a:hover,
+    .cv__websites a:hover {
+      color: var(--black);
+      border-color: var(--black);
+    }
+
+    .cv__sep {
+      margin: 0 0.5rem;
+      opacity: 0.4;
+    }
+
+    /* Divider */
+    .cv__divider {
+      height: 1px;
+      background: var(--border);
+      margin: 2rem 0;
+    }
+
+    /* Sections */
+    .cv__section {
+      margin-bottom: 0.5rem;
+    }
+
+    .cv__section-title {
+      font-family: var(--font-display);
+      font-size: var(--text-medium);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--black);
+      margin-bottom: 1.25rem;
+    }
+
+    /* Summary */
+    .cv__summary {
+      font-family: var(--font-body);
+      font-size: var(--text-body);
+      line-height: 1.7;
+      color: var(--gray-500);
+    }
+
+    .cv__summary strong {
+      color: var(--black);
+      font-weight: 600;
+    }
+
+    /* Skills Grid */
+    .cv__skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .cv__skill {
+      padding: 1rem;
+      border: 1px solid var(--border);
+    }
+
+    .cv__skill-cat {
+      display: block;
+      font-family: var(--font-display);
+      font-size: var(--text-small);
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 0.5rem;
+    }
+
+    .cv__skill p {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      line-height: 1.55;
+      color: var(--gray-400);
+      margin: 0;
+    }
+
+    /* Experience */
+    .cv__experience {
+      margin-bottom: 2rem;
+    }
+
+    .cv__experience:last-child {
+      margin-bottom: 0;
+    }
+
+    .cv__exp-header {
+      margin-bottom: 0.75rem;
+    }
+
+    .cv__exp-title {
+      font-family: var(--font-display);
+      font-size: var(--text-body);
+      font-weight: 600;
+      color: var(--black);
+      margin: 0 0 0.25rem;
+    }
+
+    .cv__exp-role {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      color: var(--gray-400);
+      margin-right: 0.75rem;
+    }
+
+    .cv__exp-date {
+      font-family: var(--font-mono);
+      font-size: var(--text-micro);
+      color: var(--gray-300);
+    }
+
+    .cv__exp-desc {
+      font-family: var(--font-body);
+      font-size: var(--text-body);
+      line-height: 1.6;
+      color: var(--gray-500);
+      margin-bottom: 0.75rem;
+    }
+
+    .cv__exp-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+    }
+
+    .cv__exp-list li {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      line-height: 1.6;
+      color: var(--gray-400);
+      padding-left: 1rem;
+      position: relative;
+      margin-bottom: 0.5rem;
+    }
+
+    .cv__exp-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gray-300);
+    }
+
+    .cv__exp-list li strong {
+      color: var(--black);
+      font-weight: 600;
+    }
+
+    /* Tech Tags */
+    .cv__tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .cv__tech-tags span {
+      font-family: var(--font-mono);
+      font-size: var(--text-micro);
+      color: var(--gray-400);
+      padding: 0.25rem 0.5rem;
+      border: 1px solid var(--border);
+      letter-spacing: 0.02em;
+    }
+
+    /* Technical Skills Grid */
+    .cv__tech-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .cv__tech-row {
+      display: flex;
+      gap: 1rem;
+      align-items: baseline;
+    }
+
+    .cv__tech-label {
+      font-family: var(--font-display);
+      font-size: var(--text-small);
+      font-weight: 600;
+      color: var(--black);
+      min-width: 180px;
+      flex-shrink: 0;
+    }
+
+    .cv__tech-value {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      color: var(--gray-400);
+      line-height: 1.5;
+    }
+
+    /* Languages */
+    .cv__languages {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .cv__lang {
+      display: grid;
+      grid-template-columns: 120px 120px 1fr;
+      gap: 1rem;
+      align-items: baseline;
+    }
+
+    .cv__lang-name {
+      font-family: var(--font-display);
+      font-size: var(--text-small);
+      font-weight: 600;
+      color: var(--black);
+    }
+
+    .cv__lang-level {
+      font-family: var(--font-mono);
+      font-size: var(--text-micro);
+      color: var(--gray-400);
+      letter-spacing: 0.02em;
+    }
+
+    .cv__lang-detail {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      color: var(--gray-400);
+      line-height: 1.5;
+    }
+
+    /* Education */
+    .cv__education {
+      margin-bottom: 0;
+    }
+
+    .cv__edu-title {
+      font-family: var(--font-display);
+      font-size: var(--text-body);
+      font-weight: 600;
+      color: var(--black);
+      margin: 0 0 0.25rem;
+    }
+
+    .cv__edu-school {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      color: var(--gray-400);
+      margin: 0 0 0.5rem;
+    }
+
+    .cv__edu-detail {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      line-height: 1.6;
+      color: var(--gray-400);
+      margin: 0;
+    }
+
+    /* Why Strong Fit */
+    .cv__fit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .cv__fit {
+      position: relative;
+    }
+
+    .cv__fit-num {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: var(--text-micro);
+      color: var(--gray-300);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .cv__fit h3 {
+      font-family: var(--font-display);
+      font-size: var(--text-small);
+      font-weight: 600;
+      color: var(--black);
+      margin: 0 0 0.5rem;
+    }
+
+    .cv__fit p {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      line-height: 1.55;
+      color: var(--gray-400);
+      margin: 0;
+    }
+
+    /* Footer */
+    .cv__footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .cv__footer p {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      color: var(--gray-400);
+      margin-bottom: 0.75rem;
+    }
+
+    .cv__footer span {
+      font-family: var(--font-mono);
+      font-size: var(--text-micro);
+      color: var(--gray-300);
+      letter-spacing: 0.05em;
+    }
+
+    /* Mobile */
+    @media (max-width: 640px) {
+      .cv {
+        padding: 2rem 1.25rem 3rem;
+      }
+
+      .cv__skills-grid,
+      .cv__fit-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cv__tech-row {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+
+      .cv__tech-label {
+        min-width: auto;
+      }
+
+      .cv__lang {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+      }
+
+      .cv__contact,
+      .cv__websites {
+        font-size: var(--text-micro);
+      }
+
+      .cv__sep {
+        margin: 0 0.25rem;
+      }
+    }
+  </style>
+</Layout>
