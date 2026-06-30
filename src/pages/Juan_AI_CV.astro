@@ -30,6 +30,8 @@ const canonical = "https://wolfim.com/Juan_AI_CV";
       <div class="cv__websites">
         <a href="https://wolfim.com" target="_blank" rel="noopener noreferrer">wolfim.com</a>
         <span class="cv__sep">·</span>
+        <a href="https://lamontaña.lat" target="_blank" rel="noopener noreferrer">lamontaña.lat</a>
+        <span class="cv__sep">·</span>
         <a href="https://korantis.com" target="_blank" rel="noopener noreferrer">korantis.com</a>
         <span class="cv__sep">·</span>
         <a href="https://roggeroyroma.com" target="_blank" rel="noopener noreferrer">roggeroyroma.com</a>
@@ -219,6 +221,31 @@ const canonical = "https://wolfim.com/Juan_AI_CV";
           <span class="cv__lang-level">Basic</span>
           <span class="cv__lang-detail">Reading comprehension.</span>
         </div>
+      </div>
+    </section>
+
+    <div class="cv__divider"></div>
+
+    <!-- Portfolio -->
+    <section class="cv__section">
+      <h2 class="cv__section-title">Live Projects</h2>
+      <div class="cv__portfolio">
+        <a href="https://wolfim.com" target="_blank" rel="noopener noreferrer" class="cv__portfolio-item">
+          <span class="cv__portfolio-url">wolfim.com</span>
+          <span class="cv__portfolio-desc">AI-Powered Web Agency — Design, development & AI evaluation workflows</span>
+        </a>
+        <a href="https://lamontaña.lat" target="_blank" rel="noopener noreferrer" class="cv__portfolio-item">
+          <span class="cv__portfolio-url">lamontaña.lat</span>
+          <span class="cv__portfolio-desc">Commercial web project</span>
+        </a>
+        <a href="https://korantis.com" target="_blank" rel="noopener noreferrer" class="cv__portfolio-item">
+          <span class="cv__portfolio-url">korantis.com</span>
+          <span class="cv__portfolio-desc">AI-Powered Venue Intelligence — Data pipeline & vision model evaluation</span>
+        </a>
+        <a href="https://roggeroyroma.com" target="_blank" rel="noopener noreferrer" class="cv__portfolio-item">
+          <span class="cv__portfolio-url">roggeroyroma.com</span>
+          <span class="cv__portfolio-desc">Real estate portal — Catalog, CRM integration & VPS backup system</span>
+        </a>
       </div>
     </section>
 
@@ -570,6 +597,42 @@ const canonical = "https://wolfim.com/Juan_AI_CV";
     }
 
     .cv__lang-detail {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      color: var(--gray-400);
+      line-height: 1.5;
+    }
+
+    /* Portfolio */
+    .cv__portfolio {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .cv__portfolio-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      text-decoration: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .cv__portfolio-item:hover {
+      border-color: var(--black);
+    }
+
+    .cv__portfolio-url {
+      font-family: var(--font-mono);
+      font-size: var(--text-small);
+      font-weight: 600;
+      color: var(--black);
+      letter-spacing: 0.02em;
+    }
+
+    .cv__portfolio-desc {
       font-family: var(--font-body);
       font-size: var(--text-small);
       color: var(--gray-400);
