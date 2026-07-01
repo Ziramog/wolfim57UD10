@@ -69,18 +69,28 @@ const description = "Detectá errores que frenan consultas en tu sitio web. Diag
         </button>
       </form>
 
-      <!-- WhatsApp direct option (secondary, very subtle) -->
-      <div class="diagnostico__wa-alt">
-        <a href="https://wa.me/5493513157202?text=Hola%20Juan%2C%20quiero%20el%20diagn%C3%B3stico%20gratuito%20de%20mi%20web." class="diagnostico__wa-link" target="_blank" rel="noopener noreferrer" id="wa-direct-link">
-          ¿Preferís WhatsApp? Escribime
-        </a>
-      </div>
-
       <!-- Success message (hidden by default) -->
       <div class="diagnostico__success" id="diagnostico-success" style="display: none;">
         <p class="diagnostico__success-text">
-          Recibido. Juan te escribe por WhatsApp en menos de 24h con el diagnóstico.
+          Listo. Recibimos tu web.<br><br>
+          Juan de Wolfim te escribe por WhatsApp en menos de 24 horas con 3 mejoras concretas para tu sitio.
         </p>
+        <div class="diagnostico__wa-alt">
+          <span class="diagnostico__wa-label">¿Preferís escribir ahora?</span>
+          <a href="https://wa.me/5493513157202?text=Hola%20Juan%2C%20quiero%20el%20diagn%C3%B3stico%20gratuito%20de%20mi%20web." class="diagnostico__wa-link" target="_blank" rel="noopener noreferrer" id="wa-success-link">
+            Abrir WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Error message (hidden by default) -->
+      <div class="diagnostico__error-box" id="diagnostico-error-box" style="display: none;">
+        <p class="diagnostico__error-text">
+          No pudimos guardar el formulario. Escribinos por WhatsApp y te hacemos el diagnóstico igual.
+        </p>
+        <a href="https://wa.me/5493513157202?text=Hola%20Juan%2C%20quiero%20el%20diagn%C3%B3stico%20gratuito%20de%20mi%20web." class="diagnostico__wa-link" target="_blank" rel="noopener noreferrer" id="wa-fallback-link">
+          Abrir WhatsApp
+        </a>
       </div>
 
       <!-- Caso real -->
@@ -214,27 +224,44 @@ const description = "Detectá errores que frenan consultas en tu sitio web. Diag
       transform: scale(0.98);
     }
 
-    .diagnostico__success {
+    .diagnostico__success,
+    .diagnostico__error-box {
       padding: 1.5rem;
       background: var(--white);
       border: 1px solid var(--border);
       margin-bottom: 2rem;
     }
-    .diagnostico__success-text {
+    .diagnostico__success-text,
+    .diagnostico__error-text {
       font-family: var(--font-body);
       font-size: var(--text-body);
       line-height: 1.6;
       color: var(--black);
+      margin: 0;
+    }
+    .diagnostico__error-box {
+      border-color: #dc2626;
+    }
+    .diagnostico__error-text {
+      color: #dc2626;
+      margin-bottom: 0.75rem;
     }
 
     .diagnostico__wa-alt {
-      margin-top: 0.75rem;
+      margin-top: 1rem;
       text-align: center;
+    }
+    .diagnostico__wa-label {
+      display: block;
+      font-family: var(--font-body);
+      font-size: var(--text-micro);
+      color: var(--gray-300);
+      margin-bottom: 0.35rem;
     }
     .diagnostico__wa-link {
       font-family: var(--font-body);
       font-size: var(--text-micro);
-      color: var(--gray-300);
+      color: var(--gray-400);
       text-decoration: none;
       transition: color 0.2s ease;
     }
@@ -318,13 +345,44 @@ const description = "Detectá errores que frenan consultas en tu sitio web. Diag
     document.addEventListener('DOMContentLoaded', () => {
       const form = document.getElementById('diagnostico-form');
       const success = document.getElementById('diagnostico-success');
+      const errorBox = document.getElementById('diagnostico-error-box');
+      const fallbackLink = document.getElementById('wa-fallback-link') as HTMLAnchorElement | null;
+      const successLink = document.getElementById('wa-success-link') as HTMLAnchorElement | null;
 
-      if (!form || !success) return;
+      if (!form || !success || !errorBox) return;
 
       const htmlForm = form as HTMLFormElement;
+      const submitBtn = htmlForm.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+      const defaultButtonText = submitBtn?.textContent?.trim() || 'Quiero el diagnóstico';
+
+      const buildWhatsAppUrl = (name: string, website: string) => {
+        const msg = encodeURIComponent(
+          `Hola Juan, quiero el diagnóstico gratuito de mi web.\nMi sitio es: ${website}\nMi nombre es: ${name}`
+        );
+        return `https://wa.me/5493513157202?text=${msg}`;
+      };
+
+      const setSubmitting = (isSubmitting: boolean) => {
+        if (!submitBtn) return;
+        submitBtn.disabled = isSubmitting;
+        submitBtn.textContent = isSubmitting ? 'Enviando...' : defaultButtonText;
+      };
+
+      const trackWhatsAppClick = (component: string) => {
+        trackEvent('click_whatsapp', {
+          component,
+          utm_source: getUTMs().utm_source || 'direct',
+        });
+      };
+
+      successLink?.addEventListener('click', () => trackWhatsAppClick('diagnostico_wa_after_success'));
+      fallbackLink?.addEventListener('click', () => trackWhatsAppClick('diagnostico_wa_fallback'));
 
       htmlForm.addEventListener('submit', async (e) => {
         e.preventDefault();
+
+        success.style.display = 'none';
+        errorBox.style.display = 'none';
 
         // Clear previous errors
         ['name', 'website', 'whatsapp'].forEach(field => {
@@ -365,20 +423,17 @@ const description = "Detectá errores que frenan consultas en tu sitio web. Diag
 
         if (hasError) return;
 
-        // Disable button while sending
-        const submitBtn = htmlForm.querySelector('button[type="submit"]') as HTMLButtonElement;
-        if (submitBtn) {
-          submitBtn.disabled = true;
-          submitBtn.textContent = 'Enviando...';
-        }
+        const whatsappUrl = buildWhatsAppUrl(name, website);
+        if (fallbackLink) fallbackLink.href = whatsappUrl;
+        if (successLink) successLink.href = whatsappUrl;
 
-        // Track form submission
+        setSubmitting(true);
+
         trackEvent('form_submit_diagnostico', {
           component: 'diagnostico_landing',
           utm_source: getUTMs().utm_source || 'direct',
         });
 
-        // Try Supabase first
         try {
           const res = await fetch('/api/leads', {
             method: 'POST',
@@ -387,48 +442,28 @@ const description = "Detectá errores que frenan consultas en tu sitio web. Diag
               name,
               website,
               whatsapp,
-              source: 'meta_ads_diagnostico',
+              source: 'meta_diagnostico',
               utms: getUTMs(),
             }),
           });
 
-          if (res.ok) {
-            htmlForm.style.display = 'none';
-            success.style.display = 'block';
-            // Meta Pixel Lead event
-            if (typeof window !== 'undefined' && (window as any).fbq) {
-              (window as any).fbq('track', 'Lead');
-            }
-            return;
+          if (!res.ok) {
+            throw new Error(`Lead API failed with status ${res.status}`);
+          }
+
+          htmlForm.reset();
+          htmlForm.style.display = 'none';
+          success.style.display = 'block';
+
+          if (typeof window !== 'undefined' && (window as any).fbq) {
+            (window as any).fbq('track', 'Lead');
           }
         } catch (err) {
-          console.warn('[Diagnóstico] API failed, falling back to WhatsApp', err);
-        }
-
-        // Fallback: open WhatsApp with pre-filled message
-        const msg = encodeURIComponent(
-          `Hola Juan, quiero el diagnóstico gratuito de mi web.\n\nMi web: ${website}\nSoy: ${name}\nWhatsApp: ${whatsapp}`
-        );
-        window.open(`https://wa.me/5493513157202?text=${msg}`, '_blank');
-
-        htmlForm.style.display = 'none';
-        success.style.display = 'block';
-        // Meta Pixel Lead event (fallback path)
-        if (typeof window !== 'undefined' && (window as any).fbq) {
-          (window as any).fbq('track', 'Lead');
+          console.warn('[Diagnóstico] API failed. Showing manual WhatsApp fallback.', err);
+          errorBox.style.display = 'block';
+          setSubmitting(false);
         }
       });
-
-      // Track WhatsApp direct link click
-      const waLink = document.getElementById('wa-direct-link');
-      if (waLink) {
-        waLink.addEventListener('click', () => {
-          trackEvent('click_whatsapp', {
-            component: 'diagnostico_wa_direct',
-            utm_source: getUTMs().utm_source || 'direct',
-          });
-        });
-      }
     });
   </script>
 </Layout>
