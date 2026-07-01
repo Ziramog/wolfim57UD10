@@ -1,10 +1,12 @@
 export const prerender = false;
 
 import type { APIRoute } from 'astro';
-import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = import.meta.env.SUPABASE_URL;
-const supabaseKey = import.meta.env.SUPABASE_ANON_KEY;
+type RuntimeGlobal = typeof globalThis & {
+  process?: {
+    env?: Record<string, string | undefined>;
+  };
+};
 
 type Utms = {
   utm_source?: string | null;
@@ -42,20 +44,42 @@ const json = (body: Record<string, unknown>, status: number) =>
 
 const sanitize = (value: unknown) => (typeof value === 'string' ? value.trim() : '');
 
-const isMissingOptionalColumnError = (error: { code?: string; message?: string } | null) => {
-  if (!error) return false;
+const getSupabaseEnv = () => {
+  const runtimeEnv = (globalThis as RuntimeGlobal).process?.env;
+
+  return {
+    url: import.meta.env.SUPABASE_URL || runtimeEnv?.SUPABASE_URL,
+    key: import.meta.env.SUPABASE_ANON_KEY || runtimeEnv?.SUPABASE_ANON_KEY,
+  };
+};
+
+const isMissingOptionalColumnError = (status: number, body: string) => {
   return (
-    error.code === 'PGRST204' &&
-    (error.message?.includes("'status'") || error.message?.includes("'utm_content'"))
+    status === 400 &&
+    body.includes('PGRST204') &&
+    (body.includes("'status'") || body.includes("'utm_content'"))
   );
 };
 
+const insertLead = async (supabaseUrl: string, supabaseKey: string, lead: LeadInsert) => {
+  return fetch(`${supabaseUrl}/rest/v1/leads`, {
+    method: 'POST',
+    headers: {
+      apikey: supabaseKey,
+      Authorization: `Bearer ${supabaseKey}`,
+      'Content-Type': 'application/json',
+      Prefer: 'return=minimal',
+    },
+    body: JSON.stringify(lead),
+  });
+};
+
 export const POST: APIRoute = async ({ request }) => {
+  const { url: supabaseUrl, key: supabaseKey } = getSupabaseEnv();
+
   if (!supabaseUrl || !supabaseKey) {
     return json({ error: 'Supabase not configured' }, 500);
   }
-
-  const supabase = createClient(supabaseUrl, supabaseKey);
 
   try {
     const body = (await request.json()) as LeadPayload;
@@ -82,15 +106,17 @@ export const POST: APIRoute = async ({ request }) => {
       utm_content: utms.utm_content || null,
     };
 
-    const { error } = await supabase.from('leads').insert(leadWithOptionalColumns);
+    const res = await insertLead(supabaseUrl, supabaseKey, leadWithOptionalColumns);
 
-    if (!error) {
+    if (res.ok) {
       return json({ success: true }, 200);
     }
 
+    const errorBody = await res.text();
+
     // Backward-compatible fallback: current production table may not have status/utm_content yet.
     // This keeps lead capture working while the SQL migration is applied.
-    if (isMissingOptionalColumnError(error)) {
+    if (isMissingOptionalColumnError(res.status, errorBody)) {
       const leadWithoutOptionalColumns: LeadInsert = {
         name,
         website,
@@ -102,17 +128,17 @@ export const POST: APIRoute = async ({ request }) => {
         utm_campaign: leadWithOptionalColumns.utm_campaign,
       };
 
-      const { error: retryError } = await supabase.from('leads').insert(leadWithoutOptionalColumns);
+      const retryRes = await insertLead(supabaseUrl, supabaseKey, leadWithoutOptionalColumns);
 
-      if (!retryError) {
+      if (retryRes.ok) {
         return json({ success: true, warning: 'optional_columns_missing' }, 200);
       }
 
-      console.error('[API] Supabase retry error:', retryError);
+      console.error('[API] Supabase retry error:', await retryRes.text());
       return json({ error: 'Database error' }, 500);
     }
 
-    console.error('[API] Supabase error:', error);
+    console.error('[API] Supabase error:', errorBody);
     return json({ error: 'Database error' }, 500);
   } catch (err) {
     console.error('[API] Error:', err);
