@@ -1,0 +1,805 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "Juan Manuel Gomariz — Web Designer & Website Builder | CV";
+const description = "Industrial engineer and hands-on website builder who designs and ships business sites end-to-end — layout, copy, build, launch, analytics. Founder of Wolfim Studio.";
+const canonical = "https://wolfim.com/Juan_Design_CV";
+---
+
+<Layout title={title} description={description} canonical={canonical}>
+  <div class="film-grain" aria-hidden="true"></div>
+
+  <main class="cv">
+    <!-- Header -->
+    <header class="cv__header">
+      <div class="cv__header-top">
+        <a href="/" class="cv__logo">Wolfim Studio</a>
+        <span class="cv__year">2026</span>
+      </div>
+
+      <h1 class="cv__name">Juan Manuel<br>Gomariz</h1>
+      <p class="cv__title">Web Designer & Website Builder<br>Business Websites · Real Estate Portals · Catalog Platforms</p>
+
+      <div class="cv__contact">
+        <span>Río Tercero, Córdoba, Argentina</span>
+        <span class="cv__sep">·</span>
+        <a href="mailto:juan@wolfim.com">juan@wolfim.com</a>
+        <span class="cv__sep">·</span>
+        <a href="tel:+5493513157202">+54 9 351 3157202</a>
+      </div>
+      <div class="cv__websites">
+        <a href="https://wolfim.com" target="_blank" rel="noopener noreferrer">wolfim.com</a>
+        <span class="cv__sep">·</span>
+        <a href="https://roggeroyroma.com" target="_blank" rel="noopener noreferrer">roggeroyroma.com</a>
+        <span class="cv__sep">·</span>
+        <a href="https://fariasyasociados.com.ar" target="_blank" rel="noopener noreferrer">fariasyasociados.com.ar</a>
+        <span class="cv__sep">·</span>
+        <a href="https://wolfim-motors.vercel.app" target="_blank" rel="noopener noreferrer">wolfim-motors.vercel.app</a>
+      </div>
+      
+      <div class="cv__download" style="margin-top: 1rem;">
+        <a href="/Juan_Design_CV.pdf" target="_blank" rel="noopener noreferrer" style="font-family: var(--font-mono); font-size: var(--text-micro); color: var(--gray-400); text-decoration: underline;">Download PDF Version</a>
+      </div>
+    </header>
+
+    <div class="cv__divider"></div>
+
+    <!-- Summary -->
+    <section class="cv__section">
+      <h2 class="cv__section-title">Professional Summary</h2>
+      <p class="cv__summary">
+        Industrial engineer and hands-on website builder who designs and ships business sites end-to-end — layout, copy, build, launch, analytics. Founder of <strong>Wolfim Studio</strong>, an AI-assisted web studio where I design every page myself and run an AI generates → AI audits → human approves delivery pipeline. I build fast because small businesses need a site this week, not next month — and I design for the phone call, not the award.
+      </p>
+    </section>
+
+    <div class="cv__divider"></div>
+
+    <!-- Skills -->
+    <section class="cv__section">
+      <h2 class="cv__section-title">Design & Build Skills</h2>
+      <div class="cv__skills-grid">
+        <div class="cv__skill">
+          <span class="cv__skill-cat">Web Design & Layout</span>
+          <p>Responsive page design, hero–offer–proof structure, typography and spacing systems. Templates and section libraries for fast builds.</p>
+        </div>
+        <div class="cv__skill">
+          <span class="cv__skill-cat">Website Building</span>
+          <p>Astro, Next.js, HTML/CSS/JS, CMS-style content structure. Published production sites for real estate, commercial and product clients.</p>
+        </div>
+        <div class="cv__skill">
+          <span class="cv__skill-cat">Copy Polish</span>
+          <p>Writes and polishes site copy from thin source material — transcripts, reviews, old sites — and turns it into clear service and proof sections.</p>
+        </div>
+        <div class="cv__skill">
+          <span class="cv__skill-cat">Photo Handling</span>
+          <p>Batch corrections, cropping for layout slots, visual QA before launch. Knows when a photo carries the page and must be hand-fixed.</p>
+        </div>
+        <div class="cv__skill">
+          <span class="cv__skill-cat">Conversion & Contact Paths</span>
+          <p>Clear offers, phone-first CTAs, WhatsApp and form integration. Every section answers: who calls, and why now.</p>
+        </div>
+        <div class="cv__skill">
+          <span class="cv__skill-cat">Analytics & Measurement</span>
+          <p>GA4 setup and monthly client reporting. Diagnoses traffic-without-calls with data instead of redesigning by guess.</p>
+        </div>
+        <div class="cv__skill">
+          <span class="cv__skill-cat">AI-Assisted Workflow</span>
+          <p>AI drafts and audits content and code; I make the final call. Multi-agent quality gates with documented acceptance criteria.</p>
+        </div>
+        <div class="cv__skill">
+          <span class="cv__skill-cat">Commercial Judgment</span>
+          <p>Managed procurement and B2B operations for years — understands cost, urgency and what clients actually pay for.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="cv__divider"></div>
+
+    <!-- Experience -->
+    <section class="cv__section">
+      <h2 class="cv__section-title">Experience & Projects</h2>
+
+      <!-- Wolfim -->
+      <div class="cv__experience">
+        <div class="cv__exp-header">
+          <h3 class="cv__exp-title">Wolfim — Founder & Lead Designer</h3>
+          <span class="cv__exp-role">Design · Build · Delivery</span>
+          <span class="cv__exp-date">2025 – Present</span>
+        </div>
+        <p class="cv__exp-desc">AI-assisted web studio. I design, build and ship client websites myself, with an independent AI audit step before every launch.</p>
+        <ul class="cv__exp-list">
+          <li>Designed and built the agency site <strong>wolfim.com</strong> and three production client sites (see Live Projects).</li>
+          <li>Ran an automated client outreach pipeline that processed <strong>122+ qualified leads</strong> with AI-assisted tagging.</li>
+          <li>Integrated WhatsApp (YCloud API), GA4 analytics and CMS workflows into client sites.</li>
+          <li>Built a lead-generation ecosystem using web scraping, enrichment and structured databases.</li>
+        </ul>
+        <div class="cv__tech-tags">
+          <span>Astro</span><span>Next.js</span><span>Supabase</span><span>GA4</span><span>Cloudflare</span><span>Resend API</span><span>YCloud API</span><span>Make.com</span><span>Python</span>
+        </div>
+      </div>
+
+      <!-- Farias -->
+      <div class="cv__experience">
+        <div class="cv__exp-header">
+          <h3 class="cv__exp-title">Farias & Asociados — Real Estate Agency Site</h3>
+          <span class="cv__exp-role">Designer & Builder</span>
+          <span class="cv__exp-date">2026</span>
+        </div>
+        <p class="cv__exp-desc">Designed and shipped a live real-estate site currently serving a production client.</p>
+        <ul class="cv__exp-list">
+          <li>Property listings with individual pages, WhatsApp contact and lead capture.</li>
+          <li>Client reviews integrated as social proof.</li>
+        </ul>
+        <div class="cv__tech-tags">
+          <span>fariasyasociados.com.ar</span><span>Next.js</span><span>Cloudinary</span><span>GA4</span>
+        </div>
+      </div>
+
+      <!-- Roggero -->
+      <div class="cv__experience">
+        <div class="cv__exp-header">
+          <h3 class="cv__exp-title">Roggero & Roma — Real Estate Portal</h3>
+          <span class="cv__exp-role">Designer & Builder</span>
+          <span class="cv__exp-date">2026</span>
+        </div>
+        <p class="cv__exp-desc">Designed and shipped a production real-estate portal currently serving a live client.</p>
+        <ul class="cv__exp-list">
+          <li>Searchable property catalog with individual listing pages, filters and contact paths.</li>
+          <li>CRM integration and VPS backup system.</li>
+          <li>Monthly GA4 reporting delivered to the client.</li>
+        </ul>
+        <div class="cv__tech-tags">
+          <span>roggeroyroma.com</span><span>Next.js</span><span>Supabase</span><span>GA4</span><span>Linux VPS</span>
+        </div>
+      </div>
+
+      <!-- Wolfim Motors -->
+      <div class="cv__experience">
+        <div class="cv__exp-header">
+          <h3 class="cv__exp-title">Wolfim Motors — Automotive Dealer Platform</h3>
+          <span class="cv__exp-role">Product & Platform Build</span>
+          <span class="cv__exp-date">2026</span>
+        </div>
+        <p class="cv__exp-desc">Built an automotive dealer platform: unit inventory with cards, specs, pricing and per-unit contact paths.</p>
+        <div class="cv__tech-tags" style="margin-top: 0.75rem;">
+          <span>wolfim-motors.vercel.app</span><span>Next.js</span><span>Vercel</span><span>Supabase</span>
+        </div>
+      </div>
+      
+      <!-- Korantis -->
+      <div class="cv__experience" style="margin-top: 2rem;">
+        <div class="cv__exp-header">
+          <h3 class="cv__exp-title">Korantis — Venue Intelligence Product</h3>
+          <span class="cv__exp-role">Founder · Product & Data Pipeline</span>
+          <span class="cv__exp-date">2025 – Present</span>
+        </div>
+        <p class="cv__exp-desc">Designed a venue-discovery product with an AI evaluation pipeline (text pre-screen + vision scoring).</p>
+        <ul class="cv__exp-list">
+          <li>Two-stage model architecture cut vision API calls by <strong>83.3%</strong>.</li>
+          <li>Curated and labeled <strong>25+ Buenos Aires venues</strong> with defined quality thresholds.</li>
+        </ul>
+        <div class="cv__tech-tags">
+          <span>korantis.com</span><span>Python</span><span>Supabase</span><span>AI vision models</span>
+        </div>
+      </div>
+      
+      <!-- ANGO Metalurgica -->
+      <div class="cv__experience" style="margin-top: 2rem;">
+        <div class="cv__exp-header">
+          <h3 class="cv__exp-title">ANGO Metalúrgica — Commercial & Imports Manager</h3>
+          <span class="cv__exp-role">B2B · China–Argentina Imports</span>
+          <span class="cv__exp-date">2024 – Present</span>
+        </div>
+        <p class="cv__exp-desc">Managed international suppliers, imports, logistics and B2B commercial development; contributed to a reported 30% sales increase in the first operating year.</p>
+      </div>
+      
+      <!-- Fabrica Militar -->
+      <div class="cv__experience" style="margin-top: 2rem;">
+        <div class="cv__exp-header">
+          <h3 class="cv__exp-title">Fábrica Militar Río Tercero — Head of Procurement & Logistics</h3>
+          <span class="cv__exp-role">Operations · Leadership · KPI Management</span>
+          <span class="cv__exp-date">2016 – 2024</span>
+        </div>
+        <p class="cv__exp-desc">Managed an approximately USD 4M annual procurement budget, led a 6-person core team (19 during the Procurement + Logistics integration), and contributed to a reported 15% reduction in acquisition cycle time.</p>
+      </div>
+
+    </section>
+
+    <div class="cv__divider"></div>
+
+    <!-- Technical Skills -->
+    <section class="cv__section">
+      <h2 class="cv__section-title">Technical Skills</h2>
+      <div class="cv__tech-grid">
+        <div class="cv__tech-row">
+          <span class="cv__tech-label">Web Build</span>
+          <span class="cv__tech-value">Astro, Next.js, Webflow (basics), HTML/CSS/JS, Supabase, Cloudflare, Git, Vercel</span>
+        </div>
+        <div class="cv__tech-row">
+          <span class="cv__tech-label">Design Tools</span>
+          <span class="cv__tech-value">Figma, Canva</span>
+        </div>
+        <div class="cv__tech-row">
+          <span class="cv__tech-label">AI Tools</span>
+          <span class="cv__tech-value">Claude, ChatGPT, DeepSeek — plus a custom multi-agent QA setup with documented rubrics</span>
+        </div>
+        <div class="cv__tech-row">
+          <span class="cv__tech-label">Data & Automation</span>
+          <span class="cv__tech-value">Python, Make.com, web scraping & enrichment, cron automation</span>
+        </div>
+        <div class="cv__tech-row">
+          <span class="cv__tech-label">Business Tools</span>
+          <span class="cv__tech-value">Excel (advanced), SAP, Notion, Google Workspace, GA4</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="cv__divider"></div>
+
+    <!-- Languages -->
+    <section class="cv__section">
+      <h2 class="cv__section-title">Languages</h2>
+      <div class="cv__languages">
+        <div class="cv__lang">
+          <span class="cv__lang-name">Spanish</span>
+          <span class="cv__lang-level">NATIVE</span>
+          <span class="cv__lang-detail">Full professional proficiency in all contexts.</span>
+        </div>
+        <div class="cv__lang">
+          <span class="cv__lang-name">English</span>
+          <span class="cv__lang-level">B2</span>
+          <span class="cv__lang-detail">Working daily in English — technical documentation, client-facing writing, voice conversations.</span>
+        </div>
+        <div class="cv__lang">
+          <span class="cv__lang-name">Portuguese</span>
+          <span class="cv__lang-level">BASIC</span>
+          <span class="cv__lang-detail">Reading comprehension.</span>
+        </div>
+      </div>
+    </section>
+    
+    <div class="cv__divider"></div>
+    
+    <!-- Portfolio -->
+    <section class="cv__section">
+      <h2 class="cv__section-title">Live Projects</h2>
+      <div class="cv__portfolio">
+        <a href="https://fariasyasociados.com.ar" target="_blank" rel="noopener noreferrer" class="cv__portfolio-item">
+          <span class="cv__portfolio-url">fariasyasociados.com.ar</span>
+          <span class="cv__portfolio-desc">Real estate agency site — live client, property listings, WhatsApp contact</span>
+        </a>
+        <a href="https://roggeroyroma.com" target="_blank" rel="noopener noreferrer" class="cv__portfolio-item">
+          <span class="cv__portfolio-url">roggeroyroma.com</span>
+          <span class="cv__portfolio-desc">Production property portal — catalog, CRM integration, analytics</span>
+        </a>
+        <a href="https://wolfim-motors.vercel.app" target="_blank" rel="noopener noreferrer" class="cv__portfolio-item">
+          <span class="cv__portfolio-url">wolfim-motors.vercel.app</span>
+          <span class="cv__portfolio-desc">Automotive dealer platform — inventory, unit pages, per-unit contact</span>
+        </a>
+        <a href="https://wolfim.com" target="_blank" rel="noopener noreferrer" class="cv__portfolio-item">
+          <span class="cv__portfolio-url">wolfim.com</span>
+          <span class="cv__portfolio-desc">Agency site — services, process and portfolio</span>
+        </a>
+        <a href="https://korantis.com" target="_blank" rel="noopener noreferrer" class="cv__portfolio-item">
+          <span class="cv__portfolio-url">korantis.com</span>
+          <span class="cv__portfolio-desc">Venue-discovery product with AI evaluation pipeline</span>
+        </a>
+        <a href="https://lamontaña.lat" target="_blank" rel="noopener noreferrer" class="cv__portfolio-item">
+          <span class="cv__portfolio-url">lamontaña.lat</span>
+          <span class="cv__portfolio-desc">Commercial web project</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="cv__divider"></div>
+
+    <!-- Education -->
+    <section class="cv__section">
+      <h2 class="cv__section-title">Education</h2>
+      <div class="cv__education">
+        <h3 class="cv__edu-title">Industrial Engineer</h3>
+        <p class="cv__edu-school">Universidad Católica de Córdoba, Argentina</p>
+        <p class="cv__edu-detail">Engineering foundation in process optimization, quality control, statistical analysis and structured evaluation — the same discipline applied to every build.</p>
+      </div>
+    </section>
+
+    <div class="cv__divider"></div>
+
+    <!-- Why Strong Fit -->
+    <section class="cv__section">
+      <h2 class="cv__section-title">Why I'm a Strong Fit as a Website Builder</h2>
+      <div class="cv__fit-grid">
+        <div class="cv__fit">
+          <span class="cv__fit-num">01</span>
+          <h3>Hands-on Builder</h3>
+          <p>I design and build the pages myself — from blank layout to launch. Templates and libraries when they help, custom work when the client needs it.</p>
+        </div>
+        <div class="cv__fit">
+          <span class="cv__fit-num">02</span>
+          <h3>Built for Speed</h3>
+          <p>Reusable section system plus a documented pre-launch checklist: alt text, phone number vs CRM, mobile hero crop. Same fixes never happen twice.</p>
+        </div>
+        <div class="cv__fit">
+          <span class="cv__fit-num">03</span>
+          <h3>Evidence Over Opinion</h3>
+          <p>GA4 and call tracking decide what gets fixed after launch — traffic reading without conversions gets one targeted change, measured for two weeks.</p>
+        </div>
+        <div class="cv__fit">
+          <span class="cv__fit-num">04</span>
+          <h3>AI With Human Gates</h3>
+          <p>AI drafts and audits; I approve. Clients get the speed of automation without the quality roulette of unverified output.</p>
+        </div>
+        <div class="cv__fit">
+          <span class="cv__fit-num">05</span>
+          <h3>Business Judgment</h3>
+          <p>Ran procurement and commercial operations for almost a decade — I design for the phone call and the payback, not for the design award.</p>
+        </div>
+        <div class="cv__fit">
+          <span class="cv__fit-num">06</span>
+          <h3>Remote Discipline</h3>
+          <p>Operating distributed systems daily: async updates, documented workflows, deadlines met without supervision.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="cv__footer">
+      <p>Río Tercero, Córdoba, Argentina · GMT-3 · Available immediately for remote work</p>
+      <span>Wolfim Studio — 2026</span>
+    </footer>
+  </main>
+
+  <style>
+    /* Base */
+    .cv {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 2rem 4rem;
+      background: #FAFAF8;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    .cv__header {
+      margin-bottom: 2rem;
+    }
+
+    .cv__header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .cv__logo {
+      font-family: var(--font-display);
+      font-size: var(--text-small);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--black);
+      text-decoration: none;
+    }
+
+    .cv__year {
+      font-family: var(--font-mono);
+      font-size: var(--text-micro);
+      color: var(--gray-300);
+    }
+
+    .cv__name {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--black);
+      margin-bottom: 0.75rem;
+    }
+
+    .cv__title {
+      font-family: var(--font-body);
+      font-size: var(--text-medium);
+      line-height: 1.5;
+      color: var(--gray-400);
+      margin-bottom: 1.5rem;
+    }
+
+    .cv__contact,
+    .cv__websites {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      color: var(--gray-400);
+      line-height: 1.8;
+    }
+
+    .cv__contact a,
+    .cv__websites a {
+      color: var(--gray-400);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .cv__contact a:hover,
+    .cv__websites a:hover {
+      color: var(--black);
+      border-color: var(--black);
+    }
+
+    .cv__sep {
+      margin: 0 0.5rem;
+      opacity: 0.4;
+    }
+
+    /* Divider */
+    .cv__divider {
+      height: 1px;
+      background: var(--border);
+      margin: 2rem 0;
+    }
+
+    /* Sections */
+    .cv__section {
+      margin-bottom: 0.5rem;
+    }
+
+    .cv__section-title {
+      font-family: var(--font-display);
+      font-size: var(--text-medium);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--black);
+      margin-bottom: 1.25rem;
+    }
+
+    /* Summary */
+    .cv__summary {
+      font-family: var(--font-body);
+      font-size: var(--text-body);
+      line-height: 1.7;
+      color: var(--gray-500);
+    }
+
+    .cv__summary strong {
+      color: var(--black);
+      font-weight: 600;
+    }
+
+    /* Skills Grid */
+    .cv__skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .cv__skill {
+      padding: 1rem;
+      border: 1px solid var(--border);
+    }
+
+    .cv__skill-cat {
+      display: block;
+      font-family: var(--font-display);
+      font-size: var(--text-small);
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 0.5rem;
+    }
+
+    .cv__skill p {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      line-height: 1.55;
+      color: var(--gray-400);
+      margin: 0;
+    }
+
+    /* Experience */
+    .cv__experience {
+      margin-bottom: 2rem;
+    }
+
+    .cv__experience:last-child {
+      margin-bottom: 0;
+    }
+
+    .cv__exp-header {
+      margin-bottom: 0.75rem;
+    }
+
+    .cv__exp-title {
+      font-family: var(--font-display);
+      font-size: var(--text-body);
+      font-weight: 600;
+      color: var(--black);
+      margin: 0 0 0.25rem;
+    }
+
+    .cv__exp-role {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      color: var(--gray-400);
+      margin-right: 0.75rem;
+    }
+
+    .cv__exp-date {
+      font-family: var(--font-mono);
+      font-size: var(--text-micro);
+      color: var(--gray-300);
+    }
+
+    .cv__exp-desc {
+      font-family: var(--font-body);
+      font-size: var(--text-body);
+      line-height: 1.6;
+      color: var(--gray-500);
+      margin-bottom: 0.75rem;
+    }
+
+    .cv__exp-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+    }
+
+    .cv__exp-list li {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      line-height: 1.6;
+      color: var(--gray-400);
+      padding-left: 1rem;
+      position: relative;
+      margin-bottom: 0.5rem;
+    }
+
+    .cv__exp-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gray-300);
+    }
+
+    .cv__exp-list li strong {
+      color: var(--black);
+      font-weight: 600;
+    }
+
+    /* Tech Tags */
+    .cv__tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .cv__tech-tags span {
+      font-family: var(--font-mono);
+      font-size: var(--text-micro);
+      color: var(--gray-400);
+      padding: 0.25rem 0.5rem;
+      border: 1px solid var(--border);
+      letter-spacing: 0.02em;
+    }
+
+    /* Technical Skills Grid */
+    .cv__tech-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .cv__tech-row {
+      display: flex;
+      gap: 1rem;
+      align-items: baseline;
+    }
+
+    .cv__tech-label {
+      font-family: var(--font-display);
+      font-size: var(--text-small);
+      font-weight: 600;
+      color: var(--black);
+      min-width: 180px;
+      flex-shrink: 0;
+    }
+
+    .cv__tech-value {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      color: var(--gray-400);
+      line-height: 1.5;
+    }
+
+    /* Languages */
+    .cv__languages {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .cv__lang {
+      display: grid;
+      grid-template-columns: 120px 120px 1fr;
+      gap: 1rem;
+      align-items: baseline;
+    }
+
+    .cv__lang-name {
+      font-family: var(--font-display);
+      font-size: var(--text-small);
+      font-weight: 600;
+      color: var(--black);
+    }
+
+    .cv__lang-level {
+      font-family: var(--font-mono);
+      font-size: var(--text-micro);
+      color: var(--gray-400);
+      letter-spacing: 0.02em;
+    }
+
+    .cv__lang-detail {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      color: var(--gray-400);
+      line-height: 1.5;
+    }
+
+    /* Portfolio */
+    .cv__portfolio {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .cv__portfolio-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      text-decoration: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .cv__portfolio-item:hover {
+      border-color: var(--black);
+    }
+
+    .cv__portfolio-url {
+      font-family: var(--font-mono);
+      font-size: var(--text-small);
+      font-weight: 600;
+      color: var(--black);
+      letter-spacing: 0.02em;
+    }
+
+    .cv__portfolio-desc {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      color: var(--gray-400);
+      line-height: 1.5;
+    }
+
+    /* Education */
+    .cv__education {
+      margin-bottom: 0;
+    }
+
+    .cv__edu-title {
+      font-family: var(--font-display);
+      font-size: var(--text-body);
+      font-weight: 600;
+      color: var(--black);
+      margin: 0 0 0.25rem;
+    }
+
+    .cv__edu-school {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      color: var(--gray-400);
+      margin: 0 0 0.5rem;
+    }
+
+    .cv__edu-detail {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      line-height: 1.6;
+      color: var(--gray-400);
+      margin: 0;
+    }
+
+    /* Why Strong Fit */
+    .cv__fit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .cv__fit {
+      position: relative;
+    }
+
+    .cv__fit-num {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: var(--text-micro);
+      color: var(--gray-300);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .cv__fit h3 {
+      font-family: var(--font-display);
+      font-size: var(--text-small);
+      font-weight: 600;
+      color: var(--black);
+      margin: 0 0 0.5rem;
+    }
+
+    .cv__fit p {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      line-height: 1.55;
+      color: var(--gray-400);
+      margin: 0;
+    }
+
+    /* Footer */
+    .cv__footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .cv__footer p {
+      font-family: var(--font-body);
+      font-size: var(--text-small);
+      color: var(--gray-400);
+      margin-bottom: 0.75rem;
+    }
+
+    .cv__footer span {
+      font-family: var(--font-mono);
+      font-size: var(--text-micro);
+      color: var(--gray-300);
+      letter-spacing: 0.05em;
+    }
+
+    /* Mobile */
+    @media (max-width: 640px) {
+      .cv {
+        padding: 2rem 1.25rem 3rem;
+      }
+
+      .cv__skills-grid,
+      .cv__fit-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cv__tech-row {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+
+      .cv__tech-label {
+        min-width: auto;
+      }
+
+      .cv__lang {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+      }
+
+      .cv__contact,
+      .cv__websites {
+        font-size: var(--text-micro);
+      }
+
+      .cv__sep {
+        margin: 0 0.25rem;
+      }
+    }
+  </style>
+</Layout>
