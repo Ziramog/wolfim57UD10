@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { buildTrackingBootstrap } from '../lib/tracking-config';
 
 interface Props {
   title: string;
@@ -11,9 +12,23 @@ interface Props {
 const { 
   title, 
   description = "Diseño web premium a medida, rediseño de sitios, catálogos digitales, SEO y Google Ads para marcas, inmobiliarias, agencias de autos y negocios.",
-  ogImage = "https://wolfim.com/og-image.jpg",
-  canonical = "https://wolfim.com/"
+  ogImage = "https://www.wolfim.com/og-image.jpg",
+  canonical
 } = Astro.props;
+
+// Canonical/hreflang por página: si la página no pasa `canonical`, se deriva de
+// su propia ruta. Antes todas las páginas apuntaban al home.
+// El host canónico es `www`: `wolfim.com` responde 308 → `www.wolfim.com`, así
+// que usar el apex en canonical/hreflang/sitemap generaba "página con
+// redirección" en Search Console (nit 2 de la revisión 2026-10-27).
+const SITE_ORIGIN = 'https://www.wolfim.com';
+const rawPath = Astro.url?.pathname || '/';
+const normalizedPath = rawPath === '/' ? '/' : rawPath.replace(/\/+$/, '');
+const canonicalUrl = canonical || `${SITE_ORIGIN}${normalizedPath}`;
+
+// GA4 con allowlist de hosts: el tag solo se carga en www.wolfim.com /
+// wolfim.com; en cualquier otro host se emite warning + banner visible.
+const trackingBootstrap = buildTrackingBootstrap();
 ---
 
 <!DOCTYPE html>
@@ -26,12 +41,12 @@ const {
   <meta name="keywords" content="diseño web premium, diseño web a medida, rediseño de sitio web, catálogo digital de productos, catálogo online inmobiliaria, SEO para sitios web, Google Ads, sitios web para agencias de autos">
   <meta name="author" content="Wolfim Studio">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href={canonical}>
+  <link rel="canonical" href={canonicalUrl}>
   <meta property="og:title" content={title}>
   <meta property="og:description" content={description}>
   <meta property="og:type" content="website">
   <meta property="og:image" content={ogImage}>
-  <meta property="og:url" content={canonical}>
+  <meta property="og:url" content={canonicalUrl}>
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content={title}>
   <meta name="twitter:description" content={description}>
@@ -39,30 +54,23 @@ const {
   <link rel="icon" type="image/svg+xml" href="/wolfim_logos/favicom_redsquare.svg">
   <link rel="apple-touch-icon" href="/wolfim_logos/favicom_redsquare.svg">
 
-  <!-- Google tag (gtag.js) -->
-  <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-D7E290M8PW"></script>
-  <script is:inline>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-D7E290M8PW');
-  </script>
+  <!-- Google tag (gtag.js) con allowlist de hosts — ver src/lib/tracking-config.ts -->
+  <script is:inline set:html={trackingBootstrap}></script>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   
-  <link rel="alternate" hreflang="es" href="https://wolfim.com/">
-  <link rel="alternate" hreflang="en" href="https://wolfim.com/?lang=en">
-  <link rel="alternate" hreflang="x-default" href="https://wolfim.com/">
+  <link rel="alternate" hreflang="es" href={canonicalUrl}>
+  <link rel="alternate" hreflang="x-default" href={canonicalUrl}>
   <script type="application/ld+json" is:inline>
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "Wolfim Studio",
-      "url": "https://wolfim.com/",
-      "logo": "https://wolfim.com/wolfim_nobg.png",
-      "image": "https://wolfim.com/og-image.jpg",
+      "url": "https://www.wolfim.com/",
+      "logo": "https://www.wolfim.com/wolfim_nobg.png",
+      "image": "https://www.wolfim.com/og-image.jpg",
       "description": "Diseño web premium a medida, rediseño de sitios, catálogos digitales, SEO y Google Ads para marcas, inmobiliarias, agencias de autos y negocios.",
       "address": {
         "@type": "PostalAddress",
@@ -88,7 +96,7 @@ const {
               "priceCurrency": "USD",
               "referenceQuantity": { "@type": "QuantitativeValue", "value": "1" }
             },
-            "url": "https://wolfim.com/#plan-presencia-comercial"
+            "url": "https://www.wolfim.com/#plan-presencia-comercial"
           },
           {
             "@type": "Offer",
@@ -96,7 +104,7 @@ const {
             "description": "Landing premium con storytelling, ubicación, galería, video, lotes con estados y precios, y campaña Meta inicial. Para desarrollos y lotes.",
             "priceCurrency": "USD",
             "price": "450",
-            "url": "https://wolfim.com/#plan-loteo-activo"
+            "url": "https://www.wolfim.com/#plan-loteo-activo"
           },
           {
             "@type": "Offer",
@@ -104,7 +112,7 @@ const {
             "description": "Catálogo de unidades con fichas individuales, fotos, datos, precio, WhatsApp por vehículo y panel de actualización. Para agencias de autos.",
             "priceCurrency": "USD",
             "price": "450",
-            "url": "https://wolfim.com/#plan-autolead-catalogo"
+            "url": "https://www.wolfim.com/#plan-autolead-catalogo"
           },
           {
             "@type": "Offer",
@@ -112,7 +120,7 @@ const {
             "description": "Home premium con catálogo de propiedades, fichas individuales, filtros, buscador y CMS. Para inmobiliarias.",
             "priceCurrency": "USD",
             "price": "650",
-            "url": "https://wolfim.com/#plan-portal-inmobiliario"
+            "url": "https://www.wolfim.com/#plan-portal-inmobiliario"
           },
           {
             "@type": "Offer",
@@ -120,7 +128,7 @@ const {
             "description": "Catálogo de productos con carrito, checkout, pagos online, gestión de pedidos y panel administrativo. Ecommerce completo.",
             "priceCurrency": "USD",
             "price": "650",
-            "url": "https://wolfim.com/#plan-tienda-online"
+            "url": "https://www.wolfim.com/#plan-tienda-online"
           }
         ]
       }

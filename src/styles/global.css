@@ -3177,6 +3177,69 @@ img {
   outline: none;
   border-color: var(--black);
 }
+.contact__cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 1.1rem 1.5rem;
+  background: var(--black);
+  color: var(--white);
+  border-radius: 4px;
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: opacity 0.3s, transform 0.3s;
+}
+.contact__cta:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  color: var(--white);
+}
+.contact__cta-label {
+  display: block;
+}
+.contact__cta-arrow {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+.contact__cta-note {
+  margin-top: 0.75rem;
+  font-family: var(--font-body);
+  font-size: var(--text-micro);
+  line-height: 1.6;
+  color: var(--gray-500);
+}
+.contact__email-note {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-family: var(--font-body);
+  font-size: var(--text-micro);
+  line-height: 1.6;
+  color: var(--gray-500);
+}
+.contact__email {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--black);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.3s;
+}
+.contact__email:hover {
+  opacity: 0.65;
+  color: var(--black);
+}
+
 .contact__submit {
   padding: 1rem 2rem;
   background: var(--black);

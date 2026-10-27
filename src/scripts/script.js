@@ -275,10 +275,10 @@
       // Contact
       'contact.title': 'Let\'s Build the Next<br>Digital Version of<br>Your Business',
       'contact.desc': 'If you\'re looking for a website that reflects the real quality of your business — not a template with your logo on it — let\'s talk. I work directly with every client, from first conversation to launch.',
-      'contact.form_name': 'Name / Company',
-      'contact.form_email': 'Email',
-      'contact.form_message': 'What do you need?',
-      'contact.form_submit': 'Send Message',
+      'contact.cta_primary': 'Get my free diagnosis',
+      'contact.cta_note': 'Three fields —name, website and WhatsApp— and you get a concrete diagnosis. No forms that silently lose your data.',
+      'contact.email_hint': 'Prefer email?',
+      'contact.email_cta': 'juan@wolfim.com',
       'contact.schedule_label': 'Schedule',
       'contact.schedule_value': 'Book a free intro call',
       'contact.availability': 'We only take 4 new projects per month to guarantee premium quality. Check availability.',
@@ -528,10 +528,10 @@
       // Contact
       'contact.title': 'Armemos la Próxima<br>Versión Digital de tu<br>Negocio',
       'contact.desc': 'Si buscás una web que refleje la calidad real de tu negocio — no una plantilla con tu logo — hablemos. Trabajo directamente con cada cliente, desde la primera conversación hasta el lanzamiento.',
-      'contact.form_name': 'Nombre / Empresa',
-      'contact.form_email': 'Email',
-      'contact.form_message': '¿Qué necesitas?',
-      'contact.form_submit': 'Enviar Mensaje',
+      'contact.cta_primary': 'Quiero mi diagnóstico gratuito',
+      'contact.cta_note': 'Tres datos —nombre, web y WhatsApp— y recibís un diagnóstico concreto. Sin formularios que se pierden.',
+      'contact.email_hint': '¿Preferís email?',
+      'contact.email_cta': 'juan@wolfim.com',
       'contact.schedule_label': 'Agendar',
       'contact.schedule_value': 'Reservar una llamada introductoria gratuita',
       'contact.availability': 'Solo tomamos 4 proyectos nuevos por mes para garantizar calidad premium. Consulta disponibilidad.',
@@ -548,7 +548,6 @@
       keywords: 'diseño web premium, diseño web a medida, rediseño de sitio web, catálogo digital de productos, catálogo online inmobiliaria, SEO para sitios web, Google Ads, sitios web para agencias de autos',
       ogTitle: 'Wolfim Studio — Diseño web premium y catálogos digitales',
       ogDescription: 'Sitios web a medida, rediseños, catálogos online y SEO para negocios que necesitan una presencia digital clara, rápida y comercial.',
-      canonical: 'https://wolfim.com/',
     },
     en: {
       title: 'Premium Web Design and Digital Catalogs | Wolfim Studio',
@@ -556,7 +555,6 @@
       keywords: 'premium web design, custom web design, website redesign, digital product catalog, real estate online catalog, SEO for websites, Google Ads, websites for car dealerships',
       ogTitle: 'Wolfim Studio — Premium web design and digital catalogs',
       ogDescription: 'Custom websites, redesigns, online catalogs and SEO for businesses that need a clear, fast and commercial digital presence.',
-      canonical: 'https://wolfim.com/?lang=en',
     },
   };
 
@@ -569,6 +567,18 @@
     }
   }
 
+  // Origen canónico único del sitio (con www: wolfim.com redirige 308 a www).
+  // El <link rel="canonical"> lo renderiza Layout.astro por página; acá solo se
+  // actualiza og:url al cambiar de idioma, sin pisar esa etiqueta.
+  const SITE_ORIGIN = 'https://www.wolfim.com';
+
+  function currentCanonicalUrl() {
+    const rawPath =
+      (typeof window !== 'undefined' && window.location && window.location.pathname) || '/';
+    const normalizedPath = rawPath === '/' ? '/' : rawPath.replace(/\/+$/, '');
+    return SITE_ORIGIN + normalizedPath;
+  }
+
   function updateMetadata(lang) {
     const meta = metadata[lang] || metadata.es;
     document.title = meta.title;
@@ -576,8 +586,7 @@
     setMeta('meta[name="keywords"]', 'content', meta.keywords);
     setMeta('meta[property="og:title"]', 'content', meta.ogTitle);
     setMeta('meta[property="og:description"]', 'content', meta.ogDescription);
-    setMeta('meta[property="og:url"]', 'content', meta.canonical);
-    setMeta('link[rel="canonical"]', 'href', meta.canonical);
+    setMeta('meta[property="og:url"]', 'content', currentCanonicalUrl());
   }
 
   function setLanguage(lang) {
@@ -1480,20 +1489,19 @@
   setTimeout(triggerRandomEffect, Math.random() * 5000 + 3000);
 
   // ─── ANALYTICS EVENT TRACKING ───
+  // Respeta la allowlist de hosts resuelta por el bootstrap de Layout.astro.
   function trackEvent(name, params) {
+    if (typeof window === 'undefined') return;
+    const tracking = window.__wolfimTracking;
+    if (tracking && tracking.allowed === false) return;
     if (typeof gtag === 'function') {
       gtag('event', name, params || {});
     }
   }
 
-  // WhatsApp clicks
-  document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
-    link.addEventListener('click', () => {
-      trackEvent('click_whatsapp', { component: link.closest('.contact__links') ? 'contact' : 'sticky' });
-    });
-  });
+  // WhatsApp clicks: los maneja src/lib/whatsapp-tracking.ts con un único
+  // listener delegado. No agregar listeners acá (duplicaba click_whatsapp).
 
-  
   // Email clicks
   document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
     link.addEventListener('click', () => {
@@ -1501,16 +1509,40 @@
     });
   });
 
-  // Pricing section view
+  // Pricing view — una sola vez por carga y alcanzable en cualquier viewport.
+  // B1 (revisión 2026-10-27): con `threshold: 0.5` sobre #pricing el evento era
+  // imposible en mobile (sección de ~3500 px en un viewport de 844 px: haría
+  // falta ver 1744 px). Ahora se observa la primera `.pricing-card` y el umbral
+  // se acota a lo que el viewport puede cubrir del target, así que siempre hay
+  // un ratio alcanzable.
   const pricingSection = document.getElementById('pricing');
-  if (pricingSection && 'IntersectionObserver' in window) {
-    new IntersectionObserver((entries) => {
+  const pricingTarget =
+    (pricingSection && pricingSection.querySelector('.pricing-card')) || pricingSection;
+  if (pricingTarget && 'IntersectionObserver' in window) {
+    let pricingViewed = false;
+    const pricingViewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+    const pricingTargetHeight = pricingTarget.getBoundingClientRect().height || 0;
+    // Cobertura máxima real del target dentro del viewport (1 = entra entero).
+    const maxReachableRatio =
+      pricingViewportHeight > 0 && pricingTargetHeight > 0
+        ? Math.min(1, pricingViewportHeight / pricingTargetHeight)
+        : 1;
+    // La mitad de esa cobertura, nunca más de 0.5 y nunca menos de 0.01.
+    const pricingThreshold = Math.min(0.5, Math.max(0.01, maxReachableRatio * 0.5));
+
+    const pricingObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          trackEvent('view_pricing');
-        }
+        if (!entry.isIntersecting || pricingViewed) return;
+        pricingViewed = true;
+        trackEvent('view_pricing', {
+          section: 'pricing',
+          target: entry.target.classList.contains('pricing-card') ? 'pricing_card' : 'pricing_section',
+          threshold: Number(pricingThreshold.toFixed(3)),
+        });
+        pricingObserver.unobserve(entry.target);
       });
-    }, { threshold: 0.5 }).observe(pricingSection);
+    }, { threshold: pricingThreshold });
+    pricingObserver.observe(pricingTarget);
   }
 
   // ─── LAZY LOAD PROJECT VIDEOS ───

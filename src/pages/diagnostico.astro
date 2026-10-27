@@ -77,7 +77,7 @@ const description = "Detectá errores que frenan consultas en tu sitio web. Diag
         </p>
         <div class="diagnostico__wa-alt">
           <span class="diagnostico__wa-label">¿Preferís escribir ahora?</span>
-          <a href="https://wa.me/5493513157202?text=Hola%20Juan%2C%20quiero%20el%20diagn%C3%B3stico%20gratuito%20de%20mi%20web." class="diagnostico__wa-link" target="_blank" rel="noopener noreferrer" id="wa-success-link">
+          <a href="https://wa.me/5493513157202?text=Hola%20Juan%2C%20quiero%20el%20diagn%C3%B3stico%20gratuito%20de%20mi%20web." class="diagnostico__wa-link" data-cta="diagnostico_wa_after_success" target="_blank" rel="noopener noreferrer" id="wa-success-link">
             Abrir WhatsApp
           </a>
         </div>
@@ -88,7 +88,7 @@ const description = "Detectá errores que frenan consultas en tu sitio web. Diag
         <p class="diagnostico__error-text">
           No pudimos guardar el formulario. Escribinos por WhatsApp y te hacemos el diagnóstico igual.
         </p>
-        <a href="https://wa.me/5493513157202?text=Hola%20Juan%2C%20quiero%20el%20diagn%C3%B3stico%20gratuito%20de%20mi%20web." class="diagnostico__wa-link" target="_blank" rel="noopener noreferrer" id="wa-fallback-link">
+        <a href="https://wa.me/5493513157202?text=Hola%20Juan%2C%20quiero%20el%20diagn%C3%B3stico%20gratuito%20de%20mi%20web." class="diagnostico__wa-link" data-cta="diagnostico_wa_fallback" target="_blank" rel="noopener noreferrer" id="wa-fallback-link">
           Abrir WhatsApp
         </a>
       </div>
@@ -340,7 +340,11 @@ const description = "Detectá errores que frenan consultas en tu sitio web. Diag
 
   <script>
     import { trackEvent } from '../lib/analytics';
-    import { getUTMs } from '../lib/utm';
+    import { captureUTMs, getAttribution } from '../lib/utm';
+    import { initWhatsAppTracking } from '../lib/whatsapp-tracking';
+
+    // Captura de atribución también en esta landing (antes solo se hacía en el home).
+    captureUTMs();
 
     document.addEventListener('DOMContentLoaded', () => {
       const form = document.getElementById('diagnostico-form');
@@ -368,15 +372,9 @@ const description = "Detectá errores que frenan consultas en tu sitio web. Diag
         submitBtn.textContent = isSubmitting ? 'Enviando...' : defaultButtonText;
       };
 
-      const trackWhatsAppClick = (component: string) => {
-        trackEvent('click_whatsapp', {
-          component,
-          utm_source: getUTMs().utm_source || 'direct',
-        });
-      };
-
-      successLink?.addEventListener('click', () => trackWhatsAppClick('diagnostico_wa_after_success'));
-      fallbackLink?.addEventListener('click', () => trackWhatsAppClick('diagnostico_wa_fallback'));
+      // Único tracker de WhatsApp (listener delegado). El `component` sale de
+      // data-cta: diagnostico_wa_after_success / diagnostico_wa_fallback.
+      initWhatsAppTracking({ track: trackEvent });
 
       htmlForm.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -429,10 +427,8 @@ const description = "Detectá errores que frenan consultas en tu sitio web. Diag
 
         setSubmitting(true);
 
-        trackEvent('form_submit_diagnostico', {
-          component: 'diagnostico_landing',
-          utm_source: getUTMs().utm_source || 'direct',
-        });
+        const attribution = getAttribution();
+        let errorTracked = false;
 
         try {
           const res = await fetch('/api/leads', {
@@ -442,14 +438,27 @@ const description = "Detectá errores que frenan consultas en tu sitio web. Diag
               name,
               website,
               whatsapp,
-              source: 'meta_diagnostico',
-              utms: getUTMs(),
+              source: attribution.source,
+              utms: attribution.utms,
             }),
           });
 
           if (!res.ok) {
+            errorTracked = true;
+            trackEvent('form_error', {
+              form: 'diagnostico',
+              component: 'diagnostico_landing',
+              status: res.status,
+            });
             throw new Error(`Lead API failed with status ${res.status}`);
           }
+
+          // El evento de negocio solo se emite cuando el lead quedó guardado.
+          trackEvent('form_submit_diagnostico', {
+            component: 'diagnostico_landing',
+            utm_source: attribution.utms.utm_source || 'direct',
+            source: attribution.source,
+          });
 
           htmlForm.reset();
           htmlForm.style.display = 'none';
@@ -459,6 +468,13 @@ const description = "Detectá errores que frenan consultas en tu sitio web. Diag
             (window as any).fbq('track', 'Lead');
           }
         } catch (err) {
+          if (!errorTracked) {
+            trackEvent('form_error', {
+              form: 'diagnostico',
+              component: 'diagnostico_landing',
+              status: 'network',
+            });
+          }
           console.warn('[Diagnóstico] API failed. Showing manual WhatsApp fallback.', err);
           errorBox.style.display = 'block';
           setSubmitting(false);
