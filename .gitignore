@@ -5,3 +5,6 @@ dist/
 .astro/
 .env
 .env.local
+
+# Local QA captures, logs and scratch files
+_review/

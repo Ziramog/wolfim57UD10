@@ -1,0 +1,163 @@
+---
+/**
+ * WOLFIM / 57UD10 — Method V9
+ * Recupera la interacción de las tarjetas de proceso superpuestas del sitio publicado.
+ * Conserva los cinco pasos y el copy de la propuesta estratégica V7; no recupera
+ * promesas de duración, cifras o testimonios no verificados.
+ */
+const steps = [
+  { number:'01', title:'Diagnosticar', description:'Entender el negocio, su audiencia, sus procesos y el punto de partida.', key:'s1' },
+  { number:'02', title:'Priorizar', description:'Decidir qué tiene impacto ahora y qué conviene dejar para después.', key:'s2' },
+  { number:'03', title:'Diseñar', description:'Dar forma a una identidad, una experiencia y una arquitectura comercial coherentes.', key:'s3' },
+  { number:'04', title:'Implementar', description:'Desarrollar, conectar, probar y preparar cada entrega para su uso real.', key:'s4' },
+  { number:'05', title:'Medir y evolucionar', description:'Observar señales útiles, aprender de la operación y definir próximos ajustes.', key:'s5' }
+];
+---
+<section id="process" class="wolfim-v9-method" aria-labelledby="wolfim-v9-method-heading">
+  <div class="wolfim-v9-method__shell">
+    <div class="wolfim-v9-method__overline">
+      <span>06 / <span data-i18n="v7.process.label">NUESTRO MÉTODO</span></span>
+      <span class="wolfim-v9-method__hint" data-i18n="v9.method.hint">CINCO ETAPAS · UNA DIRECCIÓN</span>
+    </div>
+    <div class="wolfim-v9-method__layout">
+      <div class="wolfim-v9-method__intro">
+        <h2 id="wolfim-v9-method-heading">
+          <span data-i18n="v7.process.title1">Menos ruido.</span>
+          <em data-i18n="v7.process.title2">Más dirección.</em>
+        </h2>
+        <p data-i18n="v7.process.lead">Un proceso entendible, con decisiones verificables. El alcance y los entregables se acuerdan para cada desafío.</p>
+        <div class="wolfim-v9-method__progress" aria-hidden="true">
+          <span>01 / 05</span><span class="wolfim-v9-method__progress-track"></span><span>05 / 05</span>
+        </div>
+      </div>
+
+      <ol class="wolfim-v9-method__stack" data-method-stack aria-label="Etapas del método WOLFIM">
+        {steps.map((step, i) => (
+          <li class="wolfim-v9-method__card" style={`--stack-index:${i}`} data-stack-card>
+            <div class="wolfim-v9-method__card-inner" data-stack-face>
+              <div class="wolfim-v9-method__card-top">
+                <span data-i18n="v9.method.stage">ETAPA</span>
+                <span>{step.number} / 05</span>
+              </div>
+              <div class="wolfim-v9-method__card-content">
+                <span class="wolfim-v9-method__ghost-number" aria-hidden="true">{step.number}</span>
+                <div>
+                  <h3 data-i18n={`v7.process.${step.key}.title`}>{step.title}</h3>
+                  <p data-i18n={`v7.process.${step.key}.desc`}>{step.description}</p>
+                </div>
+              </div>
+              <div class="wolfim-v9-method__card-bottom">
+                <span>WOLFIM / 57UD10</span>
+                <span aria-hidden="true">↘</span>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>
+
+<style>
+  .wolfim-v9-method {background:#ECECE8;color:#111;font-family:'Inter',Arial,sans-serif;padding:clamp(96px,10vw,165px) 0 clamp(100px,11vw,160px);scroll-margin-top:68px;}
+  .wolfim-v9-method__shell {width:min(1350px,calc(100% - clamp(36px,7vw,120px)));margin-inline:auto;}
+  .wolfim-v9-method__overline {display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:20px;border-bottom:1px solid #b4b4ae;font:700 clamp(.65rem,.8vw,.8rem)/1.45 'JetBrains Mono',monospace;letter-spacing:.075em;}
+  .wolfim-v9-method__hint {color:#666660;}
+  .wolfim-v9-method__layout {display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(30px,6vw,110px);padding-top:clamp(46px,6vw,85px);}
+  .wolfim-v9-method__intro {align-self:start;position:sticky;top:clamp(90px,10vh,126px);}
+  .wolfim-v9-method__intro h2 {font-size:clamp(3.1rem,5.55vw,6.5rem);font-weight:900;letter-spacing:-.07em;line-height:1.03;margin:0;}
+  .wolfim-v9-method__intro h2 span,.wolfim-v9-method__intro h2 em {display:block;font-style:normal;}
+  .wolfim-v9-method__intro h2 em {color:#E61E1E;}
+  .wolfim-v9-method__intro>p {margin:27px 0 0;color:#53534e;max-width:440px;font-size:1.02rem;line-height:1.65;}
+  .wolfim-v9-method__progress {margin-top:clamp(35px,5vw,90px);display:flex;align-items:center;gap:18px;color:#5f5f59;font:650 .68rem/1.5 'JetBrains Mono',monospace;}
+  .wolfim-v9-method__progress-track {display:block;flex:1;min-width:24px;max-width:200px;height:2px;background:linear-gradient(90deg,#E61E1E 18%,#aaa9a1 18%);}
+  .wolfim-v9-method__stack {list-style:none;padding:0;margin:0;min-width:0;}
+  .wolfim-v9-method__card {position:sticky;top:calc(80px + var(--stack-index) * 11px);z-index:calc(2 + var(--stack-index));margin:0 0 clamp(115px,32vh,285px);min-height:350px;transform-origin:top center;}
+  .wolfim-v9-method__card:last-child {margin-bottom:0;}
+  .wolfim-v9-method__card-inner {position:relative;display:flex;flex-direction:column;min-height:clamp(365px,48vh,455px);padding:clamp(24px,3vw,45px);background:#FAFAF8;border:1px solid #c9c8c2;box-shadow:0 14px 42px rgba(24,24,24,.085);transform:scale(var(--stack-scale,1));opacity:var(--stack-opacity,1);transform-origin:center top;will-change:transform;}
+  .wolfim-v9-method__card:nth-child(even) .wolfim-v9-method__card-inner {background:#141414;color:#f5f5f1;border-color:#4c4c49;}
+  .wolfim-v9-method__card-top,.wolfim-v9-method__card-bottom {display:flex;align-items:center;justify-content:space-between;gap:20px;font:700 clamp(.62rem,.8vw,.77rem)/1.45 'JetBrains Mono',monospace;letter-spacing:.07em;}
+  .wolfim-v9-method__card-top {padding-bottom:18px;border-bottom:1px solid currentColor;}
+  .wolfim-v9-method__card-top>span:first-child {color:#E61E1E;}
+  .wolfim-v9-method__card-content {display:grid;grid-template-columns:clamp(65px,8vw,125px) minmax(0,1fr);gap:clamp(18px,2vw,33px);margin:auto 0;align-items:start;padding:30px 0;}
+  .wolfim-v9-method__ghost-number {font-size:clamp(4.7rem,7vw,7.5rem);font-weight:900;line-height:.86;letter-spacing:-.09em;color:#E61E1E;user-select:none;}
+  .wolfim-v9-method__card-content h3 {margin:0;font-size:clamp(1.8rem,2.45vw,3.3rem);font-weight:850;line-height:1.04;letter-spacing:-.055em;}
+  .wolfim-v9-method__card-content p {margin:18px 0 0;color:#6b6b65;font-size:clamp(.92rem,1.05vw,1.04rem);line-height:1.6;}
+  .wolfim-v9-method__card:nth-child(even) .wolfim-v9-method__card-content p {color:#bdbdb8;}
+  .wolfim-v9-method__card-bottom {padding-top:16px;border-top:1px solid currentColor;color:#777771;}
+  .wolfim-v9-method__card:nth-child(even) .wolfim-v9-method__card-bottom {color:#b7b7af;}
+  .wolfim-v9-method__card-bottom span:last-child {font-size:1.3rem;color:#E61E1E;}
+  :global(body.wolfim-v9-method-visible .whatsapp-sticky) {opacity:0 !important;visibility:hidden !important;pointer-events:none !important;}
+  @media(max-width:1024px) {
+    .wolfim-v9-method__layout {grid-template-columns:1fr;gap:40px;}
+    .wolfim-v9-method__intro {position:static;}
+    .wolfim-v9-method__intro h2 {font-size:clamp(3.4rem,7vw,6rem);}
+    .wolfim-v9-method__intro>p {margin-top:16px;max-width:700px;}
+    .wolfim-v9-method__progress {display:none;}
+  }
+  @media(max-width:600px) {
+    .wolfim-v9-method {padding-top:85px;padding-bottom:95px;}
+    .wolfim-v9-method__hint {display:none;}
+    .wolfim-v9-method__intro h2 {font-size:clamp(3rem,12vw,4.8rem);}
+    .wolfim-v9-method__card {top:calc(68px + var(--stack-index) * 6px);min-height:0;margin-bottom:clamp(90px,20vh,140px);}
+    .wolfim-v9-method__card-inner {min-height:clamp(295px,53svh,350px);padding:22px;}
+    .wolfim-v9-method__card-content {grid-template-columns:62px minmax(0,1fr);gap:12px;padding:22px 0;}
+    .wolfim-v9-method__ghost-number {font-size:3rem;letter-spacing:-.065em;}
+    .wolfim-v9-method__card-content h3 {font-size:clamp(1.4rem,6.1vw,2rem);overflow-wrap:break-word;}
+    .wolfim-v9-method__card-content p {font-size:.83rem;margin-top:12px;line-height:1.5;}
+    .wolfim-v9-method__card-top,.wolfim-v9-method__card-bottom {font-size:.57rem;}
+  }
+  @media(prefers-reduced-motion:reduce) {
+    .wolfim-v9-method__card {position:relative;top:auto;margin-bottom:18px;}
+    .wolfim-v9-method__card-inner {transform:none !important;opacity:1 !important;will-change:auto;}
+  }
+</style>
+
+<script>
+  const stack = document.querySelector<HTMLElement>('[data-method-stack]');
+  const section = document.getElementById('process');
+  const whatsApp = document.querySelector<HTMLElement>('.whatsapp-sticky');
+  if (section) {
+    const areaObserver = new IntersectionObserver(entries => {
+      const visible = !!entries[0]?.isIntersecting;
+      document.body.classList.toggle('wolfim-v9-method-visible', visible);
+      if (whatsApp) whatsApp.inert = ['wolfim-v5-hero-visible','wolfim-v7-contact-visible','wolfim-v8-360-visible','wolfim-v9-method-visible'].some(c=>document.body.classList.contains(c));
+    }, {threshold:0});
+    areaObserver.observe(section);
+  }
+  const cards = Array.from(stack?.querySelectorAll<HTMLElement>('[data-stack-card]') || []);
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (stack && cards.length) {
+    let queued = false;
+    const reset = () => cards.forEach(card => {
+      card.style.removeProperty('--stack-scale');
+      card.style.removeProperty('--stack-opacity');
+    });
+    const render = () => {
+      queued = false;
+      if (reducedMotion.matches) { reset(); return; }
+      const stackBounds = stack.getBoundingClientRect();
+      if (stackBounds.bottom < 0 || stackBounds.top > window.innerHeight) return;
+      cards.forEach((card, i) => {
+        if (i === cards.length - 1) return;
+        const next = cards[i+1];
+        if (!next) return;
+        const anchor = parseFloat(getComputedStyle(card).top) || 80;
+        const nextTop = next.getBoundingClientRect().top;
+        const height = card.offsetHeight;
+        const amount = Math.min(1,Math.max(0,(anchor + height - nextTop)/Math.max(1,height)));
+        card.style.setProperty('--stack-scale', String(1-.065*amount));
+        card.style.setProperty('--stack-opacity', String(1-.12*amount));
+      });
+    };
+    const onScroll = () => {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(render);
+    };
+    window.addEventListener('scroll',onScroll,{passive:true});
+    window.addEventListener('resize',onScroll,{passive:true});
+    reducedMotion.addEventListener('change',onScroll);
+    onScroll();
+  }
+</script>

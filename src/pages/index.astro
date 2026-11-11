@@ -1,33 +1,41 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import HeroV5 from '../components/HeroV5.astro';
+import BusinessOverview from '../components/BusinessOverview.astro';
+import KineticDirection from '../components/KineticDirection.astro';
+import ProjectShowcaseV7 from '../components/ProjectShowcaseV7.astro';
+import MethodContactV7 from '../components/MethodContactV7.astro';
+import MethodStackV9 from '../components/MethodStackV9.astro';
+import Transformacion360V8 from '../components/Transformacion360V8.astro';
 ---
 
-<Layout title="Dise�o web premium y cat�logos digitales | Wolfim Studio">
+<Layout title="WOLFIM / 57UD10 | Estudio de negocios digitales" description="Estrategia, diseño y tecnología para mejorar cómo tu negocio se presenta, vende y opera. Soluciones B2B, B2C y multicanal.">
 
   <!-- ═══════════════ AMBIENT ELEMENTS ═══════════════ -->
   <div id="cinematic-bg" aria-hidden="true"></div>
   <div class="film-grain" aria-hidden="true"></div>
 
   <!-- ═══════════════ NAVIGATION ═══════════════ -->
-  <nav id="nav-main" class="nav">
+  <nav id="nav-main" class="nav nav--v6">
     <div class="nav__inner">
       <a href="#hero" class="nav__logo" id="nav-logo">
-        <img src="/wolfim_logos/logo_wolfim_57UD10.svg" alt="Wolfim 57UD10" class="nav__logo-img" width="120" height="35">
+        <img src="/wolfim_logos/logo_wolfim_57UD10.svg" alt="WOLFIM / 57UD10" class="nav__logo-img" width="4188" height="738">
       </a>
       <div class="nav__links" id="nav-links">
-        <a href="#projects" class="nav__link" data-i18n="nav.projects">Trabajos</a>
-        <a href="#capabilities" class="nav__link" data-i18n="nav.capabilities">Servicios</a>
-        <a href="#pricing" class="nav__link" data-i18n="nav.pricing">Precios</a>
-        <a href="#process" class="nav__link" data-i18n="nav.process">Proceso</a>
+        <a href="#soluciones" class="nav__link" data-i18n="nav.solutions">Soluciones</a>
+        <a href="#transformacion-360" class="nav__link" data-i18n="nav.digital360">360°</a>
+        <a href="#modelos" class="nav__link" data-i18n="nav.models">Tu negocio</a>
+        <a href="#projects" class="nav__link" data-i18n="nav.projects">Proyectos</a>
+        <a href="#process" class="nav__link" data-i18n="nav.method">Método</a>
         <a href="#contact" class="nav__link" data-i18n="nav.contact">Contacto</a>
       </div>
       <div class="nav__meta">
+        <a href="https://wa.me/5493513157202?text=Hola%20WOLFIM%2C%20quiero%20contarles%20un%20desaf%C3%ADo%20de%20mi%20empresa." class="nav__brief-cta" data-cta="nav_v6_conversation" target="_blank" rel="noopener noreferrer" data-i18n="nav.talk">Hablemos</a>
         <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">
           <span class="lang-toggle__option" data-lang="en">EN</span>
           <span class="lang-toggle__divider">/</span>
           <span class="lang-toggle__option lang-toggle__option--active" data-lang="es">ES</span>
         </button>
-        <span class="nav__time" id="nav-time"></span>
         <button class="nav__menu-btn" id="nav-menu-btn" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
@@ -46,825 +54,37 @@ import Layout from '../layouts/Layout.astro';
     </button>
     <div class="mobile-menu__inner">
       <div class="mobile-menu__links">
-        <a href="#projects" class="mobile-menu__link"><span class="menu-link-prefix">/</span><span data-i18n="nav.projects">Trabajos</span></a>
-        <a href="#capabilities" class="mobile-menu__link"><span class="menu-link-prefix">/</span><span data-i18n="nav.capabilities">Servicios</span></a>
-        <a href="#pricing" class="mobile-menu__link"><span class="menu-link-prefix">/</span><span data-i18n="nav.pricing">Precios</span></a>
-        <a href="#process" class="mobile-menu__link"><span class="menu-link-prefix">/</span><span data-i18n="nav.process">Proceso</span></a>
+        <a href="#soluciones" class="mobile-menu__link"><span class="menu-link-prefix">/</span><span data-i18n="nav.solutions">Soluciones</span></a>
+        <a href="#transformacion-360" class="mobile-menu__link"><span class="menu-link-prefix">/</span><span data-i18n="nav.digital360">360°</span></a>
+        <a href="#modelos" class="mobile-menu__link"><span class="menu-link-prefix">/</span><span data-i18n="nav.models">Tu negocio</span></a>
+        <a href="#projects" class="mobile-menu__link"><span class="menu-link-prefix">/</span><span data-i18n="nav.projects">Proyectos</span></a>
+        <a href="#process" class="mobile-menu__link"><span class="menu-link-prefix">/</span><span data-i18n="nav.method">Método</span></a>
+        <a href="#contact" class="mobile-menu__link"><span class="menu-link-prefix">/</span><span data-i18n="nav.contact">Contacto</span></a>
+        <a href="https://wa.me/5493513157202?text=Hola%20WOLFIM%2C%20quiero%20contarles%20un%20desaf%C3%ADo%20de%20mi%20empresa." class="mobile-menu__link" data-cta="mobile_v6_conversation" target="_blank" rel="noopener noreferrer"><span class="menu-link-prefix">/</span><span data-i18n="nav.talk">Hablemos</span></a>
       </div>
     </div>
   </div>
 
-  <!-- ═══════════════ HERO ═══════════════ -->
-  <header id="hero" class="hero">
-    <div class="hero__grid-lines" id="hero-grid" aria-hidden="true">
-      <!-- Horizontal lines for mobile -->
-      <div class="hero__hline hline-1"></div>
-      <div class="hero__hline hline-2"></div>
-      <div class="hero__hline hline-3"></div>
+  <!-- HERO V6.2 — dirección cinética oficial -->
+  <HeroV5 />
 
-      <div class="hero__scan-line"></div>
-    </div>
+  <!-- V6: problemas, capacidades y tres recorridos comerciales -->
+  <BusinessOverview />
+  <KineticDirection />
 
-    <div class="hero__content">
-      <div class="hero__left">
+  <!-- WOLFIM V7 · Presentación de proyectos sin claims no verificados -->
+  <ProjectShowcaseV7 />
 
-        <h1 class="hero__statement" data-animate="fade-up" data-i18n="hero.statement">Diseño web premium para catálogos y sitios que venden mejor.</h1>
-        <p class="hero__subtext" data-animate="fade-up" data-i18n="hero.subtext">Diseño web a medida, rediseño de sitios, catálogos digitales y producción visual con IA para marcas, propiedades, productos y servicios.</p>
-        <div class="hero__tags" data-animate="fade-up" data-i18n="hero.tags">
-          <span class="hero__tag">Web</span>
-          <span class="hero__tag">Catálogo</span>
-          <span class="hero__tag">Reconstrucción</span>
-          <span class="hero__tag">IA</span>
-          <span class="hero__tag">SEO</span>
-        </div>
-        <div class="hero__cta-wrapper" data-animate="fade-up">
-          <a href="https://wa.me/5493513157202?text=Hola%2C%20quisiera%20consultar%20por%20un%20proyecto" data-cta="hero" class="hero__cta hero__cta--primary" target="_blank" rel="noopener noreferrer" data-i18n="hero.cta_primary">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="margin-right: 0.75rem;">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.405-.883-.733-1.48-1.638-1.653-1.935-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            Empezar proyecto
-          </a>
-          <a href="#pricing" class="hero__cta hero__cta--secondary" data-i18n="hero.cta_secondary">Ver trabajos</a>
-        </div>
-      </div>
-      <div class="hero__video-frame" data-animate="fade-up">
-        <div class="hero__scene">
-          <video class="hero__scene-video" autoplay loop muted playsinline preload="auto">
-            <source src="herolast.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="hero__video-footer">
-          <div class="hero__logo-stack">
-            <img src="/wolfim_logos/logo_wolfim_sin57UD10.svg" alt="Wolfim" class="hero__logo-img" width="300" height="105">
-            <div class="hero__logo-row">
-              <span class="hero__logo-divider">/</span>
-              <span class="hero__scramble" id="hero-scramble">57UD10</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="hero__scroll" data-animate="fade-up">
-        <span class="hero__scroll-cipher" id="scroll-cipher" data-i18n="hero.scroll">Desplazar</span>
-      </div>
-      <div class="hero__footer">
-        <span class="hero__location" data-i18n-html="hero.location">Buenos Aires <span class="hero__location-dot">●</span> Servicio Remoto Mundial</span>
-      </div>
-      <div class="hero__logo-fixed">
-        <img src="/wolfim_logos/logo_wolfim_sin57UD10.svg" alt="Wolfim" class="hero__logo-img" width="80" height="28">
-        <div class="hero__logo-row">
-          <span class="hero__logo-divider">/</span>
-          <span class="hero__scramble" id="hero-scramble-mobile">57UD10</span>
-        </div>
-      </div>
-    </div>
-  </header>
+  <Transformacion360V8 />
 
-  <!-- ═══════════════ SELECTED PROJECTS ══════════════ -->
-  <section id="projects" class="section projects">
-    <div class="section__header" data-animate="fade-up">
-      <span class="section__number">01</span>
-      <h2 class="section__title" data-i18n-html="projects.title">Trabajos<br>recientes</h2>
-      <p class="section__subtitle" data-i18n="projects.subtitle">Sitios web y sistemas digitales construidos para rendir</p>
-    </div>
-    <div class="section__line"></div>
-    <div class="projects__grid">
+  <!-- WOLFIM V9 · tarjetas numeradas superpuestas, adaptadas del sitio público -->
+  <MethodStackV9 />
 
-      <article class="project" data-animate="fade-up">
-        <div class="project__image">
-          <video class="project__image-inner project__video" autoplay loop muted playsinline preload="auto" aria-label="Video de presentación del sitio web inmersivo para Silvia Roggero de Roma, Negocios Inmobiliarios">
-            <source src="roggeroyroma_hero2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="project__info">
-          <span class="project__number">001</span>
-          <h3 class="project__title" data-i18n-html="projects.p1.title">Silvia Roggero<br>de Roma</h3>
-          <div class="project__meta">
-          <span class="project__tag" data-i18n="projects.p1.tag1">Reconstrucción Web Inmersiva</span>
-          <span class="project__tag" data-i18n="projects.p1.tag2">Real Estate</span>
-          </div>
-          <p class="project__desc" data-i18n="projects.p1.desc">Rediseño completo para una inmobiliaria con presencia previa. Nuevo sitio desde cero con estética premium, hero en video, catálogo de propiedades, mapas interactivos, reseñas y herramientas comerciales para elevar la percepción de marca y ordenar las consultas.</p>
-          <a href="#" class="project__link" target="_blank" rel="noopener noreferrer"><span data-i18n="projects.visit">Visitar sitio en vivo ↗</span></a>
-        </div>
-      </article>
-
-      <article class="project project--reverse" data-animate="fade-up">
-        <div class="project__image">
-          <video class="project__image-inner project__video" autoplay loop muted playsinline preload="auto" aria-label="Video de presentación de la plataforma digital S&P Cars para agencia de autos premium">
-            <source src="SPCars.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="project__info">
-          <span class="project__number">002</span>
-          <h3 class="project__title" data-i18n-html="projects.p2.title">S&amp;P<br>Cars</h3>
-          <div class="project__meta">
-            <span class="project__tag" data-i18n="projects.p2.tag1">Plataforma automotriz</span>
-            <span class="project__tag" data-i18n="projects.p2.tag2">IA y automatización</span>
-          </div>
-          <p class="project__desc" data-i18n="projects.p2.desc">Plataforma digital de alto rendimiento para agencia de autos premium nuevos y usados. Descripciones de vehículos potenciadas por IA, arquitectura SEO avanzada, comparativas lado a lado y presupuestos automatizados para convertir tráfico de búsqueda en ventas.</p>
-          <a href="#" class="project__link" target="_blank" rel="noopener noreferrer"><span data-i18n="projects.visit">Visitar sitio en vivo ↗</span></a>
-        </div>
-      </article>
-
-      <article class="project" data-animate="fade-up">
-        <div class="project__image">
-          <video class="project__image-inner project__video" autoplay loop muted playsinline preload="auto" aria-label="Video de presentación del catálogo comercial digital para Construvial S.A.">
-            <source src="construvial-2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="project__info">
-          <span class="project__number">003</span>
-          <h3 class="project__title" data-i18n-html="projects.p3.title">Construvial<br>S.A.</h3>
-          <div class="project__meta">
-            <span class="project__tag" data-i18n="projects.p3.tag1">Catálogo Comercial Digital</span>
-            <span class="project__tag" data-i18n="projects.p3.tag2">Construcción & Maquinaria</span>
-          </div>
-          <p class="project__desc" data-i18n="projects.p3.desc">Catálogo comercial para empresa de construcción y maquinaria. Organización de servicios, equipos, categorías, imágenes y datos técnicos en una pieza visual clara, profesional y lista para compartir por WhatsApp, email o PDF.</p>
-          <a href="#" class="project__link" target="_blank" rel="noopener noreferrer"><span data-i18n="projects.visit">Visitar sitio en vivo ↗</span></a>
-        </div>
-      </article>
-
-      <article class="project project--reverse" data-animate="fade-up">
-        <div class="project__image">
-          <video class="project__image-inner project__video" autoplay loop muted playsinline preload="auto" aria-label="Video de presentación de Korantis - búsqueda de restaurantes y cafeterías con IA">
-            <source src="Korantis_web_UI_showcase.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="project__info">
-          <span class="project__number">004</span>
-          <h3 class="project__title" data-i18n-html="projects.p4.title">KORANTIS<br>.COM</h3>
-          <div class="project__meta">
-            <span class="project__tag" data-i18n="projects.p4.tag1">Buscador con IA</span>
-            <span class="project__tag" data-i18n="projects.p4.tag2">Plataforma web</span>
-          </div>
-          <p class="project__desc" data-i18n="projects.p4.desc">Motor de búsqueda de restaurantes y cafeterías con recomendaciones conversacionales potenciadas por IA. Filtros inteligentes, sugerencias personalizadas e interfaz precisa para encontrar el lugar ideal antes de terminar de escribir.</p>
-          <a href="#" class="project__link" target="_blank" rel="noopener noreferrer"><span data-i18n="projects.visit">Visitar sitio en vivo ↗</span></a>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-    <!-- ═══════════════ PRICING ═══════════════ -->
-  <section id="pricing" class="section pricing-section">
-    <div class="section__header" data-animate="fade-up">
-      <span class="section__number" data-i18n="pricing.headline">SOLUCIONES WOLFIM</span>
-      <h2 class="section__title" data-i18n="pricing.title">Planes de diseño web premium — desde USD 200</h2>
-      <p class="section__subtitle" data-i18n="pricing.subtitle">Sitios, catálogos y sistemas con WhatsApp, medición y estructura para campañas.</p>
-      <div class="pricing__trust" data-i18n="pricing.trust">
-        <span class="pricing__trust-item">✦ +40 proyectos entregados</span>
-        <span class="pricing__trust-divider">·</span>
-        <span class="pricing__trust-item">Respuesta en &lt;24h</span>
-        <span class="pricing__trust-divider">·</span>
-        <span class="pricing__trust-item">Presupuesto sin compromiso</span>
-      </div>
-    </div>
-    <div class="section__line"></div>
-
-    <div class="pricing__grid">
-      <!-- Plan 1 -->
-      <div class="pricing-card" id="plan-presencia-comercial" aria-labelledby="plan-p1-title" data-animate="fade-up">
-        <div class="pricing-card__left">
-          <div class="pricing-card__brand">
-            <div class="pricing-card__icon-wrapper">
-              <i data-lucide="user" class="pricing-card__icon"></i>
-            </div>
-            <div class="pricing-card__titles">
-              <div class="pricing-card__tags">
-                <span class="pricing-card__tag" data-i18n="pricing.p1.tag">PYMES & PROFESIONALES</span>
-              </div>
-              <h3 class="pricing-card__title" id="plan-p1-title" data-i18n="pricing.p1.title">Presencia Comercial</h3>
-            </div>
-          </div>
-          <ul class="pricing-card__features">
-            <li data-i18n="pricing.p1.f1">Sitio premium compacto</li>
-            <li data-i18n="pricing.p1.f2">Propuesta de valor clara</li>
-            <li data-i18n="pricing.p1.f3">Servicios + contacto</li>
-            <li data-i18n="pricing.p1.f4">WhatsApp + formulario</li>
-            <li data-i18n="pricing.p1.f5">SEO básico + medición</li>
-          </ul>
-          <p class="pricing-card__note" data-i18n="pricing.p1.note">Para negocios que necesitan verse serios.</p>
-        </div>
-        <div class="pricing-card__right">
-          <div class="pricing-card__price-group">
-            <span class="pricing-card__period" data-i18n="pricing.from">Desde</span>
-            <span class="pricing-card__amount">USD 200</span>
-            <div class="pricing-card__monthly">
-              <span class="pricing-card__plus">+</span>
-              <span class="pricing-card__amount-small">USD 25</span>
-              <span class="pricing-card__period" data-i18n="pricing.monthly">/mes</span>
-            </div>
-          </div>
-          <div class="pricing-card__actions">
-            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Presencia%20Comercial." data-cta="pricing" class="pricing-card__desktop-cta desktop-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_plan">Quiero este plan →</a>
-            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Presencia%20Comercial." data-cta="pricing" class="pricing-card__mobile-cta mobile-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_mobile"><svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> CONSULTAR</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Plan 2 -->
-      <div class="pricing-card" id="plan-loteo-activo" aria-labelledby="plan-p2-title" data-animate="fade-up">
-        <div class="pricing-card__left">
-          <div class="pricing-card__brand">
-            <div class="pricing-card__icon-wrapper">
-              <i data-lucide="flag" class="pricing-card__icon"></i>
-            </div>
-            <div class="pricing-card__titles">
-              <div class="pricing-card__tags">
-                <span class="pricing-card__tag" data-i18n="pricing.p2.tag">DESARROLLOS & LOTES</span>
-                <span class="pricing-card__badge" data-i18n="pricing.p2.badge">INCLUYE CAMPAÑA META</span>
-              </div>
-              <h3 class="pricing-card__title" id="plan-p2-title" data-i18n="pricing.p2.title">Loteo Activo</h3>
-            </div>
-          </div>
-          <ul class="pricing-card__features">
-            <li data-i18n="pricing.p2.f1">Landing premium</li>
-            <li data-i18n="pricing.p2.f2">Storytelling + ubicación</li>
-            <li data-i18n="pricing.p2.f3">Galería, video o recorrido</li>
-            <li data-i18n="pricing.p2.f4">Lotes, estados y precios</li>
-            <li data-i18n="pricing.p2.f5">Campaña Meta inicial</li>
-          </ul>
-          <p class="pricing-card__note" data-i18n="pricing.p2.note">Para loteos, countries y tierras privadas.</p>
-        </div>
-        <div class="pricing-card__right">
-          <div class="pricing-card__price-group">
-            <span class="pricing-card__period" data-i18n="pricing.from">Desde</span>
-            <span class="pricing-card__amount">USD 450</span>
-            <div class="pricing-card__monthly">
-              <span class="pricing-card__plus">+</span>
-              <span class="pricing-card__amount-small">USD 39</span>
-              <span class="pricing-card__period" data-i18n="pricing.monthly">/mes</span>
-            </div>
-          </div>
-          <div class="pricing-card__actions">
-            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Loteo%20Activo%20para%20un%20desarrollo%20o%20loteo." data-cta="pricing" class="pricing-card__desktop-cta desktop-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_plan">Quiero este plan →</a>
-            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Loteo%20Activo%20para%20un%20desarrollo%20o%20loteo." data-cta="pricing" class="pricing-card__mobile-cta mobile-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_mobile"><svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> CONSULTAR</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Plan 3 -->
-      <div class="pricing-card" id="plan-autolead-catalogo" aria-labelledby="plan-p3-title" data-animate="fade-up">
-        <div class="pricing-card__left">
-          <div class="pricing-card__brand">
-            <div class="pricing-card__icon-wrapper">
-              <i data-lucide="car-front" class="pricing-card__icon"></i>
-            </div>
-            <div class="pricing-card__titles">
-              <div class="pricing-card__tags">
-                <span class="pricing-card__tag" data-i18n="pricing.p3.tag">AUTOS & AGENCIAS</span>
-              </div>
-              <h3 class="pricing-card__title" id="plan-p3-title" data-i18n="pricing.p3.title">AutoLead Catálogo</h3>
-            </div>
-          </div>
-          <ul class="pricing-card__features">
-            <li data-i18n="pricing.p3.f1">Catálogo de unidades</li>
-            <li data-i18n="pricing.p3.f2">Fichas individuales</li>
-            <li data-i18n="pricing.p3.f3">Fotos, datos y precio</li>
-            <li data-i18n="pricing.p3.f4">WhatsApp por vehículo</li>
-            <li data-i18n="pricing.p3.f5">Panel de actualización</li>
-          </ul>
-          <p class="pricing-card__note" data-i18n="pricing.p3.note">Para agencias con stock cambiante.</p>
-        </div>
-        <div class="pricing-card__right">
-          <div class="pricing-card__price-group">
-            <span class="pricing-card__period" data-i18n="pricing.from">Desde</span>
-            <span class="pricing-card__amount">USD 450</span>
-            <div class="pricing-card__monthly">
-              <span class="pricing-card__plus">+</span>
-              <span class="pricing-card__amount-small">USD 39</span>
-              <span class="pricing-card__period" data-i18n="pricing.monthly">/mes</span>
-            </div>
-          </div>
-          <div class="pricing-card__actions">
-            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20AutoLead%20Cat%C3%A1logo%20para%20autos%20o%20agencia." data-cta="pricing" class="pricing-card__desktop-cta desktop-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_plan">Quiero este plan →</a>
-            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20AutoLead%20Cat%C3%A1logo%20para%20autos%20o%20agencia." data-cta="pricing" class="pricing-card__mobile-cta mobile-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_mobile"><svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> CONSULTAR</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Plan 4 -->
-      <div class="pricing-card" id="plan-portal-inmobiliario" aria-labelledby="plan-p4-title" data-animate="fade-up">
-        <div class="pricing-card__left">
-          <div class="pricing-card__brand">
-            <div class="pricing-card__icon-wrapper">
-              <i data-lucide="building-2" class="pricing-card__icon"></i>
-            </div>
-            <div class="pricing-card__titles">
-              <div class="pricing-card__tags">
-                <span class="pricing-card__tag" data-i18n="pricing.p4.tag">INMOBILIARIAS</span>
-              </div>
-              <h3 class="pricing-card__title" id="plan-p4-title" data-i18n="pricing.p4.title">Portal Inmobiliario</h3>
-            </div>
-          </div>
-          <ul class="pricing-card__features">
-            <li data-i18n="pricing.p4.f1">Home premium</li>
-            <li data-i18n="pricing.p4.f2">Catálogo de propiedades</li>
-            <li data-i18n="pricing.p4.f3">Fichas individuales</li>
-            <li data-i18n="pricing.p4.f4">Filtros / buscador</li>
-            <li data-i18n="pricing.p4.f5">CMS para propiedades</li>
-          </ul>
-          <p class="pricing-card__note" data-i18n="pricing.p4.note">Para venta, alquileres, tasaciones e inversores.</p>
-        </div>
-        <div class="pricing-card__right">
-          <div class="pricing-card__price-group">
-            <span class="pricing-card__period" data-i18n="pricing.from">Desde</span>
-            <span class="pricing-card__amount">USD 650</span>
-            <div class="pricing-card__monthly">
-              <span class="pricing-card__plus">+</span>
-              <span class="pricing-card__amount-small">USD 49</span>
-              <span class="pricing-card__period" data-i18n="pricing.monthly">/mes</span>
-            </div>
-          </div>
-          <div class="pricing-card__actions">
-            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Portal%20Inmobiliario." data-cta="pricing" class="pricing-card__desktop-cta desktop-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_plan">Quiero este plan →</a>
-            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Portal%20Inmobiliario." data-cta="pricing" class="pricing-card__mobile-cta mobile-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_mobile"><svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> CONSULTAR</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Plan 5 -->
-      <div class="pricing-card" id="plan-tienda-online" aria-labelledby="plan-p5-title" data-animate="fade-up">
-        <div class="pricing-card__left">
-          <div class="pricing-card__brand">
-            <div class="pricing-card__icon-wrapper">
-              <i data-lucide="shopping-bag" class="pricing-card__icon"></i>
-            </div>
-            <div class="pricing-card__titles">
-              <div class="pricing-card__tags">
-                <span class="pricing-card__tag" data-i18n="pricing.p5.tag">ECOMMERCE</span>
-              </div>
-              <h3 class="pricing-card__title" id="plan-p5-title" data-i18n="pricing.p5.title">Tienda Online</h3>
-            </div>
-          </div>
-          <ul class="pricing-card__features">
-            <li data-i18n="pricing.p5.f1">Catálogo de productos</li>
-            <li data-i18n="pricing.p5.f2">Carrito + checkout</li>
-            <li data-i18n="pricing.p5.f3">Pagos online</li>
-            <li data-i18n="pricing.p5.f4">Gestión de pedidos</li>
-            <li data-i18n="pricing.p5.f5">Panel administrativo</li>
-          </ul>
-          <p class="pricing-card__note" data-i18n="pricing.p5.note">Para negocios listos para vender online.</p>
-        </div>
-        <div class="pricing-card__right">
-          <div class="pricing-card__price-group">
-            <span class="pricing-card__period" data-i18n="pricing.from">Desde</span>
-            <span class="pricing-card__amount">USD 650</span>
-            <div class="pricing-card__monthly">
-              <span class="pricing-card__plus">+</span>
-              <span class="pricing-card__amount-small">USD 59</span>
-              <span class="pricing-card__period" data-i18n="pricing.monthly">/mes</span>
-            </div>
-          </div>
-          <div class="pricing-card__actions">
-            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Tienda%20Online." data-cta="pricing" class="pricing-card__desktop-cta desktop-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_plan">Quiero este plan →</a>
-            <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20Tienda%20Online." data-cta="pricing" class="pricing-card__mobile-cta mobile-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.consult_mobile"><svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> CONSULTAR</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="pricing__note" data-animate="fade-up">
-      <p class="pricing__note-text" data-i18n="pricing.note">Mantenimiento: hosting, SSL, soporte, backups, medición y cambios menores.
-Campañas y gestión comercial aparte.</p>
-    </div>
-
-    <div class="pricing__cta desktop-only" data-animate="fade-up">
-      <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20una%20soluci%C3%B3n%20digital%20premium." data-cta="pricing" class="pricing__cta-button" target="_blank" rel="noopener noreferrer">
-        <svg class="wa-icon wa-icon--cta" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        <span data-i18n="pricing.cta_button">CONSULTAR POR WHATSAPP</span>
-      </a>
-    </div>
-
-    <a href="https://wa.me/5493513157202?text=Hola%20Wolfim%2C%20quiero%20consultar%20por%20una%20soluci%C3%B3n%20digital%20premium." data-cta="pricing" class="pricing__secondary-cta mobile-only" target="_blank" rel="noopener noreferrer" data-i18n="pricing.secondary_cta" data-animate="fade-up">NO SÉ QUÉ NECESITO — HABLAR CON WOLFIM</a>
-  </section>
-
-  <!-- ═══════════════ FAQ ═══════════════ -->
-  <section id="faq" class="section faq-section">
-    <div class="section__header" data-animate="fade-up">
-      <h2 class="section__title" data-i18n-html="faq.title">Preguntas<br>frecuentes</h2>
-      <p class="section__subtitle" data-i18n="faq.subtitle">Resolvemos tus dudas antes de empezar</p>
-    </div>
-    <div class="section__line"></div>
-
-    <div class="faq__list" data-animate="fade-up">
-      <div class="faq-item">
-        <button class="faq-item__question"><span data-i18n="faq.q1">¿Qué incluye el pago mensual?</span><span class="faq-item__icon">+</span></button>
-        <div class="faq-item__answer"><p data-i18n="faq.a1">Incluye hosting premium, certificado SSL, copias de seguridad diarias, seguridad avanzada y soporte técnico.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-item__question"><span data-i18n="faq.q2">¿Tengo que proveer los textos y fotos?</span><span class="faq-item__icon">+</span></button>
-        <div class="faq-item__answer"><p data-i18n="faq.a2">Idealmente sí, pero si no los tienes podemos utilizar Inteligencia Artificial para redactar contenido profesional e imágenes.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-item__question"><span data-i18n="faq.q3">¿En qué plataforma construyen los sitios?</span><span class="faq-item__icon">+</span></button>
-        <div class="faq-item__answer"><p data-i18n="faq.a3">Usamos Astro y Next.js para un rendimiento ultrarrápido, superior a WordPress. Esto mejora tu SEO y experiencia de usuario.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-item__question"><span data-i18n="faq.q4">¿Puedo actualizar el contenido yo mismo?</span><span class="faq-item__icon">+</span></button>
-        <div class="faq-item__answer"><p data-i18n="faq.a4">Sí, entregamos un panel autoadministrable (CMS) intuitivo donde podrás editar textos, imágenes y proyectos sin tocar código.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════ CAPABILITIES ═══════════════ -->
-  <section id="capabilities" class="section capabilities">
-    <div class="section__header" data-animate="fade-up">
-      <span class="section__number">02</span>
-      <h2 class="section__title" data-i18n-html="capabilities.title">Qué<br>construimos</h2>
-      <p class="section__subtitle" data-i18n="capabilities.subtitle">Sitios web, catálogos digitales y sistemas comerciales</p>
-    </div>
-    <div class="section__line"></div>
-    <div class="capabilities__grid">
-
-      <div class="capability" data-animate="fade-up">
-        <div class="capability__header">
-          <span class="capability__index">A</span>
-          <h3 class="capability__title" data-i18n="cap.a.title">Diseño web a medida</h3>
-        </div>
-        <p class="capability__desc" data-i18n="cap.a.desc">Sitios web premium diseñados a medida, rápidos, responsivos y preparados para convertir visitas en consultas reales.</p>
-        <ul class="capability__list">
-          <li data-i18n="cap.a.l1">Diseño personalizado</li>
-          <li data-i18n="cap.a.l2">Desarrollo responsivo</li>
-          <li data-i18n="cap.a.l3">Gestión de contenido</li>
-          <li data-i18n="cap.a.l4">Optimización de rendimiento</li>
-        </ul>
-      </div>
-
-      <div class="capability" data-animate="fade-up">
-        <div class="capability__header">
-          <span class="capability__index">B</span>
-          <h3 class="capability__title" data-i18n="cap.b.title">Reconstrucción Web</h3>
-        </div>
-        <p class="capability__desc" data-i18n="cap.b.desc">Transformamos webs antiguas, genéricas o desactualizadas en experiencias digitales modernas, visuales y comerciales.</p>
-        <ul class="capability__list">
-          <li data-i18n="cap.b.l1">Rediseño de sitio web</li>
-          <li data-i18n="cap.b.l2">Nueva estructura comercial</li>
-          <li data-i18n="cap.b.l3">Hero inmersivo</li>
-          <li data-i18n="cap.b.l4">Mobile first</li>
-        </ul>
-      </div>
-
-      <div class="capability" data-animate="fade-up">
-        <div class="capability__header">
-          <span class="capability__index">C</span>
-          <h3 class="capability__title" data-i18n="cap.c.title">Catálogo digital</h3>
-        </div>
-        <p class="capability__desc" data-i18n="cap.c.desc">Catálogos digitales para propiedades, vehículos, lotes, maquinaria o productos, con fichas individuales, filtros, buscador y consultas por WhatsApp.</p>
-        <ul class="capability__list">
-          <li data-i18n="cap.c.l1">Fichas individuales</li>
-          <li data-i18n="cap.c.l2">Filtros y buscador</li>
-          <li data-i18n="cap.c.l3">Panel simple de publicación</li>
-          <li data-i18n="cap.c.l4">WhatsApp por ítem</li>
-        </ul>
-      </div>
-
-      <div class="capability" data-animate="fade-up">
-        <div class="capability__header">
-          <span class="capability__index">D</span>
-          <h3 class="capability__title" data-i18n="cap.d.title">Catálogo Express</h3>
-        </div>
-        <p class="capability__desc" data-i18n="cap.d.desc">Catálogos comerciales en HTML o PDF para presentar productos, servicios o listas comerciales de forma clara y profesional.</p>
-        <ul class="capability__list">
-          <li data-i18n="cap.d.l1">Diseño visual</li>
-          <li data-i18n="cap.d.l2">Categorías y datos técnicos</li>
-          <li data-i18n="cap.d.l3">PDF para compartir</li>
-          <li data-i18n="cap.d.l4">Entrega rápida</li>
-        </ul>
-      </div>
-
-      <div class="capability" data-animate="fade-up">
-        <div class="capability__header">
-          <span class="capability__index">E</span>
-          <h3 class="capability__title" data-i18n="cap.e.title">Producción visual con IA</h3>
-        </div>
-        <p class="capability__desc" data-i18n="cap.e.desc">Uso de IA para mejorar imágenes, crear videos de fondo y piezas visuales que elevan la presentación de propiedades, productos o marcas.</p>
-        <ul class="capability__list">
-          <li data-i18n="cap.e.l1">Mejora de imágenes</li>
-          <li data-i18n="cap.e.l2">Videos para hero</li>
-          <li data-i18n="cap.e.l3">Piezas para redes</li>
-          <li data-i18n="cap.e.l4">Antes / después</li>
-        </ul>
-      </div>
-
-      <div class="capability" data-animate="fade-up">
-        <div class="capability__header">
-          <span class="capability__index">F</span>
-          <h3 class="capability__title" data-i18n="cap.f.title">SEO, Ads y crecimiento</h3>
-        </div>
-        <p class="capability__desc" data-i18n="cap.f.desc">SEO técnico, campañas y optimización para que la web no solo se vea bien, sino que empiece a generar oportunidades.</p>
-        <ul class="capability__list">
-          <li data-i18n="cap.f.l1">SEO técnico</li>
-          <li data-i18n="cap.f.l2">Google Ads</li>
-          <li data-i18n="cap.f.l3">Conversión y medición</li>
-          <li data-i18n="cap.f.l4">Reportes mensuales</li>
-        </ul>
-      </div>
-
-    </div>
-
-    <div class="capabilities__method" data-animate="fade-up">
-      <p class="capabilities__method-text" data-i18n="cap.method.text">La IA no aparece como una capa aparte: atraviesa investigación, prototipado, producción visual y optimización para construir mejor cada servicio de arriba.</p>
-      <div class="capabilities__method-tags" aria-label="Método de trabajo asistido por IA">
-        <span data-i18n="cap.method.k1">Investigación asistida</span>
-        <span data-i18n="cap.method.k2">Prototipado</span>
-        <span data-i18n="cap.method.k3">Automatización</span>
-        <span data-i18n="cap.method.k4">Optimización</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════ WHAT YOU GET ═══════════════ -->
-  <section id="digital-systems" class="section systems-section">
-    <div class="section__header" data-animate="fade-up">
-      <span class="section__number">03</span>
-      <h2 class="section__title" data-i18n-html="systems.title">Qué<br>recibís</h2>
-      <p class="section__subtitle" data-i18n="systems.subtitle">Entregables claros al final del proyecto</p>
-    </div>
-    <div class="section__line"></div>
-
-    <div class="systems__grid">
-      <div class="system-card" data-animate="fade-up">
-        <div class="system-card__icon">
-          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
-            <rect x="4" y="4" width="32" height="32"/>
-            <line x1="4" y1="20" x2="36" y2="20"/>
-            <line x1="20" y1="4" x2="20" y2="36"/>
-          </svg>
-        </div>
-        <h3 class="system-card__title" data-i18n-html="sys.a.title">Tu sitio<br>web</h3>
-        <p class="system-card__desc" data-i18n="sys.a.desc">El sitio final publicado, responsivo, rápido y preparado para que tu negocio pueda recibir consultas desde el primer día.</p>
-      </div>
-      <div class="system-card" data-animate="fade-up">
-        <div class="system-card__icon">
-          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
-            <circle cx="20" cy="20" r="16"/>
-            <circle cx="20" cy="20" r="8"/>
-            <circle cx="20" cy="20" r="2"/>
-          </svg>
-        </div>
-        <h3 class="system-card__title" data-i18n-html="sys.b.title">Sistema de<br>contenido</h3>
-        <p class="system-card__desc" data-i18n="sys.b.desc">Acceso al CMS para actualizar páginas, publicar contenido y hacer cambios simples sin depender de un desarrollador para cada ajuste.</p>
-      </div>
-      <div class="system-card" data-animate="fade-up">
-        <div class="system-card__icon">
-          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
-            <polyline points="4,30 14,18 24,24 36,10"/>
-            <circle cx="14" cy="18" r="2"/>
-            <circle cx="24" cy="24" r="2"/>
-            <circle cx="36" cy="10" r="2"/>
-          </svg>
-        </div>
-        <h3 class="system-card__title" data-i18n-html="sys.c.title">Dashboard<br>configurado</h3>
-        <p class="system-card__desc" data-i18n="sys.c.desc">Acceso a tu dashboard de Google Analytics ya configurado, con eventos básicos y métricas clave listas para revisar.</p>
-      </div>
-      <div class="system-card" data-animate="fade-up">
-        <div class="system-card__icon">
-          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
-            <polygon points="20,4 36,12 36,28 20,36 4,28 4,12"/>
-            <line x1="20" y1="4" x2="20" y2="36"/>
-            <line x1="4" y1="12" x2="36" y2="28"/>
-            <line x1="36" y1="12" x2="4" y2="28"/>
-          </svg>
-        </div>
-        <h3 class="system-card__title" data-i18n-html="sys.d.title">Credenciales<br>y accesos</h3>
-        <p class="system-card__desc" data-i18n="sys.d.desc">Usuarios, accesos de administración y referencias de hosting o dominio ordenados para que sepas qué queda bajo tu control.</p>
-      </div>
-      <div class="system-card" data-animate="fade-up">
-        <div class="system-card__icon">
-          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
-            <rect x="4" y="8" width="14" height="10"/>
-            <rect x="22" y="8" width="14" height="10"/>
-            <rect x="4" y="22" width="14" height="10"/>
-            <rect x="22" y="22" width="14" height="10"/>
-          </svg>
-        </div>
-        <h3 class="system-card__title" data-i18n-html="sys.e.title">Guía<br>de uso</h3>
-        <p class="system-card__desc" data-i18n="sys.e.desc">Una guía básica para usar el CMS, editar contenidos frecuentes y entender qué cambios conviene pedir como soporte.</p>
-      </div>
-      <div class="system-card" data-animate="fade-up">
-        <div class="system-card__icon">
-          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
-            <path d="M4,20 Q12,4 20,20 Q28,36 36,20"/>
-            <line x1="4" y1="20" x2="36" y2="20" stroke-dasharray="2,2"/>
-          </svg>
-        </div>
-        <h3 class="system-card__title" data-i18n-html="sys.f.title">Soporte<br>continuo</h3>
-        <p class="system-card__desc" data-i18n="sys.f.desc">Acompañamiento post-lanzamiento para resolver ajustes, cambios menores y dudas operativas cuando el sitio ya está en uso.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════ PROCESS ═══════════════ -->
-  <section id="process" class="section process-section">
-    <div class="section__header" data-animate="fade-up">
-      <span class="section__number">04</span>
-      <h2 class="section__title" data-i18n-html="process.title">Cómo<br>trabajamos</h2>
-      <p class="section__subtitle" data-i18n="process.subtitle">Proceso claro, sin sorpresas</p>
-    </div>
-    <div class="section__line"></div>
-
-    <div class="process-stack">
-      <div class="process-card" data-card="0">
-        <div class="process-card-inner">
-          <div class="process-card__header">
-            <span class="process-ghost-num">01</span>
-            <div class="process-card__meta">
-              <span class="process-step__phase" data-i18n="process.s1.phase">Fase I</span>
-              <h3 class="process-step__title" data-i18n-html="process.s1.title">Conversación &amp;<br>estrategia</h3>
-            </div>
-          </div>
-          <p class="process-step__desc" data-i18n="process.s1.desc">Hablamos. Entiendo tu negocio, tu audiencia y lo que realmente necesitás. Definimos alcance, objetivos y dirección antes de diseñar cualquier pantalla.</p>
-          <div class="process-step__duration">
-            <span data-i18n="process.duration_label">Duración típica</span>
-            <span data-i18n="process.s1.duration">1 semana</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="process-card" data-card="1">
-        <div class="process-card-inner">
-          <div class="process-card__header">
-            <span class="process-ghost-num">02</span>
-            <div class="process-card__meta">
-              <span class="process-step__phase" data-i18n="process.s2.phase">Fase II</span>
-              <h3 class="process-step__title" data-i18n-html="process.s2.title">Diseño &amp;<br>dirección</h3>
-            </div>
-          </div>
-          <p class="process-step__desc" data-i18n="process.s2.desc">La dirección visual, los layouts y el sistema de diseño toman forma. Ves cómo se va a sentir tu sitio antes de escribir una sola línea de código.</p>
-          <div class="process-step__duration">
-            <span data-i18n="process.duration_label">Duración típica</span>
-            <span data-i18n="process.s2.duration">1-2 semanas</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="process-card" data-card="2">
-        <div class="process-card-inner">
-          <div class="process-card__header">
-            <span class="process-ghost-num">03</span>
-            <div class="process-card__meta">
-              <span class="process-step__phase" data-i18n="process.s3.phase">Fase III</span>
-              <h3 class="process-step__title" data-i18n-html="process.s3.title">Construcción &amp;<br>ajuste</h3>
-            </div>
-          </div>
-          <p class="process-step__desc" data-i18n="process.s3.desc">El diseño se convierte en un sitio web real. Desarrollo responsivo, CMS, estructura técnica, optimización de rendimiento e integraciones necesarias, todo probado antes del lanzamiento.</p>
-          <div class="process-step__duration">
-            <span data-i18n="process.duration_label">Duración típica</span>
-            <span data-i18n="process.s3.duration">2-4 semanas</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="process-card" data-card="3">
-        <div class="process-card-inner">
-          <div class="process-card__header">
-            <span class="process-ghost-num">04</span>
-            <div class="process-card__meta">
-              <span class="process-step__phase" data-i18n="process.s4.phase">Fase IV</span>
-              <h3 class="process-step__title" data-i18n-html="process.s4.title">Lanzamiento &amp;<br>crecimiento</h3>
-            </div>
-          </div>
-          <p class="process-step__desc" data-i18n="process.s4.desc">El sitio sale en vivo, revisamos estabilidad, dejamos accesos ordenados y acompañamos los primeros ajustes para que la transición sea clara.</p>
-          <div class="process-step__duration">
-            <span data-i18n="process.duration_label">Duración típica</span>
-            <span data-i18n="process.s4.duration">Continuo</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════ RESULTS ═══════════════ -->
-  <!-- ═══════════════ TESTIMONIALS ═══════════════ -->
-  <section id="testimonials" class="section testimonials-section">
-    <div class="section__header" data-animate="fade-up">
-      <span class="section__number">05</span>
-      <h2 class="section__title" data-i18n-html="testimonials.title">Lo que dicen<br>nuestros clientes</h2>
-      <p class="section__subtitle" data-i18n="testimonials.subtitle">Resultados reales, negocios que crecen</p>
-    </div>
-    <div class="section__line"></div>
-
-    <div class="testimonials__grid">
-      <div class="testimonial" data-animate="fade-up">
-        <div class="testimonial__content">
-          <p class="testimonial__quote" data-i18n="testimonials.t1.quote">"El sitio de Silvia Roggero de Roma quedó impecable. En 10 días teníamos una plataforma inmobiliaria con cotizador integrado, SEO avanzado y conexión directa con Google Reviews. Los leads aumentaron desde el primer mes."</p>
-        </div>
-        <div class="testimonial__stars">★★★★★</div>
-        <div class="testimonial__author">
-          <span class="testimonial__name" data-i18n="testimonials.t1.name">Silvia Roggero</span>
-          <span class="testimonial__role" data-i18n="testimonials.t1.role">Negocios Inmobiliarios, Buenos Aires</span>
-        </div>
-      </div>
-
-      <div class="testimonial" data-animate="fade-up">
-        <div class="testimonial__content">
-          <p class="testimonial__quote" data-i18n="testimonials.t2.quote">"Wolfim entendió exactamente lo que necesitábamos para S&P Cars. La plataforma carga en menos de 2 segundos, el SEO está optimizado y los clientes pueden comparar vehículos lado a lado. Ventas directas desde el sitio."</p>
-        </div>
-        <div class="testimonial__stars">★★★★★</div>
-        <div class="testimonial__author">
-          <span class="testimonial__name" data-i18n="testimonials.t2.name">S&P Cars</span>
-          <span class="testimonial__role" data-i18n="testimonials.t2.role">Agencia de autos premium, Buenos Aires</span>
-        </div>
-      </div>
-
-      <div class="testimonial" data-animate="fade-up">
-        <div class="testimonial__content">
-          <p class="testimonial__quote" data-i18n="testimonials.t3.quote">"Korantis.com necesitaba una búsqueda con IA que funcionara de verdad. Wolfim entregó una plataforma donde los usuarios encuentran restaurantes en segundos, con recomendaciones conversacionales. La retención de usuarios subió un 40%."</p>
-        </div>
-        <div class="testimonial__stars">★★★★★</div>
-        <div class="testimonial__author">
-          <span class="testimonial__name" data-i18n="testimonials.t3.name">Korantis</span>
-          <span class="testimonial__role" data-i18n="testimonials.t3.role">Plataforma de búsqueda con IA, Argentina</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════ PRICING MOVED TO AFTER WORK ═══════════════ -->
-
-  <!-- ═══════════════ MARQUEE ═══════════════ -->
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee__track">
-      <span class="marquee__text" data-i18n="marquee.1">Web a medida</span>
-      <span class="marquee__sep">◆</span>
-      <span class="marquee__text" data-i18n="marquee.2">Catálogos</span>
-      <span class="marquee__sep">◆</span>
-      <span class="marquee__text" data-i18n="marquee.3">CMS</span>
-      <span class="marquee__sep">◆</span>
-      <span class="marquee__text" data-i18n="marquee.4">Accesos</span>
-      <span class="marquee__sep">◆</span>
-      <span class="marquee__text" data-i18n="marquee.5">Soporte</span>
-      <span class="marquee__sep">◆</span>
-      <span class="marquee__text" data-i18n="marquee.6">Lanzamiento</span>
-      <span class="marquee__sep">◆</span>
-      <span class="marquee__text" data-i18n="marquee.1">Web a medida</span>
-      <span class="marquee__sep">◆</span>
-      <span class="marquee__text" data-i18n="marquee.2">Catálogos</span>
-      <span class="marquee__sep">◆</span>
-      <span class="marquee__text" data-i18n="marquee.3">CMS</span>
-      <span class="marquee__sep">◆</span>
-      <span class="marquee__text" data-i18n="marquee.4">Accesos</span>
-      <span class="marquee__sep">◆</span>
-      <span class="marquee__text" data-i18n="marquee.5">Soporte</span>
-      <span class="marquee__sep">◆</span>
-      <span class="marquee__text" data-i18n="marquee.6">Lanzamiento</span>
-      <span class="marquee__sep">◆</span>
-    </div>
-  </div>
-
-  <!-- ═══════════════ CONTACT ═══════════════ -->
-  <section id="contact" class="section contact-section">
-    <div class="contact__inner">
-      <div class="contact__left" data-animate="fade-up">
-        <span class="section__number">06</span>
-        <h2 class="contact__title" data-i18n-html="contact.title">Armemos la próxima<br>versión digital de tu negocio</h2>
-      </div>
-      <div class="contact__right" data-animate="fade-up">
-        <p class="contact__desc" data-i18n="contact.desc">Si buscás una web que refleje la calidad real de tu negocio — no una plantilla con tu logo — hablemos. Trabajo directamente con cada cliente, desde la primera conversación hasta el lanzamiento.</p>
-        <a href="/diagnostico" class="contact__cta" id="contact-cta-diagnostico" data-animate="fade-up">
-          <span class="contact__cta-label" data-i18n="contact.cta_primary">Quiero mi diagnóstico gratuito</span>
-          <span class="contact__cta-arrow" aria-hidden="true">→</span>
-        </a>
-        <p class="contact__cta-note" data-i18n="contact.cta_note">Tres datos —nombre, web y WhatsApp— y recibís un diagnóstico concreto. Sin formularios que se pierden.</p>
-
-        <!-- Canal secundario por email (B5): el CTA principal exige WhatsApp; un
-             visitante de escritorio sin WhatsApp no tenía ningún canal directo.
-             No vuelve el formulario muerto: es un mailto al email público. -->
-        <p class="contact__email-note">
-          <span data-i18n="contact.email_hint">¿Preferís email?</span>
-          <a
-            href="mailto:juan@wolfim.com?subject=Consulta%20desde%20wolfim.com"
-            class="contact__email"
-            id="contact-email"
-            aria-label="Escribir a juan@wolfim.com"
-          >juan@wolfim.com</a>
-        </p>
-
-        <div class="contact__availability">
-          <span class="contact__avail-dot"></span>
-          <span data-i18n="contact.availability">Agenda abierta para nuevos proyectos.</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════ FOOTER ═══════════════ -->
-  <footer class="footer">
-    <div class="footer__line"></div>
-    <div class="footer__inner" style="display: flex; justify-content: space-between; align-items: center; position: relative;">
-      <div class="footer__left" style="display: flex; align-items: center; gap: 12px;">
-        <span class="footer__logo">WOLFIM STUDIO</span>
-        <span style="opacity: 0.3;">|</span>
-        <span class="footer__copy" data-i18n="footer.copy">© 2024</span>
-      </div>
-      <div class="footer__center" style="position: absolute; left: 50%; transform: translateX(-50%);">
-        <img src="/wolfim_logos/favicom_redsquare.svg" alt="Wolfim Icon" style="width: 48px; height: 48px; opacity: 0.9;">
-      </div>
-    </div>
-  </footer>
+  <!-- WOLFIM V7 · contacto comercial -->
+  <MethodContactV7 />
 
   <!-- WhatsApp Sticky Button -->
-  <a href="https://wa.me/5493513157202?text=Hola%2C%20estoy%20interesado%20en%20un%20sitio%20web" data-cta="sticky" class="whatsapp-sticky" target="_blank" rel="noopener noreferrer" aria-label="Chatear por WhatsApp">
+  <a href="https://wa.me/5493513157202?text=Hola%20WOLFIM%2C%20me%20gustar%C3%ADa%20conversar%20sobre%20mi%20negocio" data-cta="sticky" class="whatsapp-sticky" target="_blank" rel="noopener noreferrer" aria-label="Chatear por WhatsApp">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
@@ -890,21 +110,16 @@ Campañas y gestión comercial aparte.</p>
 
   // 3. Eventos de navegación / CTA
   document.addEventListener('DOMContentLoaded', () => {
-    // Hero secondary
-    const heroSecondary = document.querySelector('.hero__cta--secondary');
-    if (heroSecondary) {
-      heroSecondary.addEventListener('click', () => trackEvent('click_service', { service_name: 'Ver trabajos', component: 'hero' }));
+    // V6: CTA genérico al contacto comercial real y acceso a soluciones.
+    const heroChallenge = document.querySelector('[data-v6-cta="challenge"]');
+    if (heroChallenge) {
+      heroChallenge.addEventListener('click', () => trackEvent('contact_cta_click', { component: 'home_hero_v6', route: 'whatsapp' }));
     }
 
-    // Projects
-    const projects = document.querySelectorAll('.project');
-    projects.forEach((proj) => {
-      proj.addEventListener('click', () => {
-        const titleEl = proj.querySelector('.project__title');
-        const title = titleEl ? titleEl.textContent.trim().replace(/\s+/g, ' ') : 'Unknown';
-        trackEvent('click_project', { project_name: title });
-      });
-    });
+    const heroSolutions = document.querySelector('[data-v6-cta="solutions"]');
+    if (heroSolutions) {
+      heroSolutions.addEventListener('click', () => trackEvent('click_service', { component: 'home_hero_v6', service_name: 'Soluciones' }));
+    }
 
     // CTA del bloque de contacto → /diagnostico
     const diagnosisCta = document.getElementById('contact-cta-diagnostico');
@@ -913,8 +128,6 @@ Campañas y gestión comercial aparte.</p>
     }
   });
 </script>
-  <script is:inline src="https://unpkg.com/lucide@latest"></script>
-  <script is:inline>lucide.createIcons();</script>
 </Layout>
 
 

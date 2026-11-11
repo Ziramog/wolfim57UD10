@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wolfim.com/sitemap.xml
+Sitemap: https://www.wolfim.com/sitemap.xml

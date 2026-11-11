@@ -1,8 +1,8 @@
 import { defineConfig } from 'astro/config';
-import vercel from '@astrojs/vercel/serverless';
+import vercel from '@astrojs/vercel';
 
 export default defineConfig({
-  output: 'hybrid',
+  site: 'https://www.wolfim.com',
   adapter: vercel(),
-  // site: 'https://wolfim.com',
+  devToolbar: { enabled: false },
 });

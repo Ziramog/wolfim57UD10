@@ -1,0 +1,394 @@
+---
+/**
+ * WOLFIM / 57UD10 — hero editorial v6
+ * Logo: PNG 4K oficial transparente, presentado sin alterar sus trazos. La animación de gravedad está aislada
+ * del resto del JS heredado y respeta prefers-reduced-motion.
+ */
+---
+
+<header id="hero" class="wolfim-hero-v5" aria-labelledby="wolfim-hero-v5-heading">
+  <div class="wolfim-hero-v5__shell">
+    <div class="wolfim-hero-v5__brand" data-kinetic-logo>
+      <img
+        src="/wolfim_logos/WOLFIM_57UD10_OFICIAL_4K.png"
+        width="4096"
+        height="1368"
+        alt="WOLFIM / 57UD10 — Estrategia, Diseño, Tecnología y Crecimiento"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </div>
+
+    <div class="wolfim-hero-v5__main">
+      <div class="wolfim-hero-v5__message">
+        <p class="wolfim-hero-v5__kicker" data-kinetic-kicker><span class="wolfim-hero-v5__kicker-line"></span> <span data-i18n="v6.hero.kicker">TRANSFORMACIÓN DIGITAL 360°</span> <span class="wolfim-hero-v5__kicker-index">/ 000</span></p>
+        <h1 id="wolfim-hero-v5-heading" class="wolfim-hero-v5__headline">
+          <span data-kinetic-line data-i18n="v5.line1">Que se vea bien</span>
+          <span data-kinetic-line data-i18n="v5.line2">no alcanza.</span>
+          <strong data-kinetic-line data-i18n="v5.line3">Tiene que funcionar.</strong>
+        </h1>
+        <div class="wolfim-hero-v5__redrule" data-kinetic-rule aria-hidden="true"></div>
+        <p class="wolfim-hero-v5__description" data-kinetic-body data-i18n="v6.hero.description">
+          Digitalizamos cómo tu empresa se presenta, vende y opera.
+        </p>
+        <div class="wolfim-hero-v5__systemline" data-kinetic-systemline>
+          <strong data-i18n="v8.hero.system">SISTEMAS + COMERCIO</strong>
+          <span data-i18n="v8.hero.services">CRM · B2B · B2C · ECOMMERCE · MERCADO LIBRE</span>
+        </div>
+        <div class="wolfim-hero-v5__actions" data-kinetic-actions>
+          <a class="wolfim-hero-v5__action wolfim-hero-v5__action--solid" href="https://wa.me/5493513157202?text=Hola%20WOLFIM%2C%20quiero%20contarles%20un%20desaf%C3%ADo%20de%20mi%20empresa." data-v6-cta="challenge" data-cta="hero_v6_challenge" target="_blank" rel="noopener noreferrer">
+            <span data-i18n="v6.hero.primary">Contanos tu desafío</span> <span aria-hidden="true">↗</span>
+          </a>
+          <a class="wolfim-hero-v5__action wolfim-hero-v5__action--outline" href="#soluciones" data-v6-cta="solutions">
+            <span data-i18n="v6.hero.secondary">Explorar soluciones</span> <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="wolfim-hero-v5__footer">
+      <span data-i18n="v5.signature">ESTRATEGIA QUE IMPULSA TU DIRECCIÓN.</span>
+      <a href="#desafios"><span data-i18n="v5.scroll">DESLIZÁ PARA EXPLORAR</span> <span aria-hidden="true">↓</span></a>
+    </div>
+  </div>
+  <button type="button" class="wolfim-hero-v5__falling-cube" data-gravity-cube aria-label="Arrastrar el cuadrado rojo y soltar para dejarlo caer"></button>
+</header>
+
+
+<style>
+.wolfim-hero-v5 {
+  --v5-ink:#090909; --v5-red:#E61E1E; --v5-paper:#FAFAF8;
+  position:relative; isolation:isolate; overflow:hidden; width:100%;
+  height:100vh; height:100svh; min-height:0;
+  padding:clamp(76px,9.5vh,100px) 0 clamp(14px,2.2vh,24px);
+  color:var(--v5-ink); background:var(--v5-paper); font-family:'Inter',Arial,sans-serif;
+}
+.wolfim-hero-v5__shell {
+  width:min(1480px,calc(100% - clamp(2rem,7vw,8rem))); height:100%; min-height:0;
+  margin-inline:auto; display:grid; grid-template-rows:auto minmax(0,1fr) auto;
+  position:relative; z-index:2; pointer-events:none;
+}
+.wolfim-hero-v5__shell a { pointer-events:auto; }
+.wolfim-hero-v5__brand { width:min(580px,55%); position:relative; aspect-ratio:3352/902; overflow:hidden; }
+.wolfim-hero-v5__brand img { display:block; width:122.2%; max-width:none; height:auto; transform:translate(-7.96%,-19.6%); }
+.wolfim-hero-v5__baseline {
+  display:flex; flex-wrap:wrap; align-items:center; gap:clamp(.45rem,1vw,1.05rem);
+  margin-top:.42rem; font-size:clamp(.59rem,.68vw,.7rem); font-weight:760;
+  letter-spacing:.12em; line-height:1.6;
+}
+.wolfim-hero-v5__baseline b { color:var(--v5-red); font-weight:900; }
+.wolfim-hero-v5__main {
+  display:grid; grid-template-columns:minmax(0,1.65fr) minmax(250px,.75fr);
+  align-items:center; gap:clamp(24px,4.3vw,65px); min-height:0;
+  padding-block:clamp(14px,3vh,34px) clamp(10px,2.4vh,25px);
+}
+.wolfim-hero-v5__message { min-width:0; position:relative; top:-clamp(14px,2.6vh,27px); }
+.wolfim-hero-v5__kicker {
+  display:flex; align-items:center; gap:.85rem; margin-bottom:clamp(9px,1.5vh,17px);
+  font:650 clamp(.61rem,.8vw,.72rem)/1.4 'JetBrains Mono',monospace; letter-spacing:.1em;
+}
+.wolfim-hero-v5__kicker-line { display:inline-block; width:24px; height:3px; flex:none; background:var(--v5-red); }
+.wolfim-hero-v5__kicker-index { margin-left:auto; color:#858580; }
+.wolfim-hero-v5__headline {
+  margin:0; max-width:1050px; font:900 clamp(2.8rem,4.65vw,4.65rem)/1.015 'Inter',Arial,sans-serif;
+  letter-spacing:-.036em;
+}
+.wolfim-hero-v5__headline span,.wolfim-hero-v5__headline strong { display:block; font:inherit; }
+.wolfim-hero-v5__headline strong { margin-top:.12em; }
+.wolfim-hero-v5__redrule {
+  width:clamp(67px,6.5vw,100px); height:4px; background:var(--v5-red);
+  margin-top:clamp(12px,2vh,22px);
+}
+.wolfim-hero-v5__description {
+  max-width:600px; margin-top:clamp(14px,2.35vh,24px);
+  font-size:clamp(.91rem,1.18vw,1.08rem); line-height:1.45;
+  letter-spacing:-.02em; color:#484844;
+}
+.wolfim-hero-v5__systemline {
+  display:flex; align-items:center; flex-wrap:wrap; gap:7px 18px;
+  margin-top:clamp(12px,1.7vh,19px);
+  font:650 clamp(.62rem,.78vw,.74rem)/1.4 'JetBrains Mono',monospace;
+  letter-spacing:.035em;
+}
+.wolfim-hero-v5__systemline strong { font-weight:850; color:#E61E1E; }
+.wolfim-hero-v5__systemline span { color:#60605e; }
+.wolfim-hero-v5__actions { display:flex; flex-wrap:wrap; gap:1rem; margin-top:clamp(15px,2.3vh,24px); }
+.wolfim-hero-v5__action {
+  display:inline-flex; align-items:center; justify-content:space-between; gap:1.5rem;
+  padding:.84rem 1.08rem; min-height:44px; border:1.5px solid var(--v5-ink); border-radius:6px;
+  font:730 .84rem/1.2 'Inter',Arial,sans-serif; letter-spacing:-.02em;
+  text-decoration:none; transition:background .2s ease,color .2s ease,transform .2s ease;
+}
+.wolfim-hero-v5__action:hover { transform:translateY(-2px); }
+.wolfim-hero-v5__action:focus-visible,.wolfim-hero-v5__footer a:focus-visible {
+  outline:3px solid var(--v5-red); outline-offset:4px;
+}
+.wolfim-hero-v5__action--solid { background:var(--v5-ink); color:white; min-width:197px; }
+.wolfim-hero-v5__action--solid:hover { background:var(--v5-red); border-color:var(--v5-red); color:white; }
+.wolfim-hero-v5__action--outline { background:transparent; color:var(--v5-ink); min-width:193px; }
+.wolfim-hero-v5__action--outline:hover { background:#ededeb; }
+.wolfim-hero-v5__footer {
+  display:flex; align-items:center; justify-content:space-between; gap:1rem;
+  border-top:1px solid #cfcfca; padding-top:clamp(8px,1.3vh,14px);
+  font:700 clamp(.57rem,.75vw,.71rem)/1.5 'JetBrains Mono',monospace; letter-spacing:.075em;
+}
+.wolfim-hero-v5__footer a { color:#595954; text-decoration:none; }
+.wolfim-hero-v5__footer a:hover { color:var(--v5-red); }
+.wolfim-hero-v5__falling-cube {
+  position:absolute; top:0; left:0; z-index:3;
+  width:clamp(72px,7.5vw,110px); height:clamp(72px,7.5vw,110px);
+  appearance:none; border:0; padding:0; cursor:grab; touch-action:none; user-select:none;
+  border-radius:clamp(8px,1vw,12px); background:var(--v5-red);
+  box-shadow:0 9px 16px rgba(144,16,24,.13);
+  pointer-events:auto; will-change:transform;
+  transform:translate3d(80vw,-90px,0);
+}
+.wolfim-hero-v5__falling-cube:active { cursor:grabbing; }
+.wolfim-hero-v5__falling-cube:focus-visible { outline:3px solid #111; outline-offset:4px; }
+:global(body.wolfim-v5-hero-visible .whatsapp-sticky) {
+  opacity:0 !important; visibility:hidden !important; pointer-events:none !important;
+}
+@media (min-width:781px) and (max-height:730px) {
+  .wolfim-hero-v5 { padding-top:73px; padding-bottom:10px; }
+  .wolfim-hero-v5__brand { width:min(520px,50%); }
+  .wolfim-hero-v5__main { padding-block:7px; }
+  .wolfim-hero-v5__headline { font-size:clamp(2.3rem,4.1vw,3.65rem); }
+  .wolfim-hero-v5__description { font-size:.87rem; line-height:1.35; }
+  .wolfim-hero-v5__assist { margin-top:6px; }
+}
+@media (max-width:780px) {
+  .wolfim-hero-v5 { padding-top:clamp(67px,9vh,79px); padding-bottom:clamp(9px,1.6vh,16px); }
+  .wolfim-hero-v5__shell { width:calc(100% - 36px); }
+  .wolfim-hero-v5__brand { width:min(100%,285px); }
+  .wolfim-hero-v5__baseline {
+    font-size:clamp(.47rem,1.55vw,.58rem); letter-spacing:.035em;
+    gap:.35rem; margin-top:.28rem; flex-wrap:nowrap; white-space:nowrap;
+  }
+  .wolfim-hero-v5__message { top:0; }
+  .wolfim-hero-v5__main {
+    display:flex; flex-direction:column; align-items:flex-start; justify-content:flex-start;
+    padding-block:clamp(40px,6.3vh,64px) clamp(8px,1.6vh,14px);
+  }
+  .wolfim-hero-v5__kicker { font-size:.58rem; letter-spacing:.06em; margin-bottom:clamp(9px,1.4vh,14px); }
+  .wolfim-hero-v5__headline { font-size:clamp(2rem,8.7vw,3.5rem); line-height:1.025; letter-spacing:-.04em; }
+  .wolfim-hero-v5__headline strong { margin-top:.1em; }
+  .wolfim-hero-v5__redrule { width:70px; height:4px; margin-top:clamp(9px,1.6vh,17px); }
+  .wolfim-hero-v5__description {
+    font-size:clamp(.78rem,2.8vw,.94rem); line-height:1.35;
+    margin-top:clamp(9px,1.4vh,14px); max-width:530px;
+  }
+  .wolfim-hero-v5__actions {
+    display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
+    margin-top:clamp(10px,1.6vh,16px); gap:8px; width:100%;
+  }
+  .wolfim-hero-v5__action {
+    width:100%; min-width:0; min-height:42px; padding:9px 10px;
+    font-size:clamp(.67rem,2.25vw,.84rem); gap:.25rem;
+  }
+  .wolfim-hero-v5__footer { padding-top:8px; font-size:.58rem; }
+  .wolfim-hero-v5__falling-cube { width:clamp(56px,16vw,72px); height:clamp(56px,16vw,72px); }
+  .wolfim-hero-v5__systemline { font-size:.58rem; gap:5px 12px; margin-top:9px; line-height:1.25; }
+}
+@media (max-width:420px) {
+  .wolfim-hero-v5__brand { width:min(100%,270px); }
+  .wolfim-hero-v5__headline { font-size:clamp(1.93rem,8.5vw,2.3rem); letter-spacing:-.034em; }
+  .wolfim-hero-v5__baseline { font-size:clamp(.43rem,1.52vw,.52rem); }
+  .wolfim-hero-v5__kicker { font-size:.52rem; }
+}
+@media (max-width:780px) and (max-height:660px) {
+  .wolfim-hero-v5 { padding-top:60px; padding-bottom:6px; }
+  .wolfim-hero-v5__brand { width:min(100%,265px); }
+  .wolfim-hero-v5__main { padding-block:clamp(10px,2vh,15px) 5px; }
+  .wolfim-hero-v5__kicker { margin-bottom:4px; font-size:.5rem; }
+  .wolfim-hero-v5__systemline { margin-top:6px; font-size:.52rem; line-height:1.2; gap:3px 8px; }
+  .wolfim-hero-v5__headline { font-size:clamp(1.75rem,7.6vw,2.5rem); line-height:.99; }
+  .wolfim-hero-v5__redrule { margin-top:6px; height:3px; }
+  .wolfim-hero-v5__description { font-size:.75rem; line-height:1.23; margin-top:5px; }
+  .wolfim-hero-v5__actions { margin-top:6px; }
+  .wolfim-hero-v5__action { min-height:34px; padding:6px 8px; }
+  .wolfim-hero-v5__footer { padding-top:4px; font-size:.5rem; }
+}
+@media (max-width:780px) and (max-height:540px) {
+  .wolfim-hero-v5__baseline { display:none; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .wolfim-hero-v5__action { transition:none; }
+  .wolfim-hero-v5__action:hover { transform:none; }
+  .wolfim-hero-v5__falling-cube { will-change:auto; }
+}
+</style>
+
+<script>
+  // Física del cuadrado sobre todo el hero. Sin panel ni controles de test.
+  const hero = document.querySelector<HTMLElement>('.wolfim-hero-v5');
+  const cube = document.querySelector<HTMLElement>('[data-gravity-cube]');
+  const footer = document.querySelector<HTMLElement>('.wolfim-hero-v5__footer');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (hero && cube && footer) {
+    let raf = 0;
+    let timer = 0;
+    let previous = 0;
+    let started = false;
+    let landed = false;
+    let visible = true;
+    let dragging = false;
+    let dragOffsetX = 0;
+    let dragOffsetY = 0;
+    let lastPointerX = 0;
+    let lastPointerY = 0;
+    let lastPointerAt = 0;
+    const physics = { x:0, y:0, vx:0, vy:0, rotation:0, spin:55, impact:0 };
+    const floatingWhatsapp = document.querySelector<HTMLElement>('.whatsapp-sticky');
+    const compactScreen = window.matchMedia('(max-width: 780px)');
+
+    const bounds = () => {
+      const parent = hero.getBoundingClientRect();
+      const ground = footer.getBoundingClientRect();
+      const size = cube.offsetHeight;
+      return {
+        x: Math.max(0,Math.min(parent.width - size - 17,parent.width*.87 - size/2)),
+        right: Math.max(0,parent.width - size),
+        start: -size-2,
+        bottom: ground.top - parent.top - size
+      };
+    };
+    const paint = () => {
+      // Breve compresión en el impacto, siempre alrededor del propio cuadrado.
+      cube.style.transform = 'translate3d('+physics.x+'px,'+physics.y+'px,0) rotate('+physics.rotation+'deg) scale('+(1+physics.impact)+','+(1-physics.impact*.72)+')';
+    };
+    const stop = () => {
+      if (raf) cancelAnimationFrame(raf);
+      raf=0; previous=0;
+    };
+    const rest = () => {
+      const b=bounds();
+      physics.y=b.bottom; physics.vx=0; physics.vy=0; physics.rotation=0; physics.spin=0; physics.impact=0;
+      landed=true; paint(); stop();
+    };
+    const step = (now:number) => {
+      raf=0;
+      if (!started || landed || dragging || !visible || reducedMotion.matches) return;
+      const dt=Math.min(.033,(now-(previous||now))/1000);
+      previous=now;
+      const b=bounds();
+      physics.vy+=(compactScreen.matches ? 2700 : 2200)*dt;
+      physics.y+=physics.vy*dt;
+      physics.x+=physics.vx*dt;
+      physics.rotation+=physics.spin*dt;
+      physics.impact=Math.max(0,physics.impact-dt*1.7);
+      // Aceleración vertical, paredes laterales y amortiguación sobre el suelo.
+      if (physics.x<0 || physics.x>b.right) {
+        physics.x=Math.min(b.right,Math.max(0,physics.x));
+        physics.vx*=-.4;
+        physics.spin*=.6;
+      }
+      if (physics.y>=b.bottom) {
+        physics.y=b.bottom;
+        const impactSpeed=Math.abs(physics.vy);
+        physics.impact=Math.min(.16,impactSpeed/1800*.16);
+        physics.vy=impactSpeed<82?0:-impactSpeed*(compactScreen.matches ? .31 : .41);
+        physics.vx*=.72;
+        physics.spin*=.43;
+      }
+      if (physics.y===b.bottom && physics.vy===0 &&
+          Math.abs(physics.vx)<10 && Math.abs(physics.spin)<12) {
+        rest(); return;
+      }
+      paint();
+      raf=requestAnimationFrame(step);
+    };
+    const play = () => {
+      if (!visible||!started||landed||dragging||reducedMotion.matches||raf) return;
+      previous=0;
+      raf=requestAnimationFrame(step);
+    };
+    const initialize = () => {
+      stop(); window.clearTimeout(timer); started=false; landed=false; dragging=false;
+      const b=bounds();
+      physics.x=b.x; physics.y=b.start; physics.vx=0; physics.vy=0; physics.rotation=0; physics.spin=compactScreen.matches ? 18 : 55; physics.impact=0;
+      paint();
+      if(reducedMotion.matches) {rest();return;}
+      timer=window.setTimeout(()=>{started=true;play();},1500);
+    };
+    // Arrastrar el cuadrado en toda el área del hero; al soltar, retomar la física.
+    cube.addEventListener('pointerdown', event => {
+      if (reducedMotion.matches || (event.pointerType==='mouse' && event.button!==0)) return;
+      event.preventDefault();
+      window.clearTimeout(timer);
+      stop();
+      started=true;
+      landed=false;
+      dragging=true;
+      const box=cube.getBoundingClientRect();
+      dragOffsetX=event.clientX-box.left;
+      dragOffsetY=event.clientY-box.top;
+      lastPointerX=event.clientX;
+      lastPointerY=event.clientY;
+      lastPointerAt=performance.now();
+      physics.vx=0; physics.vy=0; physics.spin=0; physics.rotation=0; physics.impact=0;
+      cube.setPointerCapture(event.pointerId);
+      paint();
+    });
+    cube.addEventListener('pointermove', event => {
+      if (!dragging) return;
+      event.preventDefault();
+      const origin=hero.getBoundingClientRect();
+      const b=bounds();
+      const now=performance.now();
+      const dt=Math.max(.016,(now-lastPointerAt)/1000);
+      const clamp=(value:number,min:number,max:number)=>Math.max(min,Math.min(max,value));
+      physics.vx=clamp((event.clientX-lastPointerX)/dt,-850,850);
+      physics.vy=clamp((event.clientY-lastPointerY)/dt,-1050,1050);
+      physics.spin=clamp(physics.vx*.17,-150,150);
+      physics.x=clamp(event.clientX-origin.left-dragOffsetX,0,b.right);
+      physics.y=clamp(event.clientY-origin.top-dragOffsetY,0,b.bottom);
+      lastPointerX=event.clientX;
+      lastPointerY=event.clientY;
+      lastPointerAt=now;
+      paint();
+    });
+    const releaseCube=() => {
+      if (!dragging) return;
+      dragging=false;
+      if (performance.now()-lastPointerAt>140) {
+        physics.vx=0; physics.vy=0; physics.spin=0;
+      }
+      if (reducedMotion.matches) {rest(); return;}
+      previous=0;
+      play();
+    };
+    cube.addEventListener('pointerup',releaseCube);
+    cube.addEventListener('pointercancel',releaseCube);
+    cube.addEventListener('lostpointercapture',releaseCube);
+    // Acceso con teclado: Enter o Espacio lanza otra caída sin UI adicional.
+    cube.addEventListener('keydown',event=>{
+      if (event.key!=='Enter' && event.key!==' ') return;
+      event.preventDefault();
+      initialize();
+      window.clearTimeout(timer);
+      started=true;
+      play();
+    });
+    const observer=new IntersectionObserver(entries=>{
+      visible=entries[0]?.isIntersecting??true;
+      document.body.classList.toggle('wolfim-v5-hero-visible',visible);
+      if (floatingWhatsapp) floatingWhatsapp.inert = ['wolfim-v5-hero-visible','wolfim-v7-contact-visible','wolfim-v8-360-visible','wolfim-v9-method-visible'].some(c=>document.body.classList.contains(c));
+      if(visible)play();else stop();
+    },{threshold:.01});
+    observer.observe(hero);
+    window.addEventListener('resize',()=>{
+      const b=bounds();
+      physics.x=started?Math.max(0,Math.min(b.right,physics.x)):b.x;
+      if(landed||reducedMotion.matches)rest();
+      else if(!started){physics.y=b.start;paint();}
+      else{physics.y=Math.min(physics.y,b.bottom);paint();play();}
+    },{passive:true});
+    reducedMotion.addEventListener('change',initialize);
+    document.fonts?.ready.then(()=>{
+      if (!started) physics.x=bounds().x;
+      if(landed)rest();else paint();
+    });
+    initialize();
+  }
+</script>

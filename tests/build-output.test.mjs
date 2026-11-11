@@ -59,41 +59,32 @@ test('build: existe el output de Vercel', () => {
 
 // ─── home: formulario muerto reemplazado por CTA ────────────────────────────
 
-test('home: no queda el formulario sin handler y hay CTA hacia /diagnostico', async () => {
+test('home V7: brief general real y diagnóstico especializado separado', async () => {
   const html = await readPage('index.html');
-
-  assert.equal(html.includes('id="contact-form"'), false, 'el formulario muerto no debe estar en el HTML servido');
-  assert.equal(html.includes('contact__form'), false, 'no debe quedar el contenedor del formulario');
-  assert.equal(/<form[^>]*action="#" method="POST"/.test(html), false, 'ningún form debe postear a /');
-
-  const cta = html.match(/<a[^>]*id="contact-cta-diagnostico"[^>]*href="\/diagnostico"|<a[^>]*href="\/diagnostico"[^>]*id="contact-cta-diagnostico"/);
-  assert.ok(cta, 'el bloque de contacto debe ofrecer un CTA a /diagnostico');
-  assert.match(html, /contact__cta-note/, 'el CTA debe explicar que el formulario real está en /diagnostico');
+  assert.equal(html.includes('id="contact-form"'), false, 'el viejo formulario sin handler no debe regresar');
+  assert.equal(/<form[^>]*action="#" method="POST"/.test(html), false, 'ningún formulario debe postear a /');
+  assert.match(html, /id="v7-contact-form"/, 'el brief comercial debe estar presente');
+  assert.match(html, /id="v7-model"/);
+  assert.match(html, /id="v7-challenge"/);
+  assert.match(html, /href="\/diagnostico"/, 'se conserva el diagnóstico web especializado');
+  const source = await readFile(path.join(ROOT, 'src', 'components', 'MethodContactV7.astro'), 'utf8');
+  assert.match(source, /window\.location\.assign\('https:\/\/wa\.me\//, 'el brief debe preparar WhatsApp en un evento real de submit');
+  assert.doesNotMatch(source, /fetch\('\/api\/leads/, 'el brief general no debe enviarse a un backend que solo acepta web');
 });
 
-test('home: canal email secundario con el email público (sin reinstalar el form)', async () => {
+test('home V7: email alternativo y CTA de diagnóstico conservados', async () => {
   const html = await readPage('index.html');
-
-  assert.match(
-    html,
-    /<a[^>]*href="mailto:juan@wolfim\.com[^"]*"[^>]*id="contact-email"/,
-    'falta el mailto secundario del bloque de contacto'
-  );
-  assert.match(html, /class="contact__email"/, 'falta el estilo del link de email');
-  assert.equal(html.includes('<form'), false, 'no debe volver ningún formulario al home');
-  assert.ok(
-    html.includes('contact__cta') && html.includes('mailto:juan@wolfim.com'),
-    'el CTA de diagnóstico y el canal email deben convivir'
-  );
+  assert.match(html, /href="mailto:juan@wolfim\.com[^"]*"/, 'debe mantenerse email público');
+  assert.match(html, /id="contact-email"/, 'email secundario identificable');
+  assert.match(html, /id="contact-cta-diagnostico"/, 'conservar instrumentación del diagnóstico web');
+  assert.match(html, /Abriremos WhatsApp con tu mensaje preparado/, 'el visitante debe saber que el envío final depende de él');
 });
 
-test('home: todos los links de WhatsApp tienen data-cta', async () => {
+test('home V7: todos los enlaces directos a WhatsApp tienen data-cta', async () => {
   const html = await readPage('index.html');
-  const links = [...html.matchAll(/<a\b[^>]*href="https:\/\/wa\.me\/[^"]*"[^>]*>/g)].map((m) => m[0]);
-
-  assert.ok(links.length >= 10, `se esperaban los links de WhatsApp del home, encontrados: ${links.length}`);
-  const withoutCta = links.filter((tag) => !/data-cta="/.test(tag));
-  assert.deepEqual(withoutCta, [], 'cada link de WhatsApp debe declarar su component con data-cta');
+  const links = [...html.matchAll(/<a\b[^>]*href="https:\/\/wa\.me\/[^"]*"[^>]*>/g)].map(m=>m[0]);
+  assert.ok(links.length >= 5, `se esperan rutas comerciales B2B/B2C/mixto y WhatsApp, encontrados: ${links.length}`);
+  assert.deepEqual(links.filter(tag=>!/data-cta="/.test(tag)),[], 'todos los links deben etiquetar el componente');
 });
 
 // ─── GA4: allowlist de hosts + banner que no tapa el sticky ─────────────────
@@ -231,15 +222,11 @@ test('WhatsApp: el evento emitido no duplica la página (sin parámetro page)', 
   assert.match(code, /page_path/, `${file}: el tracker por defecto debe informar page_path una sola vez`);
 });
 
-test('WhatsApp: script.js ya no trackea links de WhatsApp ni dispara view_pricing repetido', async () => {
-  const contents = await loadChunks();
-  const legacy = [...contents.entries()].find(([, code]) => code.includes('view_pricing'));
-  assert.ok(legacy, 'no encuentro el bundle con view_pricing (script.js)');
-
-  const [file, code] = legacy;
-  assert.equal(code.includes('click_whatsapp'), false, `${file}: script.js no debe emitir click_whatsapp`);
-  assert.equal(code.includes('wa.me'), false, `${file}: script.js no debe buscar links de WhatsApp`);
-  assert.match(code, /unobserve/, `${file}: el observer de pricing debe dejar de observar tras el primer hit`);
+test('WhatsApp: legacy script.js no instala trackers extra y mantiene pricing observer aislado', async () => {
+  const source = await readFile(path.join(ROOT,'src','scripts','script.js'),'utf8');
+  assert.doesNotMatch(source, /trackEvent\s*\(\s*['"]click_whatsapp['"]/, 'el script de navegación no debe emitir el evento click_whatsapp');
+  assert.doesNotMatch(source, /querySelectorAll\([^)]*wa\.me/, 'el script de navegación no debe instalar listeners para links de WhatsApp');
+  assert.match(source,/pricingObserver\.unobserve\(entry\.target\)/,'la protección legacy se mantiene para otras rutas');
 });
 
 // ─── guardas de fuente (semántica de eventos) ───────────────────────────────

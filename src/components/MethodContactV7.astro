@@ -1,0 +1,134 @@
+---
+const currentYear = new Date().getFullYear();
+---
+<section id="contact" class="v7-contact" aria-labelledby="v7-contact-title">
+  <div class="v7-contact__shell">
+    <div class="v7-contact__overline">07 / <span data-i18n="v7.contact.label">SIGUIENTE MOVIMIENTO</span></div>
+    <div class="v7-contact__grid">
+      <div class="v7-contact__intro" data-kinetic-scroll>
+        <h2 id="v7-contact-title"><span data-i18n="v7.contact.title1">Contanos</span><span data-i18n="v7.contact.title2">qué hay que</span><em data-i18n="v7.contact.title3">transformar.</em></h2>
+        <p data-i18n="v7.contact.lead">Empezamos con una conversación. No necesitás tener resuelta la tecnología ni el alcance: eso lo definimos a partir del problema.</p>
+        <div class="v7-contact__alternatives">
+          <a href="mailto:juan@wolfim.com?subject=Consulta%20WOLFIM%20-%20Proyecto%20digital" class="v7-contact__email" id="contact-email" data-i18n="v7.contact.email">Escribir por email ↗</a>
+          <a href="/diagnostico" id="contact-cta-diagnostico" data-i18n="v7.contact.web">Diagnóstico específico de sitio web ↗</a>
+        </div>
+      </div>
+      <div class="v7-contact__brief" data-kinetic-scroll>
+        <div class="v7-contact__briefhead">
+          <span data-i18n="v7.contact.brief">BRIEF EXPRESS</span>
+          <span>WOLFIM / 57UD10</span>
+        </div>
+        <form id="v7-contact-form">
+          <label for="v7-model" data-i18n="v7.contact.model.label">¿Cómo opera tu negocio?</label>
+          <select id="v7-model" name="model" required>
+            <option value="" data-i18n="v7.contact.model.placeholder">Elegí una opción</option>
+            <option value="B2B" data-i18n="v7.contact.model.b2b">B2B · Empresas / mayorista</option>
+            <option value="B2C" data-i18n="v7.contact.model.b2c">B2C · Marcas / consumidor</option>
+            <option value="Mixto" data-i18n="v7.contact.model.mixed">Mixto · Ambos canales</option>
+            <option value="A definir" data-i18n="v7.contact.model.undecided">Todavía no lo tengo definido</option>
+          </select>
+          <label for="v7-challenge" data-i18n="v7.contact.challenge.label">¿Qué querés mejorar o construir?</label>
+          <textarea id="v7-challenge" name="challenge" rows="5" minlength="10" maxlength="600" required placeholder="Contanos brevemente el desafío..." data-i18n-placeholder="v7.contact.challenge.placeholder"></textarea>
+          <button type="submit" data-i18n="v7.contact.submit">Preparar mensaje en WhatsApp ↗</button>
+          <p data-i18n="v7.contact.note">Abriremos WhatsApp con tu mensaje preparado. Vos decidís cuándo enviarlo.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="v7-footer">
+  <div class="v7-footer__shell">
+    <a class="v7-footer__brand" href="#hero" aria-label="Volver al inicio WOLFIM"><img src="/wolfim_logos/WOLFIM_57UD10_OFICIAL_4K.png" width="4096" height="1368" alt="WOLFIM / 57UD10" loading="lazy" decoding="async"/></a>
+    <nav class="v7-footer__nav" aria-label="Navegación del pie">
+      <a href="#soluciones" data-i18n="nav.solutions">Soluciones</a>
+      <a href="#projects" data-i18n="nav.projects">Proyectos</a>
+      <a href="#process" data-i18n="nav.method">Método</a>
+      <a href="#contact" data-i18n="nav.contact">Contacto</a>
+    </nav>
+    <div class="v7-footer__bottom">
+      <span>© {currentYear} WOLFIM / 57UD10</span>
+      <span data-i18n="v7.footer.tagline">ESTRATEGIA QUE IMPULSA TU DIRECCIÓN.</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+.v7-contact,.v7-footer {font-family:'Inter',Arial,sans-serif;scroll-margin-top:65px;}
+.v7-contact__shell,.v7-footer__shell {width:min(1350px,calc(100% - clamp(36px,7vw,120px)));margin-inline:auto;}
+.v7-contact {background:#101010;color:#FAFAF8;padding:clamp(95px,11vw,168px) 0;}
+:global(body.wolfim-v7-contact-visible .whatsapp-sticky) { opacity:0 !important;visibility:hidden !important;pointer-events:none !important; }
+.v7-contact__overline {border-color:#404040;}
+.v7-contact__grid {display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(30px,8vw,130px);padding-top:clamp(50px,6vw,90px);}
+.v7-contact__intro h2 {font-size:clamp(3rem,6.3vw,7.5rem);letter-spacing:-.075em;font-weight:900;line-height:1.02;}
+.v7-contact__intro h2 span,.v7-contact__intro h2 em {display:block;font-style:normal;}
+.v7-contact__intro h2 em {color:#E61E1E;}
+.v7-contact__intro>p {color:#b9b9b6;max-width:490px;margin-top:30px;line-height:1.65;font-size:1rem;}
+.v7-contact__alternatives {display:flex;align-items:flex-start;flex-wrap:wrap;gap:12px 30px;margin-top:36px;}
+.v7-contact__alternatives a {color:#f3f3f0;border-bottom:1px solid #E61E1E;padding:9px 0;font-weight:650;font-size:.81rem;}
+.v7-contact__alternatives a:hover {color:#E61E1E;}
+.v7-contact__brief {border:1px solid #464646;padding:clamp(22px,3vw,45px);align-self:start;}
+.v7-contact__briefhead {display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid #414141;padding-bottom:24px;margin-bottom:30px;font:650 .65rem/1.4 'JetBrains Mono',monospace;letter-spacing:.05em;color:#b3b3af;}
+.v7-contact__briefhead span:first-child {color:#E61E1E;}
+.v7-contact__brief form {display:flex;flex-direction:column;}
+.v7-contact__brief label {font-size:.89rem;font-weight:700;margin-bottom:12px;}
+.v7-contact__brief select,.v7-contact__brief textarea {display:block;width:100%;min-width:0;background:#181818;color:#fff;border:1px solid #5a5a5a;border-radius:0;padding:15px 16px;font-family:'Inter',Arial,sans-serif;font-size:.94rem;line-height:1.45;}
+.v7-contact__brief select {min-height:52px;margin-bottom:30px;}
+.v7-contact__brief textarea {resize:vertical;min-height:128px;margin-bottom:25px;}
+.v7-contact__brief select:focus-visible,.v7-contact__brief textarea:focus-visible,.v7-contact__brief button:focus-visible,.v7-contact a:focus-visible {outline:3px solid #E61E1E;outline-offset:3px;}
+.v7-contact__brief button {cursor:pointer;background:#E61E1E;color:#fff;border:1px solid #E61E1E;min-height:58px;padding:15px;font-weight:800;font-size:.92rem;text-align:left;transition:background .2s;}
+.v7-contact__brief button:hover {background:#c3141c;}
+.v7-contact__brief form>p {color:#999992;font-size:.76rem;line-height:1.55;margin-top:15px;}
+.v7-footer {background:#FAFAF8;color:#111;padding:clamp(60px,7vw,105px) 0 30px;}
+.v7-footer__shell {display:grid;grid-template-columns:1fr 1fr;gap:45px 30px;align-items:start;}
+.v7-footer__brand {display:block;width:min(460px,90%);aspect-ratio:3352/902;position:relative;overflow:hidden;}
+.v7-footer__brand img {display:block;width:122.2%;max-width:none;height:auto;transform:translate(-7.96%,-19.6%);}
+.v7-footer__nav {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;font-size:.95rem;font-weight:750;}
+.v7-footer__nav a {border-bottom:1px solid #d2d2ce;padding-bottom:12px;}
+.v7-footer__nav a:hover {border-bottom-color:#E61E1E;color:#E61E1E;}
+.v7-footer__bottom {grid-column:1/-1;border-top:1px solid #c7c7c1;display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;padding-top:23px;font:650 .7rem/1.6 'JetBrains Mono',monospace;letter-spacing:.055em;color:#696963;}
+@media(max-width:920px){
+.v7-contact__grid {grid-template-columns:1fr;}
+
+}
+@media(max-width:600px){
+
+
+
+.v7-contact__intro h2 {font-size:clamp(3.1rem,12vw,5rem);}
+.v7-footer__shell {grid-template-columns:1fr;}
+.v7-footer__bottom {grid-column:1;}
+.v7-footer__brand {width:min(320px,100%);}
+}
+@media(prefers-reduced-motion:reduce){.v7-contact__brief button {transition:none;}}
+</style>
+
+<script>
+  import { trackEvent } from '../lib/analytics';
+  const contactSection = document.getElementById('contact');
+  const sticky = document.querySelector<HTMLElement>('.whatsapp-sticky');
+  if (contactSection) {
+    const io = new IntersectionObserver(entries => {
+      const visible = entries[0]?.isIntersecting ?? false;
+      document.body.classList.toggle('wolfim-v7-contact-visible', visible);
+      if (sticky) sticky.inert = ['wolfim-v5-hero-visible','wolfim-v7-contact-visible','wolfim-v8-360-visible','wolfim-v9-method-visible'].some(c=>document.body.classList.contains(c));
+    }, {threshold:.1});
+    io.observe(contactSection);
+  }
+  const brief = document.getElementById('v7-contact-form') as HTMLFormElement | null;
+  brief?.addEventListener('submit',event=>{
+    event.preventDefault();
+    if (!brief.reportValidity()) return;
+    const model = (brief.querySelector('[name=model]') as HTMLSelectElement).value;
+    const challenge = (brief.querySelector('[name=challenge]') as HTMLTextAreaElement).value.trim();
+    if (challenge.length < 10) return;
+    const lang = document.documentElement.lang;
+    const greeting = lang==='en' ? 'Hello WOLFIM, I would like to discuss a digital business challenge.' : 'Hola WOLFIM, quiero conversar sobre un desafío de mi negocio.';
+    const label = lang==='en' ? 'Business model:' : 'Modelo de negocio:';
+    const detail = lang==='en' ? 'Challenge:' : 'Desafío:';
+    const message = [greeting, label+' '+model, detail+' '+challenge].join('\n\n');
+    // No backend submission. The visitor decides when to send in WhatsApp.
+    trackEvent('contact_brief_open_whatsapp', {component:'v7_contact',business_model:model});
+    window.location.assign('https://wa.me/5493513157202?text='+encodeURIComponent(message));
+  });
+</script>

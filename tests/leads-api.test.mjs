@@ -233,3 +233,26 @@ test('POST /api/leads: si repite una columna ya eliminada, degrada la siguiente 
     restore();
   }
 });
+
+test('POST /api/leads: valida datos antes de requerir credenciales', async () => {
+  const oldUrl = process.env.SUPABASE_URL;
+  const oldKey = process.env.SUPABASE_ANON_KEY;
+  delete process.env.SUPABASE_URL;
+  delete process.env.SUPABASE_ANON_KEY;
+  try {
+    const bad = await POST({ request: makeRequest({ name: 'Solo nombre' }) });
+    assert.equal(bad.status, 400, 'invalid forms must fail with 400 even without Supabase');
+    const valid = await POST({ request: makeRequest(validPayload) });
+    assert.equal(valid.status, 503, 'valid forms should indicate unavailable backend without credentials');
+  } finally {
+    if (oldUrl === undefined) delete process.env.SUPABASE_URL;
+    else process.env.SUPABASE_URL = oldUrl;
+    if (oldKey === undefined) delete process.env.SUPABASE_ANON_KEY;
+    else process.env.SUPABASE_ANON_KEY = oldKey;
+  }
+});
+
+test('POST /api/leads: JSON inválido responde 400', async () => {
+  const res = await POST({ request: { json: async () => { throw new SyntaxError('invalid JSON'); } } });
+  assert.equal(res.status, 400);
+});

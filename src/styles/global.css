@@ -3609,3 +3609,81 @@ li.desktop-only { display: flex !important; }
     border-radius: 0;
   }
 }
+
+/* WOLFIM V6 — CTA de navegación institucional */
+.nav__brief-cta {
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:10px 15px; background:#151515; color:#FAFAF8;
+  border:1px solid #151515; border-radius:2px;
+  font:750 .73rem/1 'Inter',Arial,sans-serif;
+  white-space:nowrap; text-decoration:none;
+}
+.nav__brief-cta:hover { background:#E61E1E; border-color:#E61E1E; color:#fff; }
+.nav__brief-cta:focus-visible { outline:3px solid #E61E1E; outline-offset:3px; }
+@media (max-width:1100px) { .nav__brief-cta { display:none; } }
+
+/* V6: la navegación institucional y el CTA Hablemos permanecen visibles. */
+.nav.nav--v6 { opacity:1; transform:none; }
+
+/* Logo WOLFIM / 57UD10 oficial 4K (transparente) — visible completo en cabeceras. */
+.nav__logo-img { display:block; height:clamp(22px,2.6vw,29px); width:auto; max-width:190px; object-fit:contain; }
+
+/* WOLFIM kinetic editorial V6.1 — subtle kinetic feedback, no template-like tricks. */
+.nav.nav--v6 { position: fixed; }
+.nav.nav--v6::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%; height: 2px;
+  transform: scaleX(var(--wolfim-progress, 0));
+  transform-origin: left center;
+  background: #E61E1E;
+  pointer-events: none;
+}
+.wolfim-hero-v5__redrule { transform-origin: left center; }
+.wolfim-hero-v5__action span[aria-hidden="true"] {
+  display: inline-block;
+  transition: transform .3s cubic-bezier(.16,1,.3,1);
+}
+.wolfim-hero-v5__action:hover span[aria-hidden="true"] {
+  transform: translate3d(3px,-3px,0);
+}
+.wolfim-v6-challenges__grid article {
+  transition: box-shadow .5s cubic-bezier(.16,1,.3,1), background .3s ease;
+}
+.wolfim-v6-challenges__grid article:hover {
+  box-shadow: inset 0 4px 0 #E61E1E;
+  background: #FFFFFF;
+}
+.wolfim-v6-solutions__items article .wolfim-v6-solutions__glyph {
+  transition: transform .3s cubic-bezier(.16,1,.3,1);
+}
+.wolfim-v6-solutions__items article:hover .wolfim-v6-solutions__glyph {
+  transform: translate3d(3px,-3px,0);
+}
+@media (prefers-reduced-motion:reduce) {
+  .nav.nav--v6::after { display:none; }
+  .wolfim-hero-v5__action span[aria-hidden="true"],
+  .wolfim-v6-challenges__grid article,
+  .wolfim-v6-solutions__items article .wolfim-v6-solutions__glyph { transition:none; }
+}
+
+/* WOLFIM V6.2: el logo pequeño de navegación solo emerge después del hero. */
+.nav.nav--v6 .nav__logo {
+  opacity:0;
+  visibility:hidden;
+  transform:translate3d(0,-10px,0);
+  pointer-events:none;
+  transition:opacity .45s cubic-bezier(.16,1,.3,1),
+             transform .45s cubic-bezier(.16,1,.3,1),
+             visibility .45s;
+}
+.nav.nav--v6.nav--identity-compact .nav__logo {
+  opacity:1;
+  visibility:visible;
+  transform:translate3d(0,0,0);
+  pointer-events:auto;
+}
+@media(prefers-reduced-motion:reduce) {
+  .nav.nav--v6 .nav__logo { transition:none; }
+}

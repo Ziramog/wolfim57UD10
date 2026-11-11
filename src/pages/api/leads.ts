@@ -118,14 +118,17 @@ const insertLead = async (supabaseUrl: string, supabaseKey: string, lead: Record
 };
 
 export const POST: APIRoute = async ({ request }) => {
-  const { url: supabaseUrl, key: supabaseKey } = getSupabaseEnv();
-
-  if (!supabaseUrl || !supabaseKey) {
-    return json({ error: 'Supabase not configured' }, 500);
-  }
-
   try {
-    const body = (await request.json()) as LeadPayload;
+    let body: LeadPayload;
+    try {
+      body = (await request.json()) as LeadPayload;
+    } catch {
+      return json({ error: 'Invalid JSON' }, 400);
+    }
+
+    if (!body || typeof body !== 'object' || Array.isArray(body)) {
+      return json({ error: 'Invalid JSON' }, 400);
+    }
     const name = sanitize(body.name);
     const website = sanitize(body.website);
     const whatsapp = sanitize(body.whatsapp);
@@ -134,6 +137,13 @@ export const POST: APIRoute = async ({ request }) => {
 
     if (!name || !website || !whatsapp) {
       return json({ error: 'Missing required fields' }, 400);
+    }
+
+    // Validación antes de consultar la configuración: solicitudes mal formadas
+    // siempre responden 400, aun en staging sin credenciales de Supabase.
+    const { url: supabaseUrl, key: supabaseKey } = getSupabaseEnv();
+    if (!supabaseUrl || !supabaseKey) {
+      return json({ error: 'Service unavailable' }, 503);
     }
 
     const payload: Record<string, unknown> = {

@@ -1,3 +1,5 @@
+import { v7Translations } from './v7-i18n.js';
+
 /* ═══════════════════════════════════════════════════════
    WOLFIM STUDIO — Interaction Layer
    Cinematic motion · Subtle · Precise · Bilingual
@@ -9,14 +11,81 @@
   // ─── TRANSLATIONS ───
   const translations = {
     en: {
+      ...v7Translations.en,
       // Nav
-      'nav.projects': 'Work',
+      'nav.projects': 'Projects',
       'nav.capabilities': 'Services',
       'nav.pricing': 'Pricing',
       'nav.process': 'Process',
       'nav.contact': 'Contact',
+      'nav.solutions': "Solutions",
+      'nav.digital360': "360°",
+      'nav.models': "Your business",
+      'nav.method': "Method",
+      'nav.talk': "Let's talk",
+      'v6.hero.kicker': "DIGITAL TRANSFORMATION 360°",
+      'v6.hero.description': "We digitize how your company presents itself, sells and operates.",
+      'v6.hero.primary': "Tell us your challenge",
+      'v6.hero.secondary': "Explore solutions",
+      'v6.hero.support': "Solutions for B2B, B2C and mixed operations.",
+      'v6.challenges.eyebrow': "REAL CHALLENGES",
+      'v6.challenges.aside': "BEFORE TALKING ABOUT TOOLS",
+      'v6.challenges.title': "Disconnected pieces make business harder.",
+      'v6.challenges.lead': "A brand, a commercial channel and an operation should move in the same direction. We start by identifying what lacks clarity.",
+      'v6.challenge1.title': "Scattered presentation",
+      'v6.challenge1.body': "An unclear value proposition or inconsistent identity makes it harder to explain what a company offers.",
+      'v6.challenge2.title': "Opportunities without follow-up",
+      'v6.challenge2.body': "Disconnected inquiries, quotes and sales teams add manual work and limit visibility.",
+      'v6.challenge3.title': "Channels that do not communicate",
+      'v6.challenge3.body': "Duplicated catalogs, stores, marketplaces and data complicate decisions and the buying experience.",
+      'v6.solutions.eyebrow': "INTEGRATED CAPABILITIES",
+      'v6.solutions.title1': "Three disciplines.",
+      'v6.solutions.title2': "One direction.",
+      'v6.solutions.lead': "Scope starts with the needs of each business, not a predetermined list of services.",
+      'v6.solutions.link': "Explore business models",
+      'v6.strategy.title': "Strategy",
+      'v6.strategy.body': "Business diagnosis, priorities, channel architecture and brand decisions.",
+      'v6.design.title': "Design",
+      'v6.design.body': "Identity, content, interfaces and experiences for each audience.",
+      'v6.technology.title': "Technology",
+      'v6.technology.body': "Development, catalogs, sales tools and integrations assessed for feasibility.",
+      'v6.models.eyebrow': "YOUR BUSINESS MODEL",
+      'v6.models.aside': "THREE PATHS, ONE STUDIO",
+      'v6.models.title': "Not every business sells the same way.",
+      'v6.models.lead': "Choose the model closest to your operation. These are starting points for a conversation, not fixed packages.",
+      'v6.b2b.label': "INDUSTRY / WHOLESALE / SERVICES",
+      'v6.b2b.title': "More commercial clarity. Fewer disconnected processes.",
+      'v6.b2b.body': "Private catalogs, quotations, CRM, follow-up and sector acquisition, as appropriate for your operation.",
+      'v6.b2b.cta': "Review my sales process",
+      'v6.b2c.label': "BRANDS / RETAIL / END CONSUMERS",
+      'v6.b2c.title': "A strong brand needs an equally strong buying experience.",
+      'v6.b2c.body': "Identity, ecommerce, catalogs, Mercado Libre and consistent selling experiences across channels.",
+      'v6.b2c.cta': "Review my sales channel",
+      'v6.mixto.label': "WHOLESALE + RETAIL / MULTICHANNEL",
+      'v6.mixto.title': "Two ways to sell. One organized strategy.",
+      'v6.mixto.body': "We assess catalogs, prices, permissions, stock, accounts and integrations while respecting commercial and legal boundaries.",
+      'v6.mixto.cta': "Review my multichannel operation",
 
       // Hero
+      'v5.pillar.strategy': 'STRATEGY',
+      'v5.pillar.design': 'DESIGN',
+      'v5.pillar.technology': 'TECHNOLOGY',
+      'v5.pillar.growth': 'GROWTH',
+      'v5.kicker': 'INDEPENDENT DIGITAL STUDIO',
+      'v5.line1': 'Looking good',
+      'v5.line2': "isn't enough.",
+      'v5.line3': 'It has to work.',
+      'v5.description': 'We combine strategy, design and technology to build brands, digital experiences and new commercial opportunities.',
+      'v5.projects': 'Explore projects',
+      'v5.start': 'Start a project',
+      'v5.direct': 'Prefer to speak directly?',
+      'v5.motion': 'ELEMENT 01 / GRAVITY',
+      'v5.restart': 'RESTART',
+      'v5.physics': 'INTERACTIVE PHYSICS',
+      'v5.drag': 'DRAG / RELEASE',
+      'v5.signature': 'STRATEGY THAT MOVES YOU FORWARD.',
+      'v5.scroll': 'SCROLL TO EXPLORE',
+
       'hero.label': 'Digital Design & Creative Technology',
       'hero.statement': 'Premium web design, digital catalogs and rebuilt sites that convert.',
       'hero.subtext': 'Custom websites, site reconstructions, visual catalogs and AI-powered production. For brands, properties, products and services.',
@@ -288,14 +357,81 @@
     },
 
     es: {
+      ...v7Translations.es,
       // Nav
-      'nav.projects': 'Trabajos',
+      'nav.projects': 'Proyectos',
       'nav.capabilities': 'Servicios',
       'nav.pricing': 'Precios',
       'nav.process': 'Proceso',
       'nav.contact': 'Contacto',
+      'nav.solutions': "Soluciones",
+      'nav.digital360': "360°",
+      'nav.models': "Tu negocio",
+      'nav.method': "Método",
+      'nav.talk': "Hablemos",
+      'v6.hero.kicker': "TRANSFORMACIÓN DIGITAL 360°",
+      'v6.hero.description': "Digitalizamos cómo tu empresa se presenta, vende y opera.",
+      'v6.hero.primary': "Contanos tu desafío",
+      'v6.hero.secondary': "Explorar soluciones",
+      'v6.hero.support': "Soluciones para negocios B2B, B2C y operaciones mixtas.",
+      'v6.challenges.eyebrow': "DESAFÍOS REALES",
+      'v6.challenges.aside': "ANTES DE HABLAR DE HERRAMIENTAS",
+      'v6.challenges.title': "Cuando las piezas no están conectadas, el negocio lo siente.",
+      'v6.challenges.lead': "Una marca, un canal comercial y una operación tienen que trabajar en la misma dirección. Empezamos por identificar dónde se pierde claridad.",
+      'v6.challenge1.title': "Presentación dispersa",
+      'v6.challenge1.body': "Una propuesta difícil de comprender o una identidad inconsistente hacen más complejo explicar el valor de la empresa.",
+      'v6.challenge2.title': "Oportunidades sin seguimiento",
+      'v6.challenge2.body': "Consultas, presupuestos y equipos comerciales desconectados generan trabajo manual y reducen la visibilidad del proceso.",
+      'v6.challenge3.title': "Canales que no dialogan",
+      'v6.challenge3.body': "Catálogos, tiendas, marketplaces y datos repetidos complican las decisiones y la experiencia de compra.",
+      'v6.solutions.eyebrow': "CAPACIDADES INTEGRADAS",
+      'v6.solutions.title1': "Tres disciplinas.",
+      'v6.solutions.title2': "Una dirección.",
+      'v6.solutions.lead': "El alcance se define por el problema de cada empresa, no por una lista predeterminada de servicios.",
+      'v6.solutions.link': "Conocer los modelos de negocio",
+      'v6.strategy.title': "Estrategia",
+      'v6.strategy.body': "Diagnóstico comercial, prioridades, arquitectura de canales y decisiones de marca.",
+      'v6.design.title': "Diseño",
+      'v6.design.body': "Identidad, contenido, interfaces y experiencias para cada audiencia.",
+      'v6.technology.title': "Tecnología",
+      'v6.technology.body': "Desarrollo, catálogos, herramientas comerciales e integraciones evaluadas por factibilidad.",
+      'v6.models.eyebrow': "TU MODELO DE NEGOCIO",
+      'v6.models.aside': "TRES RECORRIDOS, UN ESTUDIO",
+      'v6.models.title': "No todos los negocios venden de la misma manera.",
+      'v6.models.lead': "Elegí el modelo que más se acerca a tu operación. No son paquetes cerrados: son puntos de partida para conversar.",
+      'v6.b2b.label': "INDUSTRIAS / MAYORISTAS / SERVICIOS",
+      'v6.b2b.title': "Más claridad comercial. Menos procesos dispersos.",
+      'v6.b2b.body': "Catálogos privados, cotizaciones, CRM, seguimiento y captación sectorial, según las necesidades reales de tu operación.",
+      'v6.b2b.cta': "Revisar mi proceso comercial",
+      'v6.b2c.label': "MARCAS / COMERCIOS / CONSUMIDOR FINAL",
+      'v6.b2c.title': "Una marca sólida necesita una experiencia de compra a la altura.",
+      'v6.b2c.body': "Identidad, ecommerce, catálogos, Mercado Libre y experiencias de venta consistentes entre canales.",
+      'v6.b2c.cta': "Evaluar mi canal de venta",
+      'v6.mixto.label': "MAYORISTA + MINORISTA / MULTICANAL",
+      'v6.mixto.title': "Dos formas de vender. Una estrategia bien organizada.",
+      'v6.mixto.body': "Analizamos catálogos, precios, permisos, stock, cuentas e integraciones respetando las reglas comerciales y jurídicas de cada canal.",
+      'v6.mixto.cta': "Analizar mi operación multicanal",
 
       // Hero
+      'v5.pillar.strategy': 'ESTRATEGIA',
+      'v5.pillar.design': 'DISEÑO',
+      'v5.pillar.technology': 'TECNOLOGÍA',
+      'v5.pillar.growth': 'CRECIMIENTO',
+      'v5.kicker': 'ESTUDIO DIGITAL INDEPENDIENTE',
+      'v5.line1': 'Que se vea bien',
+      'v5.line2': 'no alcanza.',
+      'v5.line3': 'Tiene que funcionar.',
+      'v5.description': 'Integramos estrategia, diseño y tecnología para construir marcas, experiencias digitales y nuevas oportunidades comerciales.',
+      'v5.projects': 'Explorar proyectos',
+      'v5.start': 'Iniciar un proyecto',
+      'v5.direct': '¿Preferís conversar directamente?',
+      'v5.motion': 'ELEMENTO 01 / GRAVEDAD',
+      'v5.restart': 'REINICIAR',
+      'v5.physics': 'FÍSICA INTERACTIVA',
+      'v5.drag': 'ARRASTRAR / SOLTAR',
+      'v5.signature': 'ESTRATEGIA QUE IMPULSA TU DIRECCIÓN.',
+      'v5.scroll': 'DESLIZÁ PARA EXPLORAR',
+
       'hero.label': 'Diseño Digital & Tecnología Creativa',
       'hero.statement': 'Diseño web premium para catálogos y sitios que venden mejor.',
       'hero.subtext': 'Diseño web a medida, rediseño de sitios, catálogos digitales y producción visual con IA para marcas, propiedades, productos y servicios.',
@@ -543,18 +679,18 @@
 
   const metadata = {
     es: {
-      title: 'Diseño web premium y catálogos digitales | Wolfim Studio',
-      description: 'Diseño web premium a medida, rediseño de sitios, catálogos digitales, SEO y Google Ads para marcas, inmobiliarias, agencias de autos y negocios.',
+      title: 'WOLFIM / 57UD10 | Estudio de negocios digitales',
+      description: 'Estrategia, diseño y tecnología para mejorar cómo tu negocio se presenta, vende y opera. Soluciones B2B, B2C y multicanal.',
       keywords: 'diseño web premium, diseño web a medida, rediseño de sitio web, catálogo digital de productos, catálogo online inmobiliaria, SEO para sitios web, Google Ads, sitios web para agencias de autos',
-      ogTitle: 'Wolfim Studio — Diseño web premium y catálogos digitales',
-      ogDescription: 'Sitios web a medida, rediseños, catálogos online y SEO para negocios que necesitan una presencia digital clara, rápida y comercial.',
+      ogTitle: 'WOLFIM / 57UD10 — Estudio de negocios digitales',
+      ogDescription: 'Que se vea bien no alcanza. Tiene que funcionar. Estrategia y tecnología aplicadas a negocios digitales.',
     },
     en: {
-      title: 'Premium Web Design and Digital Catalogs | Wolfim Studio',
-      description: 'Premium custom web design, website redesigns, digital catalogs, SEO and Google Ads for brands, real estate firms, car dealerships and growing businesses.',
+      title: 'WOLFIM / 57UD10 | Digital Business Studio',
+      description: 'Strategy, design and technology to improve how your business presents itself, sells and operates. B2B, B2C and multichannel solutions.',
       keywords: 'premium web design, custom web design, website redesign, digital product catalog, real estate online catalog, SEO for websites, Google Ads, websites for car dealerships',
-      ogTitle: 'Wolfim Studio — Premium web design and digital catalogs',
-      ogDescription: 'Custom websites, redesigns, online catalogs and SEO for businesses that need a clear, fast and commercial digital presence.',
+      ogTitle: 'WOLFIM / 57UD10 — Strategy, Design & Technology',
+      ogDescription: 'Looking good is not enough. It has to work. Strategy, design and technology for digital business.',
     },
   };
 
@@ -580,6 +716,8 @@
   }
 
   function updateMetadata(lang) {
+    // Keep specialized landings' server-rendered metadata intact.
+    if (window.location.pathname !== '/') return;
     const meta = metadata[lang] || metadata.es;
     document.title = meta.title;
     setMeta('meta[name="description"]', 'content', meta.description);
@@ -880,6 +1018,14 @@
       nav.classList.remove('is-scrolled');
     }
 
+    // En la primera pantalla domina el logo grande; el logo de navegación
+    // aparece progresivamente cuando el visitante abandona el hero.
+    const heroHeight = document.getElementById('hero')?.offsetHeight || window.innerHeight;
+    const showNavMark = scrollY > heroHeight * .72;
+    nav.classList.toggle('nav--identity-compact', showNavMark);
+    const compactMark = document.getElementById('nav-logo');
+    if (compactMark) compactMark.inert = !showNavMark;
+
     if (scrollY > 100) {
       if (scrollY > lastScrollY && scrollY > 300) {
         nav.classList.add('nav--hidden');
@@ -900,6 +1046,7 @@
       ticking = true;
     }
   });
+  updateNav();
 
   // Mobile menu toggle with burger displacement effect
   menuBtn.addEventListener('click', () => {
@@ -972,23 +1119,6 @@
       document.body.style.overflow = '';
     });
   });
-
-
-  // ─── CLOCK ───
-  const timeEl = document.getElementById('nav-time');
-
-  function updateTime() {
-    const now = new Date();
-    const h = String(now.getHours()).padStart(2, '0');
-    const m = String(now.getMinutes()).padStart(2, '0');
-    const s = String(now.getSeconds()).padStart(2, '0');
-    if (timeEl) {
-      timeEl.textContent = `${h}:${m}:${s}`;
-    }
-  }
-
-  updateTime();
-  setInterval(updateTime, 1000);
 
 
   // ─── INTERSECTION OBSERVER — REVEAL ANIMATIONS ───
@@ -1360,9 +1490,11 @@
   // ─── SMOOTH ANCHOR SCROLL ───
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
+      const href = this.getAttribute('href');
+      if (!href || href === '#') return;
+      const target = document.getElementById(href.slice(1));
       if (target) {
+        e.preventDefault();
         const offsetTop = target.getBoundingClientRect().top + window.scrollY - 80;
         window.scrollTo({
           top: offsetTop,
@@ -1375,10 +1507,13 @@
 
   // ─── PARALLAX GRID LINES ───
   const gridLines = document.querySelectorAll('.hero__vline');
+  const oldHeroGrid = document.querySelector('.hero');
 
   function updateGridParallax() {
+    // El Hero V6 reemplaza el hero anterior. No consultar elementos inexistentes.
+    if (!oldHeroGrid || gridLines.length === 0) return;
     const scrollY = window.scrollY;
-    const heroHeight = document.querySelector('.hero').offsetHeight;
+    const heroHeight = oldHeroGrid.offsetHeight;
 
     if (scrollY < heroHeight) {
       const progress = scrollY / heroHeight;
@@ -1390,9 +1525,11 @@
     }
   }
 
-  window.addEventListener('scroll', () => {
-    requestAnimationFrame(updateGridParallax);
-  });
+  if (oldHeroGrid && gridLines.length) {
+    window.addEventListener('scroll', () => {
+      requestAnimationFrame(updateGridParallax);
+    });
+  }
 
 
   // ─── PROJECT IMAGE HOVER EFFECT ───

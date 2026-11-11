@@ -11,7 +11,7 @@ interface Props {
 
 const { 
   title, 
-  description = "Diseño web premium a medida, rediseño de sitios, catálogos digitales, SEO y Google Ads para marcas, inmobiliarias, agencias de autos y negocios.",
+  description = "Estrategia, diseño y tecnología para mejorar cómo tu negocio se presenta, vende y opera. Soluciones para B2B, B2C y operaciones mixtas.",
   ogImage = "https://www.wolfim.com/og-image.jpg",
   canonical
 } = Astro.props;
@@ -38,7 +38,7 @@ const trackingBootstrap = buildTrackingBootstrap();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title}</title>
   <meta name="description" content={description}>
-  <meta name="keywords" content="diseño web premium, diseño web a medida, rediseño de sitio web, catálogo digital de productos, catálogo online inmobiliaria, SEO para sitios web, Google Ads, sitios web para agencias de autos">
+  <meta name="keywords" content="estudio de negocios digitales, estrategia digital, identidad de marca, diseño web, soluciones B2B, ecommerce B2C, desarrollo de tecnología, catálogos digitales, transformación digital">
   <meta name="author" content="Wolfim Studio">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href={canonicalUrl}>
@@ -59,7 +59,7 @@ const trackingBootstrap = buildTrackingBootstrap();
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   
   <link rel="alternate" hreflang="es" href={canonicalUrl}>
   <link rel="alternate" hreflang="x-default" href={canonicalUrl}>
@@ -67,69 +67,19 @@ const trackingBootstrap = buildTrackingBootstrap();
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      "name": "Wolfim Studio",
+      "name": "WOLFIM / 57UD10",
       "url": "https://www.wolfim.com/",
-      "logo": "https://www.wolfim.com/wolfim_nobg.png",
-      "image": "https://www.wolfim.com/og-image.jpg",
-      "description": "Diseño web premium a medida, rediseño de sitios, catálogos digitales, SEO y Google Ads para marcas, inmobiliarias, agencias de autos y negocios.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "AR"
-      },
-      "priceRange": "$$$",
-      "sameAs": [
-        "https://www.instagram.com/wolfim.studio/"
-      ],
+      "logo": "https://www.wolfim.com/wolfim_logos/WOLFIM_57UD10_OFICIAL_4K.png",
+      "description": "Estudio de negocios digitales: estrategia, diseño y tecnología para marcas, canales y operaciones B2B, B2C y mixtas.",
+      "address": { "@type": "PostalAddress", "addressCountry": "AR" },
+      "sameAs": ["https://www.instagram.com/wolfim.studio/"],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Planes de diseño web premium",
+        "name": "Capacidades digitales",
         "itemListElement": [
-          {
-            "@type": "Offer",
-            "name": "Presencia Comercial",
-            "description": "Sitio premium compacto con propuesta de valor clara, servicios, WhatsApp, formulario y SEO básico. Para PYMES y profesionales.",
-            "priceCurrency": "USD",
-            "price": "200",
-            "priceSpecification": {
-              "@type": "UnitPriceSpecification",
-              "price": "200",
-              "priceCurrency": "USD",
-              "referenceQuantity": { "@type": "QuantitativeValue", "value": "1" }
-            },
-            "url": "https://www.wolfim.com/#plan-presencia-comercial"
-          },
-          {
-            "@type": "Offer",
-            "name": "Loteo Activo",
-            "description": "Landing premium con storytelling, ubicación, galería, video, lotes con estados y precios, y campaña Meta inicial. Para desarrollos y lotes.",
-            "priceCurrency": "USD",
-            "price": "450",
-            "url": "https://www.wolfim.com/#plan-loteo-activo"
-          },
-          {
-            "@type": "Offer",
-            "name": "AutoLead Catálogo",
-            "description": "Catálogo de unidades con fichas individuales, fotos, datos, precio, WhatsApp por vehículo y panel de actualización. Para agencias de autos.",
-            "priceCurrency": "USD",
-            "price": "450",
-            "url": "https://www.wolfim.com/#plan-autolead-catalogo"
-          },
-          {
-            "@type": "Offer",
-            "name": "Portal Inmobiliario",
-            "description": "Home premium con catálogo de propiedades, fichas individuales, filtros, buscador y CMS. Para inmobiliarias.",
-            "priceCurrency": "USD",
-            "price": "650",
-            "url": "https://www.wolfim.com/#plan-portal-inmobiliario"
-          },
-          {
-            "@type": "Offer",
-            "name": "Tienda Online",
-            "description": "Catálogo de productos con carrito, checkout, pagos online, gestión de pedidos y panel administrativo. Ecommerce completo.",
-            "priceCurrency": "USD",
-            "price": "650",
-            "url": "https://www.wolfim.com/#plan-tienda-online"
-          }
+          { "@type": "OfferCatalog", "name": "Estrategia" },
+          { "@type": "OfferCatalog", "name": "Diseño" },
+          { "@type": "OfferCatalog", "name": "Tecnología" }
         ]
       }
     }
