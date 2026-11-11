@@ -1646,40 +1646,21 @@ import { v7Translations } from './v7-i18n.js';
     });
   });
 
-  // Pricing view — una sola vez por carga y alcanzable en cualquier viewport.
-  // B1 (revisión 2026-10-27): con `threshold: 0.5` sobre #pricing el evento era
-  // imposible en mobile (sección de ~3500 px en un viewport de 844 px: haría
-  // falta ver 1744 px). Ahora se observa la primera `.pricing-card` y el umbral
-  // se acota a lo que el viewport puede cubrir del target, así que siempre hay
-  // un ratio alcanzable.
-  const pricingSection = document.getElementById('pricing');
-  const pricingTarget =
-    (pricingSection && pricingSection.querySelector('.pricing-card')) || pricingSection;
-  if (pricingTarget && 'IntersectionObserver' in window) {
-    let pricingViewed = false;
-    const pricingViewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
-    const pricingTargetHeight = pricingTarget.getBoundingClientRect().height || 0;
-    // Cobertura máxima real del target dentro del viewport (1 = entra entero).
-    const maxReachableRatio =
-      pricingViewportHeight > 0 && pricingTargetHeight > 0
-        ? Math.min(1, pricingViewportHeight / pricingTargetHeight)
-        : 1;
-    // La mitad de esa cobertura, nunca más de 0.5 y nunca menos de 0.01.
-    const pricingThreshold = Math.min(0.5, Math.max(0.01, maxReachableRatio * 0.5));
-
-    const pricingObserver = new IntersectionObserver((entries) => {
+  // Visualización real del módulo Transformación Digital 360°.
+  // El histórico view_pricing NO se emite: ya no existe una tabla de precios.
+  // Observamos el titular, no toda la sección ni un ancla de compatibilidad.
+  const digital360Heading = document.getElementById("wolfim-v8-360-heading");
+  if (digital360Heading && "IntersectionObserver" in window) {
+    let digital360Viewed = false;
+    const digital360Observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (!entry.isIntersecting || pricingViewed) return;
-        pricingViewed = true;
-        trackEvent('view_pricing', {
-          section: 'pricing',
-          target: entry.target.classList.contains('pricing-card') ? 'pricing_card' : 'pricing_section',
-          threshold: Number(pricingThreshold.toFixed(3)),
-        });
-        pricingObserver.unobserve(entry.target);
+        if (!entry.isIntersecting || digital360Viewed) return;
+        digital360Viewed = true;
+        trackEvent("view_digital360", { component: "home_digital360" });
+        digital360Observer.unobserve(entry.target);
       });
-    }, { threshold: pricingThreshold });
-    pricingObserver.observe(pricingTarget);
+    }, { threshold: 0.5 });
+    digital360Observer.observe(digital360Heading);
   }
 
   // ─── LAZY LOAD PROJECT VIDEOS ───

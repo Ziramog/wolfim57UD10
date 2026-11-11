@@ -406,14 +406,18 @@ const description = "Detectá errores que frenan consultas en tu sitio web. Diag
           hasError = true;
         } else {
           try {
-            new URL(website.startsWith('http') ? website : 'https://' + website);
+            const parsedWebsite = new URL(/^https?:\/\//i.test(website) ? website : 'https://' + website);
+            if (!['http:', 'https:'].includes(parsedWebsite.protocol) ||
+                !parsedWebsite.hostname.includes('.') || parsedWebsite.username || parsedWebsite.password) {
+              throw new Error('La URL debe ser un sitio público http(s)');
+            }
           } catch {
             const err = document.getElementById('error-website');
             if (err) err.textContent = 'URL no válida';
             hasError = true;
           }
         }
-        if (!whatsapp || whatsapp.replace(/\D/g, '').length < 8) {
+        if (!whatsapp || !/^[+\d\s().-]+$/.test(whatsapp) || whatsapp.replace(/\D/g, '').length < 8 || whatsapp.replace(/\D/g, '').length > 15) {
           const err = document.getElementById('error-whatsapp');
           if (err) err.textContent = 'Ingresá un número válido';
           hasError = true;

@@ -35,6 +35,44 @@ const json = (body: Record<string, unknown>, status: number) =>
 
 const sanitize = (value: unknown) => (typeof value === 'string' ? value.trim() : '');
 
+const isValidPublicWebsite = (website: string): boolean => {
+  if (website.length < 4 || website.length > 255 || /[\s<>"'\\]/.test(website)) return false;
+  if (/^[a-z][a-z0-9+.-]*:/i.test(website) && !/^https?:\/\//i.test(website)) return false;
+  try {
+    const url = new URL(/^https?:\/\//i.test(website) ? website : 'https://' + website);
+    const host = url.hostname;
+    return (
+      (url.protocol === 'http:' || url.protocol === 'https:') &&
+      !url.username && !url.password &&
+      host.includes('.') && host.length <= 253 &&
+      host.split('.').every(label => label.length >= 1 && label.length <= 63 && /^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i.test(label))
+    );
+  } catch {
+    return false;
+  }
+};
+
+const isValidWhatsapp = (phone: string): boolean => {
+  if (phone.length < 8 || phone.length > 32 || !/^[+\d\s().-]+$/.test(phone)) return false;
+  const digits = phone.replace(/\D/g, '');
+  return digits.length >= 8 && digits.length <= 15 && (phone.match(/\+/g) || []).length <= 1;
+};
+
+const sanitizeUtms = (value: unknown): Utms => {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return {};
+  const raw = value as Record<string, unknown>;
+  const keys: (keyof Utms)[] = [
+    'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
+    'gclid', 'fbclid', 'msclkid',
+  ];
+  const clean: Utms = {};
+  for (const key of keys) {
+    const text = sanitize(raw[key]);
+    if (text) clean[key] = text.slice(0, 200);
+  }
+  return clean;
+};
+
 const getSupabaseEnv = () => {
   const runtimeEnv = (globalThis as RuntimeGlobal).process?.env;
 
@@ -132,11 +170,14 @@ export const POST: APIRoute = async ({ request }) => {
     const name = sanitize(body.name);
     const website = sanitize(body.website);
     const whatsapp = sanitize(body.whatsapp);
-    const utms = body.utms || {};
-    const source = sanitize(body.source) || deriveSource(utms);
+    const utms = sanitizeUtms(body.utms);
+    const source = (sanitize(body.source) || deriveSource(utms)).slice(0, 150);
 
     if (!name || !website || !whatsapp) {
       return json({ error: 'Missing required fields' }, 400);
+    }
+    if (name.length > 120 || !isValidPublicWebsite(website) || !isValidWhatsapp(whatsapp)) {
+      return json({ error: 'Invalid contact fields' }, 400);
     }
 
     // Validación antes de consultar la configuración: solicitudes mal formadas

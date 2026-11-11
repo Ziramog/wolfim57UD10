@@ -226,31 +226,18 @@ test('WhatsApp: legacy script.js no instala trackers extra y mantiene pricing ob
   const source = await readFile(path.join(ROOT,'src','scripts','script.js'),'utf8');
   assert.doesNotMatch(source, /trackEvent\s*\(\s*['"]click_whatsapp['"]/, 'el script de navegación no debe emitir el evento click_whatsapp');
   assert.doesNotMatch(source, /querySelectorAll\([^)]*wa\.me/, 'el script de navegación no debe instalar listeners para links de WhatsApp');
-  assert.match(source,/pricingObserver\.unobserve\(entry\.target\)/,'la protección legacy se mantiene para otras rutas');
+  assert.match(source,/digital360Observer\.unobserve\(entry\.target\)/,'solo una visualización 360° por carga');
 });
 
 // ─── guardas de fuente (semántica de eventos) ───────────────────────────────
 
-test('view_pricing: observa una pricing-card con umbral alcanzable y una sola vez', async () => {
+test('view_digital360: mide el título real, nunca una ancla antigua de precios', async () => {
   const source = await readFile(path.join(ROOT, 'src', 'scripts', 'script.js'), 'utf8');
-
-  assert.match(source, /pricingViewed/);
-  assert.match(source, /pricingObserver\.unobserve\(entry\.target\)/);
-  assert.match(source, /if \(!entry\.isIntersecting \|\| pricingViewed\) return;/);
-
-  // B1: el target ya no es la sección completa y el threshold se acota al viewport.
-  assert.match(
-    source,
-    /pricingSection\.querySelector\('\.pricing-card'\)/,
-    'view_pricing debe observar la primera pricing-card'
-  );
-  assert.match(source, /Math\.min\(0\.5, Math\.max\(0\.01,/, 'el umbral debe acotarse a lo alcanzable');
-  assert.match(source, /threshold: pricingThreshold/, 'el observer debe usar el umbral calculado');
-  assert.equal(
-    /\{ threshold: 0\.5 \}\);?\s*\n\s*pricingObserver\.observe/.test(source),
-    false,
-    'no debe volver el threshold fijo de 0.5 sobre la sección completa'
-  );
+  assert.match(source, /getElementById\("wolfim-v8-360-heading"\)/);
+  assert.match(source, /digital360Observer\.unobserve\(entry\.target\)/);
+  assert.match(source, /if \(!entry\.isIntersecting \|\| digital360Viewed\) return;/);
+  assert.match(source, /trackEvent\("view_digital360"/);
+  assert.doesNotMatch(source, /trackEvent\(['"]view_pricing['"]/);
 });
 
 test('diagnóstico: el evento se emite después de res.ok y existe form_error', async () => {

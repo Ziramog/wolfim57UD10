@@ -256,3 +256,39 @@ test('POST /api/leads: JSON inválido responde 400', async () => {
   const res = await POST({ request: { json: async () => { throw new SyntaxError('invalid JSON'); } } });
   assert.equal(res.status, 400);
 });
+
+test('POST /api/leads: rechaza web, teléfono o nombre inválidos sin consultar la base', async () => {
+  const invalid = [
+    {...validPayload,website:'javascript:alert(1)'},
+    {...validPayload,website:'http://localhost'},
+    {...validPayload,website:'https://user:secret@ejemplo.com'},
+    {...validPayload,website:'no-dominio'},
+    {...validPayload,website:'https://dominio .com'},
+    {...validPayload,whatsapp:'1234567'},
+    {...validPayload,whatsapp:'351ABC1234'},
+    {...validPayload,whatsapp:'1234567890123456'},
+    {...validPayload,name:'a'.repeat(121)}
+  ];
+  const {sent,restore}=mockFetch([]);
+  try{
+    for (const payload of invalid) {
+      const res=await POST({request:makeRequest(payload)});
+      assert.equal(res.status,400, 'un campo inválido no puede generar un lead');
+    }
+    assert.equal(sent.length,0);
+  } finally {restore();}
+});
+test('POST /api/leads: limpia UTM no textual y limita longitudes', async () => {
+  const {sent,restore}=mockFetch([jsonResponse({},201)]);
+  try{
+    const res=await POST({request:makeRequest({
+      ...validPayload,
+      utms:{utm_source:123,utm_campaign:'A'.repeat(300),gclid:'C'.repeat(400)}
+    })});
+    assert.equal(res.status,200);
+    assert.equal(sent[0].body.utm_source,null);
+    assert.equal(sent[0].body.utm_campaign.length,200);
+    assert.equal(sent[0].body.gclid.length,200);
+    assert.equal(sent[0].body.source,'google_ads');
+  }finally{restore();}
+});
