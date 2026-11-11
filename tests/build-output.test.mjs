@@ -146,12 +146,9 @@ test('SEO: canonical propio por página y hreflang consistente en https://www', 
     );
   }
 
-  // /inmobiliarias queda fuera de la normalización a propósito: su archivo está
-  // protegido (rediseño no commiteado) y hoy declara canonical/ogImage con el
-  // apex. Sigue teniendo canonical propio por página, que es lo que este test
-  // puede garantizar sin tocar ese archivo.
+  // La landing inmobiliaria también usa el host canónico www.
   const inmo = await readPage('inmobiliarias/index.html');
-  assert.equal(canonicalOf(inmo), 'https://wolfim.com/inmobiliarias', 'inmobiliarias: canonical propio');
+  assert.equal(canonicalOf(inmo), `${SITE_ORIGIN}/inmobiliarias`, 'inmobiliarias: canonical propio');
   const inmoAlternates = hreflangsOf(inmo);
   assert.ok(inmoAlternates.some((a) => a.lang === 'es'), 'inmobiliarias: falta hreflang es');
   assert.ok(inmoAlternates.some((a) => a.lang === 'x-default'), 'inmobiliarias: falta x-default');
