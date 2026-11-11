@@ -347,8 +347,11 @@ img {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
-  width: 28px;
+  justify-content: center;
+  padding: 10px 9px;
+  width: 44px;
+  min-height: 44px;
+  flex: none;
 }
 
 .nav__menu-btn span {
@@ -3686,4 +3689,10 @@ li.desktop-only { display: flex !important; }
 }
 @media(prefers-reduced-motion:reduce) {
   .nav.nav--v6 .nav__logo { transition:none; }
+}
+
+/* V11: tamaño táctil y separación del menú móvil sin modificar el lenguaje visual. */
+@media (max-width: 420px) {
+  .nav__meta { gap: 8px; }
+  .nav__logo-img { height: 25px; }
 }
