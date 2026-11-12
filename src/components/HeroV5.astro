@@ -61,7 +61,7 @@
 <style>
 .wolfim-hero-v5 {
   --v5-ink:#090909; --v5-red:#E61E1E; --v5-paper:#FAFAF8;
-  position:relative; isolation:isolate; overflow:hidden; width:100%;
+  position:sticky; top:0; z-index:1; isolation:isolate; overflow:hidden; width:100%;
   height:100vh; height:100svh; min-height:0;
   padding:clamp(76px,9.5vh,100px) 0 clamp(14px,2.2vh,24px);
   color:var(--v5-ink); background:var(--v5-paper); font-family:'Inter',Arial,sans-serif;
@@ -215,6 +215,8 @@
   .wolfim-hero-v5__baseline { display:none; }
 }
 @media (prefers-reduced-motion:reduce) {
+  /* Sin solapamiento tipo cortina cuando el usuario prefiere reducir movimiento. */
+  .wolfim-hero-v5 { position:relative; top:auto; }
   .wolfim-hero-v5__action { transition:none; }
   .wolfim-hero-v5__action:hover { transform:none; }
   .wolfim-hero-v5__falling-cube { will-change:auto; }
@@ -372,13 +374,27 @@
       started=true;
       play();
     });
-    const observer=new IntersectionObserver(entries=>{
-      visible=entries[0]?.isIntersecting??true;
-      document.body.classList.toggle('wolfim-v5-hero-visible',visible);
+    // El hero es sticky: IntersectionObserver lo seguiría considerando visible
+    // incluso cuando la cortina lo tapa. La visibilidad se define por la
+    // posición real de la primera sección, con un único RAF por scroll.
+    const curtain = document.getElementById('desafios');
+    let exposureFrame = 0;
+    const syncHeroExposure = () => {
+      const edge = curtain?.getBoundingClientRect().top ?? window.innerHeight;
+      // Con el hero completamente tapado no debe quedar foco interactivo detrás.
+      hero.inert = edge <= 0;
+      visible = edge > window.innerHeight * .38;
+      document.body.classList.toggle('wolfim-v5-hero-visible', visible);
       if (floatingWhatsapp) floatingWhatsapp.inert = ['wolfim-v5-hero-visible','wolfim-v7-contact-visible','wolfim-v8-360-visible','wolfim-v9-method-visible'].some(c=>document.body.classList.contains(c));
-      if(visible)play();else stop();
-    },{threshold:.01});
-    observer.observe(hero);
+      if (visible) play(); else stop();
+    };
+    const queueHeroExposure = () => {
+      if (exposureFrame) return;
+      exposureFrame = requestAnimationFrame(() => { exposureFrame = 0; syncHeroExposure(); });
+    };
+    window.addEventListener('scroll', queueHeroExposure, {passive:true});
+    window.addEventListener('resize', queueHeroExposure, {passive:true});
+    syncHeroExposure();
     window.addEventListener('resize',()=>{
       const b=bounds();
       physics.x=started?Math.max(0,Math.min(b.right,physics.x)):b.x;

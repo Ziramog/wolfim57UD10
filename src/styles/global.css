@@ -3696,3 +3696,17 @@ li.desktop-only { display: flex !important; }
   .nav__meta { gap: 8px; }
   .nav__logo-img { height: 25px; }
 }
+
+/* WOLFIM V13 — cortina editorial al pasar de /000 a 01.
+   El hero permanece fijo detrás; las secciones siguientes cubren su superficie.
+   El header de navegación conserva prioridad z-index:1000. */
+#main-content.wolfim-v13-curtain-front {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+}
+#contact.v7-contact,
+.v7-footer {
+  position: relative;
+  z-index: 2;
+}

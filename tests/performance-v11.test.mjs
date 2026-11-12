@@ -29,7 +29,7 @@ test('V11 font CSS is nonblocking without losing the fallback',()=>{
  assert.match(layout,/rel="preload" as="style"/);
 });
 test('V11 accessibility landmarks and buttons',()=>{
- assert.match(page,/<main id="main-content">/);
+ assert.match(page,/<main id="main-content"(?:\s|>)/);
  assert.match(page,/<\/main>/);
  assert.match(page,/id="lang-toggle" title="Cambiar idioma"/);
  assert.doesNotMatch(page,/aria-label="Toggle language"/);

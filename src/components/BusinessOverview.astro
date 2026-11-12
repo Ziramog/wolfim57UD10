@@ -124,7 +124,14 @@ const whatsapp = (text: string) => 'https://wa.me/5493513157202?text=' + encodeU
   .wolfim-v6-wrap { width:min(1335px,calc(100% - clamp(36px,7vw,120px))); margin:0 auto; }
   .wolfim-v9-legacy-anchor {display:block;position:absolute;top:0;left:0;width:1px;height:1px;pointer-events:none;scroll-margin-top:72px;}
   .wolfim-v6-challenges,.wolfim-v6-solutions,.wolfim-v6-models { position:relative; isolation:isolate; scroll-margin-top:68px; font-family:'Inter',Arial,sans-serif; }
-  .wolfim-v6-challenges { padding:clamp(88px,10vw,150px) 0 clamp(78px,8vw,130px); color:#121212; background:#FAFAF8; }
+  /* V13: panel delantero; al desplazarse cubre gradualmente el hero sticky.
+     Sin transformaciones JS, sin nueva altura ficticia y sin modificar el flujo. */
+  .wolfim-v6-challenges {
+    padding:clamp(88px,10vw,150px) 0 clamp(78px,8vw,130px);
+    color:#121212; background:#FAFAF8;
+    border-radius:clamp(12px,1.6vw,20px) clamp(12px,1.6vw,20px) 0 0;
+    box-shadow:0 -18px 48px rgba(13,13,13,.14);
+  }
   .wolfim-v6-sectionhead { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding-bottom:18px; border-bottom:1px solid #c9c9c4; }
   .wolfim-v6-eyebrow,.wolfim-v6-aside { font:650 clamp(.62rem,.74vw,.75rem)/1.5 'JetBrains Mono',monospace; letter-spacing:.09em; }
   .wolfim-v6-eyebrow { color:#242424; }.wolfim-v6-aside { color:#666660; }

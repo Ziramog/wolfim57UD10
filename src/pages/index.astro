@@ -68,7 +68,7 @@ import Transformacion360V8 from '../components/Transformacion360V8.astro';
   <!-- HERO V6.2 — dirección cinética oficial -->
   <HeroV5 />
 
-  <main id="main-content">
+  <main id="main-content" class="wolfim-v13-curtain-front">
   <!-- V6: problemas, capacidades y tres recorridos comerciales -->
   <BusinessOverview />
   <KineticDirection />
@@ -112,6 +112,14 @@ import Transformacion360V8 from '../components/Transformacion360V8.astro';
 
   // 3. Eventos de navegación / CTA
   document.addEventListener('DOMContentLoaded', () => {
+    // El hero sticky siempre tiene top:0 en pantalla; al pulsar el logo
+    // debemos volver a la posición real 0, no hacer scrollIntoView(hero).
+    const brandHome = document.getElementById('nav-logo');
+    brandHome?.addEventListener('click', event => {
+      event.preventDefault();
+      window.scrollTo({ top:0, behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+      if (window.location.hash) history.replaceState(null,'',window.location.pathname+window.location.search);
+    });
     // V6: CTA genérico al contacto comercial real y acceso a soluciones.
     const heroChallenge = document.querySelector('[data-v6-cta="challenge"]');
     if (heroChallenge) {
