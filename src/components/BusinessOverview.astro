@@ -4,28 +4,19 @@
  * Sin nuevos endpoints ni afirmaciones de proyectos implementados.
  * Cada modelo mantiene una vía de conversación real por WhatsApp.
  */
-import ChallengeGraphicV14 from './ChallengeGraphicV14.astro';
-import ScrollVelocityV14 from './ScrollVelocityV14.astro';
 const whatsapp = (text: string) => 'https://wa.me/5493513157202?text=' + encodeURIComponent(text);
 ---
 
-<section id="desafios" class="wolfim-v6-challenges wolfim-v14-challenges" aria-labelledby="v6-challenges-title">
+<section id="desafios" class="wolfim-v6-challenges" aria-labelledby="v6-challenges-title">
   <div class="wolfim-v6-wrap">
     <div class="wolfim-v6-sectionhead">
       <span class="wolfim-v6-eyebrow">01 / <span data-i18n="v6.challenges.eyebrow">DESAFÍOS REALES</span></span>
       <span class="wolfim-v6-aside" data-i18n="v6.challenges.aside">ANTES DE HABLAR DE HERRAMIENTAS</span>
     </div>
-    <div class="wolfim-v14-challenges__story">
     <div class="wolfim-v6-challenges__heading" data-kinetic-scroll>
       <h2 id="v6-challenges-title" data-i18n="v6.challenges.title">Cuando las piezas no están conectadas, el negocio lo siente.</h2>
       <p data-i18n="v6.challenges.lead">Una marca, un canal comercial y una operación tienen que trabajar en la misma dirección. Empezamos por identificar dónde se pierde claridad.</p>
-      <span class="wolfim-v14-challenges__micro-sign" data-i18n="v14.micro">/ SISTEMAS · COMERCIO · CRECIMIENTO</span>
     </div>
-    <ChallengeGraphicV14 />
-    </div>
-  </div>
-  <ScrollVelocityV14 />
-  <div class="wolfim-v6-wrap wolfim-v14-challenges__lower">
     <p class="wolfim-v6-audience" data-i18n="v6.hero.support">Soluciones para negocios B2B, B2C y operaciones mixtas.</p>
     <div class="wolfim-v6-challenges__grid">
       <article data-kinetic-scroll data-kinetic-order="0" data-kinetic-distance="55">
@@ -130,7 +121,6 @@ const whatsapp = (text: string) => 'https://wa.me/5493513157202?text=' + encodeU
 </section>
 
 <style>
-
   .wolfim-v6-wrap { width:min(1335px,calc(100% - clamp(36px,7vw,120px))); margin:0 auto; }
   .wolfim-v9-legacy-anchor {display:block;position:absolute;top:0;left:0;width:1px;height:1px;pointer-events:none;scroll-margin-top:72px;}
   .wolfim-v6-challenges,.wolfim-v6-solutions,.wolfim-v6-models { position:relative; isolation:isolate; scroll-margin-top:68px; font-family:'Inter',Arial,sans-serif; }
@@ -197,89 +187,6 @@ const whatsapp = (text: string) => 'https://wa.me/5493513157202?text=' + encodeU
     .wolfim-v6-challenges__heading h2,.wolfim-v6-models__head h2 { font-size:clamp(2.5rem,10vw,4rem); }
   }
   @media(prefers-reduced-motion:reduce) { .wolfim-v6-models__tabs button { transition:none; } }
-  /* V14 · Sección de alto contraste con parallax vectorial y scroll velocity.
-     Descartada la cortina V13: hero y flujo original sin sticky ni recubrimientos. */
-  .wolfim-v14-challenges{
-    background:radial-gradient(ellipse at 23% 0%,rgba(100,103,99,.17),transparent 57%),linear-gradient(145deg,#1d1e1d 0%,#181a19 54%,#141514 100%);
-    color:#f8f8f3;overflow:clip;padding-bottom:clamp(85px,8vw,135px);
-  }
-  .wolfim-v14-challenges .wolfim-v6-sectionhead{border-bottom-color:rgba(235,236,229,.25);}
-  .wolfim-v14-challenges .wolfim-v6-eyebrow{color:#f5f5f1;}
-  .wolfim-v14-challenges .wolfim-v6-aside{color:#babbb5;}
-  .wolfim-v14-challenges__story{
-    display:grid;grid-template-columns:minmax(0,.91fr) minmax(0,1.09fr);
-    align-items:center;gap:clamp(30px,5vw,95px);
-    padding:clamp(55px,7vw,105px) 0 clamp(50px,6vw,95px);
-  }
-  .wolfim-v14-challenges .wolfim-v6-challenges__heading{
-    display:flex;flex-direction:column;align-items:flex-start;gap:0;padding:0;min-width:0;
-  }
-  .wolfim-v14-challenges .wolfim-v6-challenges__heading h2{
-    font-size:clamp(3.15rem,5.4vw,6.4rem);
-    max-width:720px;letter-spacing:-.077em;line-height:1.035;
-    color:#f7f7f1;text-wrap:balance;
-  }
-  .wolfim-v14-challenges .wolfim-v6-challenges__heading p{
-    font-size:clamp(.95rem,1.13vw,1.09rem);color:#c2c2ba;
-    max-width:480px;line-height:1.65;margin-top:clamp(25px,3vw,44px);
-  }
-  .wolfim-v14-challenges__micro-sign{
-    border-left:3px solid #ef3030;padding-left:14px;
-    margin-top:30px;color:#d2d1ca;
-    font:750 clamp(.58rem,.75vw,.72rem)/1.6 'JetBrains Mono',monospace;
-    letter-spacing:.065em;
-  }
-  .wolfim-v14-challenges__lower{padding-top:clamp(55px,6vw,95px);}
-  .wolfim-v14-challenges .wolfim-v6-audience{
-    color:#d8d8d1;margin:0 0 clamp(25px,3vw,38px);
-    padding-bottom:16px;border-bottom:1px solid #525450;
-    display:flex;align-items:center;gap:14px;
-  }
-  .wolfim-v14-challenges .wolfim-v6-audience::before{
-    content:"";width:18px;height:2px;background:#f13836;flex:none;
-  }
-  .wolfim-v14-challenges .wolfim-v6-challenges__grid{
-    border-color:#424440;background:#424440;gap:1px;
-    box-shadow:0 30px 60px rgba(0,0,0,.15);
-  }
-  .wolfim-v14-challenges .wolfim-v6-challenges__grid article{
-    background:#252725;min-height:280px;position:relative;
-    transition:background .26s ease;
-  }
-  .wolfim-v14-challenges .wolfim-v6-challenges__grid article::before{
-    content:"";position:absolute;top:0;left:0;right:0;height:2px;
-    background:#e61e1e;transform:scaleX(0);transform-origin:left;transition:transform .3s ease;
-  }
-  .wolfim-v14-challenges .wolfim-v6-challenges__grid article:hover{background:#303230;}
-  .wolfim-v14-challenges .wolfim-v6-challenges__grid article:hover::before{transform:scaleX(1);}
-  .wolfim-v14-challenges .wolfim-v6-challenges__grid article>span{color:#ff6765;}
-  .wolfim-v14-challenges .wolfim-v6-challenges__grid h3{
-    color:#f8f8f3;font-weight:825;font-size:clamp(1.36rem,1.9vw,1.95rem);
-  }
-  .wolfim-v14-challenges .wolfim-v6-challenges__grid p{color:#c3c3bb;}
-  @media(max-width:1050px){
-    .wolfim-v14-challenges__story{gap:clamp(24px,3vw,45px);}
-    .wolfim-v14-challenges .wolfim-v6-challenges__heading h2{font-size:clamp(3rem,5vw,5rem);}
-  }
-  @media(max-width:760px){
-    .wolfim-v14-challenges__story{
-      grid-template-columns:1fr;gap:clamp(28px,6vw,52px);
-      padding-top:clamp(42px,8vw,70px);padding-bottom:clamp(40px,7vw,65px);
-    }
-    .wolfim-v14-challenges .wolfim-v6-challenges__heading h2{font-size:clamp(2.9rem,9vw,5.6rem);}
-    .wolfim-v14-challenges .wolfim-v6-challenges__heading p{margin-top:20px;max-width:680px;}
-    .wolfim-v14-challenges__micro-sign{margin-top:20px;}
-    .wolfim-v14-challenges__lower{padding-top:55px;}
-  }
-  @media(max-width:640px){
-    .wolfim-v14-challenges .wolfim-v6-challenges__grid article{min-height:0;}
-    .wolfim-v14-challenges .wolfim-v6-challenges__heading h2{font-size:clamp(2.85rem,10.6vw,4rem);}
-    .wolfim-v14-challenges .wolfim-v6-audience{font-size:.63rem;letter-spacing:0;}
-  }
-  @media(prefers-reduced-motion:reduce){
-    .wolfim-v14-challenges .wolfim-v6-challenges__grid article,
-    .wolfim-v14-challenges .wolfim-v6-challenges__grid article::before{transition:none;}
-  }
 </style>
 
 <script>
