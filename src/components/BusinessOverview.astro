@@ -4,6 +4,7 @@
  * Sin nuevos endpoints ni afirmaciones de proyectos implementados.
  * Cada modelo mantiene una vía de conversación real por WhatsApp.
  */
+import Orbit360V15 from './Orbit360V15.astro';
 const whatsapp = (text: string) => 'https://wa.me/5493513157202?text=' + encodeURIComponent(text);
 ---
 
@@ -11,28 +12,31 @@ const whatsapp = (text: string) => 'https://wa.me/5493513157202?text=' + encodeU
   <div class="wolfim-v6-wrap">
     <div class="wolfim-v6-sectionhead">
       <span class="wolfim-v6-eyebrow">01 / <span data-i18n="v6.challenges.eyebrow">DESAFÍOS REALES</span></span>
-      <span class="wolfim-v6-aside" data-i18n="v6.challenges.aside">ANTES DE HABLAR DE HERRAMIENTAS</span>
+      <span class="wolfim-v6-aside" data-i18n="v6.challenges.aside">CANALES + SISTEMAS / 360°</span>
     </div>
-    <div class="wolfim-v6-challenges__heading" data-kinetic-scroll>
-      <h2 id="v6-challenges-title" data-i18n="v6.challenges.title">Cuando las piezas no están conectadas, el negocio lo siente.</h2>
-      <p data-i18n="v6.challenges.lead">Una marca, un canal comercial y una operación tienen que trabajar en la misma dirección. Empezamos por identificar dónde se pierde claridad.</p>
+    <div class="wolfim-v15-layout">
+      <div class="wolfim-v6-challenges__heading wolfim-v15-copy" data-kinetic-scroll>
+        <h2 id="v6-challenges-title" data-i18n="v6.challenges.title">Cuando los canales no se conectan, el negocio lo siente.</h2>
+        <p data-i18n="v6.challenges.lead">Marca, ventas y operación necesitan avanzar en una misma dirección.</p>
+        <p class="wolfim-v6-audience" data-i18n="v6.hero.support">Soluciones para negocios B2B, B2C y operaciones mixtas.</p>
+      </div>
+      <Orbit360V15 />
     </div>
-    <p class="wolfim-v6-audience" data-i18n="v6.hero.support">Soluciones para negocios B2B, B2C y operaciones mixtas.</p>
     <div class="wolfim-v6-challenges__grid">
       <article data-kinetic-scroll data-kinetic-order="0" data-kinetic-distance="55">
         <span>01</span>
         <h3 data-i18n="v6.challenge1.title">Presentación dispersa</h3>
-        <p data-i18n="v6.challenge1.body">Una propuesta difícil de comprender o una identidad inconsistente hacen más complejo explicar el valor de la empresa.</p>
+        <p data-i18n="v6.challenge1.body">Una identidad poco clara dificulta que el cliente entienda tu propuesta.</p>
       </article>
       <article data-kinetic-scroll data-kinetic-order="1" data-kinetic-distance="63">
         <span>02</span>
         <h3 data-i18n="v6.challenge2.title">Oportunidades sin seguimiento</h3>
-        <p data-i18n="v6.challenge2.body">Consultas, presupuestos y equipos comerciales desconectados generan trabajo manual y reducen la visibilidad del proceso.</p>
+        <p data-i18n="v6.challenge2.body">Consultas y presupuestos sin seguimiento pierden continuidad.</p>
       </article>
       <article data-kinetic-scroll data-kinetic-order="2" data-kinetic-distance="70">
         <span>03</span>
-        <h3 data-i18n="v6.challenge3.title">Canales que no dialogan</h3>
-        <p data-i18n="v6.challenge3.body">Catálogos, tiendas, marketplaces y datos repetidos complican las decisiones y la experiencia de compra.</p>
+        <h3 data-i18n="v6.challenge3.title">Canales desconectados</h3>
+        <p data-i18n="v6.challenge3.body">Tiendas, marketplaces y datos aislados complican cada decisión.</p>
       </article>
     </div>
   </div>
@@ -187,6 +191,67 @@ const whatsapp = (text: string) => 'https://wa.me/5493513157202?text=' + encodeU
     .wolfim-v6-challenges__heading h2,.wolfim-v6-models__head h2 { font-size:clamp(2.5rem,10vw,4rem); }
   }
   @media(prefers-reduced-motion:reduce) { .wolfim-v6-models__tabs button { transition:none; } }
+
+  /* V15 / compact editorial section with orbital ecosystem. */
+  .wolfim-v6-challenges {
+    background:#F1F1ED; color:#111; display:flex; align-items:stretch;
+    box-sizing:border-box; scroll-margin-top:0; padding:clamp(78px,8.3vh,96px) 0 clamp(62px,7.9vh,86px);
+  }
+  .wolfim-v6-challenges>.wolfim-v6-wrap {
+    display:grid; grid-template-rows:auto minmax(0,1fr) auto;
+    gap:clamp(14px,2vh,25px); width:min(1360px,calc(100% - clamp(36px,7vw,120px)));
+  }
+  .wolfim-v6-challenges .wolfim-v6-sectionhead {padding-bottom:12px;border-bottom-color:#C4C4BE}
+  .wolfim-v6-challenges .wolfim-v6-aside{font-size:.67rem;letter-spacing:.09em}
+  .wolfim-v15-layout {display:grid; grid-template-columns:minmax(0,1.06fr) minmax(340px,.94fr);align-items:center;gap:clamp(36px,4vw,76px);min-height:0}
+  .wolfim-v6-challenges__heading.wolfim-v15-copy{display:flex;flex-direction:column;align-items:flex-start;gap:clamp(17px,2.5vh,28px);padding:0;min-width:0}
+  .wolfim-v6-challenges__heading.wolfim-v15-copy h2 {max-width:680px;font-size:clamp(2.9rem,4.55vw,5.3rem);font-weight:850;line-height:1.04;letter-spacing:-.065em;text-wrap:balance}
+  .wolfim-v6-challenges__heading.wolfim-v15-copy>p:not(.wolfim-v6-audience){max-width:490px;color:#52524e;font-size:clamp(.92rem,1.06vw,1.05rem);line-height:1.55}
+  .wolfim-v6-challenges__heading .wolfim-v6-audience{margin:0;font:700 clamp(.65rem,.78vw,.77rem)/1.5 'JetBrains Mono',monospace;letter-spacing:.035em;color:#60605a}
+  .wolfim-v6-challenges__grid {border-color:#252525;background:#252525;gap:1px;grid-template-columns:repeat(3,minmax(0,1fr))}
+  .wolfim-v6-challenges__grid article {min-height:0;padding:clamp(17px,1.8vw,24px) clamp(18px,2.3vw,30px);background:#1B1B1B;color:#F6F6F3}
+  .wolfim-v6-challenges__grid article>span {color:#FA5F5F;font-size:.65rem}
+  .wolfim-v6-challenges__grid h3 {margin:clamp(13px,1.5vw,19px) 0 6px;font-size:clamp(1rem,1.32vw,1.33rem);font-weight:790;letter-spacing:-.042em;line-height:1.15}
+  .wolfim-v6-challenges__grid p {max-width:370px;color:#C4C4BE;font-size:clamp(.77rem,.82vw,.87rem);line-height:1.43}
+  @media(min-width:1001px) and (min-height:720px){.wolfim-v6-challenges{height:100svh}}
+  @media(max-width:1000px){
+    .wolfim-v6-challenges{padding:clamp(74px,8vh,90px) 0 34px;min-height:0}
+    .wolfim-v15-layout{grid-template-columns:minmax(0,1fr) minmax(290px,.92fr);gap:20px}
+    .wolfim-v6-challenges__heading.wolfim-v15-copy h2{font-size:clamp(2.4rem,4.7vw,3.8rem)}
+    .wolfim-v6-challenges__grid article{padding:18px}
+    .wolfim-v6-challenges__grid h3{font-size:1rem}
+    .wolfim-v6-challenges__grid p{font-size:.78rem}
+  }
+  @media(max-width:800px){
+    .wolfim-v6-challenges{height:auto;min-height:0;padding:75px 0 32px}
+    .wolfim-v6-challenges>.wolfim-v6-wrap{gap:17px}
+    .wolfim-v15-layout{grid-template-columns:1fr;gap:6px}
+    .wolfim-v6-challenges__heading.wolfim-v15-copy{gap:12px}
+    .wolfim-v6-challenges__heading.wolfim-v15-copy h2{max-width:700px;font-size:clamp(2.4rem,6.8vw,4.5rem)}
+    .wolfim-v6-challenges__heading.wolfim-v15-copy>p:not(.wolfim-v6-audience){max-width:550px;font-size:.94rem}
+  }
+  @media(max-width:640px){
+    .wolfim-v6-challenges {padding:62px 0 23px;min-height:100svh}
+    .wolfim-v6-challenges>.wolfim-v6-wrap{display:flex;flex-direction:column;gap:8px;justify-content:flex-start}
+    .wolfim-v6-challenges .wolfim-v6-sectionhead{padding-bottom:9px}
+    .wolfim-v6-challenges__heading.wolfim-v15-copy{gap:8px}
+    .wolfim-v6-challenges__heading.wolfim-v15-copy h2{font-size:clamp(1.95rem,8.1vw,2.65rem);line-height:1.06}
+    .wolfim-v6-challenges__heading.wolfim-v15-copy>p:not(.wolfim-v6-audience){font-size:.82rem;line-height:1.43}
+    .wolfim-v6-challenges__heading .wolfim-v6-audience{font-size:.58rem}
+    .wolfim-v6-challenges__grid{grid-template-columns:1fr;gap:1px}
+    .wolfim-v6-challenges__grid article{
+      display:grid;grid-template-columns:24px minmax(0,.82fr) minmax(0,1.18fr);
+      gap:10px;align-items:center;padding:11px 14px;min-height:0;
+    }
+    .wolfim-v6-challenges__grid article>span{align-self:center}
+    .wolfim-v6-challenges__grid h3{font-size:clamp(.87rem,3.45vw,.98rem);margin:0;line-height:1.18}
+    .wolfim-v6-challenges__grid p{font-size:clamp(.67rem,2.75vw,.75rem);line-height:1.35}
+  }
+  @media(max-width:350px){
+    .wolfim-v6-challenges__grid article{grid-template-columns:18px minmax(0,.83fr) minmax(0,1.17fr);gap:7px;padding:10px 8px}
+    .wolfim-v6-challenges__grid h3{font-size:.81rem}
+    .wolfim-v6-challenges__grid p{font-size:.64rem}
+  }
 </style>
 
 <script>

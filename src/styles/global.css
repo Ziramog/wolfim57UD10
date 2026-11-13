@@ -3696,3 +3696,11 @@ li.desktop-only { display: flex !important; }
   .nav__meta { gap: 8px; }
   .nav__logo-img { height: 25px; }
 }
+
+/* V15 / Ocultar el acceso flotante cuando podría tapar las tarjetas de Desafíos.
+   No afecta los enlaces de contacto de otras secciones. */
+body.wolfim-v15-challenges-visible .whatsapp-sticky {
+  opacity:0!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+}

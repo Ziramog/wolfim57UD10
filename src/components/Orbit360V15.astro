@@ -1,0 +1,206 @@
+---
+/**
+ * WOLFIM / 57UD10 — Orbital Ecosystem V15
+ * Interpretación propia en Astro/CSS de órbitas concéntricas.
+ * Visual conceptual: no implica integraciones activas.
+ * Movimiento pausado fuera del viewport y accesible con reduced-motion.
+ */
+---
+<div
+  class="wolfim-orbit"
+  data-v15-orbit
+  role="img"
+  aria-labelledby="wolfim-v15-orbit-description"
+>
+  <span id="wolfim-v15-orbit-description" class="wolfim-orbit__sr-only" data-i18n="v15.orbit.description">Ecosistema conceptual con Mercado Libre, Instagram, Facebook y WhatsApp orbitando alrededor de WOLFIM 360°, con Web y CRM como herramientas de apoyo.</span>
+  <div class="wolfim-orbit__canvas" aria-hidden="true">
+    <div class="wolfim-orbit__reticle"></div>
+    <div class="wolfim-orbit__ring wolfim-orbit__ring--outer"></div>
+    <div class="wolfim-orbit__ring wolfim-orbit__ring--inner"></div>
+
+    <div class="wolfim-orbit__wheel wolfim-orbit__wheel--outer">
+      <div class="wolfim-orbit__satellite" style="--angle:0deg">
+        <span class="wolfim-orbit__tile wolfim-orbit__tile--ml">
+          <span class="wolfim-orbit__tile-face">
+            <b>ML</b><small>MERCADO<br/>LIBRE</small>
+          </span>
+        </span>
+      </div>
+      <div class="wolfim-orbit__satellite" style="--angle:90deg">
+        <span class="wolfim-orbit__tile">
+          <span class="wolfim-orbit__tile-face">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle cx="17.7" cy="6.5" r="1.1" fill="currentColor" stroke="none"></circle>
+            </svg>
+            <small>INSTAGRAM</small>
+          </span>
+        </span>
+      </div>
+      <div class="wolfim-orbit__satellite" style="--angle:180deg">
+        <span class="wolfim-orbit__tile">
+          <span class="wolfim-orbit__tile-face">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 20l1.6-4.2a8.8 8.8 0 1 1 3.7 3.3L4 20z"></path>
+              <path d="M9 9.2c.4 3.1 2.5 5.2 5.6 5.6l1.2-1.3-2.2-1.1-1 1-2.1-2.1 1-1-1.2-2.2z"></path>
+            </svg>
+            <small>WHATSAPP</small>
+          </span>
+        </span>
+      </div>
+      <div class="wolfim-orbit__satellite" style="--angle:270deg">
+        <span class="wolfim-orbit__tile">
+          <span class="wolfim-orbit__tile-face">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M14.3 22v-8.4h2.8l.4-3.3h-3.2V8.2c0-.96.27-1.6 1.63-1.6h1.74V3.65A22.7 22.7 0 0 0 15.1 3c-2.7 0-4.55 1.65-4.55 4.69v2.61H7.5v3.3h3.05V22h3.75Z"/></svg>
+            <small>FACEBOOK</small>
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="wolfim-orbit__wheel wolfim-orbit__wheel--inner">
+      <div class="wolfim-orbit__satellite" style="--angle:45deg">
+        <span class="wolfim-orbit__tool"><span class="wolfim-orbit__tool-face">WEB</span></span>
+      </div>
+      <div class="wolfim-orbit__satellite" style="--angle:225deg">
+        <span class="wolfim-orbit__tool"><span class="wolfim-orbit__tool-face">CRM</span></span>
+      </div>
+    </div>
+
+    <div class="wolfim-orbit__core">
+      <span class="wolfim-orbit__core-kicker">WOLFIM</span>
+      <span class="wolfim-orbit__core-value">360<span>°</span></span>
+      <span class="wolfim-orbit__core-bottom">DIRECCIÓN</span>
+    </div>
+  </div>
+
+  <div class="wolfim-orbit__foot" aria-hidden="true">
+    <span class="wolfim-orbit__foot-mark"></span>
+    <span data-i18n="v15.orbit.caption">CANALES · COMERCIO · GESTIÓN</span>
+    <span class="wolfim-orbit__foot-index">360 / 01</span>
+  </div>
+</div>
+
+<style>
+  .wolfim-orbit { --orbit-size:clamp(310px,30vw,430px); width:min(100%,500px); margin-inline:auto; user-select:none; position:relative; }
+  .wolfim-orbit__sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .wolfim-orbit__canvas {
+    position:relative; width:var(--orbit-size); height:var(--orbit-size);
+    max-width:100%; margin-inline:auto; display:grid;place-items:center;
+    isolation:isolate; overflow:visible;
+  }
+  .wolfim-orbit__reticle {
+    position:absolute; inset:5%; z-index:-1; border-radius:50%;
+    background:radial-gradient(circle, rgba(230,30,30,.037) 0%,transparent 60%);
+  }
+  .wolfim-orbit__reticle::before,.wolfim-orbit__reticle::after {
+    content:''; position:absolute; background:#d5d5cf;opacity:.55;
+  }
+  .wolfim-orbit__reticle::before{width:1px;height:100%;left:50%;top:0}
+  .wolfim-orbit__reticle::after{height:1px;width:100%;top:50%;left:0}
+  .wolfim-orbit__ring { position:absolute;left:50%;top:50%;border:1px solid #c5c5bf;border-radius:50%;transform:translate(-50%,-50%);pointer-events:none; }
+  .wolfim-orbit__ring--outer {width:78%;height:78%;border-color:#bbbbB6}
+  .wolfim-orbit__ring--inner {width:44%;height:44%;border-style:dashed;opacity:.75}
+  .wolfim-orbit__ring--outer::after {
+    content:'';position:absolute;width:6px;height:6px;border-radius:50%;
+    top:50%;left:-3px;background:#E61E1E;
+  }
+  .wolfim-orbit__wheel {position:absolute;inset:0;transform-origin:50% 50%;pointer-events:none;}
+  .wolfim-orbit__wheel--outer {--sat-radius:calc(var(--orbit-size) * .39);animation:wolfim-orbit-rotate 36s linear infinite;}
+  .wolfim-orbit__wheel--inner {--sat-radius:calc(var(--orbit-size) * .22);animation:wolfim-orbit-counterrotate 25s linear infinite;}
+  .wolfim-orbit__satellite {
+    position:absolute; left:50%; top:50%;
+    transform:translate(-50%,-50%) rotate(var(--angle)) translateY(calc(-1 * var(--sat-radius))) rotate(calc(-1 * var(--angle)));
+    display:grid;place-items:center;
+  }
+  .wolfim-orbit__tile {
+    display:grid;place-items:center;width:clamp(62px,5.2vw,76px);height:clamp(62px,5.2vw,76px);
+    border:1px solid #c9c9c3;border-radius:50%;background:#F9F9F6;color:#272724;
+    box-shadow:0 8px 18px rgba(30,30,30,.08);animation:wolfim-orbit-counterrotate 36s linear infinite;
+  }
+  .wolfim-orbit__tile-face{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;line-height:1}
+  .wolfim-orbit__tile-face svg {width:25px;height:25px;}
+  .wolfim-orbit__tile-face b {font:900 22px/1 'Inter',Arial,sans-serif;letter-spacing:-.08em}
+  .wolfim-orbit__tile-face small {font:700 7px/1.18 'JetBrains Mono',monospace;letter-spacing:.02em;text-align:center}
+  .wolfim-orbit__tile--ml small {font-size:6px}
+  .wolfim-orbit__tool {
+    display:grid;place-items:center;width:clamp(42px,3.75vw,52px);height:clamp(42px,3.75vw,52px);
+    border:1px solid #777771;border-radius:50%;background:#252525;color:#f6f6f2;
+    box-shadow:0 6px 15px rgba(0,0,0,.09);
+    animation:wolfim-orbit-rotate 25s linear infinite;
+  }
+  .wolfim-orbit__tool-face {font:700 10px/1 'JetBrains Mono',monospace;letter-spacing:.05em}
+  .wolfim-orbit__core {
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    position:relative;z-index:2;width:clamp(98px,8.8vw,125px);height:clamp(98px,8.8vw,125px);
+    border-radius:50%;background:#E61E1E;color:#fff;
+    box-shadow:0 15px 34px rgba(230,30,30,.13);
+  }
+  .wolfim-orbit__core-kicker,.wolfim-orbit__core-bottom {font:750 8px/1.4 'JetBrains Mono',monospace;letter-spacing:.12em}
+  .wolfim-orbit__core-value {font:850 clamp(38px,3.5vw,51px)/1 'Inter',Arial,sans-serif;letter-spacing:-.095em;margin:4px 5px 3px 0;}
+  .wolfim-orbit__core-value span {font-size:.56em;vertical-align:top;letter-spacing:0}
+  .wolfim-orbit__foot {display:flex;align-items:center;gap:9px;padding-top:14px;border-top:1px solid #c4c4bd;margin-top:5px;font:700 9px/1.4 'JetBrains Mono',monospace;letter-spacing:.06em;color:#64645f}
+  .wolfim-orbit__foot-mark {width:5px;height:5px;border-radius:50%;background:#E61E1E}
+  .wolfim-orbit__foot-index {margin-left:auto;color:#85857f}
+  @keyframes wolfim-orbit-rotate {to {transform:rotate(360deg)}}
+  @keyframes wolfim-orbit-counterrotate {to {transform:rotate(-360deg)}}
+  .wolfim-orbit[data-paused] .wolfim-orbit__wheel,
+  .wolfim-orbit[data-paused] .wolfim-orbit__tile,
+  .wolfim-orbit[data-paused] .wolfim-orbit__tool {animation-play-state:paused}
+  @media(max-width:1150px){.wolfim-orbit{--orbit-size:clamp(295px,34vw,385px)}}
+  @media(max-width:800px){.wolfim-orbit{--orbit-size:min(66vw,290px)}.wolfim-orbit__foot{margin-top:0}}
+  @media(max-width:560px){
+    .wolfim-orbit{--orbit-size:clamp(210px,57vw,232px);width:min(100%,290px)}
+    .wolfim-orbit__tile{width:47px;height:47px;box-shadow:0 4px 10px rgba(0,0,0,.06)}
+    .wolfim-orbit__tile-face{gap:2px}
+    .wolfim-orbit__tile-face svg{width:19px;height:19px}
+    .wolfim-orbit__tile-face b{font-size:17px}
+    .wolfim-orbit__tile-face small{font-size:5.2px}
+    .wolfim-orbit__tile--ml small{font-size:4.5px}
+    .wolfim-orbit__tool{width:32px;height:32px}
+    .wolfim-orbit__tool-face{font-size:7px}
+    .wolfim-orbit__core{width:80px;height:80px}
+    .wolfim-orbit__core-kicker,.wolfim-orbit__core-bottom{font-size:6px}
+    .wolfim-orbit__core-value{font-size:34px}
+    .wolfim-orbit__foot{padding-top:8px;font-size:7px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .wolfim-orbit__wheel,.wolfim-orbit__tile,.wolfim-orbit__tool {animation:none!important}
+  }
+</style>
+
+<script>
+  const orbit = document.querySelector<HTMLElement>('[data-v15-orbit]');
+  const section = document.getElementById('desafios');
+  const floatingWhatsapp = document.querySelector<HTMLElement>('.whatsapp-sticky');
+  const reconcileShortcut = () => {
+    if (floatingWhatsapp) floatingWhatsapp.inert = [
+      'wolfim-v5-hero-visible', 'wolfim-v7-contact-visible',
+      'wolfim-v8-360-visible', 'wolfim-v9-method-visible',
+      'wolfim-v15-challenges-visible',
+    ].some(name => document.body.classList.contains(name));
+  };
+  if (section && 'IntersectionObserver' in window) {
+    const sectionObserver = new IntersectionObserver(([entry]) => {
+      document.body.classList.toggle('wolfim-v15-challenges-visible', !!entry?.isIntersecting);
+      reconcileShortcut();
+    }, {threshold:0});
+    sectionObserver.observe(section);
+  }
+  if (orbit && 'IntersectionObserver' in window) {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const observer = new IntersectionObserver(([entry]) => {
+      orbit.toggleAttribute('data-paused', !entry?.isIntersecting || document.hidden || reduce.matches);
+    }, {rootMargin:'100px 0px',threshold:0});
+    observer.observe(orbit);
+    document.addEventListener('visibilitychange',()=>{
+      if(document.hidden)orbit.setAttribute('data-paused','');
+      else if(orbit.getBoundingClientRect().bottom>0 && orbit.getBoundingClientRect().top<innerHeight && !reduce.matches)orbit.removeAttribute('data-paused');
+    });
+    reduce.addEventListener('change',()=>{
+      if(reduce.matches)orbit.setAttribute('data-paused','');
+      else orbit.removeAttribute('data-paused');
+    });
+  }
+</script>

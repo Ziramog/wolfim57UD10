@@ -111,7 +111,7 @@ const currentYear = new Date().getFullYear();
     const io = new IntersectionObserver(entries => {
       const visible = entries[0]?.isIntersecting ?? false;
       document.body.classList.toggle('wolfim-v7-contact-visible', visible);
-      if (sticky) sticky.inert = ['wolfim-v5-hero-visible','wolfim-v7-contact-visible','wolfim-v8-360-visible','wolfim-v9-method-visible'].some(c=>document.body.classList.contains(c));
+      if (sticky) sticky.inert = ['wolfim-v5-hero-visible','wolfim-v7-contact-visible','wolfim-v8-360-visible','wolfim-v9-method-visible','wolfim-v15-challenges-visible'].some(c=>document.body.classList.contains(c));
     }, {threshold:.1});
     io.observe(contactSection);
   }

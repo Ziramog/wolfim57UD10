@@ -113,7 +113,7 @@ const modules = [
     const observer = new IntersectionObserver(entries => {
       const visible = !!entries[0]?.isIntersecting;
       document.body.classList.toggle('wolfim-v8-360-visible', visible);
-      if (whatsApp) whatsApp.inert = ['wolfim-v5-hero-visible','wolfim-v7-contact-visible','wolfim-v8-360-visible','wolfim-v9-method-visible'].some(c=>document.body.classList.contains(c));
+      if (whatsApp) whatsApp.inert = ['wolfim-v5-hero-visible','wolfim-v7-contact-visible','wolfim-v8-360-visible','wolfim-v9-method-visible','wolfim-v15-challenges-visible'].some(c=>document.body.classList.contains(c));
     }, {threshold:0});
     observer.observe(digital360);
   }
